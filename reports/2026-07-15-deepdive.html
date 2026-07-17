@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Közeleg a határidő: Július 24-én lekapcsolják a régi DeepSeek API-kat, de a V4 mindent megváltoztat az önhosztolt agenteknél — LocalAgent Digest</title>
+  <meta name="description" content="A DeepSeek-V4 nem csak egy modellfrissítés -- kötelező migráció és egy sokkal robusztusabb ökoszisztéma az önhosztolt agenteknek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-15</div>
+          <h1 class="article-title">Közeleg a határidő: Július 24-én lekapcsolják a régi DeepSeek API-kat, de a V4 mindent megváltoztat az önhosztolt agenteknél</h1>
+          <div class="article-sub">A DeepSeek-V4 nem csak egy modellfrissítés -- kötelező migráció és egy sokkal robusztusabb ökoszisztéma az önhosztolt agenteknek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Közeleg a határidő: Július 24-én lekapcsolják a régi DeepSeek API-kat, de a V4 mindent megváltoztat az önhosztolt agenteknél" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A <a href="https://api-docs.deepseek.com/news/news260424/">DeepSeek áprilisban bemutatott V4-es szériája (Pro és Flash)</a> nem csak a nyers paraméterszámban lépett nagyot, hanem az önhosztolt AI-agentek számára kritikus fontosságú lett a nyílt licenceléssel és az extrém méretű kontextussal. Ha a Hermes vagy OpenClaw rendszeredben még a régi `deepseek-chat` végpontokat használod, alig több mint egy heted maradt a kötelező átállásig, mielőtt a régi modellek válaszadás helyett hibaüzenetet kezdenének dobni.</p>
+<p>Amikor a DeepSeek bejelentette az 1,6 billió paraméteres V4-Pro és a kisebb, 284 milliárd paraméteres V4-Flash modelleket, a piac figyelme azonnal a beépített "Thinking Mode" felé fordult. A korábbi generációkban a gondolkodási fázis (mint amit az R1 modellnél láttunk) még különálló rétegként működött, most viszont ez integrált része mindkét új variánsnak. Ez az architektúra-váltás indokolja a régi API-struktúra teljes megszüntetését.</p>
+<p>A <a href="https://api-docs.deepseek.com/updates/">hivatalos changelog szerint a `deepseek-chat` és `deepseek-reasoner` API azonosítók 2026. július 24-én véglegesen nyugdíjba vonulnak</a>. Azok a fejlesztők, akik olyan keretrendszereket használnak, ahol az OpenAI-kompatibilis végpontokba hardcode-olták a korábbi azonosítókat, július végére működésképtelen agentekkel találhatják szembe magukat. A megoldás egyszerű API kulcs csere helyett az új `deepseek-v4-pro` és `deepseek-v4-flash` azonosítók használatát igényli a kód bázisban.</p>
+<p>A technikai kényszerítő erő mellett azonban a V4 széria páratlan lehetőségeket nyit meg. Mindkét modell 1 millió tokenes kontextus ablakkal rendelkezik, ami a gyakorlatban azt jelenti, hogy egy teljes, több százezer soros kód bázist vagy hosszas dokumentációkat lehet egyszerre a memóriában tartani. Ezen felül a modellek nyílt, <a href="https://github.com/deepseek-ai">MIT licenc alatt érhetők el</a>, amely a legmegengedőbb az open-weight modellek között, így a lokális deployment és a saját infrastruktúrán történő üzemeltetés jogilag és technikailag is tiszta utat kapott.</p>
+<p><strong>Mit jelent ez neked, ha OpenClaw vagy Hermes-szerű rendszert üzemeltetsz?</strong><br>Első lépésként ellenőrizd az `.env` fájljaidat és az agentek konfigurációs állományait. Ha bármelyik LLM hívás a `deepseek-chat` stringet tartalmazza, azt azonnal cseréld a feladat komplexitásától függően `deepseek-v4-flash`-re (gyors válaszok, kategorizálás) vagy `deepseek-v4-pro`-ra (komplex kódolás, érvelés). Hosszabb távon pedig érdemes kísérletezni az 1 millió tokenes kontextus kihasználásával: az eddigi darabolt RAG (Retrieval-Augmented Generation) megoldások helyett a kisebb projektek teljes memóriája beküldhető egyetlen promptban, ami drasztikusan csökkentheti a "hallucinációkból" eredő hibákat az autonóm működés során.</p>
+<p>Az időzített bomba ketyeg, de a kötelező frissítés egy sokkal robusztusabb ökoszisztémát eredményez az önhosztolt mesterséges intelligencia rendszerek számára. A kérdés már csak az, hogy a hardvered készen áll-e arra, hogy kihasználja ezeknek a nyílt modelleknek az igazi potenciálját.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

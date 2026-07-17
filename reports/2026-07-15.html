@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeepSeek-V4 migráció és Claude 5 újdonságok — LocalAgent Digest</title>
+  <meta name="description" content="A legfontosabb hírek és trendek önhosztolt AI-ágens üzemeltetőknek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-15</div>
+          <h1 class="article-title">DeepSeek-V4 migráció és Claude 5 újdonságok</h1>
+          <div class="article-sub">A legfontosabb hírek és trendek önhosztolt AI-ágens üzemeltetőknek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="DeepSeek-V4 migráció és Claude 5 újdonságok" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <h2>Hírek az Agentek Világából</h2>
+<h3>Közeleg a DeepSeek API migrációs határideje
+A <a href="https://api-docs.deepseek.com/news/news260424/">DeepSeek-V4 széria áprilisi megjelenésével</a> a vállalat egy teljesen új architektúrára állt át, amely jelentős változásokat hoz a fejlesztők számára. Az új kínálat a zászlóshajónak számító 1,6 billió paraméteres DeepSeek-V4-Pro, valamint a kisebb, gyorsabb DeepSeek-V4-Flash modellekből áll. Mindkét modell hatalmas, 1 millió tokenes kontextus ablakkal rendelkezik, és beépítve tartalmazza a korábbi R1 modellből ismert "Thinking Mode" gondolkodási képességeket. A legfontosabb határidő azonban a küszöbön áll: <a href="https://api-docs.deepseek.com/updates/">2026. július 24-én hivatalosan is lekapcsolják</a> a régi `deepseek-chat` és `deepseek-reasoner` végpontokat, így az önhosztolt agentek API hívásait addig kötelezően át kell írni az új V4-es végpontokra. A modellek szerencsére <a href="https://github.com/deepseek-ai">MIT licenccel</a> lettek közzétéve, ami maximális rugalmasságot biztosít a saját infrastruktúrát üzemeltetők számára.</h3>
+<h3>Claude 5 modellek és új Anthropic ökoszisztéma funkciók
+Az Anthropic júniusi és júliusi bejelentései komoly bővülést hoztak az agentic munkafolyamatok terén. Megjelent a <a href="https://claude.com">Claude Fable 5</a>, amelyet a legképességesebb általánosan elérhető modelljükként pozícionálnak, valamint a szintén továbbfejlesztett Claude Sonnet 5. A platform szempontjából izgalmas újítás a <a href="https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide">Microsoft 365 Connector megjelenése</a>, amely azonban a biztonsági irányelvek alapján szigorúan olvasási (read-only) jogosultságokkal rendelkezik. Bár írási képességek nélkül nem tud közvetlenül e-maileket küldeni vagy fájlokat módosítani, lehetővé teszi a naptárak, levelezések és OneDrive dokumentumok biztonságos lekérdezését és elemzését. Szintén júliusi újdonság a béta fázisú Admin API, mellyel az Enterprise felhasználók automatizálhatják a jogosultságkezelését, valamint a fejlesztői élményt javító <a href="https://github.com/anthropics">Claude Code frissítések</a>, amelyek a memóriaszivárgások javítása mellett új `/cd` és `/doctor` parancsokkal segítik a lokális kódolási asszisztenseket.</h3>
+<h2>RepoCheck - Felfutó AI Repók</h2>
+<p>A <a href="https://ossinsight.io/trending/ai">GitHub trending adatai</a> alapján az e havi legnépszerűbb projektek fókuszában egyértelműen a lokális futtatás és az autonóm működés áll.</p>
+<ul><li><strong><a href="https://github.com/openclaw/openclaw">openclaw/openclaw</a></strong>: A 2026-os év egyik kiemelkedő projektje, amely jelentős népszerűségre tett szert a GitHubon. Ez a lokális-első személyes AI asszisztens a legnépszerűbb alternatívája a zárt ökoszisztémáknak.</li><li><strong><a href="https://github.com/re4/LibreCode">re4/LibreCode</a></strong>: Egy frissen felkapott, Ollama-kompatibilis, lokális kódolási és reverz-mérnöki felület. Sokan "Cursor-klónként" emlegetik azok számára, akik nulla felhős függőséggel szeretnének dolgozni.</li><li><strong><a href="https://github.com/Zackriya-Solutions/meetily">Zackriya-Solutions/meetily</a></strong>: Egy privát, önhosztolt AI meeting asszisztens. Rust alapokon Parakeet/Whisper használatával végzi a transzkripciót, és lokális Ollama modellekkel készíti el az összefoglalókat, garantálva, hogy a meeting adatok nem hagyják el a gépet.</li><li><strong><a href="https://github.com/iOfficeAI/OfficeCLI">iOfficeAI/OfficeCLI</a></strong>: Egyetlen binárisból álló, nyílt forráskódú irodai programcsomag, amelyet kifejezetten AI agentek számára terveztek. Lehetővé teszi, hogy a botok Microsoft Office telepítése nélkül olvassanak, szerkesszenek és automatizáljanak Word, Excel és PowerPoint fájlokat.</li><li><strong><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system\_prompts\_leaks</a></strong>: Egy rendkívül népszerű gyűjtemény, amely a nagy AI szolgáltatások (Claude, ChatGPT, Gemini, Grok) kiszivárgott rendszer-promptjait aggregálja, ami kiváló inspiráció a saját agentjeink személyiségének és instrukcióinak finomhangolásához.</li></ul>
+<blockquote><p>Hosszabb lélegzetvételű, részletes cikkünket a DeepSeek-V4 önhosztolt modellek jelentőségéről és az API átállás részleteiről <a href="./2026-07-15-deepdive.html">itt olvashatod</a>.</p></blockquote>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
