@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenAI GPT-5.6 Sol/Terra/Luna: többügynökös orkesztráció az API-ban, és Suno V3 Alpha — LocalAgent Digest</title>
-  <meta name="description" content="Az agentic modellverseny új köre programozott eszközhívással és párhuzamos ügynök-koordinációval, plusz egy korai AI-audio frissítés az önhosztolt ágensek üzemeltetőinek.">
+  <title>Google a Gemini CLI-t az Antigravity CLI-be olvasztja, és mit adnak a GPT-5.6 ügynök-primitívei — LocalAgent Digest</title>
+  <meta name="description" content="Az ágens-harness réteg konszolidálódik: a CLI-konvenciók pluginokká állnak össze, az API-k pedig már beépített többügynökös orkesztrációt adnak az önhosztolt üzemeltetőknek.">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -28,8 +28,8 @@
       <article>
         <header class="article-header">
           <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-20</div>
-          <h1 class="article-title">OpenAI GPT-5.6 Sol/Terra/Luna: többügynökös orkesztráció az API-ban, és Suno V3 Alpha</h1>
-          <div class="article-sub">Az agentic modellverseny új köre programozott eszközhívással és párhuzamos ügynök-koordinációval, plusz egy korai AI-audio frissítés az önhosztolt ágensek üzemeltetőinek.</div>
+          <h1 class="article-title">Google a Gemini CLI-t az Antigravity CLI-be olvasztja, és mit adnak a GPT-5.6 ügynök-primitívei</h1>
+          <div class="article-sub">Az ágens-harness réteg konszolidálódik: a CLI-konvenciók pluginokká állnak össze, az API-k pedig már beépített többügynökös orkesztrációt adnak az önhosztolt üzemeltetőknek.</div>
           <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             Megosztás
@@ -37,26 +37,25 @@
         </header>
 
         <div class="article-hero-img-wrap">
-          <img src="../assets/placeholder-1.jpg" alt="OpenAI GPT-5.6 Sol/Terra/Luna: többügynökös orkesztráció az API-ban, és Suno V3 Alpha" class="article-hero-img">
+          <img src="../assets/placeholder-1.jpg" alt="Google a Gemini CLI-t az Antigravity CLI-be olvasztja, és mit adnak a GPT-5.6 ügynök-primitívei" class="article-hero-img">
         </div>
 
         <div class="article-content">
-          <p>Üdv a mai kiadásban. A hét fő szála, hogy az agentic modellverseny átbillent a puszta benchmark-pontokról a tényleges ügynök-orkesztrációs primitívekre: az OpenAI GPT-5.6 családja már az API szintjén ad párhuzamos ügynök-koordinációt és programozott eszközhívást, ami közvetlenül érinti azt, ahogy egy önhosztolt ágens-flottát fel lehet építeni.</p>
+          <p>Üdv a mai kiadásban. A hét fő szála nem egy új modell, hanem a körülötte lévő harness-réteg érése: Google a Gemini CLI-t az Antigravity CLI-be olvasztja, az OpenAI pedig az API szintjén ad ügynök-orkesztrációs primitíveket. Az önhosztolt ágens-üzemeltetőnek ez azt jelenti, hogy a saját, kézzel írt vezérlő-rétege egyre inkább szabványosodó building-blockokra cserélhető.</p>
 <h2>Hírek az Agentek Világából</h2>
-<h3>OpenAI GPT-5.6 (Sol, Terra, Luna): programozott eszközhívás és többügynökös beta az API-ban</h3>
-<p>Az OpenAI kiadta a GPT-5.6 háromszintű modellcsaládját (Sol a csúcs, Terra a kiegyensúlyozott, Luna az olcsó), és a bejelentés érdemi része nem a modellméret, hanem az ügynök-orkesztrációs képességek. A <a href="https://www.marktechpost.com/2026/07/09/openai-releases-gpt-5-6-a-three-tier-model-family-with-programmatic-tool-calling/">Programmatic Tool Calling</a> engedi, hogy a modell JavaScriptet írjon az eszközök összefűzésére, amit egy izolált, hálózat nélküli V8 futtatókörnyezetben hajt végre. Emellett megjelent egy többügynökös beta a Responses API-ban, és egy "Ultra" mód, amely négy ágenst koordinál párhuzamosan egy komplex feladaton.</p>
-<ul><li>Programozott eszközhívás: a modell maga írja a tool-összefűző kódot, sandboxolt V8-ban, hálózat nélkül.</li><li>Többügynökös beta a Responses API-ban + négy párhuzamos ágens az Ultra módban.</li><li>Az "Agents' Last Exam" hosszú, professzionális munkafolyamat-benchmarkon a Sol 53,6%-ot ért el, 13,1 százalékponttal a legerősebb versenytárs fölött.</li></ul>
-<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: eddig a párhuzamos ügynök-koordinációt és a determinisztikus eszköz-összefűzést magadnak kellett a harness-ben megírnod. Ha ezek a primitívek beköltöznek az API-ba, a saját orkesztrációs réteged vékonyabb és megbízhatóbb lehet, az olcsó Luna szint pedig a rutinmunka batch-eléséhez ad kiszámítható költséget.</p></blockquote>
+<h3>Google: a Gemini CLI beolvad az Antigravity CLI-be</h3>
+<p>A Google bejelentette a váltást a Gemini CLI-ről az Antigravity CLI-re. A lényeg, hogy a fő koncepciók megmaradnak, csak átcsomagolva: a <a href="https://aiagentstore.ai/ai-agent-news/this-week">skillek, hookok, subagentek és extension-ök pluginokká állnak össze</a> az új CLI-ben. Ez egy irányt jelez: az ágens-harnessek konvenciói (készség-modulok, életciklus-hookok, al-ügynökök) kezdenek egységes, hordozható formára állni a nagy szereplőknél.</p>
+<ul><li>A Gemini CLI koncepciói (skill, hook, subagent, extension) megmaradnak, plugin-formában.</li><li>Nem modell-, hanem harness-szintű változás: a vezérlő-réteg standardizálódik.</li><li>Aki saját CLI-alapú ágenst üzemeltet, annak érdemes a plugin-konvenciót figyelnie a jövőbeli hordozhatóság miatt.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: ha a nagy CLI-k a skill/hook/subagent/plugin mintára állnak, akkor a saját harnessed is ehhez érdemes igazítani. Így később könnyebb komponenst átemelni vagy szolgáltatót váltani anélkül, hogy az egész vezérlő-réteget újra kellene írni.</p></blockquote>
+<p>Ár: a Google agent-CLI eszközei jellemzően ingyenesen használhatók, a mögöttes modell-hívás fogyasztás-alapú.</p>
+<h3>GPT-5.6 ügynök-primitívek: programozott eszközhívás és többügynökös beta az API-ban</h3>
+<p>Az OpenAI GPT-5.6 család a bejelentés óta nem a modellméret, hanem az ügynök-orkesztrációs képességek miatt érdekes. A <a href="https://www.marktechpost.com/2026/07/09/openai-releases-gpt-5-6-a-three-tier-model-family-with-programmatic-tool-calling/">Programmatic Tool Calling</a> engedi, hogy a modell JavaScriptet írjon az eszközök összefűzésére, amit egy izolált, hálózat nélküli V8 futtatókörnyezetben hajt végre. Emellett megjelent egy többügynökös beta a Responses API-ban, és egy "Ultra" mód, amely négy ágenst koordinál párhuzamosan egy feladaton. Az "Agents' Last Exam" hosszú munkafolyamat-benchmarkon a csúcsszint (Sol) 53,6%-ot ért el.</p>
+<ul><li>Programozott eszközhívás: a modell maga írja a tool-összefűző kódot, sandboxolt V8-ban, hálózat nélkül.</li><li>Többügynökös beta a Responses API-ban + négy párhuzamos ágens az Ultra módban.</li><li>Háromszintű család: olcsó (Luna), kiegyensúlyozott (Terra), csúcs (Sol).</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: a párhuzamos ügynök-koordinációt és a determinisztikus eszköz-összefűzést eddig magadnak kellett a harness-ben megírnod. Ha ezek API-primitívvé válnak, a saját orkesztrációs réteged vékonyabb és megbízhatóbb lehet, az olcsó szintet pedig a rutin batch-munkára tarthatod.</p></blockquote>
 <p>Ár: Luna 1 / 6, Terra 2,50 / 15, Sol 5 / 30 USD per millió input/output token.</p>
-<h2>AI Audio</h2>
-<h3>Suno V3 Alpha: nyilvános tesztkör, de még döcög a precíz vezérlés</h3>
-<p>A <a href="https://suno.com/release-notes">Suno</a> kiadott egy V3 Alpha verziót nyilvános tesztelésre. A korai build már mutatja az irányt, de a jelentések szerint még gyenge a precíz, paraméteres vezérlésben: nehezen követ konkrét utasításokat, mint a hangnem (key) vagy a BPM, és rövid promptoknál hajlamos a minőségromlásra és hallucinációra. A jogi háttér változatlanul feszült: a müncheni GEMA kontra Suno ügyben a várható ítélet dátuma 2026. július 31.</p>
-<ul><li>V3 Alpha: nyilvános teszt, még nem stabil a paraméteres (key/BPM) vezérlés.</li><li>Rövid prompt = magasabb hallucináció- és minőségromlás-kockázat.</li><li>Jogi menetrend: GEMA kontra Suno ítélet várhatóan 2026. július 31.</li></ul>
-<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: aki AI-audiót gyárt automatizált pipeline-ból, annak egy alpha-modellnél a determinisztikus, paraméteres vezérlés (key, BPM, hossz) a kritikus pont. Amíg az nem stabil, tartsd a produkciós zenei lépéseket a bevált modellen, és az alphát csak izolált kísérletként futtasd.</p></blockquote>
-<p>Ár: a Suno alap generálás ingyenes napi kerettel; a haladó funkciók (pl. Advanced Split) a Premier előfizetéshez kötöttek.</p>
 <h2>RepoCheck - Felfutó AI Repók</h2>
 <p>A hónap valóban új, önhosztolható ágens-eszközei, nem a régóta népszerűek:</p>
-<ul><li><strong><a href="https://github.com/agentscope-ai/QwenPaw">QwenPaw 2.0</a></strong>: 2026. július 10-én kiadott, AgentScope 2.0-alapú teljes újraírás. Lokálisan telepíthető úgy, hogy az adat a gépeden marad (nincs harmadik fél, nincs feltöltés), és hoz egy protokoll-semleges MCP / A2A / ACP connector-réteget titkosított hitelesítő-adatokkal és per-hívás policy kapuval. Pont az a fajta, saját infrán futó, adat-otthontartó felállás, amit egy önhosztolt operátor keres.</li><li><strong><a href="https://github.com/the-open-agent/openagent">OpenAgent</a></strong>: önhosztolható személyi ágens, amely LLM-et, saját tudásbázist (RAG) és autonóm ágens-hurkokat rak össze egy platformba. Támogat computer-use-t, browser-use-t és kódoló ágenst, és bármelyik MCP-kompatibilis eszközt meg tudja hívni, tehát egy helyen fedi le a böngészést, a kódfuttatást és a gép-vezérlést.</li></ul>
+<ul><li><strong><a href="https://github.com/agentscope-ai/QwenPaw">QwenPaw 2.0</a></strong>: 2026. július 10-én kiadott, AgentScope 2.0-alapú teljes újraírás. Lokálisan telepíthető úgy, hogy az adat a gépeden marad (nincs harmadik fél, nincs feltöltés), és hoz egy protokoll-semleges MCP / A2A / ACP connector-réteget titkosított hitelesítő-adatokkal és per-hívás policy kapuval. Pont az a saját infrán futó, adat-otthontartó felállás, amit egy önhosztolt operátor keres.</li><li><strong><a href="https://github.com/the-open-agent/openagent">OpenAgent</a></strong>: önhosztolható személyi ágens, amely LLM-et, saját tudásbázist (RAG) és autonóm ágens-hurkokat rak össze egy platformba. Támogat computer-use-t, browser-use-t és kódoló ágenst, és bármelyik MCP-kompatibilis eszközt meg tud hívni, tehát egy helyen fedi le a böngészést, a kódfuttatást és a gép-vezérlést.</li></ul>
         </div>
       </article>
     </div>
