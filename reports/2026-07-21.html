@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Loom nyílt forrású ágens-irányítás és a Hugging Face behatolás biztonsági tanulságai — LocalAgent Digest</title>
+  <meta name="description" content="Vállalati jogosultság-továbbítás az AWS Labs-től, a guardrail-aszimmetria tanulsága egy autonóm ágens-incidensből és friss eszközök az önhosztolt ökoszisztémában.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-21</div>
+          <h1 class="article-title">AWS Loom nyílt forrású ágens-irányítás és a Hugging Face behatolás biztonsági tanulságai</h1>
+          <div class="article-sub">Vállalati jogosultság-továbbítás az AWS Labs-től, a guardrail-aszimmetria tanulsága egy autonóm ágens-incidensből és friss eszközök az önhosztolt ökoszisztémában.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="AWS Loom nyílt forrású ágens-irányítás és a Hugging Face behatolás biztonsági tanulságai" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Üdv a mai kiadásban! A mai nap fő fókusza az önhosztolt és vállalati AI-ágensek biztonsága és irányítása: az AWS nyílt forráskódúvá tette a Loom referencia-platformot az ágensek jogosultság-kezelésére, miközben a Hugging Face egy autonóm ágens által elkövetett behatolási incidens tanulságait tette közzé.</p>
+<h2>Hírek az Agentek Világából</h2>
+<h3>AWS Loom: nyílt forráskódú referencia-platform vállalati AI-ágens irányításhoz és jogosultságkezeléshez</h3>
+<p>Az AWS Labs megjelentetett egy nyílt forráskódú referencia-platformot <a href="https://github.com/awslabs/loom">AWS Loom</a> néven, amely kifejezetten a többügynökös rendszerek biztonságos skálázására és irányítására nyújt megoldást. A platform integrálja az AWS Agent Registry-t az eszközök és ágensek felülvizsgálati folyamatához, kezeli a Cognito-alapú hitelesítést és az RFC 8693 szerinti on-behalf-of (OBO) token-cserét az ágens-láncokon keresztül. Emellett a Model Context Protocol (MCP) beépítésével biztosít emberi jóváhagyási (Human-in-the-Loop) pontokat a kritikus műveletekhez.</p>
+<ul><li>AWS Agent Registry integráció az ágensek és eszközök központi felülvizsgálatára és regisztrációjára.</li><li>OBO token-csere (RFC 8693) és finomhangolt jogosultságkezelés ágensek közötti hívásoknál.</li><li>MCP-alapú emberi jóváhagyási kapuk (Human-in-the-Loop) és automatikus erőforrás-címkézés (`loom:application`, `loom:owner`) a teljes költség-átláthatóságért.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Amikor egy saját ágens-flotta növekedésnek indul, a legnagyobb kihívást nem a modellhívás, hanem az ágensek közötti biztonságos jogosultság-továbbítás és az ellenőrizhető döntési kapuk jelentik. Az AWS Loom ingyenes mintát ad arra, hogyan építsünk MCP-kompatibilis, auditálható kontroll-síkot saját infrastruktúránkon.</p></blockquote>
+<p>Ár: ingyenes (open-source Apache 2.0 licenc)</p>
+<h3>Hugging Face incidens és a "guardrail aszimmetria": miért kritikus a saját infrán futó nyílt modell?</h3>
+<p>A Hugging Face részletes elemzést közölt egy <a href="https://huggingface.co/blog/security-update-jul-2026">autonóm ágens által elkövetett behatolási incidensről</a>, amely az adatfeldolgozási pipeline sérülékenységeit használta ki. Az incidensreagálás során a biztonsági csapat egy meglepő akadályba ütközött: a kereskedelmi, API-alapú modellek biztonsági szűrői (guardrails) elutasították a forensic lekérdezéseket, mivel a támadási logok és exploit-payloadok tartalma fennakadt a biztonsági szabályokon. A csapat végül egy saját infrastruktúrán hozott nyílt súlyú modellre (GLM 5.2) támaszkodva tudta lefolytatni az elemzést.</p>
+<ul><li>Autonóm ágens által végrehajtott behatolás az adatfeldolgozási pipeline sérülékenységein keresztül.</li><li>Guardrail-aszimmetria: a zárt API-modellek nem tudták megkülönböztetni a valódi támadási logok forenzikus elemzését egy élő támadástól.</li><li>A saját infrastruktúrán futó nyílt súlyú modellek fontossága a korlátozásmentes biztonsági és elemzési feladatokban.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Ez az eset pontosan rámutat arra, miért nem támaszkodhat egy ágens-rendszer kizárólag külső, harmadik fél által szűrt API-kra. Biztonsági, forensic vagy érzékeny adatelemzési feladatokhoz elengedhetetlen egy saját infrán futó, szűretlen nyílt modell megléte.</p></blockquote>
+<p>Ár: nem alkalmazható (biztonsági elemzés és architektúra-tanulság)</p>
+<h2>RepoCheck - Felfutó AI Repók</h2>
+<p>A hónap valóban új és gyakorlati szempontból értékes önhosztolható eszközei:</p>
+<ul><li><strong><a href="https://github.com/strands-agents/strands-agents">Strands Agents</a></strong>: Modell-vezérelt Python és TypeScript SDK AI-ágensek építéséhez minimális keretrendszer-overhead mellett. Nem igényel bonyolult gráf-scaffoldot, közvetlenül támogatja az OpenTelemetry-t és a Model Context Protocol (MCP) eszközkészletet.</li><li><strong><a href="https://github.com/jlowin/fastmcp">FastMCP</a></strong>: Magas szintű Python keretrendszer Model Context Protocol (MCP) szerverek és kliensek építéséhez. Automatikusan kezeli a Python függvények sémagenerálását, validációját és a protokoll-egyeztetést a modell-eszközök felé.</li></ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
