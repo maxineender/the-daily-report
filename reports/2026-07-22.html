@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kimi K3, a 2,8 billiós nyílt modell, és az MCP állapotmentes fordulata — LocalAgent Digest</title>
+  <meta name="description" content="A Moonshot AI kiadta minden idők legnagyobb nyílt súlyú modelljét, a Model Context Protocol pedig július 28-án leszámol a session-kezeléssel. Plusz az xAI kódoló ügynöke nyílt forráskódon.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-22</div>
+          <h1 class="article-title">Kimi K3, a 2,8 billiós nyílt modell, és az MCP állapotmentes fordulata</h1>
+          <div class="article-sub">A Moonshot AI kiadta minden idők legnagyobb nyílt súlyú modelljét, a Model Context Protocol pedig július 28-án leszámol a session-kezeléssel. Plusz az xAI kódoló ügynöke nyílt forráskódon.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kimi K3, a 2,8 billiós nyílt modell, és az MCP állapotmentes fordulata" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Üdv a mai kiadásban. Két dolog mozgatja ma a házi ágensek világát: egy kínai laborból kijött a valaha volt legnagyobb nyílt súlyú modell, és a protokoll, amire a legtöbb önhosztolt ágens épül, jövő héten alapjaiban egyszerűsödik. Mindkettő közvetlenül számít, ha saját infrán futtatsz ágenseket. Nézzük.</p>
+<h2>Hírek az Agentek Világából</h2>
+<h3>Kimi K3: 2,8 billió paraméter, nyílt súlyokkal, július 27-től</h3>
+<p>A Moonshot AI kiadta a <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/moonshot-releases-2-8-trillion-parameter-kimi-k3">Kimi K3-at</a>, egy 2,8 billió paraméteres ritka mixture-of-experts modellt, amit a cég a világ első nyílt, 3 billiós nagyságrendű rendszerének nevez. A méret önmagában is rekord a nyílt súlyú kategóriában, de a lényeg nem a szám: a modell a Moonshot saját méréseiben minden más nyílt modellt megelőzött kódolásban és ágens-feladatokban, és csak a zárt csúcs (Claude Fable 5, GPT-5.6 Sol) maradt előtte. A ritka aktiválás miatt a 2,8 billióból hívásonként csak töredék dolgozik, szóval a következtetés költsége nem egy dense modell szintje.</p>
+<ul><li>Két architekturális újítás: a Kimi Delta Attention (KDA) és az Attention Residuals, a hatékonyságért és a hosszú kontextusért.</li><li>1 millió tokenes kontextusablak és natív vizuális megértés.</li><li>Már kipróbálható a Kimi appban és a kimi.com-on, fejlesztői fiók nélkül; a teljes nyílt súlyok július 27-én jönnek.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: a 2,8 billió paramétert a legtöbben nem fogják otthon futtatni, ezt tisztázzuk. A jelentősége más: a nyílt súlyú front tovább zárkózik a zárt csúcshoz, és ez lefelé is nyomja a valóban futtatható modellek (GLM 5.2, a kisebb Kimi-variánsok) színvonalát. Ha nyílt modellre tervezel ágenst, a mérce most feljebb került.</p></blockquote>
+<p>Ár: ingyenes próba a webes/mobil appban; a nyílt súlyok július 27-től szabadon letölthetők.</p>
+<h3>Az MCP állapotmentessé válik július 28-án: eltűnik a handshake és a session</h3>
+<p>A Model Context Protocol következő verziója release candidate állapotban van, és a <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/">hivatalos MCP-blog</a> szerint július 28-án véglegesül. A legnagyobb változás, hogy a protokoll mag állapotmentes lesz: megszűnik az `initialize` handshake és a protokoll-szintű session-azonosító, minden kérés önmagában hordozza a verziót és a képességeket. Vagyis egy `tools/call` már önálló, és bármelyik szerver-példány kiszolgálhatja, ami hétköznapi HTTP load balancinget tesz lehetővé a saját infrádon. Mellé jön a Tasks kiterjesztés a hosszú futású műveletekre (`tasks/get`, `tasks/update`, `tasks/cancel`), és az MCP Apps, amivel a szerverek sandboxolt iframe-ben renderelt HTML-felületet küldhetnek.</p>
+<ul><li>Nincs több session-id: a kéréseket akárhány szerver-példány közt szét lehet osztani, állapot-ragasztás nélkül.</li><li>A Tasks a kísérleti státuszból éles funkcióvá vált, állapotmentes modellben kezeli a hosszú munkát.</li><li>Auth-keményítés és formális elavulási (deprecation) szabály, hogy a jövőbeni váltások kiszámíthatók legyenek.</li><li>A béta SDK-k a release candidate-hez már elérhetők, 10 hetes tesztelési ablakkal a véglegesítés előtt.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: eddig egy MCP-szerver skálázása azt jelentette, hogy a session-höz kellett ragasztani a klienst egy adott példányhoz. Az állapotmentes maggal az MCP-szervered ugyanúgy skálázódik, mint bármelyik hétköznapi HTTP-szolgáltatás: több példány egy load balancer mögött, sticky session nélkül. Aki saját ágens-flottát üzemeltet, annak ez kevesebb ragasztószalag és olcsóbb vízszintes skálázás.</p></blockquote>
+<p>Ár: nyílt szabvány, ingyenes.</p>
+<h2>RepoCheck - Felfutó AI Repók</h2>
+<p>A hét friss, önhosztolható kódoló ügynökei, mindkettő valódi újdonság, nem népszerű-de-régi:</p>
+<ul><li><strong><a href="https://github.com/xai-org/grok-build">Grok Build</a></strong> (xai-org): az xAI július 15-én nyílt forráskódúvá tett terminál-ügynöke, Apache 2.0 licenc alatt. Teljes képernyős TUI, ami átlátja a kódbázist, fájlokat szerkeszt, shell-parancsot futtat és hosszú futású feladatokat kezel, diff-alapú review-val. A fa egy nagyjából 1 millió soros Rust workspace, ugyanaz a `grok` CLI, ami a Grok 4.5 ágens-stackjét hajtja; az ágens-hurok olvasható, a lokális következtetés dokumentált. Ár: ingyenes (Apache 2.0).</li><li><strong><a href="https://github.com/thedavidweng/gork-build">gork-build</a></strong> (közösségi fork): ami a VSCodium a VS Code-nak, az a gork-build a Grok Buildnek. Közösségi karbantartású disztribúció az xai-org/grok-build-ból, kikapcsolt gyártói telemetriával és eltávolított brandinggel. Annak, aki privát infrán, adat-kiszivárgás nélkül akarja ugyanazt az ügynököt, ez a kiindulópont. Ár: ingyenes (közösségi disztribúció).</li></ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
