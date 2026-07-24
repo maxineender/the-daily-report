@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Az Agno AgentOS és a Pydantic AI típusbiztos ágens-architektúrái — LocalAgent Digest</title>
+  <meta name="description" content="A legújabb nyílt forráskódú ágens-keretrendszerek a strukturált típusbiztonságra és a nagy teljesítményű, többágenses futtatókörnyezetekre helyezik a hangsúlyt.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-24</div>
+          <h1 class="article-title">Az Agno AgentOS és a Pydantic AI típusbiztos ágens-architektúrái</h1>
+          <div class="article-sub">A legújabb nyílt forráskódú ágens-keretrendszerek a strukturált típusbiztonságra és a nagy teljesítményű, többágenses futtatókörnyezetekre helyezik a hangsúlyt.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Az Agno AgentOS és a Pydantic AI típusbiztos ágens-architektúrái" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Üdv a mai kiadásban! Az önhosztolt és autonóm ágensek világa egyre inkább a típusbiztonságra és a nagy teljesítményű, többágenses futtatókörnyezetekre fókuszál. Ma két olyan kiemelkedő nyílt forráskódú projektre tekintünk rá, amelyek radikálisan leegyszerűsítik a saját infrastruktúrán futtatott ágensek állapotkövetését és adatátvitelét. Nézzük a részleteket!</p>
+<h2>Hírek az Agentek Világából</h2>
+<h3><a href="https://github.com/agno-agi/agno">Agno</a>: nagy teljesítményű AgentOS és moduláris Python keretrendszer többágenses rendszerekhez</h3>
+<p>Az <a href="https://github.com/agno-agi/agno">Agno</a> (a Phidata utódja) egy kifejezetten többágenses architektúrákra és helyi infrastruktúrára tervezett, nagy sebességű nyílt forráskódú keretrendszer. A túlbonyolított absztrakciós rétegek helyett az Agno egy beépített FastAPI-alapú AgentOS futtatókörnyezetet és natív webes felületet biztosít. Ez a felület valós időben teszi lehetővé az ágensek állapotának, memóriájának és tudásbázisának nyomon követését. A keretrendszer modellfüggetlen, így zökkenőmentesen integrálható helyi és felhős modellekhez egyaránt.</p>
+<ul><li>FastAPI-alapú AgentOS futtatókörnyezet beépített webes felülettel és monitorozással.</li><li>Keretrendszer- és modellfüggetlen kialakítás helyi (Ollama, vLLM) és felhős LLM-ekhez.</li><li>Strukturált memória- és RAG-kezelés bonyolult keretrendszeri overhead nélkül.</li><li>Nyílt forráskódú és rendkívül gyors végrehajtást biztosító Python kódalap.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Ha saját szerveren futtatsz ágens-flottát (például egy Hermes-alapú asszisztens-hálózatot), az Agno AgentOS felülete és a kiterjeszthető memóriakezelése rendkívül egyszerűvé teszi az ágensek állapotának nyomon követését és a hálózati erőforrások elosztását.</p></blockquote>
+<p>Ár: ingyenes (Open Source).</p>
+<h3><a href="https://github.com/pydantic/pydantic-ai">Pydantic AI</a>: szigorúan típusbiztos Python ágens-fejlesztés a Pydantic alkotóitól</h3>
+<p>A népszerű Pydantic adatvalidációs könyvtár mögött álló fejlesztőcsapat bemutatta a <a href="https://github.com/pydantic/pydantic-ai">Pydantic AI</a> keretrendszert, amely a szigorú típusbiztonságot és a determinisztikus adatstruktúrákat helyezi a középpontba. A keretrendszer garantálja, hogy az LLM-ek által visszaadott válaszok és eszköz-hívások (tool calls) pontosan megfeleljenek a megadott Python típusdefinícióknak. Ez a megközelítés megszünteti a nem strukturált kimenetekből fakadó futásidejű hibákat, és natív támogatást nyújt a Model Context Protocol (MCP) használatához is.</p>
+<ul><li>Szigorú Pydantic típusellenőrzés minden ágens-akcióra, kérése és válaszra.</li><li>Elsődleges támogatás a Model Context Protocol (MCP) eszközök integrációjára.</li><li>Állapotmentes és állapotfüggő munkafolyamatok natív, átlátható kezelése.</li><li>Teljes kompatibilitás a helyi Ollama/vLLM példányokkal és a vezető felhős modellekkel.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: A saját infrastruktúrán futtatott ágenseknél a legnagyobb hibalehetőséget a kiszámíthatatlan kimenetek jelentik. A Pydantic AI segítségével egy Hermes típusú ágens teljesen típusbiztosan kommunikálhat a rendszer többi részével, így a hibakezelés és az automatikus újrapróbálkozás a protokoll szintjén garantált.</p></blockquote>
+<p>Ár: ingyenes (Open Source, MIT).</p>
+<h2>RepoCheck - Felfutó AI Repók</h2>
+<p>A hét friss, önhosztolható és ágens-központú nyílt forráskódú projektjei:</p>
+<ul><li><strong><a href="https://github.com/elizaOS/eliza">elizaOS</a></strong> (elizaOS): TypeScript-alapú, moduláris ágens operációs rendszer kifejezetten többcsatornás (Discord, Telegram, X) és helyi ágens-flották építéséhez. Ár: ingyenes (Open Source).</li><li><strong><a href="https://github.com/ag2ai/ag2">AG2</a></strong> (AG2AI): Az AutoGen nyílt forráskódú utódja, amely kifejezetten a komplex, többágenses együttműködések és autonóm munkafolyamatok skálázható szervezésére készült. Ár: ingyenes (Open Source).</li></ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
