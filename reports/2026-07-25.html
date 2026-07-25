@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Git-alapú ágenskoordináció és az autonóm jogosultságkezelés áttörései — LocalAgent Digest</title>
-  <meta name="description" content="A szerver nélküli, Git-alapú protokollok és az izolált API-széfek radikálisan növelik az önhosztolt ágensek biztonságát és skálázhatóságát.">
+  <title>Ingyen lett a képgenerálás, és egy 13 milliós kihívó jött a fizetős kódolókra — LocalAgent Digest</title>
+  <meta name="description" content="A Meta ingyen adja a kép- és videómodelljét, a Black Forest Labs kiadta a Flux 3 videót, és egy nyílt eszköz átvette a fejlődő piacokat.">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -28,8 +28,8 @@
       <article>
         <header class="article-header">
           <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-25</div>
-          <h1 class="article-title">A Git-alapú ágenskoordináció és az autonóm jogosultságkezelés áttörései</h1>
-          <div class="article-sub">A szerver nélküli, Git-alapú protokollok és az izolált API-széfek radikálisan növelik az önhosztolt ágensek biztonságát és skálázhatóságát.</div>
+          <h1 class="article-title">Ingyen lett a képgenerálás, és egy 13 milliós kihívó jött a fizetős kódolókra</h1>
+          <div class="article-sub">A Meta ingyen adja a kép- és videómodelljét, a Black Forest Labs kiadta a Flux 3 videót, és egy nyílt eszköz átvette a fejlődő piacokat.</div>
           <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             Megosztás
@@ -37,25 +37,29 @@
         </header>
 
         <div class="article-hero-img-wrap">
-          <img src="../assets/placeholder-1.jpg" alt="A Git-alapú ágenskoordináció és az autonóm jogosultságkezelés áttörései" class="article-hero-img">
+          <img src="../assets/placeholder-1.jpg" alt="Ingyen lett a képgenerálás, és egy 13 milliós kihívó jött a fizetős kódolókra" class="article-hero-img">
         </div>
 
         <div class="article-content">
-          <p>Üdv a mai kiadásban! Az önhosztolt és autonóm ágensek fejlődése ma két kritikus területre koncentrál: az infrastruktúra nélküli koordinációra és az érzékeny adatok védelmére. Ma megnézzük, hogyan váltja ki a Git repó az összetett üzenetsorokat, és miként óvják az új API-széfek a helyi ágenseket a jogosulatlan hozzáférésektől. Íme a legfontosabbak!</p>
-<h2>Hírek az Agentek Világából</h2>
-<h3><a href="https://github.com/farol-team/gnap">GNAP</a>: Git-Native Agent Protocol szerver nélküli ágens-koordinációhoz</h3>
-<p>A <a href="https://github.com/farol-team/gnap">GNAP</a> egy nyílt RFC és protokoll, amely lehetővé teszi, hogy az AI ágensek közvetlenül egy Git repót használjanak központi üzenetbuszként és feladattáblaként. Ahelyett, hogy bonyolult adatbázisokat vagy Redis üzenetsorokat kellene üzemeltetni, az ágensek a repóban található JSON fájlok és mappák (`board/todo/`, `board/doing/`, `board/done/`) mozgatásával koordinálják a munkát. A protokoll teljesen nyelv- és keretrendszer-független.</p>
-<ul><li>Zéró infrastruktúra-igény: nincs szükség külső szerverre, adatbázisra vagy fizetős platformra.</li><li>Teljes nyelvfüggetlenség a szabványos Git műveleteknek és JSON struktúrának köszönhetően.</li><li>Beépített audithatóság és verziókövetés minden egyes ágens-akcióra a Git commit-előzményekben.</li><li>Egyszerű integráció meglévő feladatkezelő munkafolyamatokba és CI/CD csővezetékekbe.</li></ul>
-<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Ha saját szerveren vagy több gépen futtatsz ágens-flottát (például egy Hermes-alapú környezetben), a GNAP segítségével teljesen elhagyhatod a bonyolult üzenetsor-infrastruktúrát. A meglévő Git hozzáféréseid automatikusan biztosítják az ágensek közötti biztonságos feladatosztást és a visszakövethető naplózást.</p></blockquote>
-<p>Ár: ingyenes (Open Source).</p>
-<h3><a href="https://github.com/onecli/onecli">OneCLI</a>: nyílt forráskódú kulcs- és jogosultságkezelő átjáró autonóm ágensekhez</h3>
-<p>A <a href="https://github.com/onecli/onecli">OneCLI</a> egy kifejezetten AI ágensekhez tervezett biztonsági széf és API-proxy. Megakadályozza, hogy az autonóm ágensek közvetlenül hozzáférjenek a nyers API-kulcsokhoz vagy adatbázis-jelszavakhoz. A OneCLI egy biztonságos réteget képez az ágens és a külső szolgáltatások között, így finomhangolt rate-limit szabályok és explicit engedélyezési korlátok állíthatók be minden egyes kimenő kérésre.</p>
-<ul><li>Közvetlen kulcs-hozzáférés megszüntetése: az ágensek csak tokenizált proxy-kéréseket küldhetnek.</li><li>Részletes hozzáférés-vezérlés és kéréskorlátozás (rate-limiting) szolgáltatásonként.</li><li>Átlátható és valós idejű auditnaplózás minden egyes külső API-hívásról.</li><li>Könnyű integráció meglévő Python, Node.js és Go alapú ágens-futtatókörnyezetekbe.</li></ul>
-<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Az önhosztolt ágensek automatizált feladatvégzése során komoly kockázatot jelent, ha a kód közvetlenül hozzáfér a gyártási API-kulcsokhoz. A OneCLI használatával a Hermes példányod úgy használhat külső eszközöket, hogy a kulcsok sérülésének vagy kiszivárgásának kockázata minimálisra csökken.</p></blockquote>
-<p>Ár: ingyenes (Open Source).</p>
-<h2>RepoCheck - Felfutó AI Repók</h2>
-<p>A hét friss, önhosztolható és ágens-központú nyílt forráskódú projektjei:</p>
-<ul><li><strong><a href="https://github.com/8treenet/raven">Raven</a></strong> (Raven): Önhosztolható csapat-ágens platform izolált munkaterekkel és egységes futtatókörnyezettel a többágenses munkafolyamatokhoz. Ár: ingyenes (Open Source).</li><li><strong><a href="https://github.com/ag-ui-protocol/ag-ui">AG-UI</a></strong> (AG-UI Protocol): Pehelykönnyű nyílt protokoll az AI ágensek és a felhasználói webes felületek (UI) szabványos összekapcsolására. Ár: ingyenes (Open Source).</li></ul>
+          <p>Ha képpel, videóval vagy kóddal dolgozol, ez a hét neked szólt. A Meta ingyen kirakta a kép- és videómodelljét, a Black Forest Labs kiadta a Flux 3 videót, a Microsoft egyszerre hét modellt dobott piacra, és közben egy nyílt kódoló csendben 13 millió felhasználóig nőtt. Nézzük, mi ebből a valódi hír, és mit kezdesz vele.</p>
+<h2>Ingyen lett a jó képgenerálás: a Meta beszállt</h2>
+<p>A Meta eddig alig számított a képes AI-ban. Most viszont kirakott egy kép- és videómodellt, amit ingyen használhatsz, és a tesztelők a Nano Banana meg a GPT Image 2 szintjére teszik. A videómodell külön meglepetés: a korai példák meggyőzőek.</p>
+<p>Ha képet vagy rövid videót készítesz, van egy komoly ingyenes opció, amit érdemes a fizetős eszközök mellett kipróbálni. A minőséget te döntöd el, de a teszt nem kerül semmibe.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=epJiVrv4KVQ">Theoretically Media végigpróbálja a Meta modelljét</a></p>
+<h2>Flux 3 videó: a képes csapat átlépett mozgóképre</h2>
+<p>A Black Forest Labs eddig a Flux képmodellekről volt ismert. Most kiadták a Flux 3-at, és először van benne videó is. A specifikációk erősek, és egy apró, de beszédes jel a színvonalról: egy AI-val készült rövidfilm moziba kerül.</p>
+<p>A videós eszközök hónapról hónapra cserélődnek az élen. Ha most választasz generátort, ne kötelezd el magad egyre; pár hét múlva más lehet a legjobb ár-érték.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=TZ1uAQazv90">Theoretically Media a Flux 3 videóról</a></p>
+<h2>Microsoft Build: hét modell egyszerre</h2>
+<p>A Microsoft a Build konferencián egyszerre hét AI-modellt jelentett be, plusz egy önálló GitHub Copilot appot és fejlesztői eszközöket Windowsra. Sok minden egyszerre, a többsége fejlesztőknek szól.</p>
+<p>A tanulság inkább a tempóról szól: a nagy szereplők ma már havonta dobnak egész modellcsaládot. Aki AI-ra épít, jobban jár, ha a modellválasztást rugalmasan tartja, nem drótozza be egyetlen fix döntésbe.</p>
+<p>Forrás: <a href="https://www.engadget.com/2185601/microsoft-build-2026-live-blog-copilot-windows-news/">Engadget élő tudósítás a Build 2026-ról</a></p>
+<h2>Egy nyílt kódoló, ami 13 millió emberig nőtt</h2>
+<p>Az Opencode egy nyílt alternatíva a fizetős kódoló-asszisztensekre, és bármelyik modellel megy. A számok most jöttek ki: 13 millió havi felhasználó, idén tizenhatszoros növekedés. A húzóerő nem a Szilícium-völgy, hanem Indonézia, Brazília, Vietnam, ahol egy havi 200 dolláros előfizetés elérhetetlen. Havi 10 dollárért bármelyik nyílt modellt használhatod rajta.</p>
+<p>Ha nem akarsz egyetlen fizetős szolgáltatóhoz kötődni, ez a minta: egy nyílt kliens, alá pedig bármelyik modell, helyi vagy fizetős, ahogy a feladat és a pénztárca kívánja.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=_O6x4ktK6JA">Y Combinator interjú az Opencode alapítójával</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/Dokploy/dokploy">Dokploy</a></strong> - nyílt eszköz, amivel saját szerverre telepítesz appokat egy kattintással, fizetős felhő-panel helyett. A hét egyik felfutó projektje a GitHubon. Ingyenes.</p>
         </div>
       </article>
     </div>
