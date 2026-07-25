@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Git-alapú ágenskoordináció és az autonóm jogosultságkezelés áttörései — LocalAgent Digest</title>
+  <meta name="description" content="A szerver nélküli, Git-alapú protokollok és az izolált API-széfek radikálisan növelik az önhosztolt ágensek biztonságát és skálázhatóságát.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-25</div>
+          <h1 class="article-title">A Git-alapú ágenskoordináció és az autonóm jogosultságkezelés áttörései</h1>
+          <div class="article-sub">A szerver nélküli, Git-alapú protokollok és az izolált API-széfek radikálisan növelik az önhosztolt ágensek biztonságát és skálázhatóságát.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A Git-alapú ágenskoordináció és az autonóm jogosultságkezelés áttörései" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Üdv a mai kiadásban! Az önhosztolt és autonóm ágensek fejlődése ma két kritikus területre koncentrál: az infrastruktúra nélküli koordinációra és az érzékeny adatok védelmére. Ma megnézzük, hogyan váltja ki a Git repó az összetett üzenetsorokat, és miként óvják az új API-széfek a helyi ágenseket a jogosulatlan hozzáférésektől. Íme a legfontosabbak!</p>
+<h2>Hírek az Agentek Világából</h2>
+<h3><a href="https://github.com/farol-team/gnap">GNAP</a>: Git-Native Agent Protocol szerver nélküli ágens-koordinációhoz</h3>
+<p>A <a href="https://github.com/farol-team/gnap">GNAP</a> egy nyílt RFC és protokoll, amely lehetővé teszi, hogy az AI ágensek közvetlenül egy Git repót használjanak központi üzenetbuszként és feladattáblaként. Ahelyett, hogy bonyolult adatbázisokat vagy Redis üzenetsorokat kellene üzemeltetni, az ágensek a repóban található JSON fájlok és mappák (`board/todo/`, `board/doing/`, `board/done/`) mozgatásával koordinálják a munkát. A protokoll teljesen nyelv- és keretrendszer-független.</p>
+<ul><li>Zéró infrastruktúra-igény: nincs szükség külső szerverre, adatbázisra vagy fizetős platformra.</li><li>Teljes nyelvfüggetlenség a szabványos Git műveleteknek és JSON struktúrának köszönhetően.</li><li>Beépített audithatóság és verziókövetés minden egyes ágens-akcióra a Git commit-előzményekben.</li><li>Egyszerű integráció meglévő feladatkezelő munkafolyamatokba és CI/CD csővezetékekbe.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Ha saját szerveren vagy több gépen futtatsz ágens-flottát (például egy Hermes-alapú környezetben), a GNAP segítségével teljesen elhagyhatod a bonyolult üzenetsor-infrastruktúrát. A meglévő Git hozzáféréseid automatikusan biztosítják az ágensek közötti biztonságos feladatosztást és a visszakövethető naplózást.</p></blockquote>
+<p>Ár: ingyenes (Open Source).</p>
+<h3><a href="https://github.com/onecli/onecli">OneCLI</a>: nyílt forráskódú kulcs- és jogosultságkezelő átjáró autonóm ágensekhez</h3>
+<p>A <a href="https://github.com/onecli/onecli">OneCLI</a> egy kifejezetten AI ágensekhez tervezett biztonsági széf és API-proxy. Megakadályozza, hogy az autonóm ágensek közvetlenül hozzáférjenek a nyers API-kulcsokhoz vagy adatbázis-jelszavakhoz. A OneCLI egy biztonságos réteget képez az ágens és a külső szolgáltatások között, így finomhangolt rate-limit szabályok és explicit engedélyezési korlátok állíthatók be minden egyes kimenő kérésre.</p>
+<ul><li>Közvetlen kulcs-hozzáférés megszüntetése: az ágensek csak tokenizált proxy-kéréseket küldhetnek.</li><li>Részletes hozzáférés-vezérlés és kéréskorlátozás (rate-limiting) szolgáltatásonként.</li><li>Átlátható és valós idejű auditnaplózás minden egyes külső API-hívásról.</li><li>Könnyű integráció meglévő Python, Node.js és Go alapú ágens-futtatókörnyezetekbe.</li></ul>
+<blockquote><p>Miért számít az önhosztolt ágens-üzemeltetőknek: Az önhosztolt ágensek automatizált feladatvégzése során komoly kockázatot jelent, ha a kód közvetlenül hozzáfér a gyártási API-kulcsokhoz. A OneCLI használatával a Hermes példányod úgy használhat külső eszközöket, hogy a kulcsok sérülésének vagy kiszivárgásának kockázata minimálisra csökken.</p></blockquote>
+<p>Ár: ingyenes (Open Source).</p>
+<h2>RepoCheck - Felfutó AI Repók</h2>
+<p>A hét friss, önhosztolható és ágens-központú nyílt forráskódú projektjei:</p>
+<ul><li><strong><a href="https://github.com/agentteams/agentteams">AgentTeams</a></strong> (AgentTeams): Nyílt forráskódú, többágenses futtatókörnyezet Manager-Workers architektúrával és beépített Matrix szoba integrációval a human-in-the-loop ellenőrzésekhez. Ár: ingyenes (Open Source).</li><li><strong><a href="https://github.com/ag-ui/ag-ui">AG-UI</a></strong> (AG-UI Protocol): Pehelykönnyű nyílt protokoll az AI ágensek és a felhasználói webes felületek (UI) szabványos összekapcsolására. Ár: ingyenes (Open Source).</li></ul>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
