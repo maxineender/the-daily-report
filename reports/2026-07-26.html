@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosszabb ügynökfutások, gyorsabb Gemini és négy friss médiás munkafolyamat — LocalAgent Digest</title>
+  <meta name="description" content="Az Opus 5 és a Gemini új változatai mellett a videó-, zene- és VFX-eszközök kapták a legtöbb figyelmet.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-26</div>
+          <h1 class="article-title">Hosszabb ügynökfutások, gyorsabb Gemini és négy friss médiás munkafolyamat</h1>
+          <div class="article-sub">Az Opus 5 és a Gemini új változatai mellett a videó-, zene- és VFX-eszközök kapták a legtöbb figyelmet.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Hosszabb ügynökfutások, gyorsabb Gemini és négy friss médiás munkafolyamat" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A mai hírek két irányba mutatnak. A laborok hosszabb feladatokra és gyorsabb modellválasztásra készítik fel az ügynököket, közben a médiagenerálás egyre jobban beilleszthető automatizált munkafolyamatokba.</p>
+<h2>A Claude Opus 5 a hosszú ügynökfutásokat célozza</h2>
+<p>Az Anthropic július 24-én mutatta be a Claude Opus 5-öt. A vállalat az új Opus-generációt elsősorban programozásra és hosszú ideig futó ügynökfeladatokra pozicionálja, vagyis olyan munkákra, ahol a modellnek sok lépésen keresztül kell megőriznie a célt és kezelnie a köztes eredményeket.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Érdemes ugyanazt a hosszabb kódolási vagy kutatási feladatot az eddigi modelleddel és az Opus 5-tel is lefuttatni, majd összevetni a megszakadt lépéseket, a hibás eszközhívásokat és a teljes költséget. Ne állítsd át rögtön minden feladat alapértelmezett modelljét, a drágább modell inkább felügyelőként vagy elakadás utáni tartalékként lehet jó választás.</p></blockquote>
+<p>Forrás: <a href="https://www.anthropic.com/news/claude-opus-5">Anthropic</a></p>
+<h2>Három új Gemini Flash-változat érkezett</h2>
+<p>A Google július 21-én jelentette be a Gemini 3.6 Flash, a 3.5 Flash-Lite és a 3.5 Flash Cyber modelleket. A három külön változat lehetőséget ad arra, hogy az általános, könnyű és kiberbiztonsági feladatokat ne ugyanarra a modellre bízd.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A Flash-Lite jó jelölt lehet egyszerű osztályozásra, kivonatolásra és eszközválasztásra, míg a nagyobb Flash modellt megtarthatod az összetettebb lépésekhez. A Cyber változatot csak elkülönített, naplózott környezetben próbáld ki, és ne adj neki automatikusan írási vagy hálózati jogosultságot.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/">Google</a></p>
+<h2>Biztonsági incidens történt egy modellértékelés során</h2>
+<p>Az OpenAI és a Hugging Face július 21-én közösen számolt be egy modellértékelés közben történt biztonsági incidens kezeléséről. A bejelentés azért figyelemre méltó, mert a modellek teszteléséhez használt külső környezetek, fájlok és integrációk ugyanúgy a támadási felület részét képezik, mint maga az ügynök.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A benchmarkokat és ismeretlen repókból származó értékelőcsomagokat külön konténerben, ideiglenes hitelesítő adatokkal futtasd. Az értékelő ügynök ne lássa a fő konfigurációdat, az SSH-kulcsaidat vagy a személyes dokumentumaidat, és a futás végén töröld a környezetet.</p></blockquote>
+<p>Forrás: <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident">OpenAI</a></p>
+<h2>Seedream 5.0 és Seedance 2.5 egy közös tesztben</h2>
+<p>A Theoretically Media friss videója a Seedream 5.0 képmodell tesztjét mutatja be, valamint Seedance 2.5 felvételeket és kiszivárgott információkat vizsgál. Ez még nem végleges termékdokumentáció, ezért a Seedance-részleteket érdemes fenntartással kezelni.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Egy kép-videó munkafolyamatban külön mérd a karakterek következetességét, a képarány megtartását és az újragenerálások számát. Ha az ügynököd automatikusan választ modellt, a még nem hivatalos Seedance 2.5-re ne építs kötelező lépést, inkább legyen cserélhető szolgáltató a folyamatban.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/pn-YwWn3kkM">Theoretically Media</a></p>
+<h2>Tíz új funkciót mutatott be a Suno</h2>
+<p>A Suno hivatalos YouTube-csatornája egyetlen videóban foglalta össze a szolgáltatás tíz új funkcióját. A bejelentés különösen azoknak érdekes, akik nem pusztán teljes dalokat generálnak, hanem több lépésből álló zenei gyártást szeretnének automatizálni.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A teljes dal helyett bontsd szét a folyamatot briefre, szövegre, változatok készítésére, fájlelnevezésre és emberi jóváhagyásra. Így az ügynököd nem pazarol új generálást egy rossz címke vagy hibás dalszerkezet miatt, és könnyebb követni, melyik bemenetből készült a végleges változat.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/xFS0WxzqJoM">Suno</a></p>
+<h2>A valós idejű AI VFX már külön munkafolyamatként tesztelhető</h2>
+<p>Bob Doyle új videója valós időben működő AI VFX-eszközöket mutat be. A hangsúly itt nem egy teljes klip hosszú renderelésén van, hanem azon, hogy az effekt már a felvétel vagy az előnézet közben látható legyen.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Az ügynököd készíthet jelenetleírást, kiválaszthat effektprofilt, majd elmentheti a próbák paramétereit és előnézeteit. Valós idejű feldolgozásnál figyeld a GPU-memóriát és a késleltetést, továbbá tarts kézi jóváhagyást a végleges render előtt.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/Yeua65wmaK4">Bob Doyle Media</a></p>
+<h2>A Higgsfield bővítményekkel közelít az Adobe munkafolyamataihoz</h2>
+<p>Rourke Heath friss videója a Higgsfield és az Adobe videószerkesztéshez kapcsolódó bővítményeit vizsgálja. A lényeg az integráció: a generált elemeket nem külön webes felületről kell kézzel áthordani, hanem közelebb kerülhetnek a megszokott szerkesztési folyamathoz.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Automatizálhatóvá válhat a jelenetváltozatok elkészítése, a fájlok rendezése és a szerkesztőprojektbe történő átadás. Mielőtt bekötöd, ellenőrizd, hogy a bővítmény milyen fájlokhoz és felhős fiókokhoz kér hozzáférést, az ügynöknek pedig csak egy kijelölt projektmappát engedélyezz.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/Z5HLzd97EKw">Rourke Heath</a></p>
+<h2>A Qualcomm egy lapkára vinné a kamerát és a helyi AI-t</h2>
+<p>A Qualcomm új, vizuális intelligenciára és IoT-eszközökre szánt rendszerlapkákat jelentett be. A lapkák egy csomagban egyesítik a képfeldolgozó egységet, az AI-gyorsítást, a CPU-t és a GPU-t, célterületként pedig kamerákat, robotikai eszközöket és okoskijelzőket neveztek meg.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ez olyan perifériák felé mutat, amelyek a nyers videó továbbítása helyett helyben végezhetnek tárgyfelismerést vagy képszűrést. Egy otthoni ügynöknél ez kisebb hálózati terhelést és kevesebb továbbított személyes adatot jelenthet, de vásárlás előtt ellenőrizd a futtatókörnyezet és a modellformátumok támogatását.</p></blockquote>
+<p>Forrás: <a href="https://www.zdnet.com/article/qualcomm-launches-systems-on-chips-for-vision-intelligence-iot/">ZDNET</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://www.actenon.com/">Actenon</a></strong> - Az Actenon egy olyan ellenőrzési megközelítést mutat be, amely ügynökkeretrendszerekben keresi a romboló vagy komoly következménnyel járó műveleteket. Saját ügynöknél hasznos kiindulópont a fájltörlés, parancsfuttatás, hálózati hozzáférés és hitelesítőadat-kezelés átvizsgálásához, különösen új eszközök telepítése után.</p>
+<p><strong><a href="https://llm-stats.com/llm-updates">LLM Stats</a></strong> - Az LLM Stats a nagy szolgáltatók modellkiadásait és verzióneveit követi, beleértve az OpenAI, az Anthropic és a Google modelljeit. Akkor praktikus, ha az ügynököd konfigurációjában rögzített modellazonosítókat használsz: egy változás után gyorsan ellenőrizheted, hogy új snapshot jelent meg, vagy ideje frissíteni a tartalékmodellek listáját.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

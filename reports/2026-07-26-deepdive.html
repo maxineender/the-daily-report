@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mit változtat a Claude Opus 5 a saját ügynököd felépítésén? — LocalAgent Digest</title>
+  <meta name="description" content="A hosszabb ideig dolgozó modellekhez nem hosszabb prompt, hanem szigorúbb futtatási rendszer kell.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-26</div>
+          <h1 class="article-title">Mit változtat a Claude Opus 5 a saját ügynököd felépítésén?</h1>
+          <div class="article-sub">A hosszabb ideig dolgozó modellekhez nem hosszabb prompt, hanem szigorúbb futtatási rendszer kell.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mit változtat a Claude Opus 5 a saját ügynököd felépítésén?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Az Anthropic július 24-én mutatta be a Claude Opus 5-öt, és a bejelentésben a programozás mellett a hosszú ideig futó ügynökfeladatokat emelte ki. Ez fontosabb változás lehet, mint egy újabb minőségi ugrás a hagyományos csevegésben: a modell értékét egyre inkább az adja, hogy képes-e hosszabb munkafolyamatot fenntartani, eszközöket használni és a köztes eredmények alapján korrigálni. <a href="https://www.anthropic.com/news/claude-opus-5">Az Anthropic bejelentése</a> szerint az Opus 5 kifejezetten ezt a területet célozza.</p>
+<p>A saját gépen futó ügynöknél azonban a hosszabb önálló működés nem egyszerűen több képességet jelent. Több ideje van hibázni, több eszközt érhet el, és egy korai téves következtetést több későbbi lépés is továbbvihet. Az OpenAI külön tanulmányban foglalkozik a hosszú időhorizontú modellek biztonsági és összehangolási problémáival, ami jelzi, hogy ez már önálló üzemeltetési kérdés, nem pusztán modellminőségi verseny. <a href="https://openai.com/index/safety-alignment-long-horizon-models">OpenAI: Safety and alignment in an era of long-horizon models</a></p>
+<h2>A feladat hossza nem egyenlő a kontextus méretével</h2>
+<p>Egy hosszú feladat nem attól hosszú, hogy sok dokumentumot másolsz a promptba. Inkább attól, hogy az ügynöknek állapotot kell fenntartania: mit próbált már ki, mely fájlokat módosította, milyen tesztek buktak el, és mely feltételezéseket kell újravizsgálnia.</p>
+<p>Ezt az állapotot nem érdemes kizárólag a modell beszélgetési előzményeire bízni. Használj külön feladatnaplót, strukturált ellenőrzőlistát és géppel olvasható állapotfájlt. Egy programozási ügynök például minden ciklus végén rögzítheti a módosított fájlokat, a lefuttatott parancsokat, a teszteredményeket és a következő tervezett lépést.</p>
+<p>Az Opus 5 hosszú ügynökfeladatokra helyezett hangsúlya jó ok arra, hogy ilyen tartós állapotkezelést építs a rendszeredbe, ahelyett hogy egyetlen megszakítás nélküli beszélgetéstől várnád az egész munka elvégzését. <a href="https://www.anthropic.com/news/claude-opus-5">Anthropic: Introducing Claude Opus 5</a></p>
+<h2>Korlátok nélkül a jobb modell is kockázatos</h2>
+<p>A hosszabb futás több modellhívást, több eszközhasználatot és nagyobb költséget jelenthet. Ezért legalább négy külön korlátot érdemes beállítani:</p>
+<ol><li>maximális modellhívások száma;</li><li>teljes token- vagy pénzügyi keret;</li><li>eszközönkénti használati korlát;</li><li>a teljes feladat maximális futási ideje.</li></ol>
+<p>Ezek egymástól független biztosítékok. Ha az ügynök gyorsan ismétli ugyanazt a sikertelen műveletet, az időkorlát túl későn állíthatja le. Ha viszont egy külső szolgáltatásra vár, a hívásszám önmagában nem segít. Az OpenAI hosszú időhorizontú modellekről szóló anyaga arra helyezi a hangsúlyt, hogy a hosszabb önálló működéshez külön biztonsági megközelítés szükséges. <a href="https://openai.com/index/safety-alignment-long-horizon-models">OpenAI</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ne az Opus 5-re bízd annak eldöntését, hogy meddig dolgozhat. A korlátokat a modellfolyamaton kívül, a futtatóprogramban érvényesítsd. Így egy hibás terv vagy ismétlődő eszközhívás akkor is leáll, ha a modell folytatni szeretné.</p></blockquote>
+<h2>Minden eszköz kapjon saját jogosultságot</h2>
+<p>Egy kódoló ügynöknek ritkán van szüksége korlátlan hozzáférésre a teljes géphez. A forráskód olvasása, a munkakönyvtár írása, a tesztek futtatása és a csomagtelepítés négy külön képesség. Ezeket külön engedélyezd.</p>
+<p>A modellértékelés során történt OpenAI és Hugging Face biztonsági incidens arra emlékeztet, hogy az ismeretlen modell, a generált kód és maga a tesztkörnyezet is lehet támadási felület. A két szervezet július 21-én közös közleményt adott ki az esetről. <a href="https://openai.com/index/hugging-face-model-evaluation-security-incident">OpenAI és Hugging Face</a></p>
+<p>A gyakorlatban ez elkülönített munkakönyvtárat, konténert vagy virtuális gépet jelenthet. A hálózat legyen alapértelmezetten tiltott, a titkos kulcsokat pedig csak az a konkrét eszköz kapja meg, amelyiknek valóban szüksége van rájuk. Egy tesztfuttató ne lássa az e-mailhez tartozó tokent, egy dokumentumkereső pedig ne tudjon rendszerparancsot indítani.</p>
+<h2>Az erős modell ne legyen minden feladat alapértelmezése</h2>
+<p>Az Opus 5-öt érdemes a tervezéshez, nehéz hibakereséshez és több fájlt érintő módosításokhoz fenntartani. A fájlok felsorolását, rövid összefoglalást, címkézést vagy naplóformázást kisebb modell is elvégezheti.</p>
+<p>A Google július 21-én három eltérő Gemini-változatot jelentett be: a 3.6 Flash, a 3.5 Flash-Lite és a 3.5 Flash Cyber modelleket. Ez a felosztás is azt mutatja, hogy a különböző feladatokra érdemes eltérő modellt választani. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/">Google modellbejelentés</a></p>
+<p>Egyszerű útválasztást már néhány szabállyal is kialakíthatsz. Ha a feladat csak olvasást és rövid választ kér, menjen kisebb modellre. Ha kódot módosít, több eszközt használ vagy sikertelen próbálkozás után új tervet készít, kapjon erősebb modellt. A modellváltást és annak indokát írd bele a naplóba.</p>
+<h2>Először egy szűk próbafeladat</h2>
+<p>Az Opus 5 bevezetését ne egy teljesen önálló, többórás munkával kezdd. Válassz ismételhető feladatot, például egy kisebb hiba javítását tesztekkel együtt. Rögzítsd a hívások számát, a futási időt, a költséget, a módosított fájlokat és azt, hogy hányszor kellett emberi beavatkozás.</p>
+<p>Ezután futtasd le ugyanazt a feladatot a jelenlegi modelleddel. A fontos kérdés nem az, melyik modell ír szebb magyarázatot, hanem az, melyik jut el kevesebb javítási ciklussal ellenőrizhető eredményhez. Az Anthropic az Opus 5-öt programozásra és hosszú ügynökfeladatokra pozicionálja, így ezen a két területen érdemes először mérni. <a href="https://www.anthropic.com/news/claude-opus-5">Anthropic</a></p>
+<p>A hosszabb ideig dolgozó modell akkor lesz igazán hasznos, ha a körülötte lévő rendszer rövid pórázon tartja: tartós állapot, elkülönített jogosultságok, külső költségkorlát és rendszeres ellenőrzési pontok mellett. Az Opus 5 új lehetőséget adhat a komolyabb automatizálásra, de a megbízhatóságot továbbra sem egyetlen modellnév, hanem a teljes futtatási rendszer adja.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
