@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felvétel után választott kamera: mit kezdhet egy ügynök a 4D videóval? — LocalAgent Digest</title>
+  <meta name="description" content="A navigálható Gaussian splat jelenetekben a videós ügynök már nemcsak vág, hanem virtuális operatőrként is dolgozhat.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-07-30</div>
+          <h1 class="article-title">Felvétel után választott kamera: mit kezdhet egy ügynök a 4D videóval?</h1>
+          <div class="article-sub">A navigálható Gaussian splat jelenetekben a videós ügynök már nemcsak vág, hanem virtuális operatőrként is dolgozhat.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Felvétel után választott kamera: mit kezdhet egy ügynök a 4D videóval?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A hagyományos videónál a kamera helye a felvétel pillanatában eldől. Utólag lehet vágni, stabilizálni vagy nagyítani, de egy oldalról rögzített szereplőt nem lehet valódi részletekkel a másik oldalról megmutatni. A <a href="https://youtu.be/uiYnWs6Wcqs">4D Views bemutatója</a> ezen változtat: kamerák tömbjével rögzíti a jelenetet, majd navigálható, időben változó Gaussian splat reprezentációvá alakítja.</p>
+<p>Ez nem ugyanaz, mint amikor egy videómodell promptból új képkockákat talál ki. A rendszer egy ténylegesen rögzített esemény több nézőpontját fogja össze, a virtuális kamera pedig ezen belül mozgatható. A <a href="https://youtu.be/uiYnWs6Wcqs">bemutatott demókban</a> egy macska körül lehet mozogni, egy stúdióinterjúnál módosítható a beállítás, egy harci jelenetből pedig többféle képkivágás állítható elő.</p>
+<h2>A felvétel nem egyetlen képsor többé</h2>
+<p>Egy hagyományos interjúnál külön A és B kamerát helyeznek el, ha a vágónak közelire és tágabb képre is szüksége van. A 4D Views példájában a rögzített térből utólag választható ki az interjú virtuális kamerája, így ugyanabból a pillanatból több beállítás készülhet. A technológia ígérete tehát nem az, hogy minden képet generál, hanem az, hogy a rögzített jelenetet újrakomponálhatóvá teszi. Ezt a különbséget a <a href="https://youtu.be/uiYnWs6Wcqs">Curious Refuge felvétele</a> jól látható példákkal mutatja be.</p>
+<p>A harci jelenet még érdekesebb ügynökszempontból. Egy rendszer elvileg végignézheti ugyanazt az eseményt több virtuális kameraállásból, majd kiválaszthatja, hogy az adott mozdulat közeliben, oldalról vagy tág képen olvasható-e a legjobban. A <a href="https://youtu.be/uiYnWs6Wcqs">demóban</a> a néző mozgathatja és nagyíthatja a kamerát, majd különböző szögekből állíthatja össze a jelenet lefedettségét.</p>
+<h2>A vágóügynökből virtuális operatőr lehet</h2>
+<p>A mai videós ügynökök jellemzően kész klipek között választanak. Átiratot elemeznek, eltávolítják a csendet, feliratot készítenek, majd az előre rögzített kamerák között vágnak. Navigálható 4D jelenetnél a döntési tér nagyobb: az ügynöknek a kamera helyét, látószögét, mozgását és időzítését is meg kell választania.</p>
+<p>Egy lehetséges folyamatban az első ügynök eseményeket jelölne meg, például egy mondat kezdetét, egy kézmozdulatot vagy egy ütközést. A második ezekhez virtuális kamerautakat készítene, a harmadik pedig képi hibák, takarások és túl gyors mozgás alapján pontozná a változatokat. Ez már nem kész funkcióként szerepel a bemutatóban, hanem a <a href="https://youtu.be/uiYnWs6Wcqs">megmutatott, szabadon mozgatható kamerából</a> következő gyakorlati munkafolyamat.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A felvétel elemzését és a kameraválasztást külön feladatra bonthatod. Az egyik modell eldöntheti, mi fontos a jelenetben, egy másik létrehozhat több kamerautat, egy vizuális ellenőrző pedig kiszűrheti az artefaktumos közelképeket. Így nem kell egyetlen, nehezen javítható promptban összekeverni a történet, a kompozíció és a technikai minőség szempontjait.</p></blockquote>
+<h2>A hibák közelről jobban látszanak</h2>
+<p>A bemutató készítője külön megjegyzi, hogy a kép nem tökéletes, és bizonyos szögeknél artefaktumok jelennek meg. Ez különösen fontos, ha az ügynök automatikusan nagyít rá arcokra, kezekre vagy gyors mozgásra. Egy ember ösztönösen elkerülheti a hibás nézőpontot, egy automatikus rendszer viszont könnyen éppen azt a látványosnak tűnő közeli beállítást választhatja, ahol a rekonstrukció szétesik. A korlátozás a <a href="https://youtu.be/uiYnWs6Wcqs">macskás és stúdiós példákban</a> is megfigyelhető.</p>
+<p>Ezért a kamerautak pontozásánál nem elég az esztétikai érték. Figyelni kell a részletek időbeli stabilitását, a szereplők körvonalát, a takarásokat és azt is, hogy egy adott szögből marad-e elég megbízható képi információ. Egy saját gépen futó vizuális modell erre előszűrőként használható, a végső export előtt pedig rövid előnézetet készíthet minden javasolt kamerából.</p>
+<h2>Hol kapcsolódik ehhez a generatív videó?</h2>
+<p>Egy másik bemutató a navigálható jelenetet további AI-eszközökkel kombinálta: a rögzített anyagban karaktert, világítást és hátteret is cserélt. Az Apple Vision Pro megjelenítését és az utólagos vizuális átalakításokat a <a href="https://youtu.be/aJ56syDki6c">4D videóról készült rövid bemutató</a> szemlélteti.</p>
+<p>Itt két külön réteget érdemes megtartani. Az első a rögzített tér és mozgás, amelyből virtuális kameraállás választható. A második a generatív átalakítás, amely módosítja a szereplőt vagy a környezetet. Ha a kettőt egyetlen lépésként kezeli az ügynök, nehéz megállapítani, hogy egy hiba a térrekonstrukcióból, a kameramozgásból vagy a képi átformálásból származik.</p>
+<h2>Ami még nem derült ki</h2>
+<p>A rendelkezésre álló bemutató nem közöl árat, pontos kameramennyiséget, tárolási igényt, exportformátumot vagy automatizálható API-t. Emiatt a technológia ma inkább egy új felvételi és utómunka-modellként értékelhető, mint azonnal beköthető ügynökeszközként. A <a href="https://youtu.be/uiYnWs6Wcqs">nyilvános demók</a> azt már megmutatják, hogy a felvétel utáni újrakomponálás működik, de a teljes automatizálás feltételeit még nem.</p>
+<p>A lényeg ettől függetlenül jól látható. Amikor egy videó nem rögzített képkockasor, hanem bejárható időbeli jelenet, a vágóügynök feladata is megváltozik. Nemcsak azt dönti el, melyik klip következzen, hanem azt is, honnan lássuk ugyanazt a pillanatot.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
