@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mit változtat a Seedance 2.5 harminc másodperces videója? — LocalAgent Digest</title>
+  <meta name="description" content="Az ötven referencia és a hosszabb jelenet új feladatot ad az ügynöknek: prompt helyett vizuális tervet kell összeállítania.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-01</div>
+          <h1 class="article-title">Mit változtat a Seedance 2.5 harminc másodperces videója?</h1>
+          <div class="article-sub">Az ötven referencia és a hosszabb jelenet új feladatot ad az ügynöknek: prompt helyett vizuális tervet kell összeállítania.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mit változtat a Seedance 2.5 harminc másodperces videója?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Seedance 2.5 legfontosabb újdonsága nem egyszerűen az, hogy hosszabb videót készít. A Dreaminán elérhető modell legfeljebb 30 másodperces klipet generálhat, akár jeleneten belüli vágásokkal, és ötven referenciát fogad. A Curious Refuge gyakorlati bemutatója szerint a kimenethez hangeffektusok is társulhatnak, miközben a jelenlegi felbontás 720p marad. <a href="https://youtu.be/xjyuNokwAPw">A teljes teszt itt nézhető meg.</a></p>
+<p>Ez a kombináció megváltoztatja, mit érdemes automatizálni. Egy rövid kép-videó feladatnál még elég lehetett egy kezdőkép és egy mozgást leíró mondat. Harminc másodpercnél már szereplőket, helyszínt, kellékeket, kameramozgást, vágásokat és hangulatot kell egymással összehangolni. Az ügynök feladata ezért egyre kevésbé a végső prompt megírása, és egyre inkább a megfelelő referenciacsomag összeállítása.</p>
+<h2>Ötven referencia nem ötvenszer több kontroll</h2>
+<p>A Seedance 2.5 legfeljebb ötven referenciája elsőre bőséges keretnek tűnik. A modell bemenetére kerülhetnek szereplőképek, ruhák, helyszínek, kellékek, kompozíciós példák és vizuális stílusminták. A gyakorlati bemutató ugyanakkor csak azt igazolja, hogy ennyi anyag feltölthető, azt nem, hogy minden referencia azonos súllyal és hibátlanul érvényesül. <a href="https://youtu.be/xjyuNokwAPw">A referenciafeltöltés és a generálási felület a videó elején látható.</a></p>
+<p>Ezért érdemes a saját ügynököddel nem egyszerű fájllistát, hanem strukturált csomagot készíttetni. A szereplőhöz tartozó képek kerüljenek külön csoportba, a helyszínek kapjanak egyértelmű neveket, a kellékekhez pedig legyen rövid szöveges leírás. Ha egy karakter minden képen más ruhát visel, vagy a helyszín nappali és esti fotói összekeverednek, az ötven referencia inkább bizonytalanságot ad, mint irányítást.</p>
+<p>Egy használható csomag például tartalmazhat három szereplőnézetet, két arckifejezést, két helyszínképet, néhány kelléket és egy képi stílusmintát. A maradék helyet nem kell feltétlenül kitölteni. Az ügynök előnye éppen az lehet, hogy a rendelkezésre álló mappából kiválasztja a jelenethez szükséges elemeket, és kihagyja az egymásnak ellentmondó képeket.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A videógenerálás elé tehetsz egy előkészítő lépést, amely fájlnév, képaláírás vagy látásmodell alapján csoportosítja a referenciákat. Az ügynök ezután jelenetenként külön csomagot állíthat össze, és naplózhatja, melyik generáláshoz melyik képeket használta. Így egy sikeres jelenet később reprodukálhatóbb lesz.</p></blockquote>
+<h2>A harminc másodperc már vágási probléma</h2>
+<p>A modell több vágást is képes egyetlen, legfeljebb harminc másodperces generálásba foglalni. Ez rövid reklámhoz, kliphez vagy történetrészlethez használható hossz, de nagyobb hibafelületet is jelent. Ha a szereplő arca a huszadik másodpercnél változik meg, nem biztos, hogy érdemes az egész jelenetet azonos beállításokkal újragenerálni. <a href="https://youtu.be/xjyuNokwAPw">A Curious Refuge tesztje többvágásos felhasználásként mutatja be ezt a lehetőséget.</a></p>
+<p>A saját ügynök ezért kétféle tervet készíthet ugyanahhoz a jelenethez. Az egyik egyetlen harminc másodperces generálás, a másik pedig három vagy négy rövidebb snitt. Az eredményeket ezután össze lehet vetni folytonosság, hibaarány és költség szerint. Párbeszédnél vagy pontos ritmusú zenés jelenetnél valószínűleg továbbra is a rövidebb klipek adnak több szerkesztési szabadságot. Folyamatos kameramozgásnál viszont a hosszú generálás lehet értékesebb.</p>
+<h2>A 720p kimenet miatt kell egy utófeldolgozási lánc</h2>
+<p>A gyakorlati teszt szerint a Seedance 2.5 jelenlegi kimenete 720p, ezért professzionális felhasználáshoz felskálázásra lehet szükség. A bemutatott űrhajós jelenet mozgása és fizikája meggyőző volt, de a képben tömörítésszerű hibák jelentek meg. <a href="https://youtu.be/xjyuNokwAPw">A hibák és a felbontási korlát ugyanebben a tesztben láthatók.</a></p>
+<p>Egy automatizált láncban ezért a generálás csak az első lépés. Utána érdemes képkockákat mintavételezni a videó elejéről, közepéről és végéről, majd ellenőrizni az arcokat, kezeket, feliratokat és fontos kellékeket. A megfelelt klipek mehetnek felskálázásra és vágásra, a hibásak pedig újragenerálásra.</p>
+<p>A hangot szintén külön kezeld. A modell beépített hangeffektusai gyors előnézethez hasznosak lehetnek, de egy hosszabb projektben célszerű külön sávon tartani a narrációt, zenét és környezeti hangokat. Így egy képi javítás nem kényszerít a teljes hanganyag cseréjére.</p>
+<h2>Először kis jeleneten érdemes mérni</h2>
+<p>A Seedance 2.5 körüli legfontosabb kérdés most nem az, hogy képes-e látványos harminc másodpercet készíteni. A bemutatók alapján képes rá. A gyakorlati kérdés az, hogy ugyanazzal a szereplővel, hasonló minőségben és elfogadható újragenerálási aránnyal megismételhető-e az eredmény. <a href="https://youtu.be/xjyuNokwAPw">A Dreaminán végzett teszt egyszerre mutat látványos fizikát és látható képhibákat.</a></p>
+<p>Első próbának válassz egy ismert, tíz másodperc körüli jelenetet. Készíts hozzá kevés, jól elkülönített referenciát, majd ugyanazt futtasd le több változatban. Ha a szereplő, a tárgyak és a kameramozgás stabilak, csak ezután emeld a hosszt és a vágások számát. A harminc másodperces keret akkor lesz valóban hasznos, ha az ügynököd nem pusztán elindítja a generálást, hanem előkészíti, ellenőrzi és reprodukálhatóvá is teszi.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
