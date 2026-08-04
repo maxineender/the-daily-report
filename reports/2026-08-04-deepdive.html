@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Így lesz egy hangból és egy képből beszélgetős avatar — LocalAgent Digest</title>
+  <meta name="description" content="A Fish Audio MCP és a Lemon Slice API összekötése jól mutatja, hogyan dolgozhat együtt egy kész ügynökeszköz és egy hagyományos fejlesztői felület.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-04</div>
+          <h1 class="article-title">Így lesz egy hangból és egy képből beszélgetős avatar</h1>
+          <div class="article-sub">A Fish Audio MCP és a Lemon Slice API összekötése jól mutatja, hogyan dolgozhat együtt egy kész ügynökeszköz és egy hagyományos fejlesztői felület.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Így lesz egy hangból és egy képből beszélgetős avatar" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Egy beszélgetős avatarhoz legalább három külön képesség kell: nyelvi válaszgenerálás, beszédhang és a hanghoz igazodó arcanimáció. Ezeket ritkán adja ugyanaz a szolgáltatás, ezért a nehéz rész sokszor nem maga a generálás, hanem a komponensek összekapcsolása.</p>
+<p>Bob Doyle bemutatójában a Fish Audio MCP szolgáltatja a hangot, a Lemon Slice pedig egy állóképből készít valós időben beszélő avatart. A megvalósításhoz nem készült előre külön Lemon Slice MCP-szerver. Claude a hagyományos API-dokumentációból értette meg a szükséges hívásokat, majd elkészítette az alkalmazást, amely a két rendszert összeköti. <a href="https://youtu.be/CosiXStxouo">A teljes bemutató itt nézhető meg.</a></p>
+<h2>Az MCP nem előfeltétel minden szolgáltatáshoz</h2>
+<p>Az MCP egyik előnye, hogy egységes módon tesz elérhetővé eszközöket a modell számára. A Fish Audio esetében már rendelkezésre állt ilyen kapcsolat, ezért az ügynök a hanggenerálást kész eszközként érhette el. A Lemon Slice viszont API-t és SDK-t kínált, külön MCP-integráció nélkül. A videóban Claude az API-referenciát olvasta el, majd közvetlen klienskódot írt hozzá. <a href="https://youtu.be/CosiXStxouo">Ez volt az alkalmazás elkészítésének központi lépése.</a></p>
+<p>Ez fontos különbség. Egy saját ügynök eszköztára nem csak előre csomagolt MCP-szerverekből állhat. Ha egy szolgáltatásnak rendezett dokumentációja van, az ügynök képes lehet megírni a szükséges adaptert, tesztelni a válaszokat, majd egy egyszerűbb belső eszközfelület mögé rejteni a szolgáltató sajátosságait.</p>
+<p>A végeredmény szempontjából mindegy, hogy az egyik komponens MCP-n, a másik pedig REST API-n keresztül működik. Az ügynök számára az a lényeg, hogy egyértelmű legyen a bemenet, a kimenet és a hibaállapot.</p>
+<h2>A munkafolyamat három külön rétege</h2>
+<p>Az első réteg a személyiség és a beszélgetés. A bemutatott alkalmazásban meghatározható az avatar karaktere, így nem csupán egy felolvasó felület készül, hanem egy adott szerepben válaszoló beszélgetőtárs. <a href="https://youtu.be/CosiXStxouo">A videó külön bemutatja a személyiség megadását és a valós idejű párbeszédet.</a></p>
+<p>A második réteg a hang. A Fish Audio MCP segítségével választott vagy klónozott hang kapcsolható az alkalmazáshoz. A nyelvi modell szöveges válaszát ez a komponens alakítja beszéddé. Az MCP használata itt azért praktikus, mert az ügynök ugyanúgy hívhatja a hanggenerátort, mint más eszközeit, külön szolgáltatói kezelőfelület nélkül. <a href="https://youtu.be/CosiXStxouo">A Fish Audio szerepét és a hangklónozást a bemutató elején ismertetik.</a></p>
+<p>A harmadik réteg a kép animálása. A Lemon Slice egy kiválasztott képet alakít valós idejű avatarrá, majd a kapott beszédhez igazítja a megjelenést. Ez eltér a hagyományos, előre elkészített beszélőfej-videótól: a cél itt egy folyamatosan válaszoló alkalmazás, nem egyetlen renderelt klip. <a href="https://youtu.be/CosiXStxouo">A Lemon Slice API és SDK használatát ugyanez a bemutató részletezi.</a></p>
+<h2>Érdemes szétválasztani az adaptereket</h2>
+<p>Ha hasonló rendszert építesz, ne közvetlenül a fő ügynökhurokba írd a Fish Audio és a Lemon Slice összes saját paraméterét. Célszerű három belső műveletet kialakítani:</p>
+<ol><li>szöveges válasz elkészítése,</li><li>szöveg átalakítása hanggá,</li><li>hang és kép átadása az avatarrétegnek.</li></ol>
+<p>Ez azért hasznos, mert később külön cserélheted a hang- vagy videós szolgáltatót. Ha a belső művelet mindig ugyanazt a fájlformátumot, azonosítót és állapotjelzést adja vissza, a fő ügynöknek nem kell tudnia, melyik külső API végzi a munkát. A videóban látott Fish Audio és Lemon Slice kapcsolat jó kiinduló minta ehhez a rétegezéshez. <a href="https://youtu.be/CosiXStxouo">A két szolgáltatás összekapcsolását itt mutatják be.</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Nem kell megvárnod, hogy minden kiválasztott szolgáltatáshoz elkészüljön egy közösségi MCP-szerver. Az ügynököd a dokumentációból létrehozhat egy kis adaptert, amelyet utána ugyanúgy kezelhetsz, mint a többi eszközt. Tartsd külön a szolgáltatói kódot, hogy egy API-változás ne állítsa le a teljes beszélgetési rendszert.</p></blockquote>
+<h2>A látvány előtt jön a jogosultság</h2>
+<p>A hangklónozás és az arcképek animálása érzékenyebb művelet, mint egy általános szöveges eszközhívás. Az ügynöknek nem szabad abból kiindulnia, hogy minden feltöltött képhez és hangmintához automatikusan van felhasználási engedély.</p>
+<p>A gyakorlatban ezért a generálási folyamat elé célszerű külön jóváhagyási lépést tenni. A rendszer rögzítheti, melyik kép és hang használata engedélyezett, milyen célra, és meddig. A szolgáltatói kulcsokat szintén az adapter kezelje, ne a modellnek átadott szöveges kontextus.</p>
+<p>A bemutató elsősorban az alkalmazás elkészítésére és a komponensek összekapcsolására koncentrál, nem egy teljes jogosultságkezelő rendszerre. <a href="https://youtu.be/CosiXStxouo">A ténylegesen bemutatott megvalósítás itt látható.</a> Saját használatnál viszont éppen ez a különbség egy érdekes próba és egy tartósan működtethető eszköz között.</p>
+<h2>Nem az avatar a legfontosabb tanulság</h2>
+<p>A konkrét alkalmazás látványos kimenete egy valós időben beszélő karakter, de az általánosítható rész az integráció módja. Az egyik szolgáltatás kész MCP-eszközt adott, a másik csak API-dokumentációt. Az ügynök mindkettőt fel tudta használni egy közös alkalmazásban. <a href="https://youtu.be/CosiXStxouo">A teljes építési folyamat összefoglalója a videóban követhető.</a></p>
+<p>Ugyanez a minta működhet dokumentumfeldolgozásnál, videóvágásnál vagy otthoni automatizálásnál is. Nem kell minden rendszernek ugyanazt a protokollt beszélnie. Elég, ha a saját ügynököd körül világos, kis adapterek választják el egymástól a beszélgetést, az eszközhívást és a külső szolgáltatót.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

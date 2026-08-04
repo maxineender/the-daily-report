@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egy hívásban fér össze a web és a térkép — LocalAgent Digest</title>
+  <meta name="description" content="A Gemini két adatforrást kapcsol össze, a videós munkafolyamatok pedig egyre inkább programozható eszközláncokká válnak.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-04</div>
+          <h1 class="article-title">Egy hívásban fér össze a web és a térkép</h1>
+          <div class="article-sub">A Gemini két adatforrást kapcsol össze, a videós munkafolyamatok pedig egyre inkább programozható eszközláncokká válnak.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Egy hívásban fér össze a web és a térkép" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, nézzük, mi érdemel ma egy próbát. A legfontosabb változás, hogy a Gemini ügynökei már egy futáson belül használhatják a Google keresőjét és térképét, így kevesebb saját összekötő kód kell a helyfüggő feladatokhoz. A mai híreket az köti össze, hogy a modellek köré épített munkafolyamatok egyre több lépést vesznek át, a webalkalmazás készítésétől a videón és a hangon át az irodai fájlokig.</p>
+<h2>A Gemini egyszerre használhatja a Google keresőjét és térképét</h2>
+<p>A Gemini API-ban mostantól ugyanabban a feladatban engedélyezhető a Google Search és a Google Maps eszköz a Gemini 3.5 Flash és 3.6 Flash modellekkel. Korábban az ügynöknek külön folyamatokra vagy saját köztes logikára volt szüksége, ha előbb friss webes információt kellett keresnie, majd helyeket, útvonalakat vagy térképes adatokat kellett feldolgoznia.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Egyszerűsítheted az olyan feladatokat, mint az útiterv készítése, a környékbeli szolgáltatások összevetése vagy egy esemény helyszínének ellenőrzése. A két eszközt érdemes külön jogosultsági és naplózási szabályokkal kezelni, mert egyetlen kérés most több külső adatforrást és több költséges eszközhívást indíthat.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://x.com/OfficialLoganK/status/2084469065322729817">Gemini API bejelentés</a></p>
+<h2>A v0 alkalmazásépítő ügynöke API-t kapott</h2>
+<p>A v0 Platform API v2 béta REST felületen engedi új beszélgetések létrehozását, az ügynök futási eseményeinek streamelését, a fájlműveletek és eszközhívások követését, valamint az elkészült webalkalmazás telepítését. Webhookokkal a beszélgetések eseményei más rendszerekhez kapcsolhatók, az npm SDK pedig jelenleg a `v0@canary` csomagból érhető el. A bejelentés szerint API-kulcsos hitelesítést használ, a beküldött kódot pedig nem használják modelltréninghez.</p>
+<blockquote><p>A saját ügynököd a v0-t alügynökként hívhatja meg: átadhat neki egy specifikációt, figyelheti a fájlmódosításokat, majd tesztekkel ellenőrizheti az elkészült alkalmazást. Mivel béta API-ról és canary SDK-ról van szó, rögzíts verziót, és ne engedd automatikusan éles környezetbe telepíteni az eredményt emberi jóváhagyás nélkül.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://x.com/futurepedia_io/status/2084463457127350733">v0 Platform API összefoglaló</a></p>
+<h2>A MiniMax H3 videót, képet és hangot fogad egyszerre</h2>
+<p>A MiniMax H3 egyetlen természetes nyelvű kérésben több videós, képi és hangreferenciát tud feldolgozni, majd legfeljebb 15 másodperces, 2K felbontású videót készít natív sztereó hanggal. A bejelentés pontosabb szöveg- és márkamegjelenítést is ígér. A szolgáltatás elindult, a letölthető súlyokat azonban csak későbbre ígérték, így jelenleg nem kezelhető teljesen helyi videómodellként.</p>
+<blockquote><p>A többféle referencia egyetlen kérésben kevesebb külön kép-, hang- és videólépést jelenthet az ügynököd munkafolyamatában. A súlyok megjelenéséig érdemes az integrációt cserélhető szolgáltatói adapter mögé tenni, hogy később átállhass helyi futtatásra anélkül, hogy az egész folyamatot újra kellene építeni.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://x.com/futurepedia_io/status/2084338509649719570">MiniMax H3 bejelentés</a></p>
+<h2>Három kis eszköz rövidíti le az AI-filmes előkészítést</h2>
+<p>A Dankieft bemutatójában három, ingyen használható saját eszköz automatizálja az ismétlődő filmes feladatokat. Az első történetet, karakterlapokat, helyszínleírásokat és jelenethez szükséges elemeket készít; a második szereplőt, pózt és kameraállást állít össze képgenerálási referenciának; a harmadik használható kameramozgás-promptokat ad. A megoldások alapja nem egy új videómodell, hanem a korábban kézzel végzett, Claude és képgenerátorok közötti lépések sablonosítása.</p>
+<blockquote><p>Ezt a mintát saját ügynökkel is könnyű átvenni: először írd le a visszatérő gyártási lépéseket, majd minden lépéshez kérj strukturált, géppel ellenőrizhető kimenetet. A legnagyobb megtakarítás nem feltétlenül a generálásnál lesz, hanem abban, hogy az ügynök következetesen ugyanazokat a karakter-, helyszín- és kameramezőket adja tovább.</p></blockquote>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/3YkMI7z_CWI">Dankieft videója</a></p>
+<h2>Fish Audio hangból és Lemon Slice képből készült élő avatar</h2>
+<p>Bob Doyle egy beszélgetős avataralkalmazást épített a Fish Audio MCP és a Lemon Slice valós idejű avatar API-jának összekapcsolásával. A Fish Audio adja a klónozható hangot, a Lemon Slice pedig egy választott állóképből készíti a beszélő avatart. A megvalósítás során Claude elolvasta a Lemon Slice API-dokumentációját, majd elkészítette a két szolgáltatás közötti alkalmazáskódot annak ellenére, hogy a Lemon Slice-hoz nem állt rendelkezésre külön MCP-szerver.</p>
+<blockquote><p>Jó példa arra, hogy az ügynöködnek nem kell minden szolgáltatáshoz kész MCP-integráció: megfelelő API-dokumentációból hagyományos klienst is készíthet. Hangklónozásnál és arcképek használatánál viszont legyen külön beleegyezési ellenőrzés, a szolgáltatói kulcsokat pedig ne add át közvetlenül a modell kontextusában.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/CosiXStxouo">Bob Doyle bemutatója</a></p>
+<h2>A Qwen3.8-Max lett az Alibaba legnagyobb modellje</h2>
+<p>Az Alibaba augusztus 3-án mutatta be a Qwen3.8-Max modellt, amelyet a vállalat eddigi legnagyobb és legerősebb rendszerének nevez. A közösségi beszámolók 2,4 billió paraméteres méretet említenek, ami a modell helyi futtatását még erős munkaállomásokon is valószerűtlenné teszi. A mostani anyagok nem közölnek letölthető súlyokat vagy olyan tömörített változatot, amelyet átlagos saját gépen érdemes lenne telepíteni.</p>
+<blockquote><p>Ne a paraméterszám alapján cseréld le a jelenlegi modelledet. Ha elérhetővé válik API-n keresztül, ugyanazzal a húsz-harminc saját feladattal mérd össze a jelenlegi elsődleges és tartalék modellekkel, külön figyelve az eszközhívások pontosságára és a teljes feladatköltségre.</p></blockquote>
+<p>Forrás: <a href="https://www.thestar.com.my/business/business-news/2026/08/04/deepseeks-new-ai-model-is-the-cheapest-of-well-known-varieties">Reuters tudósítás</a></p>
+<h2>A sablonos AI-képek már az olvasót is elriaszthatják</h2>
+<p>Egy 136 Hacker News pontot és 45 hozzászólást gyűjtő esszé szerint a felismerhetően generált nyitóképek csökkentik a blogbejegyzések hitelességét, és eltántoríthatják az olvasót magától a szövegtől is. A szerző fő kifogása nem pusztán a kép eredete, hanem az, hogy a díszítő illusztráció gyakran nem közöl többet a cikk címénél, miközben olcsó, sablonos benyomást kelt.</p>
+<blockquote><p>Ha az ügynököd automatikusan publikál, ne legyen kötelező lépés minden szöveghez generált borítóképet készíteni. Jobb szabály, hogy csak akkor kérjen képet, ha annak információs szerepe van, például folyamatábra, képernyőkép vagy összehasonlítás, és tegye emberi jóváhagyásra a nyilvános megjelenés előtt.</p></blockquote>
+<p>Forrás: <a href="https://nelson.cloud/ai-generated-images-discourage-me-from-reading-your-blog/">Nelson Cloud esszéje</a></p>
+<h2>A Google ügynökkurzusának teljes anyaga továbbra is elérhető</h2>
+<p>A Google és a Kaggle ötnapos, természetes nyelvű ügynöképítésre összpontosító kurzusán több mint 353 000 fejlesztő vett részt, és több mint 6000 záróprojekt készült. A program szakértői előadásokat, technikai tanulmányokat és futtatható notebookokat tartalmazott. Az esemény lezárult, de a tananyag továbbra is elérhető a Kaggle Learn felületén.</p>
+<blockquote><p>A notebookokat használhatod ellenőrzött mintaként a saját ügynököd eszközhívásaihoz és telepítési folyamatához. Ne másold át egyszerre az egész kurzust a rendszerpromptba: bontsd külön készségekre, és csak az adott feladathoz szükséges anyagot töltsd be.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/ai-agents-intensive-recap-2026/">Google kurzusösszefoglaló</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/iOfficeAI/OfficeCLI">OfficeCLI</a></strong> - Az OfficeCLI egyetlen binárisként ad az ügynöknek olvasási, szerkesztési és automatizálási hozzáférést Word-, Excel- és PowerPoint-fájlokhoz, telepített Office és külön függőségek nélkül. A beépített renderelő `.docx`, `.xlsx` és `.pptx` dokumentumokat alakít HTML-lé vagy PNG-vé, így az ügynök a módosítás után vizuálisan is ellenőrizheti az eredményt. Apache-2.0 licencű, nem fork, 2026. március 15-én hozták létre, utoljára 2026. július 31-én kapott push-t, és 25 236 csillaga van. Nincs archiválva. Saját ügynöknél akkor hasznos, ha irodai fájlokat kell helyben feldolgozni és visszaellenőrizni anélkül, hogy asztali Office-alkalmazást vezérelnél.</p>
+<p><strong><a href="https://github.com/Alishahryar1/free-claude-code">free-claude-code</a></strong> - A projekt saját szolgáltatóhoz kapcsolt proxyn keresztül futtatja a Claude Code, Codex és Pi klienseket terminálból, IDE-ből, asztali indítóból vagy telefonos kapcsolaton át. A helyi Admin UI 31 felhős és helyi szolgáltató kiválasztását és ellenőrzését kezeli, miközben külön modellekhez irányíthatja az elsődleges és tartalék forgalmat. Támogatja a streamelést, az eszközhasználatot, a képbemenetet, valamint az opcionális Discord- és Telegram-kapcsolatot hangjegyzetek átírásával. MIT licencű, nem fork, 2026. január 28-án hozták létre, utolsó push-a 2026. augusztus 3-i, és 44 262 csillaga van. Saját ügynöknél központi modellkapcsolóként lehet hasznos, de a proxy egyben érzékeny forgalmi és hitelesítési ponttá válik.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai szál a felügyelhető ügynököktől és verziózott konfigurációktól az olcsóbb modelleken át a nehezen felismerhető AI-vizuálokig ér.</p>
+<p><strong>@gdb</strong> -- Az Astra belső változata tíz matematikai és elméleti informatikai eredményt oldott meg mintegy 2000 dollárnyi API-költséggel, ami konkrét viszonyítási pont a kutatóügynökök futtatásához.<br>> "ten significant advances in mathematics and theoretical computer science"<br><a href="https://x.com/gdb/status/2083457463337287721">link</a></p>
+<p><strong>@gdb</strong> -- A ChatGPT Work felhőböngészőjében élőben követhető és megszakítható az ügynök munkája, ez a felügyeleti minta saját gépen futó automatizálásnál is hasznos.<br>> "monitor what your AI is up to and also intervene"<br><a href="https://x.com/gdb/status/2083641828415602989">link</a></p>
+<p><strong>@rryssf</strong> -- A vállalati ügynökkonfiguráció verziózható infrastruktúrává válhat, így a beállítások ugyanúgy felülvizsgálhatók és visszaállíthatók, mint a forráskód.<br>> "infrastructure you version like code"<br><a href="https://x.com/rryssf/status/2084563659439960429">link</a></p>
+<p><strong>@rryssf</strong> -- Az auditnaplók, munkamenetenkénti költségek és jogosultsági határok már a tartósan futó ügynökök üzemeltetéséhez szükséges kontrollokat célozzák.<br>> "audit logs, session costs and session scoping"<br><a href="https://x.com/rryssf/status/2084563647834333321">link</a></p>
+<p><strong>@itsPaulAi</strong> -- Az új DeepSeek alacsony ára csökkentheti a hosszabb kódoló és építő ügynökfolyamatok költségét, bár a képességekről szóló erős állítást saját feladatokon érdemes ellenőrizni.<br>> "powerful enough to build just about anything which is virtually free"<br><a href="https://x.com/itsPaulAi/status/2084390963737182636">link</a></p>
+<p><strong>@AIHighlight</strong> -- A csatolt AI-vizuál azt jelzi, hogy a generált kép vagy videó felismeréséhez már nem elég pusztán a látvány alapján ítélni.<br>> "How is this AI?"<br><a href="https://x.com/AIHighlight/status/2084580915687137745">link</a></p>
+<p><strong>@AIHighlight</strong> -- Egy másik, sok reakciót kiváltó generatív demó is azt mutatja, hogy a médiakészítő munkafolyamatoknál fontos lesz a forrás és a modell dokumentálása.<br>> "AI is getting out of hand!"<br><a href="https://x.com/AIHighlight/status/2084243436270399583">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A heti gyűjtés egy helyre rendezi a friss modell- és eszközkiadásokat, így gyors kiindulópontot adhat a helyi ügynökverem következő tesztjeihez.<br>> "the biggest AI tool updates, model releases, and news"<br><a href="https://x.com/futurepedia_io/status/2084263198740353225">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Qwen3.8 család 27B-s változata a Max mellett jelent meg, és mérete miatt közvetlenebbül érdekes a saját hardveren végzett próbákhoz. (2672 pont, 635 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A nagy aktivitású beszélgetés szerint a teljes PC automatizálása már könnyen elérhető, de a helyi ügynöknél különösen fontos az engedélykérés és a visszavonható műveletek kialakítása. (471 pont, 240 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1vcvjb9/i_think_people_seriously_underestimate_how_easy/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
