@@ -19,19 +19,26 @@
     <section class="hero-section">
       <div class="hero-title-bar">
         <div class="hero-title-group">
-          <h1 class="hero-title">Morning Brief</h1>
+          <div class="hero-title-row">
+            <h1 class="hero-title">Morning Brief</h1>
+            <label class="search-box" for="digest-search">
+              <span class="sr-only">Keresés a digestekben</span>
+              <input id="digest-search" type="search" placeholder="Keresés / search" autocomplete="off">
+            </label>
+          </div>
           <div class="hero-subtitle">Daily intelligence for self-hosted AI agent operators</div>
         </div>
         <div class="hero-meta">
           <span class="hero-status-dot"></span>
-          <span>SYS.FEED: ACTIVE // DATE: 2026.08.04 // NODE: LOCALAGENT</span>
+          <span>SYS.FEED: ACTIVE // DATE: 2026.08.05 // NODE: LOCALAGENT</span>
         </div>
       </div>
+      <div id="search-results" class="search-results" aria-live="polite"></div>
       <div class="hero-image-container">
         <div class="hero-css-graphic">
           <img src="assets/hero-nano.png" alt="Hero background" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.85;">
           <div class="hero-lines" style="z-index:1;"></div>
-          <div class="hero-issue" style="z-index:1;">EDITION: 2026.08.04</div>
+          <div class="hero-issue" style="z-index:1;">EDITION: 2026.08.05</div>
         </div>
       </div>
     </section>
@@ -39,6 +46,17 @@
     <section>
       <div class="section-label">LEGFRISSEBB JELENTÉSEK // FEED_FLOW</div>
       <div class="news-grid">
+        <a href="reports/2026-08-05.html" class="news-card" id="card-2026-08-05">
+          <div class="card-image-wrap">
+            
+            <img src="assets/placeholder-1.jpg" alt="A helyi világmodell már 16 képkockát rajzol másodpercenként" class="card-image" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-date">// DATE: 2026-08-05</div>
+            <h2 class="card-title">A helyi világmodell már 16 képkockát rajzol másodpercenként</h2>
+            <p class="card-sub">Interaktív világok egy asztali GPU-n, hosszabb Seedance-videók, egypromptos animáció és egy közös tér a helyi ügynököknek.</p>
+          </div>
+        </a>
         <a href="reports/2026-08-04-deepdive.html" class="news-card card-long-article" id="card-2026-08-04-deepdive">
           <div class="card-image-wrap">
             <div class="article-badge">HOSSZÚ CIKK</div>
@@ -224,6 +242,77 @@
       <p>// LOCALAGENT DATA FEED — SECURE CONNECTION ESTABLISHED // © 2026 LOCALAGENT //</p>
     </div>
   </footer>
+
+  <script>
+    const searchInput = document.getElementById('digest-search');
+    const searchResults = document.getElementById('search-results');
+
+    function excerptFor(text, query) {
+      const index = text.toLocaleLowerCase().indexOf(query.toLocaleLowerCase());
+      const start = Math.max(0, index - 90);
+      const end = Math.min(text.length, index + query.length + 140);
+      return (start > 0 ? '...' : '') + text.slice(start, end) + (end < text.length ? '...' : '');
+    }
+
+    function appendHighlightedText(element, text, query) {
+      const parts = text.split(new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'));
+      parts.forEach(part => {
+        if (part.toLocaleLowerCase() === query.toLocaleLowerCase()) {
+          const mark = document.createElement('mark');
+          mark.textContent = part;
+          element.appendChild(mark);
+        } else {
+          element.appendChild(document.createTextNode(part));
+        }
+      });
+    }
+
+    async function enableSearch() {
+      let index;
+      try {
+        const response = await fetch('assets/search-index.json');
+        if (!response.ok) throw new Error('Search index unavailable');
+        index = await response.json();
+      } catch (error) {
+        console.error(error);
+        return;
+      }
+
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.trim();
+        searchResults.replaceChildren();
+        if (!query) return;
+
+        const matches = index.filter(report =>
+          (report.title + ' ' + report.text).toLocaleLowerCase().includes(query.toLocaleLowerCase())
+        ).slice(0, 20);
+
+        if (!matches.length) {
+          const empty = document.createElement('p');
+          empty.className = 'search-empty';
+          empty.textContent = 'Nincs találat.';
+          searchResults.appendChild(empty);
+          return;
+        }
+
+        matches.forEach(report => {
+          const link = document.createElement('a');
+          link.className = 'search-result';
+          link.href = 'reports/' + encodeURIComponent(report.date) + '.html?q=' + encodeURIComponent(query);
+          const date = document.createElement('span');
+          date.className = 'search-result-date';
+          date.textContent = report.date;
+          const snippet = document.createElement('span');
+          snippet.className = 'search-result-snippet';
+          appendHighlightedText(snippet, excerptFor(report.text, query), query);
+          link.append(date, snippet);
+          searchResults.appendChild(link);
+        });
+      });
+    }
+
+    enableSearch();
+  </script>
 
 </body>
 </html>

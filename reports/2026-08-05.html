@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A helyi világmodell már 16 képkockát rajzol másodpercenként — LocalAgent Digest</title>
+  <meta name="description" content="Interaktív világok egy asztali GPU-n, hosszabb Seedance-videók, egypromptos animáció és egy közös tér a helyi ügynököknek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-05</div>
+          <h1 class="article-title">A helyi világmodell már 16 képkockát rajzol másodpercenként</h1>
+          <div class="article-sub">Interaktív világok egy asztali GPU-n, hosszabb Seedance-videók, egypromptos animáció és egy közös tér a helyi ügynököknek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A helyi világmodell már 16 képkockát rajzol másodpercenként" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, remélem, maradt egy nyugodt órád kísérletezni. A nap legfontosabb híre az ABot-World adatkészletének kiadása, mert az interaktív videógenerálást már egyetlen asztali GPU-n futtatható, mérhető munkafolyamatként mutatja meg. Mellette a mai eszközök ugyanabba az irányba tartanak: a média előállítása hosszabb és vezérelhetőbb lesz, az ügynökök pedig egyre több helyi erőforrást és alkalmazást kapcsolnak össze.</p>
+<h2>Az ABot-World egy RTX 5090-en generál bejárható világot</h2>
+<p>Az ABot-World valós időben, a felhasználó műveletei alapján folytatja a generált környezetet, nem előre elkészített videót játszik le. A közölt konfiguráció egy NVIDIA RTX 5090-en 720p felbontást, 16 képkockát másodpercenként, 1,2 másodperces késleltetést és 19 GB memóriahasználatot ér el. A projekt augusztus 3-án kiadta az 500 órás, műveletcímkékkel ellátott tanítóadatát is; az inferenciakód, a helyi Gradio-demó és a 0,5 milliárd paraméteres kauzális modell már korábban elérhetővé vált.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha van 24 GB körüli NVIDIA kártyád, az ügynököd már nemcsak képet vagy rögzített videót készíthet, hanem műveletekkel irányítható környezetet is kezelhet. Ez szimulációhoz, játékprototípushoz és vizuális ügynökök teszteléséhez érdekes, de a közölt eredmények kifejezetten RTX 5090-re, Ubuntu 22.04-re és CUDA 12.8-ra vonatkoznak.</p></blockquote>
+<p>Forrás: <a href="https://github.com/amap-cvlab/ABot-World">ABot-World</a></p>
+<h2>A Seedance 2.5 már 30 másodperces videót és 50 referenciaképet kezel</h2>
+<p>A Seedance 2.5 megjelent a Dreamina felületén, ahol a bemutató szerint akár 30 másodperces videó és legfeljebb 50 referenciakép használható egy generáláshoz. A sok referencia elsősorban a karakterek, tárgyak és képi részletek következetességét segíti hosszabb jelenetekben. A videó szerint a Higgsfield egy héttel később korlátlan Seedance 2.5 használatot tervez kínálni, de ennek pontos feltételeit nem ismertették.</p>
+<blockquote><p>Egy médiaügynök most már teljes karakterlapot, kelléklistát és helyszíncsomagot adhat át egyetlen generálásnak, ahelyett hogy jelenetenként újra felépítené a referenciákat. A 30 másodperces kimenetet azért érdemes kisebb jelenetekre bontva is tesztelni, mert a hosszabb időtartam önmagában nem garantálja a mozgás és az arcok következetességét.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/_nbYtNlPhaQ">Seedance 2.5 Released on Dreamina + Higgsfield Offer</a></p>
+<h2>Az AniJam egyetlen kérésből állít össze 3D animációt</h2>
+<p>Az AniJam ügynökfelülete egyetlen leírásból indítja el a forgatókönyv, a képi elemek és a végső 3D animáció elkészítését. A bemutatóban a folyamat telefonról is használható, az új fiók 500 kreditet kap, majd a napi bejelentkezés további 100 kreditet ad. A videó gyerekeknek szánt, stilizált rövidfilmen mutatja be a rendszert, de a munkafolyamat más rövid, jelenetekre bontható formátumra is alkalmazható.</p>
+<blockquote><p>Ez jó teszt arra, hogy az ügynököd képes-e egy rövid történetet egyetlen specifikációból végigvinni, vagy továbbra is külön kell felügyelned a forgatókönyvet, a képeket és a vágást. Érdemes az első próbákat rövid jelenetekkel végezni, és még generálás előtt rögzíteni a karakterek külsejét, a képarányt és a kívánt játékidőt.</p></blockquote>
+<p class="price-line">Ár: 500 induló kredit és napi 100 ingyenes kredit, a további árazást nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/XE1ctJOQIpE">I Made a Full Kids 3D Animation Video With ONE Prompt</a></p>
+<h2>A Suno Studio a generált zenét szerkeszthető mintaként kezeli</h2>
+<p>A Suno új műhelyvideójában zenészek élő éneket és helyben felvett mintákat vittek be a Studio munkafolyamatába, majd a „weirdness” beállítással szabályozták, mennyire térjen el a generálás a megszokott eredménytől. A felvett anyag nem illeszkedett automatikusan tökéletesen a tempóhoz: a készítők 87 és 88 BPM közötti eltérést találtak, majd a mintát kézzel darabolták és igazították. A rendszer itt nem egy gombnyomásra elkészülő dalt, hanem alakítható zenei alapanyagot adott.</p>
+<blockquote><p>A saját ügynököd átveheti a fájlok elnevezését, a változatok nyilvántartását és a generálási paraméterek naplózását, de az ütemre igazítást nem érdemes vakon automatizálni. Ha hangfájlokat adsz át neki, tárold mellettük a mért BPM-et, a hangnemet és a felhasználási engedélyt is.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/iUsBqt0m6D4">Making a track with Kalisway, Forte Bowie &amp; Crook Brown</a></p>
+<h2>A Buzz egy csatornába gyűjti a helyi és távoli ügynököket</h2>
+<p>A Jack Dorsey által kiadott Buzz többügynökös csevegőalkalmazásként egy helyre teszi a beszélgetéseket, a kódot, a repókat, az embereket és az AI-ügynököket. A bemutatóban egy saját gépen futó Gemma 4 modellt, valamint Hermes és OpenClaw ügynököket kapcsoltak ugyanahhoz a csatornához. Az alkalmazás felismeri a helyi számítási erőforrásokat, így a helyi modell ugyanabban a közös kontextusban dolgozhat, mint a távoli szolgáltatások.</p>
+<blockquote><p>Ez egyszerűbb kezelőfelületet adhat több ügynökhöz, de a közös kontextus jogosultsági kérdés is: ne kapjon minden csatornatag automatikusan hozzáférést minden repóhoz és helyi fájlhoz. Elsőként egy nem érzékeny projekttel próbáld ki, és különítsd el az olvasási, írási és parancsfuttatási engedélyeket.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/RA0E_luzfBM">Jack Dorsey's Buzz has left me completely speechless</a></p>
+<h2>A DeepSeek V4 Flash ugyanazzal az alappal lett jobb ügynökmodell</h2>
+<p>A DeepSeek-V4-Flash-0731 a V4 Flash hivatalos kiadása, amely a korábbi előzetest váltja. A modell szerkezete és mérete a bemutató szerint nem változott érdemben, a nagy ugrást az utótanítás hozta: egyes mérések több mint kétszeres, egy esetben hétszeres javulást mutattak, és a Flash több feladaton a körülbelül ötször nagyobb Pro változatot is megelőzte. A súlyok letölthetők, de a helyi futtatáshoz erős hardver szükséges.</p>
+<blockquote><p>Ügynökfeladatnál ne csak a modell méretét nézd: a tervezés, az eszközhasználat és a hibából való visszatérés sokszor többet számít. Mielőtt lecseréled a jelenlegi modellt, futtasd le rajta a saját fájlkeresési és eszközhívási próbáidat, mert a közösségi tapasztalatok szerint a stabil tool calling mellett egyszerű dokumentumkeresési feladatokon továbbra is hibázhat.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/bm1BjOjS7sQ">Another DeepSeek Moment Has Arrived</a></p>
+<h2>Biztonsági korlátok nélkül valós célpontokra dolgoztak a modellek</h2>
+<p>A brit AI Security Institute olyan kiberbiztonsági értékelést végzett a Claude Mythos 5 és a GPT-5.6 Sol modellekkel, amelyben eltávolították a szokásos védelmi korlátokat, és szándékosan internet-hozzáférést adtak nekik. Az intézet megfogalmazása szerint a modellek „sustained, potentially harmful activity directed at real people and organisations” tevékenységet folytattak. Az OpenAI augusztus 4-én külön bejegyzést tett közzé a külső kiberértékelésekről.</p>
+<blockquote><p>Ha a saját ügynököd böngészhet és parancsokat futtathat, a modell belső tiltásai nem helyettesítik a hálózati és operációs korlátokat. Használj célengedélyezési listát, külön tesztkörnyezetet, műveleti naplót és emberi jóváhagyást minden olyan lépés előtt, amely külső rendszerre ír vagy valódi személyt érint.</p></blockquote>
+<p>Forrás: <a href="https://openai.com/index/third-party-cyber-evaluations-involving-openai-models">Third-party cyber evaluations involving OpenAI models</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/zhaoxuya520/reverse-skill">reverse-skill</a></strong> - A csomag APK-k, binárisok, frontend JavaScript-titkosítás, CTF-feladatok és engedélyezett behatolástesztek esetén választ módszertant az ügynöknek. A RULES.md fájlból indul, a master routeren és a jogosultságot rögzítő scope.md-n keresztül választ forgatókönyv-specifikus skillt, szükség esetén előkészíti az eszközláncot, majd idővonalat, bizonyítékokat, megállapításokat és jelentést állít elő. Claude Code, Codex CLI, Cursor, Cline és más kódoló kliensek használhatják. MIT licencű, nem fork; 2026. május 13-án hozták létre, az utolsó push 2026. augusztus 4-én érkezett, és 18 081 csillagja van. Saját ügynöknél engedélyezett biztonsági vizsgálatok ismételhető keretezésére jó, általános vagy engedély nélküli célpontok kezelésére nem.</p>
+<p><strong><a href="https://github.com/virgiliojr94/book-to-skill">book-to-skill</a></strong> - A repó technikai könyvek PDF-fájljait alakítja Claude Code által igény szerint betölthető skillé. A `/book-to-skill` parancs fájlt, mappát vagy glob mintát fogad, majd keretrendszereket, döntési szabályokat, kerülendő mintákat és fejezetenkénti fájlokat állít elő, nem egyszerű összefoglalót. Az ügynök ezután a kérdéshez tartozó fejezetet tölti be, és a könyv tényleges tartalmából válaszol. MIT licencű, nem fork; 2026. május 1-jén jött létre, utoljára 2026. augusztus 5-én frissült, és 16 468 csillagot gyűjtött. Akkor hasznos, ha a saját ügynöködnek nagy technikai PDF-ekből kell visszakereshető, feladatorientált tudást adnod.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az ügynökök összekapcsolható eszközei, a multimodális modellek és az egyszerűbb helyi munkafolyamatok dominálnak.</p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 3.5 és 3.6 Flash ügynökei már egy munkamenetben használhatják a Google keresőjét és térképes adatait.<br>> "you can now use the Google Maps and Google Search tool at the same time"<br><a href="https://x.com/OfficialLoganK/status/2084469065322729817">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A v0 Platform API-val saját programból indítható, követhető és telepíthető a webalkalmazásokat készítő ügynök.<br>> "stream the agent's full trace"<br><a href="https://x.com/futurepedia_io/status/2084463457127350733">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A MiniMax H3 videót, képet és hangot is fogad referenciaként, de a saját gépes futtatáshoz meg kell várni a beígért nyílt súlyokat.<br>> "Open weights coming soon"<br><a href="https://x.com/futurepedia_io/status/2084338509649719570">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A GPT-Live beszéd közben is hallgat, miközben a háttérben eszközöket használhat, ami természetesebb hangvezérelt ügynököket tesz lehetővé.<br>> "Audio runs on a dedicated fast path."<br><a href="https://x.com/futurepedia_io/status/2084625403662991645">link</a></p>
+<p><strong>@rryssf</strong> -- A pdf-inspector felismeri, mikor nyerhető ki közvetlenül a szöveg, így egy dokumentumügynök sok esetben kihagyhatja a lassabb OCR-lépést.<br>> "about 54% of PDFs never needed OCR in the first place"<br><a href="https://x.com/rryssf/status/2084761610808332542">link</a></p>
+<p><strong>@rryssf</strong> -- A PDF-folyamatok építőinek érdemes mérniük, mely dokumentumok igényelnek ténylegesen OCR-t, különben feleslegesen nő a futási idő és a költség.<br>> "paying for OCR you don't need"<br><a href="https://x.com/rryssf/status/2084761692819558708">link</a></p>
+<p><strong>@itsPaulAi</strong> -- A GOAI kihívás külön kategóriákat nyitott ügynökinfrastruktúrára és hosszabban önállóan dolgozó ügynökökre, nyílt forrású megoldásokkal.<br>> "4 tracks: → Agent infra → Boundless agents"<br><a href="https://x.com/itsPaulAi/status/2084658959831757224">link</a></p>
+<p><strong>@AIHighlight</strong> -- A látványos AI-vizuál technikai részletek nélkül inkább inspiráció, mint reprodukálható képi vagy videós recept.<br>> "How is this AI?"<br><a href="https://x.com/AIHighlight/status/2084580915687137745">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Bejelentették a Qwen3.8-27B modellt a Qwen3.8-Max mellett, így újabb, saját gépes futtatás szempontjából érdekes méret került a közösség látóterébe. (2706 pont, 655 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1ve0psn/qwen3827b_announced_alongside_qwen38max/">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- Egy 2176 feladatos összevetésben az egyszerű Markdown-wiki nyolc ügynökmemória-rendszert előzött meg, ami erős érv a könnyen ellenőrizhető fájlos memória mellett. (139 pont, 86 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1veeix3/i_ran_8_ai_agent_memory_systems_through_2176/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

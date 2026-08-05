@@ -96,6 +96,35 @@
     </div>
   </footer>
   <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn) {
       shareBtn.addEventListener('click', async () => {
