@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Így ad pontos kameramozgást a Blender egy videógenerátornak — LocalAgent Digest</title>
+  <meta name="description" content="A helyben renderelt 3D referencia olcsóbbá és megismételhetőbbé teheti az ügynökkel vezérelt videógyártást.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-06</div>
+          <h1 class="article-title">Így ad pontos kameramozgást a Blender egy videógenerátornak</h1>
+          <div class="article-sub">A helyben renderelt 3D referencia olcsóbbá és megismételhetőbbé teheti az ügynökkel vezérelt videógyártást.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Így ad pontos kameramozgást a Blender egy videógenerátornak" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A videógenerátorok már elfogadható karaktert, fényt és környezetet tudnak előállítani, de a kamera irányítása továbbra is bizonytalan. A „lassú körívben közelíts a szereplőhöz” típusú kérés értelmezése generálásonként változhat. A DanKieft által bemutatott munkafolyamat ezt nem hosszabb prompttal próbálja megoldani, hanem egy tényleges 3D referencia elkészítésével: az ügynök felépíti a jelenetet Blenderben, beállítja a kamerát, majd a renderelt mozgást átadja a videómodellnek. <a href="https://youtu.be/miIDu04N7_4">A teljes bemutató itt nézhető meg.</a></p>
+<h2>A kameraút fontosabb, mint a részletes 3D látvány</h2>
+<p>A Blenderben nem kell végleges minőségű környezetet készíteni. A referencia célja az elrendezés, a mélység, a szereplők helye és mindenekelőtt a kamera mozgásának rögzítése. A bemutatóban Claude a Blender MCP-kapcsolatán keresztül építi fel a jelenetet, majd létrehozza az animált kameraútvonalat. A kész render nem végtermék, hanem szerkezeti útmutató a videómodell számára. <a href="https://youtu.be/miIDu04N7_4">A videó ezt egy Seedance-alapú jeleneten mutatja be.</a></p>
+<p>Ez azért működhet jobban egy szöveges kamerautasításnál, mert a referencia minden képkockában megmutatja, hol van a kamera és hogyan változik a kompozíció. Nem kell nyelvi leírásból kitalálni, hogy a „dolly in”, a köríves mozgás vagy a daruval végzett emelkedés pontosan milyen sebességet és pályát jelent.</p>
+<h2>Az ügynök kapja a Blender nehéz részét</h2>
+<p>A Blender használatához általában ismerni kell a jelenetgráfot, a kamerabeállításokat, a kulcsképkockákat és a renderelést. Ebben a folyamatban ezek jelentős részét az ügynök kezeli. A bemutató készítője saját elmondása szerint nem rendelkezik Blender-tapasztalattal, mégis az ügynökkel építtette fel a teljes referenciajelenetet és a kameramozgást. <a href="https://youtu.be/miIDu04N7_4">A munkafolyamat lépései a bemutató elején láthatók.</a></p>
+<p>A jó feladatleírásnak ezért nem a Blender menüit kell felsorolnia. Inkább a jelenet geometriáját és a filmes szándékot érdemes rögzíteni:</p>
+<ol><li>hol áll a szereplő és a kamera;</li><li>milyen magasról indul a felvétel;</li><li>mi legyen a kamera célpontja;</li><li>hány másodperc alatt hová jusson;</li><li>maradjon-e végig látható a teljes alak;</li><li>milyen képaránnyal készüljön a referencia.</li></ol>
+<p>Az ügynök ezekből létrehozhat egy egyszerű jelenetet, renderelhet alacsony felbontású előnézetet, majd kérhet emberi jóváhagyást a fizetős videógenerálás előtt.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A Blender-fájl, a kamera koordinátái és a renderelési beállítások a saját gépeden maradhatnak. Az ügynök először olcsó előnézeteket készíthet, ellenőrizheti a kamera útját, és csak a jóváhagyott referencia-videót küldheti tovább a generátornak.</p></blockquote>
+<h2>Ugyanaz a mozgás több változatban</h2>
+<p>A 3D referencia egyik legnagyobb előnye az ismételhetőség. Ha ugyanahhoz a jelenethez más ruhát, napszakot vagy vizuális stílust szeretnél, nem kell újra kitaláltatni a kameramozgást. Az ügynök ugyanabból a Blender-projektből újrarenderelheti a referenciát, vagy csak egyetlen paramétert módosíthat, például a kamera sebességét. <a href="https://youtu.be/miIDu04N7_4">A bemutató kifejezetten az újrahasználható, pontos kameramozgást emeli ki.</a></p>
+<p>Ez rövidfilmnél különösen hasznos. Több snitthez létrehozhatsz külön Blender-fájlt vagy jelenetet, majd az ügynök egy táblázatból végigfuttathatja a renderelést. A táblázat tartalmazhatja a snitt hosszát, a kezdő és záró kamerapozíciót, a képarányt és a használandó kezdőképet.</p>
+<h2>Hol hibázhat a folyamat?</h2>
+<p>A referencia nem garantálja, hogy a videómodell minden képkockában pontosan követi a kamerát. A végleges eredmény továbbra is függ a választott modell referenciaérzékenységétől, a jelenet összetettségétől és attól, mennyire tér el a kezdőkép a 3D előnézettől. A bemutató ezért olyan modellt javasol, amely képi vagy videós referenciát is elfogad. <a href="https://youtu.be/miIDu04N7_4">A konkrét összeállítás Higgsfieldet, Seedance-et, Claude-ot és Blendert használ.</a></p>
+<p>Az ügynököt sem érdemes teljesen felügyelet nélkül hagyni. Praktikus ellenőrzési pontot tenni a jelenet felépítése, az első referencia-render és a külső generálás elé. Így egy hibás kameraút nem fogyaszt el több videógenerálási kreditet.</p>
+<h2>Egy egyszerű első próba</h2>
+<p>Első kísérletnek válassz egyetlen szereplőt, egyszerű hátteret és öt másodperces kameramozgást. Kérd meg az ügynököt, hogy építsen dobozokból helyettesítő geometriát, állítson be egy lassú oldalirányú mozgást, majd készítsen kis felbontású referencia-videót. Ha a kompozíció megfelelő, ugyanazt a renderelt mozgást már átadhatod a választott videómodellnek.</p>
+<p>A lényeg nem a Blender teljes automatizálása. Az érték abban van, hogy a nehezen megfogalmazható filmes döntést, vagyis a kamera pontos térbeli mozgását az ügynök kézzelfogható és újra felhasználható adattá alakítja.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
