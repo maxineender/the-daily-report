@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A jó médiás ügynök nem egy promptból dolgozik — LocalAgent Digest</title>
+  <meta name="description" content="A referenciakép, a karakterlap és az eredeti hangfelvétel fontosabb építőelem lett, mint az egyre hosszabb utasítás.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-07</div>
+          <h1 class="article-title">A jó médiás ügynök nem egy promptból dolgozik</h1>
+          <div class="article-sub">A referenciakép, a karakterlap és az eredeti hangfelvétel fontosabb építőelem lett, mint az egyre hosszabb utasítás.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="A jó médiás ügynök nem egy promptból dolgozik" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Az AI-videók és zenék készítésénél sokáig az volt a látványos bemutató, hogy valaki beír egy mondatot, majd megkapja a kész jelenetet vagy dalt. A mostani munkafolyamatok más képet mutatnak. A Grok Imagine 1.5 referenciaképet kér, az OpenArt-alapú rajzfilmes folyamat karakterlapot használ, a Suno stúdiómunkájában pedig valódi ének és kézzel igazított minta kerül a generált anyag mellé. A közös elem nem egy újabb promptfogás, hanem a tartós kreatív állapot kezelése. (<a href="https://youtu.be/EbDzfeBwszM">Curious Refuge</a>, <a href="https://youtu.be/JFUzS1I86c8">Dankieft</a>, <a href="https://youtu.be/iUsBqt0m6D4">Suno</a>)</p>
+<h2>A prompt nem projektfájl</h2>
+<p>Egy szöveges utasítás jól leírhatja, hogy egy férfi egy sajtszörny elől meneküljön, de önmagában nem őrzi meg pontosan a férfi arcát, a helyszín formáit vagy a kép vizuális nyelvét. A Grok Imagine 1.5 ezért különbséget tesz a feltöltött kép két felhasználása között: lehet belőle szó szerinti első képkocka, vagy olyan referencia, amelyből a modell a karaktert, terméket, helyszínt és stílust veszi át. Ez két eltérő művelet, ezért az automatizálásban sem célszerű ugyanazzal a paraméterrel kezelni őket. (<a href="https://youtu.be/EbDzfeBwszM">Curious Refuge</a>)</p>
+<p>Az első képkocka időbeli kötöttséget hoz létre: a generált videónak abból az állapotból kell elindulnia. A referencia ezzel szemben vizuális szabályokat ad, de nagyobb szabadságot hagy a jelenet nyitásához. Egy videós ügynöknek tehát nemcsak azt kell tudnia, melyik képfájlt töltse fel, hanem azt is, milyen szerepet kapjon az adott fájl. A forrásképet, a módot és a jelenet promptját együtt érdemes verziózni. (<a href="https://youtu.be/EbDzfeBwszM">Curious Refuge</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A médiakészítő folyamatodban a referenciák legyenek első osztályú fájlok, saját azonosítóval és változattal. Az ügynök ne próbálja minden alkalommal szövegből újraalkotni ugyanazt a szereplőt, hanem a jóváhagyott karakterképet adja át a következő generálásnak.</p></blockquote>
+<h2>A karakterlap közös szerződés</h2>
+<p>A Dankieft által bemutatott rajzfilmes folyamat öt részt választ el: stílus, karakter, helyszín, hang és animáció. Az első lépésben több mint 30 vizuális irány közül lehet választani, majd egy konkrét szereplőről karakterlap készül. Ezután a helyszín, a hang és a mozgás már erre a rögzített alapra épül. (<a href="https://youtu.be/JFUzS1I86c8">Dankieft</a>)</p>
+<p>Ez ügynökrendszerként is tisztább szerkezetet ad. Egy szereplőtervező alügynök elkészítheti a karakterlapot, egy másik a helyszíneket, egy harmadik pedig az animációs feladatokat. A köztük átadott objektum nem egy hosszú beszélgetés, hanem néhány fájl és strukturált mező: karakterazonosító, stílusazonosító, referenciaképek, hangprofil és jelenetlista. A feladatok így külön megismételhetők anélkül, hogy minden hibánál az egész filmet újra kellene kezdeni. A munkafolyamat lépéseinek elkülönítését a bemutató konkrétan is végigvezeti. (<a href="https://youtu.be/JFUzS1I86c8">Dankieft</a>)</p>
+<p>A karakterlap egyben ellenőrzési pont. Mielőtt az ügynök több tucat jelenetet generálna, megállhat emberi jóváhagyásért. Ha a szereplő megfelelő, a fájl zárolható, és a további alügynökök csak olvasási jogosultságot kapnak hozzá. Ezzel kisebb az esélye annak, hogy egy későbbi részfeladat véletlenül átírja a projekt vizuális alapját. A bemutatott OpenArt-folyamat is a karakter létrehozását helyezi az animáció elé. (<a href="https://youtu.be/JFUzS1I86c8">Dankieft</a>)</p>
+<h2>A zenei hiba néha szerkesztési feladat</h2>
+<p>A Suno felvételén a zenészek nem kész termékként fogadják el a modell eredményét. Élő éneket vesznek fel, mintákat próbálnak ki, majd egy 87 és 88 BPM közötti eltérés miatt feldarabolják és újra időzítik az anyagot. A generálás itt a stúdiófolyamat egyik része, nem annak helyettesítője. A Weirdness beállítással azt is szabályozzák, mennyire merészen térjen el az eredmény a megszokottól. (<a href="https://youtu.be/iUsBqt0m6D4">Suno</a>)</p>
+<p>Ebből az következik, hogy a zenei ügynöknek nemcsak promptokat és kész hangfájlokat kell kezelnie. Szüksége van BPM-re, ütemrácsra, sávnevekre, változatokra és vágási pontokra is. Ha egy énekminta csúszik, ne kérjen automatikusan teljesen új dalt, hanem jelölje ki az érintett részt, készítsen javított változatot, majd tegye az eredeti mellé. A Suno-videóban bemutatott kézi mintavágás pontosan ezt a részleges javítási logikát példázza. (<a href="https://youtu.be/iUsBqt0m6D4">Suno</a>)</p>
+<h2>A tartós állapot többet ér a hosszabb promptnál</h2>
+<p>A három folyamat más médiumon dolgozik, mégis ugyanazt a szerkezetet használja. Van egy jóváhagyott bemenet, például referenciakép, karakterlap vagy emberi hang. Ehhez tartoznak strukturált beállítások, majd több részleges generálás és szerkesztési kör következik. A végeredmény nem egyetlen modellválasz, hanem fájlok, döntések és változatok lánca. (<a href="https://youtu.be/EbDzfeBwszM">Curious Refuge</a>, <a href="https://youtu.be/JFUzS1I86c8">Dankieft</a>, <a href="https://youtu.be/iUsBqt0m6D4">Suno</a>)</p>
+<p>Ha ilyen ügynököt építesz, a legfontosabb komponens könnyen lehet nem maga a generátor, hanem a projektállapotot kezelő réteg. Ennek kell tudnia, melyik referencia lett jóváhagyva, melyik jelenet melyik modellből származik, milyen beállításokkal készült, és melyik rész vár emberi döntésre. A modellek cserélődhetnek, de egy rendezett projektmappa, rögzített metaadat és visszavonható munkafolyamat több generátoron keresztül is használható marad. Ezt a referenciaalapú videó, az ötlépcsős rajzfilm és a sávonként szerkesztett zene egyaránt alátámasztja. (<a href="https://youtu.be/EbDzfeBwszM">Curious Refuge</a>, <a href="https://youtu.be/JFUzS1I86c8">Dankieft</a>, <a href="https://youtu.be/iUsBqt0m6D4">Suno</a>)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

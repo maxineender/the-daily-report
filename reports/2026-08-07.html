@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Egy modell, kevesebb útválasztás — LocalAgent Digest</title>
+  <meta name="description" content="Az OpenAI összevonja a gyors és gondolkodó módot, miközben a videós és zenei munkafolyamatok egyre inkább referenciákra épülnek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-07</div>
+          <h1 class="article-title">Egy modell, kevesebb útválasztás</h1>
+          <div class="article-sub">Az OpenAI összevonja a gyors és gondolkodó módot, miközben a videós és zenei munkafolyamatok egyre inkább referenciákra épülnek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Egy modell, kevesebb útválasztás" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép reggelt! A nap legfontosabb híre, hogy a GPT-5.6 Sol már ugyanazon modellen belül kezeli a gyors válaszokat és a hosszabb gondolkodást, ami egyszerűbbé teheti az ügynökök modellválasztását. A mai médiaeszközök közben ugyanabba az irányba haladnak: az egyszeri prompt helyett referenciaképekből, karakterlapokból és emberi felvételekből építenek újrahasznosítható munkafolyamatot.</p>
+<h2>A GPT-5.6 Sol egyesíti a gyors választ és a mélyebb gondolkodást</h2>
+<p>Az OpenAI frissítette a GPT-5.6 Sol modellt, amely mostantól a rövid beszélgetéseket és a hosszabb következtetést is egyetlen modellként kezeli. Ezekhez korábban külön modelleket használt a ChatGPT. A vállalat emellett korlátlan Luna szöveges beszélgetést ad az ingyenes felhasználóknak.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha felhős modellt is használsz tartalékként, kevesebb kézzel írt útválasztási szabályra lehet szükséged a gyors és összetett feladatok között. A Luna ingyenes elérése kézi teszteléshez jó összehasonlítási alap, de automatizált futtatás előtt külön ellenőrizd, hogy az API-ra is ugyanazok a korlátok vonatkoznak-e.</p></blockquote>
+<p class="price-line">Ár: a Luna szöveges chatje ingyenes; a Sol árát nem közölték</p>
+<p>Forrás: <a href="https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt">OpenAI</a></p>
+<h2>A Grok Imagine 1.5 már referenciaképből tartja egyben a szereplőt</h2>
+<p>A Grok Imagine 1.5 videógenerátora kétféleképpen használhatja a feltöltött képet: konkrét első képkockaként vagy lazább vizuális referenciaként. A Curious Refuge tesztje szerint az utóbbi mód fő célja, hogy ugyanaz a karakter, termék vagy helyszín több generálásban is felismerhető maradjon. A felvétel készítésekor az eszköz csak az Egyesült Államokban volt elérhető, további piacokra fokozatosan vezetik be.</p>
+<blockquote><p>A saját ügynököd előbb készíthet egy jóváhagyott karakterképet, majd ugyanazt a fájlt minden jelenethez referenciaként továbbíthatja. Érdemes külön tárolni a képet, a promptot és a választott referencia-módot, mert az első képkocka és a stílusreferencia nem felcserélhető beállítás.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/EbDzfeBwszM">Curious Refuge teszt</a></p>
+<h2>Öt külön lépésben stabilabb az AI-rajzfilm</h2>
+<p>A Dankieft által bemutatott OpenArt-munkafolyamat külön kezeli a vizuális stílust, a karaktereket, a helyszíneket, a hangokat és az animációt. A folyamat több mint 30 előre bemutatott stílusból indul, majd prompttal létrehozott karakterlapokra építi a jeleneteket. A lépések szétválasztása lehetővé teszi, hogy egy hibás animáció miatt ne kelljen újratervezni az egész szereplőt.</p>
+<blockquote><p>Ezt öt külön ügynökfeladatra bonthatod, közös projektmappával és rögzített fájlnevekkel. A karakterlap legyen zárolt bemenet, ne egy korábbi beszélgetésből visszaidézett leírás, így a későbbi jelenetek kevésbé függnek a modell memóriájától.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/JFUzS1I86c8">Dankieft munkafolyamata</a></p>
+<h2>A Suno-menetben az emberi felvétel nem csak prompt lett</h2>
+<p>Kalisway, Forte Bowie és Crook Brown közös Suno-menetében élő éneket és zenei ötleteket vittek be a Studio munkafolyamatába. A generált és felvett részeket nem hagyták érintetlenül: egy 87 és 88 BPM közötti eltérés miatt a mintát kézzel feldarabolták és újra igazították. A résztvevők a Weirdness beállítást is használták annak szabályozására, mennyire térjen el az eredmény a megszokottól.</p>
+<blockquote><p>Ha a saját ügynököd zenét készít, ne a teljes dal újragenerálása legyen az egyetlen javítási lehetőség. Mentse külön az eredeti hangot, a generált változatot, a BPM-et és a vágási pontokat, majd csak az eltérő szakaszokat dolgozza újra.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://youtu.be/iUsBqt0m6D4">Suno, In The Cut</a></p>
+<h2>A Venice már a beszélgetésen belül futtatja a generált programot</h2>
+<p>A Venice agentic chat új Code Sandbox módja a beszélgetésben készíti el és futtatja a kért programot. A bemutatott példák között görgethető weboldal, mozgatható térkép és játszható Doom is szerepel. A szolgáltatás közlése szerint a munkamenetek alapértelmezés szerint privátak, és nincs külön telepítési vagy kiadási lépés.</p>
+<blockquote><p>Ez gyors prototípushoz kényelmes, de a sandboxot kezeld ideiglenes végrehajtási környezetként, ne végleges célgépként. A saját ügynököd csak szintetikus tesztadatot küldjön bele, az elkészült kódot pedig mentse helyi verziókezelésbe, mielőtt további jogosultságokat kap.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://venice.ai/chat/agent">Venice Agent</a></p>
+<h2>A Perplexity Terra lett a Computer alügynökeinek alapmodellje</h2>
+<p>A Perplexity a GPT-5.6 Terrát állította be a Computer összes alügynökének alapértelmezett modelljeként. Aravind Srinivas szerint a döntést a modell képessége és költsége közötti arány indokolta. A Terra emellett választható központi koordinátorként is a Computer felhasználóinak.</p>
+<blockquote><p>Ez jó emlékeztető arra, hogy a koordinátor és a végrehajtó alügynökök modelljeit külön konfiguráld. Ha a helyi modelled elég az ismétlődő eszközhívásokhoz, csak a tervezést vagy a hibás futások felülvizsgálatát irányítsd drágább távoli modellhez.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2085444242227523882">Aravind Srinivas bejelentése</a></p>
+<h2>Az Ask Maps már ételrendelést és több lépéses ügyintézést is vállal</h2>
+<p>A Google kibővítette az Ask Maps funkciót ételrendeléssel, szálláskereséssel és valós idejű tömegközlekedési késésadatokkal. Gmail-kapcsolattal a rendszer a meglévő repülőjegyeket, foglalásokat és utazási terveket is figyelembe veheti. A frissítések fokozatosan jelennek meg a felhasználóknál.</p>
+<blockquote><p>A saját ügynöködben különítsd el a keresési és a tranzakciós jogosultságot. Egy térképes alügynök szabadon gyűjthet opciókat, de rendeléshez vagy foglaláshoz kérjen megerősítést, és csak a szükséges levelezési adatokat kapja meg.</p></blockquote>
+<p class="price-line">Ár: nem közölték</p>
+<p>Forrás: <a href="https://blog.google/products-and-platforms/products/maps/order-food-in-ask-maps/">Google</a></p>
+<h2>A Google megnyitja a WeatherNext 2 ciklonmodelljét</h2>
+<p>A Nature-ben közölt eredmények szerint a WeatherNext 2 egyszerre javította a trópusi ciklonok pályájának, intenzitásának és szélszerkezetének előrejelzését. A Google ezt nagyjából egy évtizednyi meteorológiai fejlődésnek megfelelő ugrásként írja le. A modellt a globális kutatói közösség számára nyíltan hozzáférhetővé teszik.</p>
+<blockquote><p>Időjárási vagy kockázatfigyelő ügynöknél ez új adatforrás lehet, de a modell kimenete ne váltson ki automatikusan nagy következményű műveletet. A saját rendszered rögzítse a modellverziót, az előrejelzés időpontját és a mellette használt hivatalos riasztást is.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-2-cyclones/">Google WeatherNext 2</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory">TencentDB Agent Memory</a></strong> - A rendszer az ügynökök beszélgetéseiből, dokumentumaiból, kódjából és eszköznaplóiból négy megosztható memóriatípust készít: Chat Memory, Skill, LLM-Wiki és Code-Graph. A rövid távú eszköznaplókat tömör Mermaid-szimbólumokká alakítja, a hosszú távú beszélgetéseket pedig strukturált személy- és jelenetleírásokká rendezi; az átadott README-részlet az OpenClaw-integrációt említi, de a telepítés módját nem részletezi. Nincs megadott licence, ezért alapértelmezés szerint nem szabadon felhasználható. A nem fork repó 2026. április 7-én jött létre, utolsó push-a 2026. augusztus 6-án volt, és 16 543 csillagnál jár. Saját ügynöknél a hosszú naplók tömörítésére és több ügynök közös memóriájára lehet hasznos, de a hiányzó licenc komoly felhasználási korlát.</p>
+<p><strong><a href="https://github.com/lidge-jun/opencodex">opencodex</a></strong> - Az opencodex helyi proxyt indít a `localhost:10100` címen, és a Codex Responses API-ját a kiválasztott szolgáltató formátumára fordítja, beleértve a streamelést, eszközhívásokat, gondolkodási tokeneket és képeket. Az `npm install -g @bitkyc08/opencodex` telepítés után az `ocx start` paranccsal fut, és Claude, Gemini, Grok, DeepSeek, Kimi, Qwen, Ollama, illetve más modelleket kapcsolhat a Codexhez vagy a Claude Code-hoz. ChatGPT-fiókcsoportot is kezelhet, kvóta alapján osztva el az új munkameneteket, miközben a meglévő szálakat az eredeti fióknál tartja. MIT-licencű, nem fork, 2026. június 18-án hozták létre, utolsó push-a 2026. augusztus 7-én volt, és 8 098 csillaggal rendelkezik. Saját ügynöknél egységes modellkapuként használható, így szolgáltatóváltáskor nem kell átírni a teljes eszközréteget.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fókusza az ügynökök eszközhasználata és biztonsága, valamint a szerkeszthető videós munkafolyamatok és a helyben futó modellek.</p>
+<p><strong>@AnthropicAI</strong> -- Az AISI tesztje arra figyelmeztet, hogy az internethez hozzáférő ügynököknél a jogosultságokat, a naplózást és az emberi jóváhagyást már a futtatás előtt rendezni kell.<br>> "engaged in sustained, potentially harmful activity directed at real people and organisations"<br><a href="https://x.com/AnthropicAI/status/2084748111239344556">link</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini Flash modellek egy menetben használhatják a keresést és a Google Mapset, így az ügynökök összetettebb helyalapú feladatokat végezhetnek külön eszközváltás nélkül.<br>> "you can now use the Google Maps and Google Search tool at the same time"<br><a href="https://x.com/OfficialLoganK/status/2084469065322729817">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Seedance 2.5 már egyben készít 30 másodperces videót, sok referenciaanyagot kezel, és időpont alapján enged javítani egy jelenetet.<br>> "Native 30-second video generation in one pass"<br><a href="https://x.com/AIHighlight/status/2085302725059743956">link</a></p>
+<p><strong>@rryssf</strong> -- Egy Claude Code skill modellek letöltése nélkül emel ki kulcsképeket, így a helyi ügynök nem csak átiratból elemezhet videót.<br>> "install it as a Claude Code skill and Claude can watch videos on its own."<br><a href="https://x.com/rryssf/status/2084971328633995569">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Claude Design animációs módja szerkeszthető jeleneteket és valódi idővonalat ad, ezért a generált mozgógrafika tovább alakítható egy munkafolyamatban.<br>> "get back an editable, on-brand animation (not a black box)."<br><a href="https://x.com/futurepedia_io/status/2084844188181598394">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Bland Speech v3 szüneteket, levegővételeket és instrukcióval vezérelt hanghatásokat generál, ami természetesebb telefonos ügynökök építéséhez ad új vezérlőket.<br>> "it keeps the breaths, stumbles and pauses real people make"<br><a href="https://x.com/futurepedia_io/status/2085123689297948935">link</a></p>
+<p><strong>@Thom_Wolf</strong> -- A többügynökös rendszereknél már nem csak a feladatbontás, hanem az ügynökök közötti együttműködés megfigyelése és korlátozása is külön tervezési kérdés.<br>> "the agents, they just want to collaborate"<br><a href="https://x.com/Thom_Wolf/status/2085302365096165494">link</a></p>
+<p><strong>@itsPaulAi</strong> -- A GOAI nyílt AI-versenye külön kategóriát ad az ügynökinfrastruktúrának és a nagyobb önállóságú ügynököknek, 730 ezer dollár körüli összdíjazással.<br>> "The GOAI Global Open-source AI Challenge is live."<br><a href="https://x.com/itsPaulAi/status/2084658959831757224">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Kimi K3 teljes modellje 16 GB10 egységen 20 token/másodperc felett fut, ami konkrét viszonyítási pont nagy modell helyi klaszteres kiszolgálásához. (1777 pont, 335 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vfl525/kimi_k3_full_model_running_on_16x_gb10_cluster_at/">link</a></p>
+<p><strong>r/MachineLearning</strong> -- A Bad Apple videó 3 MB-os neurális hálóba tömörítése azt mutatja meg, hogyan kódolható mozgókép egy apró, helyben futtatható modell súlyaiba. (202 pont, 41 komment)<br><a href="https://www.reddit.com/r/MachineLearning/comments/1vfrco1/i_compressed_bad_apple_into_a_3mb_neural_network_p/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
