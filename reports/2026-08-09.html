@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Prime Agent tartós memóriával viszi tovább a hosszú feladatokat — LocalAgent Digest</title>
+  <meta name="description" content="Közvetlenül kommunikáló munkamenetek, helyi AWS-emuláció és egy 32 szereplős videós terhelési próba került a mai válogatásba.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-09</div>
+          <h1 class="article-title">A Prime Agent tartós memóriával viszi tovább a hosszú feladatokat</h1>
+          <div class="article-sub">Közvetlenül kommunikáló munkamenetek, helyi AWS-emuláció és egy 32 szereplős videós terhelési próba került a mai válogatásba.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A Prime Agent tartós memóriával viszi tovább a hosszú feladatokat" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép vasárnapot! A nap legfontosabb tétele a Prime Agent, mert a hosszú feladatokat nem egyetlen beszélgetésként, hanem visszaállítható állapottal, futva maradó alügynökökkel és javítható munkamintákkal kezeli. A többi hír is a folytonosságról szól: hogyan oszthatnak meg összefoglalókat a párhuzamos munkamenetek, miként tesztelhető helyben a felhős infrastruktúra, és hol törik meg egy videómodell összetett jelenetnél.</p>
+<h2>A Prime Agent futva marad a terminál bezárása után is</h2>
+<p>A PrimeIntellect Prime Agent egy MIT-licencű kódoló és kutatóügynök, amely tartós IPython-környezetben kezeli a fájlműveleteket, parancsokat és alügynököket. A kiegészítő promptokat, emlékeket, készségleírásokat és újrahasználható alügynök-specifikációkat tartós állapotban tárolja, a `/refine` paranccsal pedig bizonyítékokra támaszkodó, visszavonható módosításokat végezhet ezen az állapoton. A háttérfolyamatként futó munkamenetek terminálbontás után is folytatódhatnak, az ügynökök közvetlenül üzenhetnek egymásnak, a hosszú feladatokat pedig célok, ütemezések, szívverések és automatikus kontextustömörítés tartja mozgásban.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A daemonos futást és az újracsatlakozást olyan feladatnál érdemes kipróbálni, amely több terminálmeneten át tart. A `/refine` módosításaihoz pillanatképek tartoznak, így egy rosszul bevált munkaminta visszaállítható anélkül, hogy az alap rendszerpromptot átírná az ügynök.</p></blockquote>
+<p>Forrás: <a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a></p>
+<h2>A Claude Code munkamenetei összefoglalókat küldhetnek egymásnak</h2>
+<p>A Futurepedia beszámolója szerint az egy gépen futó Claude Code-munkamenetek már két irányban üzenhetnek egymásnak. Nem a teljes előzményt vagy a fájlokat adják át, hanem összefoglalót, és egy munkamenet saját kezdeményezésre is jelezhet a másiknak, ha az általa végzett módosítás érinti annak feladatát. Az azonos gépen küldött üzenetek a beszámoló szerint helyben maradnak, nem kerülnek az Anthropic szervereire.</p>
+<blockquote><p>Az összefoglaló nem állapotszinkronizálás. Párhuzamos kódolóügynököknél ezért az átadott üzenetbe érdemes beletenni az érintett fájlútvonalat, ágnevet vagy commitazonosítót, különben a fogadó munkamenet csak azt tudja, mi változott, magát a változást nem kapja meg.</p></blockquote>
+<p>Forrás: <a href="https://x.com/futurepedia_io/status/2086082389542105097">Futurepedia</a></p>
+<h2>A Floci helyben utánozza az AWS szolgáltatásait</h2>
+<p>A Floci egy MIT-licencű, helyi AWS-emulátor fejlesztéshez, teszteléshez és CI-folyamatokhoz. Fiók és hitelesítési token nélkül indítható a `floci start` paranccsal vagy Docker Compose-zal, majd az AWS SDK, CLI, Terraform, CDK, OpenTofu és a tesztek a `http://localhost:4566` címre irányíthatók. Így a meglévő AWS-munkafolyamatok felhős kapcsolat nélkül is megtarthatók.</p>
+<blockquote><p>Ha az ügynököd S3-at, SQS-t vagy más AWS-formájú szolgáltatást kezel, a fejlesztői végpontot átállíthatod a Floci 4566-os portjára. Ez konkrét lehetőséget ad a fájlfeltöltés, sorba állítás és infrastruktúra-módosítás helyi próbájára, mielőtt valódi felhős erőforráshoz engednéd az ügynököt.</p></blockquote>
+<p>Forrás: <a href="https://github.com/floci-io/floci">Floci</a></p>
+<h2>FRISSÍTÉS: Öt próbálkozás kellett a Seedance 2.5 harminckét szereplős jelenetéhez</h2>
+<p>A Curious Refuge 32 különböző ember referenciaképéből próbált egyetlen, folyamatos Seedance 2.5-jelenetet készíteni a Dreaminában. A végül elkészült klip a szereplők jelentős részét felismerhetően tartotta, de körülbelül öt generálás kellett hozzá, mert a korábbi próbák hibával leálltak. A teszt egy másik gyakorlati korlátot is kiemelt: a 30 másodperces mód 720p felbontást adott, miközben a Seedance 2.0 akár 4K-s kimenetet is kínál.</p>
+<blockquote><p>Többszereplős automatikus videófolyamatnál ne egyetlen generálás sikerére építs. A teszt alapján érdemes újrapróbálkozási keretet és 720p-s kimenetellenőrzést beállítani, majd csak a sikeres klipet továbbadni a felskálázó vagy vágó lépésnek.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/N7zh3PoMeSk">Curious Refuge tesztje</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/cobusgreyling/loop-engineering">Loop Engineering</a></strong> - A CLI készségeket, állapot- és költségkeretfájlokat hoz létre egy ügynökhurokhoz, majd kiszámítja a „Loop Ready” pontszámot és kiírja az első futtatandó parancsot. A `loop doctor` auditot, szinkronizálást és fájlellenőrzést egyesít, az eredményt pedig három következő teendőre szűkíti; Claude, Codex, OpenCode és Grok eszközválasztás is szerepel a README-ben. A repó MIT-licencű, nem fork, 2026. június 9-én hozták létre, utolsó push-a 2026. augusztus 9-én történt, és 10 000 csillagnál jár. Saját ügynöknél akkor hasznos, ha az ismétlődő promptolás helyett verziózott állapotot, költségkeretet és ellenőrizhető futási hurkot szeretnél kialakítani.</p>
+<p><strong><a href="https://github.com/diegosouzapw/OmniRoute">OmniRoute</a></strong> - Az OmniRoute egyetlen átjáró mögé gyűjt 43 szolgáltatói készletet és 516 modellt, a dokumentált ingyenes keretek aktuális összegét pedig külön műszerfalon számolja. A README körülbelül havi 1,53 milliárd ingyenes tokent jelez, ezt kéthetente újraellenőrzi, és a megszűnő kereteket levonja az összesítésből. Kvótafüggő automatikus tartalékmodellt, MCP- és A2A-kapcsolatot, valamint 15 és 95 százalék közötti megtakarítást ígérő tokentömörítést is tartalmaz. A repó MIT-licencű, nem fork, 2026. február 13-án jött létre, utolsó push-a 2026. augusztus 9-i, és 43 519 csillaga van. Saját ügynöknél a szolgáltatói kvóták közötti automatikus váltásra lehet jó, de az ingyenes kapacitás nem állandó, mert maga a projekt is változó katalógusként kezeli.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fókusza az új modellek gyakorlati bevetése, a többügynökös rendszerek irányítása és a generatív videós eszközök gyors fejlődése.</p>
+<p><strong>@sama</strong> -- Az OpenAI Astra erős kódoló és kiberbiztonsági képességeket ígér, de a szélesebb hozzáférést további biztonsági munka előzi meg.<br>> "astra is a powerful model and we are working to make it generally available."<br><a href="https://x.com/sama/status/2085862292311396515">link</a></p>
+<p><strong>@gdb</strong> -- A Codex már minden GitHub pull requestet átvizsgálhat, így az automatizált biztonsági ellenőrzés közvetlenül beépíthető a fejlesztési folyamatba.<br>> "Codex can now perform a security review of every GitHub pull request"<br><a href="https://x.com/gdb/status/2085496677725860064">link</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity a költséghatékony GPT 5.6 Terrát tette meg alügynökei alapmodelljének, ami jól mutatja, hogy a többmodell-es rendszerekben nem mindig a legerősebb modell az optimális választás.<br>> "We’re making it the default for all subagents inside Perplexity Computer harness."<br><a href="https://x.com/AravSrinivas/status/2085444242227523882">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Will Smith-spagettivideók újabb változata jól szemlélteti, mennyit javult a generált mozgás, az arcok és a tárgyinterakciók minősége.<br>> "Will Smith has come a long way from just eating Spaghetti."<br><a href="https://x.com/AIHighlight/status/2085660154066804981">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Seedance 2.5-tel egy harminc másodperces videó számított renderköltsége 3,60 dollár, ami már kis gépen szervezett automatizált tartalomgyártásnál is tervezhető tétel.<br>> "At $0.12 a second, a 30 second render costs $3.60."<br><a href="https://x.com/AIHighlight/status/2086118638008844617">link</a></p>
+<p><strong>@rryssf</strong> -- A Loop Engineering egy csomagban ad eszközöket kódoló ügynökök vezérléséhez, az auditáló komponens pedig GitHub Actionként a saját tárolóját is ellenőrzi.<br>> "a toolkit for designing the systems that orchestrate AI coding agents"<br><a href="https://x.com/rryssf/status/2086187697509687331">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A GPT-5.6 Sol egységesen megjelenik a fizetős ChatGPT-munkamenetekben, és kérdésenként szabályozható lesz a gondolkodási ráfordítás.<br>> "paid users get GPT-5.6 Sol across every chat"<br><a href="https://x.com/futurepedia_io/status/2085712574382018696">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Claude Fable 5 biológiai finomhangolása mintegy 85 százalékkal csökkentette a gyengébb modellre tereléseket, így az egészségügyi segédfolyamatok gyakrabban maradhatnak a képességesebb modellen.<br>> "the update cut biology-related 'fallbacks' by ~85%"<br><a href="https://x.com/futurepedia_io/status/2085576281823842474">link</a></p>
+<p><strong>r/comfyui</strong> -- Egy fejlesztő egy év alatt nyílt forrású alkalmazást épített a ComfyUI fölé, hogy egyszerűbb felületet adjon a helyben futó képgenerálási munkafolyamatokhoz. (328 pont, 75 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1vh32n7/comfyui_stopped_feeling_comfy_so_i_spent_a_year/">link</a></p>
+<p><strong>r/AI_Agents</strong> -- A vita azt boncolgatja, hogy az ügynöki autonómia mennyiben csak architekturális látszat, ami fontos szempont a felügyelet, a jogosultságok és a hibakezelés tervezésekor. (38 pont, 36 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1viprrk/can_we_please_have_an_honest_conversation_about/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

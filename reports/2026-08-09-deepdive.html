@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitől marad működőképes egy ügynök több terminálmeneten át? — LocalAgent Digest</title>
+  <meta name="description" content="A Prime Agent tartós futtatókörnyezettel, visszaállítható munkamintákkal és közvetlen alügynök-kommunikációval közelíti meg a hosszú feladatokat.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-09</div>
+          <h1 class="article-title">Mitől marad működőképes egy ügynök több terminálmeneten át?</h1>
+          <div class="article-sub">A Prime Agent tartós futtatókörnyezettel, visszaállítható munkamintákkal és közvetlen alügynök-kommunikációval közelíti meg a hosszú feladatokat.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mitől marad működőképes egy ügynök több terminálmeneten át?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A hosszú ügynökfeladatok egyik fő problémája nem feltétlenül a modell képessége. Sokkal prózaibb gond, hogy a munka elveszíti a szerkezetét: megtelik a kontextus, bezárul a terminál, eltűnik egy alügynök eredménye, vagy a következő munkamenet már nem tudja, melyik döntés miért született. A <a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a> ezt nem nagyobb beszélgetési ablakkal próbálja megoldani, hanem tartós futtatókörnyezettel és külön kezelhető munkamemóriával.</p>
+<h2>A beszélgetés helyett a futtatókörnyezet az alap</h2>
+<p>A Prime Agent egyik központi eleme egy tartós IPython-környezet. A fájlműveletek, shellparancsok, eszközhívások, kontextuskezelés és alügynökök indítása programkódból történik, nem egymástól elszigetelt szöveges válaszok sorozataként. Az RLM, vagyis Recursive Language Model megközelítésben a prompt változóként, az eszköz és az alügynök pedig meghívható függvényként jelenik meg a futó környezetben. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<p>Ez azért fontos különbség, mert egy hosszabb munkafolyamat állapota nem kizárólag a modell aktuális kontextusában létezik. A vezérlőprogram megőrizhet változókat, részeredményeket és futó gyermekügynököket, majd később programozottan visszatérhet hozzájuk. A `rlm(...)` hívás valódi alügynököt indít párhuzamos vagy háttérmunkára, az eredményét pedig a program közvetlenül felhasználhatja. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<h2>Különválik az alaputasítás és a tanuló munkaminta</h2>
+<p>A Continual Harness kiegészítő promptokat, emlékeket, készségleírásokat és újrahasználható alügynök-specifikációkat tárol tartós állapotként. Ezek alapértelmezés szerint a munkamenethez helyben kapcsolódnak, de túlélhetnek egyetlen csevegőablakot. A cél nem az, hogy a modell minden korábbi szöveget magával cipeljen, hanem hogy a később is hasznos működési minták külön, kezelhető rétegbe kerüljenek. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<p>A `/refine` parancs átnézi az aktuális munkafolyamatot, majd kis, bizonyítékokkal alátámasztott módosításokat végezhet ezen a kiegészítő állapoton. Az alap rendszerprompt változatlan marad, a módosításokról pedig pillanatképek készülnek, amelyekből vissza lehet állni. Ez lényegesen szűkebb és ellenőrizhetőbb mechanizmus annál, mint amikor egy ügynök korlátozás nélkül átírhatja a saját alaputasításait. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A `/refine` használatát érdemes egy jól mérhető, ismétlődő munkafolyamatra korlátozni, például teszthibák osztályozására vagy kiadási jegyzetek összeállítására. Ha a módosított munkaminta rosszabb eredményt ad, a tárolt pillanatképből visszaállítható, miközben az alap rendszerprompt érintetlen marad.</p></blockquote>
+<h2>A terminálkapcsolat nem azonos a munkamenettel</h2>
+<p>A Prime Agent daemon mögött futtatja az ügynököket. Emiatt a munka a terminál bontásakor nem feltétlenül áll le, a felhasználó pedig később újra csatlakozhat ugyanahhoz a munkamenethez. Az automatikus kontextustömörítés, a tartós célok, a szívverések, az ütemezések és az autonóm mód arra szolgálnak, hogy a hosszú feladatok több fordulón és terminálmeneten át is folytatódjanak. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<p>Ez a működés például egy nagyobb repó elemzésénél, több tesztkörből álló hibajavításnál vagy hosszabb kutatási feladatnál lehet érdekes. A felhasználónak nem kell nyitva tartania ugyanazt a terminált csak azért, hogy a háttérfolyamat életben maradjon. Ettől azonban a feladat még nem válik automatikusan megbízhatóvá: a tartós cél és a megőrzött állapot azt biztosítja, hogy folytatható legyen, nem azt, hogy minden köztes döntés helyes. A projekt ehhez visszaállítható állapotot és programozható vezérlést ad. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<h2>Az alügynökök nem csak a felhasználón keresztül beszélnek</h2>
+<p>A futó ügynökök közvetlenül üzenhetnek egymásnak, és egymás munkáját is szervezhetik. Ez csökkenti azt a kézi közvetítést, amikor az egyik terminál eredményét ki kell másolni, majd beilleszteni egy másik munkamenetbe. A megtartott alügynökök a későbbi fordulókban is elérhetők maradhatnak, így nem kell minden részfeladatot új szereplővel és üres kontextussal újrakezdeni. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<p>A közvetlen kommunikáció leginkább akkor ad tiszta szerkezetet, ha az alügynökök feladata és kimenete eleve géppel feldolgozható. Egyikük összegyűjtheti a hibás teszteket, másikuk módosításokat készíthet, a vezérlő pedig a visszaadott eredmények alapján dönthet a következő hívásról. A Prime Agent programozott alügynök-kezelése ehhez függvényhívásként elérhető eredményeket kínál. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<h2>A készségek futtatható Python-csomagok</h2>
+<p>A projekt készségei importálható Python-csomagok, nem pusztán szöveges utasításfájlok. A beépített készségkészítő egy ismétlődő munkafolyamatot projekt- vagy személyes készséggé alakíthat, amelyet később ugyanabból a futtatókörnyezetből lehet használni. Ez összekapcsolja a tartós munkamintát a ténylegesen végrehajtható műveletekkel. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+<p>A Prime Agent tehát nem egyszerűen hosszabb memóriát kínál. Szétválasztja a futó programállapotot, a javítható kiegészítő munkamintákat, az alap rendszerpromptot és az újrahasználható készségeket. Saját gépen futó ügynöknél ez a szerkezet akkor lehet igazán értékes, ha a feladat több órán vagy több munkameneten át tart, és fontosabb a visszaállíthatóság, mint az, hogy minden előzmény egyetlen hatalmas promptban maradjon. (<a href="https://github.com/PrimeIntellect-ai/prime-agent">Prime Agent</a>)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
