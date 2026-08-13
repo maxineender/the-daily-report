@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A modell olcsóbb lett, a körítés még keresi a helyét — LocalAgent Digest</title>
+  <meta name="description" content="Pontosabb Seedance-munkafolyamat, kedvező Grok-teszt és két használható helyi integráció.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-13</div>
+          <h1 class="article-title">A modell olcsóbb lett, a körítés még keresi a helyét</h1>
+          <div class="article-sub">Pontosabb Seedance-munkafolyamat, kedvező Grok-teszt és két használható helyi integráció.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A modell olcsóbb lett, a körítés még keresi a helyét" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szervusz! A Grok 4.6 egy gyakorlati tesztben gyorsabban és olcsóbban kódolt riválisainál. A mai hírek közös kérdése, hogy a nyers modellképesség mellé milyen munkafolyamat, korlát és visszajelzés társul.</p>
+<h2>FRISSÍTÉS: Pontosabb referenciakeretet kapott a Seedance 2.5 munkafolyamata</h2>
+<p>Egy új, dokumentációra és több mint 2000 dollárnyi tesztelésre épülő bemutató pontosította a Seedance 2.5 bemeneti korlátait. Egy kérés legfeljebb 30 képet, 10 videót és 10 hangfájlt fogad; a videók együttes hossza legfeljebb 30 másodperc, és ugyanez vonatkozik a hangokra is. A 30 másodperces klipek mellett elérhető 180 másodperces mód valójában hat rész összefűzésére épül, miközben az egész történetet egy körülbelül 5000 karakteres promptnak kell vezérelnie.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A videós alügynök promptépítőjében érdemes 1-8 külön alanyra korlátozni a referenciákat, a beszédet, zenét és környezeti hangot pedig külön fájlokként átadni. Hosszabb jelenetnél a 180 másodperces mód helyett készíttess 30 másodperces szakaszokat, és az előző klipet add vissza videóreferenciaként.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/UxwV16jDglA">DanKieft Seedance 2.5 bemutatója</a></p>
+<h2>A Grok 4.6 harmadannyi költséggel előzte meg a GPT-5.6 Solt egy gyakorlati teszten</h2>
+<p>Alex Finn öt feladaton mérte össze a Grok 4.6-ot a GPT-5.6 Sollal, a Claude Fable 5-tel és részben az Opus 5-tel. Saját tesztsorában a Grok 18 perc alatt végzett a GPT-5.6 Sol 24 percével szemben, hozzávetőleg harmadannyi költséggel; egy 13 hibát tartalmazó kódtárban mindkét modell megtalálta az összes hibát. A fájlok, CSV-k és PDF-ek közötti keresési feladatban a Grok minden célt megtalált, míg a GPT két elemet kihagyott. A modell jelenleg Cursorban és a Grok Build parancssori eszközben használható, de a teszt szerint az általános számítógép- és böngészőkezelő környezet még elmarad a konkurens asztali alkalmazásoktól.</p>
+<p>Forrás: <a href="https://youtu.be/3-ahsHfFjwk">Alex Finn tesztje</a></p>
+<h2>A Claude Reflect megmutatja, milyen munkát adtál át a modellnek</h2>
+<p>A Claude beállításaiban megjelent Reflect 1, 3, 6 vagy 12 hónap használatából készít összesítést. Megmutatja többek között a beszélgetések számát, a legaktívabb napot, a csúcsidőszakot, a visszatérő témákat és az átruházott feladattípusokat. Ha ugyanazt a hátteret rendszeresen újra leírod, projekt létrehozását javasolja; külön csendes időszakok és szünetemlékeztetők is beállíthatók. Az inkognitó beszélgetéseket, az egészségügyi integrációkat és a csatlakoztatott eszközök mögöttes fájljait nem használja az összesítéshez.</p>
+<p>Forrás: <a href="https://futuretools.beehiiv.com/p/apple-sues-openai">FutureTools</a></p>
+<h2>Az AI-szagú bejegyzéseket visszafoghatja a LinkedIn új jelzése</h2>
+<p>A LinkedIn bejegyzésmenüjében megjelent a „Seems like AI slop” visszajelzés. A megjelölt poszt elérését a rendszer a szerző közvetlen hálózatán kívül csökkentheti, a szerző pedig privát értesítést kap az elemzési felületen. A döntést nem automatikus szövegdetektor hozza, hanem felhasználói jelzés, ezért a funkció vitás bejegyzések ellen is használható. A LinkedIn ezzel párhuzamosan kivezeti saját bejegyzésjavító AI-íróját, és olyan korrektúraeszközre cseréli, amely a szerző hangjának megtartását ígéri.</p>
+<p>Forrás: <a href="https://futuretools.beehiiv.com/p/ai-goes-to-washington">FutureTools</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/firecrawl/anydoc">anydoc</a></strong> - Rustban készült könyvtár, amely Word-, PowerPoint-, Excel-, OpenDocument-, RTF-, EPUB-, CSV- és PDF-fájlokat alakít egységes GitHub-Flavored Markdown formátumra. Parancssorból futtatható, továbbá Node.js-, Python- és böngészős WebAssembly-kötéseket ad; az Agent Skill Claude Code, Codex, Cursor és OpenCode környezetbe is telepíthető. A böngészős változat helyben dolgozza fel a fájlokat, viszont a beolvasott képalapú oldalakhoz nem tartalmaz saját OCR-t. MIT-licencű, 2026. augusztus 3-án hozták létre, az utolsó push augusztus 10-én érkezett, és 15 148 csillagnál jár. Jó bemeneti réteg lehet olyan saját ügynökhöz, amelynek többféle irodai dokumentumot kell egységes szöveggé alakítania.</p>
+<p><strong><a href="https://github.com/corsairdev/corsair">Corsair</a></strong> - MCP-alapú integrációs réteg, amely alkalmazáskapcsolatokat és eszközhívásokat ad az ügynöknek úgy, hogy az ne lássa a hozzáférési adatokat. A műveletekhez külön jogosultságok és szűkített hitelesítés rendelhető, például egy Drive-fájlból összeállított e-mail elküldéséhez. Nem fork, 2025. október 14-én jött létre, 2026. augusztus 13-án kapta a legutóbbi push-t, és 9713 csillaga van. Nincs megadott licence, ezért alapértelmezés szerint nem tekinthető szabadon felhasználhatónak. Technikailag hasznos köztes kapu lehet a saját ügynököd és külső alkalmazások között, de a licenc hiánya korlátozza, hogyan építheted be vagy módosíthatod.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A helyben futtatható új modellek mellett az önállóan dolgozó ügynökök és a személyes média-előállítás kerültek előtérbe.</p>
+<p><strong>@AravSrinivas</strong> -- Az új, nyílt súlyú Nemotron MoE laptopon és DGX Sparkon is futtatható, így helyi ügynökök alapmodellje lehet.<br>> "A great American open weights MoE model that can run efficiently on your laptop or local hardware like the DGX Spark!"<br><a href="https://x.com/AravSrinivas/status/2087252892378112310">link</a></p>
+<p><strong>@steipete</strong> -- Az ügynökfejlesztés súlypontja a parancssorból és az alkalmazásokból a tartós szolgáltatások, webes felületek és felhős munkamenetek felé tolódik.<br>> "now it’s services, web, cloud sessions."<br><a href="https://x.com/steipete/status/2087568620465607078">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Grok Bot külön számítógépet ad a párhuzamosan dolgozó ügynököknek, ami jól mutatja a tartós, többügynökös munkafolyamatok irányát.<br>> "a team of AI agents that each get their own computer in the cloud."<br><a href="https://x.com/futurepedia_io/status/2087356612138971421">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Lindy Slackben tanulja meg a csapat működését, ami a külön kezelőfelület helyett a meglévő kommunikációs csatornába költözteti az ügynököt.<br>> "Lindy Teammate lives in Slack, learns your business, and gets smarter the longer it works with you"<br><a href="https://x.com/futurepedia_io/status/2087158339675591069">link</a></p>
+<p><strong>@rowancheung</strong> -- A Meta közelgő Muse Glimmer és Muse Spark 1.2 modelljei új lehetőségeket ígérnek a saját kép- és videós munkafolyamatokhoz.<br>> "More details from Zuck on Muse Glimmer, Muse Spark 1.2 (coming soon)"<br><a href="https://x.com/rowancheung/status/2087204285792858186">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Az új Qwen kiadása körüli várakozás azért fontos, mert a család korábbi modelljei gyakori alapjai a helyben futó ügynököknek. (1333 pont, 204 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vm7iqx/its_the_final_countdown_baby_qwen_is_out_in_just/">link</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy felhasználó 24 órát adott az Opus 5-nek egy GTA6-szerű játék elkészítésére, ami látványos terhelési próba az önálló kódoló ügynökök számára. (677 pont, 163 komment)<br><a href="https://www.reddit.com/r/ClaudeAI/comments/1vmjzh7/i_asked_opus_5_to_build_gta6_on_its_own_in_24/">link</a></p>
+<p><strong>r/PromptEngineering</strong> -- Egy 15 másodperces hangmintából készített klón felolvassa a hírleveleket és szkripteket, így rövid bemenettel építhető személyes hanggeneráló folyamat. (126 pont, 36 komment)<br><a href="https://www.reddit.com/r/PromptEngineering/comments/1vkeyzj/cloned_my_own_voice_from_a_15_second_recording/">link</a></p>
+<p><strong>r/LLMDevs</strong> -- A megosztott ügynökmunkamenetek naplóiból visszanyerhetők lehetnek az API-kulcsok, ezért publikálás előtt a titkosított értékeket is törölni kell. (66 pont, 34 komment)<br><a href="https://www.reddit.com/r/LLMDevs/comments/1vlmffi/you_posted_your_session_logs_thinking_they_were/">link</a></p>
+<p><strong>r/AI_Agents</strong> -- A Claude által generált szövegek és fájlok állítólagos vízjelezése az ügynökök kimenetének felismerhetőségét és későbbi feldolgozását is érintheti. (192 pont, 123 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1vldtr2/claude_now_watermarks_all_aigenerated_text_and/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
