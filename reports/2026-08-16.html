@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keresők, hangmodellek és tartós ügynökmenetek — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadás a bővíthető helyi eszközökre és a célzott multimodális modellekre koncentrál.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-16</div>
+          <h1 class="article-title">Keresők, hangmodellek és tartós ügynökmenetek</h1>
+          <div class="article-sub">A mai kiadás a bővíthető helyi eszközökre és a célzott multimodális modellekre koncentrál.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Keresők, hangmodellek és tartós ügynökmenetek" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! A Pika négy külön hangmodellt tett egyetlen fejlesztői felület mögé. Emellett új keresőkapcsolatokat kapott a DeepTutor, egy nyílt súlyú modell pedig a sérülékenységek rangsorolását célozza. A közös szál a specializáció: nem feltétlenül nagyobb modell kell, hanem jobb illesztés a feladathoz.</p>
+<h2>Hat új keresőszolgáltatóval bővült a DeepTutor</h2>
+<p>A DeepTutor 2026. augusztus 13-án kiadott v1.5.12-es verziója átdolgozta a webes keresést, és hozzáadta a Doubao, Bocha, Zhipu, Firecrawl, Qianfan és Aliyun IQS szolgáltatókat. Az új LiteParse motor dolgozza fel a találatokat, az MCP-szerverek pedig automatikusan újracsatlakoznak, ha megváltoznak a hitelesítő adatok. A kiadásba bekerült a CodeBuddy és az OrcaRouter támogatása is.</p>
+<p>Forrás: <a href="https://github.com/HKUDS/DeepTutor">DeepTutor</a></p>
+<h2>Négy külön hangmodellt nyitott meg a Pika</h2>
+<p>A Pika Audio egyetlen API-kulcs mögött négy modellt kínál. A Pika Music referenciahangból készít teljes zenei anyagot, a Pika SFX szövegből generál hangeffektet, a Pika Speech narrációt állít elő, a Pika Soundtrack pedig közvetlenül videóhoz készít zenét. A felosztás lehetővé teszi, hogy egy videós ügynök külön lépésként válasszon narrációt, effektet vagy aláfestést, ahelyett hogy minden hangfeladatot ugyanarra a modellre küldene.</p>
+<p>Forrás: <a href="https://dev.pika.art/models/pika/pika-audio">Pika Audio</a></p>
+<h2>A GLM-5.3 a veszélyes hibák rangsorolását célozza</h2>
+<p>A Z.ai új, nyílt súlyú GLM-5.3 modellje egy közzétett beszámoló szerint 84,5 százalékot ért el a CyberGym teszten. A benchmark nemcsak a forráskódban található sérülékenységek felismerését vizsgálja, hanem azt is, hogy a modell képes-e megítélni azok gyakorlati jelentőségét. Egyelőre egyetlen külső beszámoló közölte az eredményt, ezért érdemes megvárni a részletes modellkártyát és a reprodukálható teszteket.</p>
+<p>Forrás: <a href="https://x.com/dongwukeji/status/2088793448547852420">Dongwu Technology beszámolója</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/anywhere-labs/deepseek-harness-desktop">DeepSeek Harness Desktop</a></strong> - A DeepSeek Harness asztali környezete, amely ablakot, rendszertálcát és futtatási környezetet ad az ügynököknek. Megőrzi a hivatalos DSH modell-, eszköz-, munkamenet- és webes felületi rendszerét, miközben ezeket bővíthető modulokként kezeli. Nem adatgyűjtő alkalmazás, hanem a modelleket, eszközöket, felületeket és munkafolyamatokat összekapcsoló asztali gazda. MIT licencű, nem fork; 2026. augusztus 13-án hozták létre, az utolsó push augusztus 15-én érkezett, és 6296 csillagnál jár. Akkor lehet hasznos, ha a DSH-t macOS vagy Windows alatt külön asztali alkalmazásként szeretnéd futtatni és modulokkal bővíteni.</p>
+<p><strong><a href="https://github.com/herdrdev/herdr">herdr</a></strong> - Háttérben futó terminálkiszolgáló kódoló ügynökökhöz, amely Claude Code, Codex, Cursor, OpenCode, Grok és más meglévő eszközök munkameneteit kezeli. A terminálpanelek állapotát dolgozó, blokkolt vagy tétlen jelzéssel mutatja, az ügynökök pedig CLI-n és socket API-n keresztül indíthatnak új paneleket, üzenhetnek egymásnak és várhatnak egy blokkolt munkamenetre. Egyetlen Rust binárisként fut, a munkameneteket hálózati szakadás vagy gépújraindítás után is visszaállítja, és SSH-n keresztül is újracsatlakozhatsz hozzájuk. Apache 2.0 licencű, nem fork; 2026. március 27-én jött létre, az utolsó push augusztus 15-én történt, csillagszáma 29 522. Arra jó, hogy több különböző kódoló ügynök terminálját egy tartós futtatási rétegben tartsd anélkül, hogy lecserélnéd magukat az ügynököket.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála a helyben futó modellek gyakorlati határa, az ügynökök ellenőrizhetősége és a munkafolyamatokba épített kontroll.</p>
+<p><strong>@AnthropicAI</strong> -- A Claude szöveges kimenetei az EU AI Act miatt vízjelet kapnak, ami az automatizált tartalomfeldolgozásnál eredetvizsgálati lépést tehet szükségessé.<br>> "We’re implementing watermarking to comply with the EU AI Act."<br><a href="https://x.com/AnthropicAI/status/2088343978873966687">link</a></p>
+<p><strong>@AnthropicAI</strong> -- Az új kockázati jelentés támpontot ad ahhoz, milyen védelmi korlátokat érdemes az önállóan eszközöket használó Claude-ügynökök köré építeni.<br>> "Our second Risk Report is now available"<br><a href="https://x.com/AnthropicAI/status/2088324824863236248">link</a></p>
+<p><strong>@steipete</strong> -- Egy közös AGENTS.md utasítással minden felületet módosító pull requesthez videós bizonyíték kérhető, így az ügynök munkája könnyebben ellenőrizhető.<br>> "upload videos to each PR that changes UI state"<br><a href="https://x.com/steipete/status/2088486859244741020">link</a></p>
+<p><strong>@futurepedia_io</strong> -- A Gemini 3.7 Flash olcsóbb árazással, jobb többlépéses tervezéssel és eszközhívással célozza a kódoló ügynököket.<br>> "Smarter multi-step planning &amp; tool calls"<br><a href="https://x.com/futurepedia_io/status/2088279480821530892">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Qwen3.8 27B módosított kiadása fogyasztói hardveren kínál kevésbé korlátozott, erős helyi modellt, bár az Opus 4.6-tal való összevetést a kommentelők vitatják. (863 pont, 201 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1voix4o/local_uncensored_opus_46_at_home_qwen38_27b/">link</a></p>
+<p><strong>r/LocalLLM</strong> -- A vita szerint 128 GB RAM felett a helyben futtatott nagy modellek hardverköltsége már nehezen indokolható, ami a modellméret és a felhős API közötti választást érinti. (393 pont, 462 komment)<br><a href="https://www.reddit.com/r/LocalLLM/comments/1vo7uc1/local_models_beyond_128_gb_of_ram_arent/">link</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy felhasználó valódi pénzzel engedte kereskedni a Claude Code-ot, az eredmény pedig az emberi jóváhagyás, a veszteséglimit és az API-költség mérésének fontosságát mutatja. (1970 pont, 351 komment)<br><a href="https://www.reddit.com/r/ClaudeAI/comments/1voi341/i_let_claude_code_trade_stocks_with_my_real_money/">link</a></p>
+<p><strong>r/SelfHostedAI</strong> -- A közösség működő STT, LLM és TTS összeállításokat keres helyben futó beszédügynökökhöz, ahol a késleltetést és a hangminőséget együtt kell optimalizálni. (27 pont, 3 komment)<br><a href="https://www.reddit.com/r/SelfHostedAI/comments/1vn98mt/what_sttllmtts_stack_are_you_using_for_production/">link</a></p>
+<p><strong>r/OpenSourceeAI</strong> -- A SPIF egy 828 bájtos, aláírt eredetigazolást javasol AI-kimenetekhez, ami naplózhatóvá teheti, melyik modell vagy ügynök készített egy fájlt. (4 pont, 0 komment)<br><a href="https://www.reddit.com/r/OpenSourceeAI/comments/1vnaicd/spif_semantic_provenance_inference_format_an/">link</a></p>
+<p><strong>r/mcp</strong> -- Az MCP körüli vita arra keresi a választ, hogy érdemes-e kiváltani vele a meglévő API-kat, vagy csak egységes ügynöki rétegként célszerű föléjük tenni. (25 pont, 28 komment)<br><a href="https://www.reddit.com/r/mcp/comments/1vncr6j/are_you_guys_replacing_apis_with_mcp_or_just/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
