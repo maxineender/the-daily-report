@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A generátorok kimenete végre szerkeszthetőbbé válik — LocalAgent Digest</title>
+  <meta name="description" content="MIDI-vé alakítható zene, célzott videójavítás és olcsóbb hosszú klipek kerültek előtérbe.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-17</div>
+          <h1 class="article-title">A generátorok kimenete végre szerkeszthetőbbé válik</h1>
+          <div class="article-sub">MIDI-vé alakítható zene, célzott videójavítás és olcsóbb hosszú klipek kerültek előtérbe.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A generátorok kimenete végre szerkeszthetőbbé válik" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! A H3 már idősávhoz kötött, részleges videóátalakítást is végzett egy gyakorlati tesztben. A mai anyagot az köti össze, hogy egyre kevésbé kell elfogadnod a generátor első kimenetét véglegesnek. A zene hangjegyekre bontható, a videó egy részlete újragenerálható, a hosszabb jeleneteknél pedig már érdemes külön költségstratégiát használni.</p>
+<h2>FRISSÍTÉS: MIDI-sávokat kapott a Suno Studio 2.0</h2>
+<p>A Studio 2.0-ban külső MIDI-billentyűzetről, a számítógép klaviatúrájáról vagy promptból is létrehozhatsz MIDI-sávot. A rendszer hangból MIDI-t, MIDI-ből pedig új hangszeres hangsávot készít, miközben a hangmagasság, időzítés, velocity, pitch bend és moduláció utólag szerkeszthető marad. A chatmező például a meglévő dalhoz illeszkedő basszusmenetet is generálhat, az elkészült MIDI pedig másik zenei munkaállomásba exportálható.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Mielőtt az ügynököd hangjegyeket mozgatna, állítsd be a dal hangnemét, majd kapcsold be a Scale mode-ot, így a módosítások a kiválasztott skálában maradnak. Az időzítés javításához a Quantize menüben külön megadható például a nyolcados felosztás.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/N2HJUmWIbvc">Suno</a></p>
+<h2>A MiniMax H3 csak a megadott videórészletet írta át</h2>
+<p>Bob Doyle OpenArtban végzett tesztjeiben a H3 képet, videót és hangot használt referenciaként, valamint időintervallumhoz kötött módosításokat hajtott végre. Egy klipben csak a 4. és 7. másodperc között változtatta pirosra az alany ingét, miközben a teljes hátteret fagylaltmúzeummá alakította. Egy másik esetben kizárólag az utolsó öt másodpercet generálta újra, hogy H3-logót helyezzen az égboltra. A modell ugyanakkor nem mindig követte a szerkezeti utasításokat: egy jelenetben a szereplők legyőzték támadóikat, de az előírt robottá alakulás elmaradt.</p>
+<p>Forrás: <a href="https://youtu.be/Xtp28cw4cM0">Bob Doyle Media</a></p>
+<h2>FRISSÍTÉS: A Wan 3.0 olcsóbb lett a Seedance-nél, de nem minden jelenetben jobb</h2>
+<p>A Curious Refuge összehasonlításában egy 30 másodperces Wan 3.0-klip körülbelül 3 dollárba került 720p-ben és 5 dollárba 1080p-ben, míg a Seedance 2.5 azonos hosszúságú, 720p-s generálása nagyjából 13 dollár volt. A Wan legfeljebb tíz képet, öt videót, öt hangfájlt, valamint dokumentumot és weboldalt is fogadott referenciaként. A tesztben jól kezelte a helyszíni részleteket és néhány reklámjellegű beállítást, de ajakszinkronban, érzelmi jelenetekben és összetett akcióban a Seedance gyakran jobb eredményt adott. Egy generálás a friss indulás idején körülbelül 30 percig tartott.</p>
+<p class="price-line">Ár: kb. 3 USD / 30 mp (720p), kb. 5 USD / 30 mp (1080p)</p>
+<p>Forrás: <a href="https://youtu.be/aA_AFy-GDwo">Curious Refuge</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/lidge-jun/opencodex">opencodex</a></strong> - Helyi proxyt indít, amely a Codex Responses API-ját Claude, Gemini, Grok, GLM, DeepSeek, Kimi, Qwen, Ollama és más szolgáltatók formátumára fordítja, beleértve a streamelést, eszközhívásokat, reasoning tokeneket és képeket. Az `ocx start` paranccsal induló proxy és kezelőfelület a `localhost:10100` címen fut, továbbá ChatGPT-fiókkészletet és kvótaalapú munkamenet-irányítást is kezel. MIT-licencű, nem fork. A repó 2026. június 18-án jött létre, utolsó push-a 2026. augusztus 17-én volt, és 10 498 csillagnál jár. Akkor hasznos a saját ügynöködhöz, ha ugyanazt a Codex vagy Claude Code klienst több helyi és távoli modellel szeretnéd használni.</p>
+<p><strong><a href="https://github.com/HKUDS/CLI-Anything">CLI-Anything</a></strong> - Olyan parancssori illesztőket gyűjt és kezel, amelyekkel grafikus szoftvereket is elérhetnek ügynökök, például CAD-, 3D-, diagram-, játék- és feliratozó alkalmazásokat. A CLI-Hub a `pip install cli-anything-hub` paranccsal telepíthető, majd a `cli-hub install &lt;name&gt;` paranccsal tölthetők le a közösségi illesztők. Apache-2.0 licencű, nem fork. A repó 2026. március 8-án jött létre, utolsó push-a 2026. augusztus 13-án volt, és 47 640 csillagot gyűjtött. Saját ügynöknél arra jó, hogy egy kizárólag grafikus felületű alkalmazás működését stabilabb, automatizálható parancsokra fordítsd.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála: olcsóbb modellek, hosszabb ügynökfutások és több helyi hardverkísérlet teszi használhatóbbá a saját AI-munkafolyamatokat.</p>
+<p><strong>@rryssf</strong> -- A GPT-5.6 Luna minden ChatGPT-felhasználóhoz eljut, az ingyenes, korlátlan szöveges használat pedig jó belépő lehet ügynökpromptok gyors teszteléséhez.<br>> "GPT-5.6 Luna out to everyone this week"<br><a href="https://x.com/rryssf/status/2088952416842793323">link</a></p>
+<p><strong>@rryssf</strong> -- Az ingyenes csomag várhatóan már napi eszközként is használható lesz, miközben a fájl- és képfeldolgozást igénylő ügynököknél megmaradnak a korlátok.<br>> "free ChatGPT stops feeling like a trial"<br><a href="https://x.com/rryssf/status/2088952463995134067">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- Az xAI hosszabb, többlépéses feladatokra szánt Grok 4.6-ot és külön felhőgépeken dolgozó ügynökcsapatot mutatott be, ami a tartós agentic futások irányát erősíti.<br>> "a team of always-on agents, each with its own cloud computer"<br><a href="https://x.com/futurepedia_io/status/2088825994580738215">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Pika egyetlen API mögé tett zene-, hangeffekt-, beszéd- és filmzene-generálást, így egy videós ügynök külön szolgáltatások összefűzése nélkül készíthet hangsávot.<br>> "4 models, one API key"<br><a href="https://x.com/futurepedia_io/status/2088642619043962906">link</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini egy meg nem nevezett feladatot körülbelül nyolc másodperc alatt oldott meg, ami érdekes sebességadat, de reprodukálható prompt nélkül még nem valódi modell-összehasonlítás.<br>> "Gemini got it in ~8 seconds"<br><a href="https://x.com/OfficialLoganK/status/2089076529955266630">link</a></p>
+<p><strong>r/PromptEngineering</strong> -- A vita szerint az ügynökök megbízhatóságát nem varázsszavak, hanem az egyértelmű célok, korlátok és elvárt eredmények javítják. (52 pont, 38 komment)<br><a href="https://www.reddit.com/r/PromptEngineering/comments/1vp2yyy/there_are_no_magic_words_in_prompting_the_real/">link</a></p>
+<p><strong>r/PromptEngineering</strong> -- Egy megosztott prompt előbb feltérképezteti a rendezetlen táblázat szerkezetét, és csak utána engedi az elemzést, ami csökkentheti a hibás összesítéseket. (23 pont, 4 komment)<br><a href="https://www.reddit.com/r/PromptEngineering/comments/1voc3hx/the_prompt_i_paste_before_i_trust_any_ai_report/">link</a></p>
+<p><strong>r/google_antigravity</strong> -- A Gemini 3.7 Flash tapasztalatai vegyesek: gyorsabbnak tűnik, de kérdésre is hajlamos azonnal kódot írni vagy végrehajtásba kezdeni, ezért ügynökként szigorú jogosultságokat igényel. (94 pont, 114 komment)<br><a href="https://www.reddit.com/r/google_antigravity/comments/1vp1cep/so_is_flash_37_good_or_bad_whats_the_verdict/">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A közösség Georgi Gerganov és a llama.cpp szerepét emeli ki: ez az alapréteg tette széles körben elérhetővé a kvantált modellek saját gépes futtatását. (946 pont, 84 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vq1n1l/lets_all_thank_georgi_gerganov_who_gave_use/">link</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Két R9700 GPU Framework Desktophoz kapcsolása azt mutatja, hogy a nagyobb helyi modellekhez már kompakt, de kísérleti több-GPU-s konfigurációkat is építenek. (7 pont, 0 komment)<br><a href="https://www.reddit.com/r/SelfHostedAI/comments/1voi26p/i_did_something_crazy_connected_2x_r9700_to/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

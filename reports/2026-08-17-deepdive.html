@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nem kell újragenerálni mindent: ezt mutatja a MiniMax H3 szerkesztési modellje — LocalAgent Digest</title>
+  <meta name="description" content="A célzott idősávos javítás fontosabb lehet a látványos első generálásnál.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-17</div>
+          <h1 class="article-title">Nem kell újragenerálni mindent: ezt mutatja a MiniMax H3 szerkesztési modellje</h1>
+          <div class="article-sub">A célzott idősávos javítás fontosabb lehet a látványos első generálásnál.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Nem kell újragenerálni mindent: ezt mutatja a MiniMax H3 szerkesztési modellje" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A videógenerátorok bemutatói általában az első elkészült klipre összpontosítanak. A valódi munkafolyamatban azonban ritkán az egész videó rossz. Gyakrabban egy kellék színe hibás, egy szereplő mozdulata csúszik félre, vagy az utolsó néhány másodpercet kell lecserélni. A MiniMax H3 egyik érdekes tulajdonsága éppen az, hogy ilyen módosításokat is megpróbál végrehajtani, nem csak teljes jeleneteket generál. Bob Doyle tesztje több működő és több félresikerült példát is mutatott, ezért használhatóbb képet ad a modellről, mint egy válogatott demó. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<h2>Az idősáv lett a szerkesztési utasítás része</h2>
+<p>Az egyik tesztben a bemeneti videó egy szobában beszélő férfit mutatott. A prompt két külön módosítást kért: a teljes videó háttere változzon fagylaltmúzeummá, az ing pedig kizárólag a 4. és 7. másodperc között legyen piros. A H3 mindkét utasítást végrehajtotta, miközben az eredeti beszédet és mozgást megtartotta. Ez azért érdekes, mert az időintervallum itt nem egyszerű vágási utasítás volt, hanem a generatív átalakítás hatókörét jelölte ki. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<p>Egy másik példában egy már elkészült felhős jelenet végére kellett H3-logót illeszteni. A készítő csak az utolsó öt másodpercet generáltatta újra, majd ezt hozzáillesztette az eredeti kliphez. A módszer nem követelte meg a teljes videó ismételt elkészítését, így az addig megfelelő képsorok változatlanul maradhattak. Ez különösen akkor számít, ha egy hosszabb generálásnak csak kis része hibás. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<h2>A helyi modell előkészítheti a drága generálást</h2>
+<p>Doyle a H3 teszteléséhez saját promptkészítő alkalmazást épített. Az alkalmazás helyi szerveren futott, Ollamát használt, és külön mezőkön kérte be a történet alapötletét, a vizuális stílust, a kameramozgást, valamint a jelenetek ritmusát. Ezekből időzített, képenként és snittenként felépített H3-promptot állított elő. Maga a videógenerálás OpenArtban történt, tehát a bemutató nem egy teljesen helyi H3-futtatást dokumentált. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<p>Ez a szétválasztás saját ügynöknél is használható minta. A helyi nyelvi modell feladata lehet a jelenet felbontása, a referenciák elnevezése és az idősávok meghatározása. A videómodell csak ezután kapja meg a már strukturált kérést. Így kevesebb drága próbálkozás megy el arra, hogy a generátor találja ki, mit jelent például a „dinamikusabb kamera” vagy a „csak a végén jelenjen meg” utasítás. A bemutató alapján a részletes kamera-, környezet-, világítás- és hangutasítások együttesen adták a legjobban irányítható eredményeket. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A videójavítási feladatot érdemes legalább négy külön mezőre bontanod: `start<em>sec`, `end</em>sec`, `reference<em>asset` és `edit</em>instruction`. A helyi modelled ezekből összeállíthatja a végső promptot, miközben a videógenerátor csak a kijelölt szakaszt kapja meg. A H3 bemutatott idősávos szerkesztése ehhez közvetlenül használható mintát ad. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p></blockquote>
+<h2>A részleges szerkesztés nem javít meg minden hibát</h2>
+<p>A H3 jól kezelte az ing színét, a hátteret és a klipvégi logót, de az összetett történeti utasításoknál már kevésbé volt biztos. Egy jelenetben két szereplőnek robottá kellett volna alakulnia, majd megküzdenie támadóival. A modell elkészítette a harcot és a kívánt filmes világítást, az átalakulást azonban teljesen kihagyta. Egy másik módosításnál a szereplő ugyan végül a kamera felé futott, de előtte még elindult a hibás irányba. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<p>Ebből kétféle hibát érdemes elkülöníteni. A felszíni eltérés, például rossz szín, háttér vagy felirat, jól körülhatárolható szerkesztési kérés lehet. A történeti hiba viszont gyakran az egész jelenet mozgására, térbeli felépítésére és ok-okozati sorrendjére hat. Ilyenkor a rövid részlet javítása helyett jobb eredményt adhat a jelenet újratervezése, kevesebb egyidejű utasítással. A teszt készítője maga is megjegyezte, hogy az egyik próbánál egyszerre két változtatást kért, pedig valószínűleg célszerűbb lett volna ezeket külön kezelni. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<h2>A nyílt súly nem jelent automatikus helyi használati jogot</h2>
+<p>A H3 súlyai elérhetők, és technikailag felmerül a ComfyUI-jal vagy más helyi környezettel történő futtatás. A licencelésről azonban eltérő beszámolók jelentek meg. Doyle videója szerint bizonyos területeken, köztük az Egyesült Államokban, a súlyok helyi használata nincs engedélyezve, miközben API-s szolgáltatón keresztül hozzáférhető marad a modell. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a> A Curious Refuge ezzel szemben egy olyan jelentkezési űrlapról számolt be, amely az Egyesült Államokból, az Európai Unióból, az Egyesült Királyságból és Dél-Koreából is hozzáférést ígért a nyílt súlyú változathoz. <a href="https://youtu.be/aA_AFy-GDwo">Forrás</a></p>
+<p>Amíg ez a helyzet nem tisztul, nem érdemes arra építeni az automatizmust, hogy a H3 minden régióban korlátozás nélkül letölthető és futtatható. A biztonságosabb felépítés az, ha a prompttervezés, az idősávok kezelése és az állományok előkészítése modellfüggetlen marad. Így ugyanaz a saját gépen futó vezérlőfolyamat helyi H3-at, engedélyezett API-t vagy másik videómodellt is meg tud hívni anélkül, hogy az egész rendszert át kellene írni.</p>
+<h2>A fontos újdonság a javítási ciklus</h2>
+<p>A H3 nem azért érdekes, mert minden első generálása hibátlan. A bemutatott eredmények alapján nem az. Az előrelépés inkább az, hogy a javítás konkrét idősávhoz és konkrét vizuális elemhez köthető. Ez közelebb áll egy szerkesztőprogram működéséhez, mint a korábbi „dobd el és próbáld újra” folyamathoz. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+<p>Saját ügynöknél ezért a következő lépés nem feltétlenül egy újabb videógenerátor bekötése. Hasznosabb lehet egy olyan ellenőrző ciklus, amely az elkészült klipet jelenetekre bontja, megjelöli a hibás időintervallumot, majd csak arra készít módosítási utasítást. A H3 tesztje azt mutatja, hogy ez a munkamód már nem puszta terv, bár az összetett mozgásoknál továbbra is szükség van teljes újragenerálásra és emberi válogatásra. <a href="https://youtu.be/Xtp28cw4cM0">Forrás</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
