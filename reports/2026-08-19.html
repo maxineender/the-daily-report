@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kisebb kontextusok, külön feladatkörök — LocalAgent Digest</title>
+  <meta name="description" content="A mai eszközök a mindentudó ügynök helyett egyre inkább specializált munkatársakat építenek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-19</div>
+          <h1 class="article-title">Kisebb kontextusok, külön feladatkörök</h1>
+          <div class="article-sub">A mai eszközök a mindentudó ügynök helyett egyre inkább specializált munkatársakat építenek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kisebb kontextusok, külön feladatkörök" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szervusz! A Hermes külön botnézetbe rendezte a saját gépen futó ügynököket. Közben az OpenAI lassítja legnagyobb tréningjeit, a videós és zenei eszközök pedig egyre szerkeszthetőbb kimeneteket adnak. A közös irány ma a több kontroll, még ha ez néha több beállítással is jár.</p>
+<h2>Az OpenAI szünetelteti néhány legnagyobb RL-tréningjét</h2>
+<p>Az OpenAI augusztus 18-án közölte, hogy átmenetileg lassítja a frontier modellek skálázását, köztük a legnagyobbnak tervezett megerősítéses tanulási tréninget. Sam Altman szerint a döntés oka, hogy a képességek gyorsabban fejlődnek, mint a hozzájuk tartozó biztonsági, megfigyelési és összehangolási rendszerek. A közelebbi modellkiadásokat továbbra is tervezik, a fékezés inkább a későbbi generációkat érinti.</p>
+<p>Forrás: <a href="https://openai.com/index/pacing-model-development-cyber-capabilities">OpenAI</a>, <a href="https://x.com/sama/status/2089805495783813196">Sam Altman kiegészítése</a></p>
+<h2>A Hermes külön botnézetet kapott</h2>
+<p>A Hermes asztali alkalmazásának új Bot módja a meglévő profilokat külön névvel, feladatkörrel és beszélgetéssel rendelkező ügynökként jeleníti meg. Profilonként külön szolgáltató, modell, személyiség, eszközkészlet és időzített feladat állítható be, így helyi modell is használható valamelyik szerepkörhöz. Az ügynökök már üzenhetnek egymásnak, de Alex Finn tesztjében a delegálás még kevésbé volt átlátható, mint a Grok Botnál: az eredmény visszakerült a koordinátorhoz, miközben a végrehajtó bot beszélgetésében alig látszott a munka.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A legújabb asztali verzióban külön profilt érdemes létrehozni például fejlesztéshez, kutatáshoz és fájlkezeléshez, majd csak az adott szerephez szükséges eszközöket és időzített feladatokat engedélyezni. Így minden kéréshez kisebb rendszerprompt, rövidebb előzmény és kevesebb eszközleírás kerül.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/1udtpl43iv8">Alex Finn bemutatója</a></p>
+<h2>Az LTX 2.5 már 16 GB VRAM-mal is készít videót</h2>
+<p>Az LTX 2.5 letölthető súlyokkal, 1080p-s alapfelbontással, több snitt közötti következetességgel, valamint 4K, HDR és RAW kimeneti lehetőséggel érkezett. A gyártó szerint 16 GB VRAM is elég hozzá, optimalizált gépen pedig egy tíz másodperces 1080p-klip 6,8 másodperc alatt elkészülhet. A Curious Refuge összehasonlításában ugyanakkor a MiniMax H3 jobb fizikát és promptkövetést adott, míg az LTX előnye elsősorban a sebesség, a nagyobb felbontás és a helyben tartható betanítási adatok voltak.</p>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/qv0s1_coX50">Curious Refuge tesztje</a></p>
+<h2>A ChatCut valódi vágóidővonalon hajtja végre az ügynök utasításait</h2>
+<p>A ChatCut Desktop több sávos, utólag szerkeszthető idővonalon hajtja végre a természetes nyelvű vágási kéréseket. Codex vagy Claude Code kapcsolható hozzá, az ügynök pedig vágásokat, B-rollt, feliratokat és mozgó grafikákat helyezhet el anélkül, hogy minden módosításnál újra kellene generálni a teljes videót. Az elkészült projekt XML-ben továbbvihető Premiere Proba vagy DaVinci Resolve-ba.</p>
+<p>Forrás: <a href="https://x.com/futurepedia_io/status/2089698833093603433">Futurepedia bemutatója</a></p>
+<h2>Egy kiadatlan Claude 650 sikertelen menet után javított meg egy matematikai korlátot</h2>
+<p>A Two Minute Papers beszámolója szerint egy még ki nem adott Claude-változat a Riemann-sejtéshez kapcsolódó matematikai korláton javított, bár magát a sejtést nem oldotta meg. Az első 650 próbálkozás sikertelen volt, a kezelő pedig főként rövid folytatásra biztató üzeneteket küldött. A kulcsfontosságú eredmény egy 37 perces megszakítás nélküli menetben született, a bizonyításhoz pedig géppel ellenőrizhető formalizált változat is készült.</p>
+<p>Forrás: <a href="https://youtu.be/QnGNF8k_uoc">Two Minute Papers</a></p>
+<h2>FRISSÍTÉS: Effekteket is eltávolít a Suno Studio 2.0</h2>
+<p>A Suno új bemutatója szerint a Studio 2.0 fejlett stem-szétválasztása külön megnevezett ének-, dob-, basszus- és hangszersávokat készít, amelyek MP3, WAV vagy MIDI formában is letölthetők. A sávokra kompresszor, EQ és zengetés tehető, de a generáláskor rákerült effektek eltávolítására is van külön parancs. Az új automatizálás teljes sávon képes paramétereket változtatni, a klipek eleje és vége pedig fogóponttal vagy a Ctrl+F billentyűvel halványítható.</p>
+<p>Forrás: <a href="https://youtu.be/GmZTKZWv1BA">Suno</a></p>
+<h2>A Mozart Hands 2 már nem lógott ki egy Suno-vaktesztből</h2>
+<p>Bob Doyle négy zenei stílusban ugyanazokat a dalszövegeket és stílusutasításokat adta a Suno 5.5-nek és a Mozart Hands 2-nek, majd utómunka nélkül hasonlította össze a párokat. A country, alternatív pop, kortárs pop és neo-soul próbákban mindkét rendszer használható eredményeket adott, a különbség inkább hangszerelési és frazeálási ízlés kérdése volt. A saját hangjával végzett próbában Doyle szerint a Mozart Persona kevésbé változtatta meg az eredeti hangszínt, mint a Suno Voices.</p>
+<p>Forrás: <a href="https://youtu.be/4UDr-urIfB4">Bob Doyle Media vaktesztje</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/affaan-m/ECC">ECC</a></strong> - Az ECC Claude Code, Codex, OpenCode és Cursor számára kínál ügynökfuttatási optimalizálást készségekkel, memóriával, biztonsági elemekkel és kutatásközpontú munkafolyamatokkal. Claude Code alatt piactérként és bővítményként telepíthető, ekkor a készségeket, ügynököket, parancsokat és kezelt hookokat együtt rakja fel. MIT licencű, nem fork, 2026. január 18-án hozták létre, utoljára 2026. augusztus 18-án frissült, és 240 998 csillagnál jár. Saját ügynöködhöz akkor lehet hasznos, ha több támogatott kódoló kliensben ugyanazt a készség- és memóriarendszert szeretnéd használni.</p>
+<p><strong><a href="https://github.com/openTrinity/mycontext">MyContext</a></strong> - A MyContext az üzenetekből, dokumentumokból, naptárakból, megbeszélésekből, jóváhagyásokból és helyi aktivitásból tartós személyes munkakontextust épít. Az adatokat verziózott migrációkkal kezelt, lemezen tárolt SQLite-adatbázisban tartja, amelyből modellek, helyi ügynökök és engedélyezett külső alkalmazások kérhetnek le információt. Fejlesztői előzetes, ezért a kompatibilitást törő változások és az adatgyűjtés megismétlését igénylő migrációk kifejezetten várhatók. Licenc nincs megadva, így alapértelmezés szerint nem tekinthető szabadon felhasználhatónak; nem fork, 2026. augusztus 3-án jött létre, utolsó pushja augusztus 17-i, és 1521 csillaga van. Saját ügynöknél tartós kontextusrétegnek ígéretes, de jelenlegi állapotában nem jó egyetlen, pótolhatatlan adattárnak.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A helyi futtatásnál most a hardverigény, az önellenőrző ügynökök és a generatív eszközök gyakorlati használata van fókuszban.</p>
+<p><strong>@AravSrinivas</strong> -- A sűrű modellek helyi futtatása még lassú, de már látszik, hogy az új hardverekkel és kvantálással egyre több ilyen modell költözhet saját gépre.<br>> "Dense models are slow to run on local hardware, but this is incredible and a sign of things to come soon-ish."<br><a href="https://x.com/AravSrinivas/status/2089451933321052366">link</a></p>
+<p><strong>@steipete</strong> -- Az 512 GB memóriás Mac Studio megmutatja, milyen géposztály épül a nagy modelleket és több ügynököt helyben futtató munkafolyamatok köré.<br>> "512GB RAM Studios. Apple was good to us."<br><a href="https://x.com/steipete/status/2089877190422974974">link</a></p>
+<p><strong>@rryssf</strong> -- Nyilvánossá vált egy hackathongyőztes Claude Code-konfiguráció, amely külön szerepekkel és kontextusokkal szervez fejlesztőcsapatként működő ügynököket.<br>> "Then he open sourced the exact Claude Code setup that did it."<br><a href="https://x.com/rryssf/status/2089811326080327798">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Claude Code új `/design` képessége közvetlenül a kódbázisból készít szerkeszthető terveket, így kieshet a látványterv kézi újrafogalmazása a kódoló ügynök számára.<br>> "Run /design → get editable artboards pulled from your actual codebase"<br><a href="https://x.com/futurepedia_io/status/2089555894300520753">link</a></p>
+<p><strong>@AIHighlight</strong> -- Az Oreate a teljes projektet közös kontextusban tartja, ezért egy módosítást automatikusan átvezethet az összekapcsolt kreatív anyagokon.<br>> "one change updates every connected asset at once"<br><a href="https://x.com/AIHighlight/status/2089733273878401484">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy négy RTX 3060-as gép a DeepSeek V4 Flash kvantált változatánál körülbelül 100 token/másodperces promptfeldolgozást ért el, ami használható alap lehet helyi ügynökökhöz. (575 pont, 153 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vrqf4f/running_deepseek_v4_flash_q4_k_xl_at_100_toks/">link</a></p>
+<p><strong>r/MachineLearning</strong> -- Egy diffúziós modell mindössze 264 KB RAM-mal fut, ami a képgenerálás erősen korlátozott eszközökre költöztetését demonstrálja. (82 pont, 16 komment)<br><a href="https://www.reddit.com/r/MachineLearning/comments/1vrk7t5/trained_an_diffusion_model_that_runs_on_264kb_of/">link</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- Az Autoprompt arra ad mintát, hogyan ellenőrizheti, értékelheti és javíthatja egy kódoló ügynök önállóan a saját eredményét. (4 pont, 1 komment)<br><a href="https://www.reddit.com/r/ChatGPTCoding/comments/1vs19w3/tip_let_your_coding_agents_autonomously_verify/">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A beszélgetés a futtatás után felbukkanó új promptinjekciók észleléséről szól, ami külső tartalmat feldolgozó helyi ügynököknél alapvető védelmi kérdés. (19 pont, 17 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1vs01u2/how_are_you_detecting_new_prompt_injection/">link</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy három hete, teljesen AI-eszközökkel készülő horgászjáték azt mutatja, hogy a gyors prototípus után továbbra is az egyedi vizuális döntések és a csiszolás viszi el a munkát. (1765 pont, 185 komment)<br><a href="https://www.reddit.com/r/ClaudeAI/comments/1vrjryf/week_3_of_making_my_fishing_game_entirely_with_ai/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
