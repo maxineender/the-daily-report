@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Seedance 2.5 vezérléséhez már jelenetfordító kell, nem hosszabb prompt — LocalAgent Digest</title>
+  <meta name="description" content="Az új videós munkafolyamatban a saját ügynököd feladata a referenciák, időzítések és átmenetek következetes összeállítása.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-20</div>
+          <h1 class="article-title">A Seedance 2.5 vezérléséhez már jelenetfordító kell, nem hosszabb prompt</h1>
+          <div class="article-sub">Az új videós munkafolyamatban a saját ügynököd feladata a referenciák, időzítések és átmenetek következetes összeállítása.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="A Seedance 2.5 vezérléséhez már jelenetfordító kell, nem hosszabb prompt" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Seedance 2.5 újdonsága nem pusztán a hosszabb videó. A két friss bemutató alapján a modell egyre inkább olyan bemenetet vár, amely közelebb áll egy rendezői tervhez: meg kell nevezni a szereplőt, a kiinduló állapotot, a változást kiváltó eseményt, a kameramozgást, a hangot és a jelenet végállapotát. Egy 30 másodperces generáláshoz akár 50 kép-, videó- és hangreferencia használható, ami már önmagában indokolttá teszi egy ügynök bevonását a bemenet összeállításába. (<a href="https://youtu.be/MY6f9xnYOwU">Rourke Heath</a>)</p>
+<h2>A folytatás két irányban működik</h2>
+<p>A legegyszerűbb új munkafolyamat a meglévő klip folytatása. Előrefelé a videó utolsó képkockája, a szereplő testhelyzete, a háttér, a fény és a mozgás iránya adja az induló állapotot. Visszafelé ugyanez fordítva működik: a prompt azt írja le, mi történhetett közvetlenül az első képkocka előtt. A bemutatóban egy már elkészült jelenet elé generáltak előzményt, majd az új rész végét összeillesztették az eredeti klip elejével. (<a href="https://youtu.be/RlKg6oXLf7Y">DanKieft</a>)</p>
+<p>Ez ügynökös szempontból jól formalizálható feladat. A videóból ki kell nyerni az első vagy utolsó képkockát, leírni a látható szereplőket, a kameranézetet és a mozgásvektort, majd ezekből folytonossági blokkot készíteni. Az ügynök ezután külön kezelheti a változatlan elemeket és az új cselekményt, így kisebb az esélye annak, hogy a prompt véletlenül új helyszínt vagy más ruhát kér.</p>
+<h2>Két klip között nem elég annyit mondani, hogy legyen sima az átmenet</h2>
+<p>A két videót összekötő generálásnál az első klip a kiindulópont, a második a kötelező végállapot. A promptnak meg kell határoznia az átmenetet elindító eseményt, a közben végzett kameramozgást, az átalakuló képi elemeket, valamint azt, hogyan érkezzen meg a jelenet a második videó nyitóképéhez. A DanKieft-videó példájában egy zuhanó lovagból lett vízbe csapódó figura, miközben a hang a levegőben hallható robajtól a víz alatti becsapódásig változott. (<a href="https://youtu.be/RlKg6oXLf7Y">DanKieft</a>)</p>
+<p>Egy saját ügynök itt négy külön mezőből építhet promptot: `start<em>state`, `trigger`, `transition` és `end</em>state`. Ehhez érdemes ötödikként hangívet is rendelni. Ez nem a modell saját formátuma, hanem praktikus köztes séma, amelyből az ügynök előállíthatja a végleges természetes nyelvű utasítást.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: tegyél a videós folyamat elé olyan ellenőrzést, amely nem engedi tovább a feladatot, ha hiányzik a második klip nyitó testhelyzete, a kiváltó esemény vagy a hang végállapota. A legfeljebb 30 másodperces hangreferenciát az ügynök még feltöltés előtt levághatja, és a promptban külön azonosítóval hivatkozhat rá. (<a href="https://youtu.be/RlKg6oXLf7Y">DanKieft</a>)</p></blockquote>
+<h2>Az érzelmet eseményhez kell kötni</h2>
+<p>A modell nem csak általános hangulatot kap. A bemutatóban a szereplő először komoly maradt, majd egy képbe belógó mikrofont észrevéve megállt, felnézett, megpróbálta visszatartani a nevetést, végül elnevette magát. A prompt minden köztes állapotot külön leírt. Több érzelmi szakasz is egymás után rendezhető, párbeszéddel és testbeszéddel együtt. (<a href="https://youtu.be/RlKg6oXLf7Y">DanKieft</a>)</p>
+<p>Itt az ügynök feladata lehet a prózai jelenet átalakítása időrendbe rendezett eseményekké. A „megijed, majd megnyugszik” helyett külön sorok készülhetnek a kiváltó hangról, a tekintet irányáról, az arckifejezés változásáról és a végső testhelyzetről. Ez hosszabb promptot eredményez, de nem fölösleges jelzőkkel, hanem ellenőrizhető állapotváltásokkal.</p>
+<h2>A referencia nem csak kép lehet</h2>
+<p>A Seedance 2.5 legfeljebb 30 másodperces hangfájlt is fogadhat, a szereplők pedig reagálhatnak annak ritmusára vagy tartalmára. A bemutatóban karakterek egy zeneszám ütemére kezdtek mozogni, egy másik jelenetben pedig az autó rádiójából megszólaló dalra reagált a szereplő. (<a href="https://youtu.be/RlKg6oXLf7Y">DanKieft</a>)</p>
+<p>A legfeljebb 50 referencia miatt célszerű manifestet készíteni. Ebben minden fájlhoz szerepelhet az azonosító, a típus, a felhasználási cél és az érintett jelenetek listája. A saját ügynököd így észreveheti, ha ugyanahhoz a karakterhez két eltérő ruházatú képet adtál, vagy ha a prompt olyan hangra hivatkozik, amely nincs a feltöltési csomagban. Az 50 referenciás korlátot és a 30 másodperces generálást Rourke Heath gyakorlati bemutatója ismertette. (<a href="https://youtu.be/MY6f9xnYOwU">Rourke Heath</a>)</p>
+<h2>A hosszabb generálás nem feltétlenül olcsóbb</h2>
+<p>Egy 30 másodperces Seedance 2.5-generálás a bemutató szerint jelenleg 40 és 60 dollár közé kerülhet. A készítők ezért nem egyetlen tökéletes menetben gondolkodtak: három változatot futtattak, majd mindegyikből kivágták a legerősebb részeket, és ezeket hagyományos idővonalon egyesítették. A kínos szüneteket kézzel rövidítették, a végső videóhoz pedig külön zenét és feliratot adtak. (<a href="https://youtu.be/MY6f9xnYOwU">Rourke Heath</a>)</p>
+<p>Ez a saját ügynök számára világos optimalizálási feladat. Minden újragenerálás előtt összevetheti a hibát a várható költséggel, és eldöntheti, hogy valóban új teljes klip kell-e, vagy elég egy rövid átvezetés. A jó videós ügynök tehát nem egyetlen óriási promptot ír. Referenciákat rendez, folytonosságot ellenőriz, időzített jelenettervet állít elő, majd csak a hibás szakaszt küldi vissza generálásra.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
