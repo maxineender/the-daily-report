@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Az ügynök már a képi műhelyt is összerakja — LocalAgent Digest</title>
+  <meta name="description" content="A ComfyUI vezérelhetővé válik, az OpenAI adatmegőrzést enged el, a helyi zene pedig felzárkózik.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-21</div>
+          <h1 class="article-title">Az ügynök már a képi műhelyt is összerakja</h1>
+          <div class="article-sub">A ComfyUI vezérelhetővé válik, az OpenAI adatmegőrzést enged el, a helyi zene pedig felzárkózik.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Az ügynök már a képi műhelyt is összerakja" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! A ComfyUI hivatalos MCP-je szöveges utasítássá egyszerűsíti a node-alapú munkát. Mellette ma az API-adatvédelem, a saját gépen készülő zene és a Gemma ökoszisztémája került fókuszba. Mindegyik arról szól, mennyi munka és adat maradhat a te felügyeleted alatt.</p>
+<h2>Az OpenAI adatmegőrzés nélkül is kínálja frontier modelljeit</h2>
+<p>Az OpenAI augusztus 19-én jelentette be a Zero Data Retention lehetőségét frontier modelljeihez. Sam Altman ezt üzleti adatvédelmi lépésként vezette fel, Greg Brockman pedig a Private Safety Processing technikai és szabályozási megközelítését emelte ki, amely az ügyféladatok védelmét a biztonsági ellenőrzésekkel próbálja összeegyeztetni. Ez azoknak lehet fontos, akik saját ügynököt futtatnak, de bizonyos feladatokhoz továbbra is távoli OpenAI-modellt hívnak.</p>
+<p>Forrás: <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models/">OpenAI</a></p>
+<h2>A ComfyUI hivatalos MCP-t kapott</h2>
+<p>A ComfyUI új, hivatalos MCP-kiszolgálója lehetővé teszi, hogy egy kompatibilis modell szöveges kérésből állítson össze és futtasson kép- vagy videómunkafolyamatokat. A bemutatóban Claude egy Krea 2 képgenerátort MiniMax H3 kép-videó lépéssel kapcsolt össze, majd egy RTX 5090-en körülbelül 204 másodperc alatt készített helyben egy ötmásodperces klipet. Az MCP jelenleg béta, ezért a videó készítője az érettebb közösségi változat párhuzamos telepítését is javasolja; a munkafolyamatok helyi modelleket és fizetős külső API-node-okat egyaránt használhatnak.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Az összeállításkor telepítheted egymás mellé a hivatalos és a közösségi ComfyUI MCP-t, majd hibánál külön megadhatod, melyiket használja az ügynök. A már elkészült gráfban a promptot, a képkockaszámot és a lépésszámot érdemes közvetlenül átírni, így ezek a módosítások nem fogyasztják az ügynök tokenkeretét.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/ghCKziHvGXo">Theoretically Media bemutatója</a></p>
+<h2>A MiniMax Music 3 már saját gépen is használható zenegenerálásra</h2>
+<p>A Curious Refuge hét zenegenerátort vetett össze azonos dalszövegekkel és műfaji utasításokkal. Összesítésükben a Suno 5.5 maradt az első, de a nyílt súlyú MiniMax Music 3 minőségben már használható helyi alternatívának bizonyult, amely letölthető és saját gépen futtatható. A teszt ugyanakkor homályosnak találta a modell licencelését, ezért a vele készített számok üzleti felhasználását kockázatosabbnak ítélte, mint például a licencelt tanítóadatokra épülő Eleven Music kimeneteit.</p>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/wEU5yR9koeg">Curious Refuge összehasonlítása</a></p>
+<h2>Egymilliárd letöltésnél jár a Gemma modellcsalád</h2>
+<p>A Google szerint a Gemma modellek összesített letöltésszáma átlépte az egymilliárdot, miközben a közösség több mint százezer modellváltozatot tett közzé az elmúlt két évben. A modelleket nemcsak helyi gépeken és peremeszközökön futtatják: a NASA, a Satlyt és a Starcloud csapatai műholdas képelemzéshez, a továbbítandó adatmennyiség csökkentéséhez és műholdak közötti kommunikáció irányításához is használják őket. A szám önmagában nem minőségi mérce, de az eszközök, finomhangolások és futtatókörnyezetek méretét jól jelzi.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-one-billion-downloads/">Google</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/cathrynlavery/diagram-design">diagram-design</a></strong> - Claude Code, Codex, Factory Droid és Pi számára készült skill, amely 39 szerkesztőségi diagramtípusból állít elő önálló HTML- és SVG-fájlokat. Sankey-diagramot, Wardley-térképet, kanbant, felhasználói utat, függőségi gráfot és adatbázissémát is készít, továbbá Mermaid- és draw.io-forrásokat rajzol újra megadott formátumban, méretben és részletességgel. MIT-licencű, nem fork. A repót 2026. április 16-án hozták létre, az utolsó push 2026. augusztus 20-án érkezett, és 24 390 csillagnál jár. Saját ügynöknél akkor hasznos, ha a dokumentációból vagy rendszertervből közvetlenül publikálható, statikus ábrát szeretnél előállítani.</p>
+<p><strong><a href="https://github.com/calesthio/OpenMontage">OpenMontage</a></strong> - Ügynökalapú videókészítő rendszer 12 gyártási folyamattal, több mint 100 eszközzel és 700-nál több skill- illetve produkciósismeret-fájllal. Az ügynök kutatást, forgatókönyvírást, eszközgenerálást, vágást és végső kompozíciót végez, illetve ingyenes stockvideókból és nyílt archívumokból mozgóképes korpuszt épít, klipeket keres, idővonalat szerkeszt és kész videót renderel. AGPL-3.0 licencű, nem fork. A repót 2026. március 29-én hozták létre, utoljára 2026. augusztus 18-án frissítették, és 49 129 csillagot gyűjtött. Saját ügynök mellett komplett videófolyamat kialakítására jó, de az AGPL feltételeit a belőle épített hálózati szolgáltatásnál is figyelembe kell venni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála az ügynökök növekvő önállósága, a modellválasztás gyakorlati tesztelése és a helyben futó vizuális generálás.</p>
+<p><strong>@sama</strong> -- Az OpenAI átmenetileg visszafogta egyes csúcsmodellek megerősítéses tanítását, mert a biztonsági és megfigyelési rendszerek nem tartottak lépést a képességekkel.<br>> "We have paused some frontier RL training"<br><a href="https://x.com/sama/status/2089787807611195475">link</a></p>
+<p><strong>@AnthropicAI</strong> -- Az Anthropic szerint az Opus 5 továbbra is a legerősebb modellje élettudományi kutatáshoz, és külön hozzáférési programot készít a tudományos felhasználóknak.<br>> "Opus 5 remains our most capable model available for life science research."<br><a href="https://x.com/AnthropicAI/status/2089842393218777151">link</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Agent API több modell és telepítési eszköz közös rétegét ígéri, ami egyszerűsítheti a saját ügynökök modellváltását és éles futtatását.<br>> "That is basically the Perplexity Agent API."<br><a href="https://x.com/AravSrinivas/status/2090577299838267739">link</a></p>
+<p><strong>@AIHighlight</strong> -- Egy új filmes demó azt mutatja, hogy a videógenerálás már teljes jelenetsorok promptból történő összeállítása felé halad.<br>> "We are one prompt away from AI making entire movies."<br><a href="https://x.com/AIHighlight/status/2090446862016794900">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Gemini Notebook már forrásokra épülő prezentációkat, infografikákat és podcastokat is készít, így kutatási munkafolyamatok végrehajtó elemeként használható.<br>> "Turn research into infographics, podcasts, slides, and more"<br><a href="https://x.com/futurepedia_io/status/2090475745663397921">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A felhasználói beszámoló szerint a Qwen3.8-27B szokatlanul önállóan tervez és hajt végre feladatokat, ezért helyi ügynökmodellekhez is figyelemre méltó jelölt. (767 pont, 213 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vt78xd/qwen3827b_has_the_highest_level_of_agency_ive/">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A közösség két modell azonos ügynökben történő A/B tesztelésére keres tiszta megoldást, ami a költség, sebesség és feladatminőség méréséhez is hasznos. (22 pont, 18 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1vtfsk2/cleanest_way_youve_found_to_ab_two_models_in_the/">link</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy hónapos kísérletben Claude jelentős pénzösszeg felett kap döntési jogot, ami jól láthatóvá teszi az autonóm ügynökök pénzügyi korlátainak és naplózásának fontosságát. (3495 pont, 531 komment)<br><a href="https://www.reddit.com/r/ClaudeAI/comments/1vtl9of/this_is_letting_claude_handle_a_good_amount_of/">link</a></p>
+<p><strong>r/comfyui</strong> -- A MiniMax H3 egy RTX 5070 Ti-n, kamera és szereplő nélkül generál videót, így középkategóriás gépen is kipróbálhatóvá válik a teljesen szintetikus videós munkafolyamat. (187 pont, 24 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1vsvckd/no_camera_no_model_just_minimax_h3_running/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- A közösség arra talált példát, hogy egy képgeneráló modell más tokenekhez vagy nevekhez kapcsolva ismerhet egy adott színészt, ami célzott prompttesztelést indokol. (240 pont, 79 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1vta8g5/if_youre_looking_for_a_specific_actor_that_the/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
