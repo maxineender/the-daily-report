@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Külön infrastruktúra épül az ügynökök munkája köré — LocalAgent Digest</title>
+  <meta name="description" content="A gyorsítótárazott kontextus, a szerepkörökre bontott ügynökök és az új böngészőréteg ma már közvetlenül alakítja az üzemeltetési költséget.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-23</div>
+          <h1 class="article-title">Külön infrastruktúra épül az ügynökök munkája köré</h1>
+          <div class="article-sub">A gyorsítótárazott kontextus, a szerepkörökre bontott ügynökök és az új böngészőréteg ma már közvetlenül alakítja az üzemeltetési költséget.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Külön infrastruktúra épül az ügynökök munkája köré" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Az OpenRouter adatai szerint az ügynökök már ötször több tokent fogyasztanak. Közben a videókészítés, a böngészés és a helyi modellek delegálása is egyre inkább beépül az ügynökök eszköztárába.</p>
+<h2>A Codex már szerkeszthető videóprojektet ad át a Topview-nak</h2>
+<p>A Topview új Codex-bővítménye egy beszélgetésen belül alakítja a promptot storyboarddá, majd MiniMax H3-videóvá. Az eredmény nem egyszerűen egy letöltött klip: szerkeszthető projektként jelenik meg a Topview felületén. A Topview előfizetői tíz ingyenes MiniMax H3-generálást kapnak a bővítmény kipróbálásához.</p>
+<p>Forrás: <a href="https://www.topview.ai/plugin">Topview Codex plugin</a></p>
+<h2>Az ügynökök tokenforgalmának több mint 85 százaléka gyorsítótárazható előtöltés</h2>
+<p>Ryan Shannon OpenRouter-adatokra hivatkozó összesítése szerint az AI-ügynökök már ötször több tokent használnak el, mint az ember által közvetlenül indított beszélgetések. Az ügynöki tokenforgalom több mint 85 százaléka gyorsítótárazott prompt: ismétlődő célok, szabályok, eszközleírások, kódrészletek és felületi állapotok kerülnek újra a modell elé. Ez megmagyarázza, miért válik a prefix cache támogatása legalább olyan fontos költségtényezővé, mint az alap tokenár.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha a modellszolgáltatód támogatja a prefix cache-t, tartsd stabil sorrendben a rendszerpromptot és az eszközsémákat, a menetről menetre változó feladatot pedig tedd a kontextus végére. Így nagyobb eséllyel marad újrahasznosítható a prompt eleje, ahelyett hogy egy apró változás érvénytelenítené az egész gyorsítótárat.</p></blockquote>
+<p>Forrás: <a href="https://x.com/rryssf/status/2091317270354251861">Ryan Shannon összesítése</a></p>
+<h2>FOLYTATÁS: Szerepkörökre bontva mutatta be a Grok Bot ügynökcsapatát</h2>
+<p>Alex Finn új bemutatójában külön ügynök kezeli az e-mailt, a fejlesztést, a tartalomfigyelést, a közösségi feladatokat és a kutatást, miközben egy kijelölt koordinátor osztja szét és ellenőrzi a munkát. A videó szerint az egyes Grok Bot ügynökök külön felhős számítógépet kaphatnak, a koordinátor pedig Tailscale-en keresztül egy saját gépen futó Hermes-ügynöknek is delegálhat feladatokat. Finn ehhez egy helyben futó Qwen 3.8 27B modellt használt az ismétlődő, egyszerűbb műveletekre.</p>
+<blockquote><p>Az e-mailes mintában az ügynök minden reggel 8 órakor triázsol, de csak piszkozatokat készít, automatikusan nem küld levelet. Az Agent Mail külön címet adhat neki, így a szolgáltatásokba csapattagként, korlátozott jogosultsággal hívható meg a tulajdonosi fiók megosztása helyett.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/x8KP4MdvM1k">Alex Finn bemutatója</a></p>
+<h2>Egy névtelen modell jelent meg Ox Alpha néven az OpenRouteren</h2>
+<p>Az Ox Alpha csütörtökön bukkant fel az OpenRouteren, az üzemeltető megnevezése nélkül. A szolgáltatás kódolásra és következtetési feladatokra szánt modellként írja le, a fejlesztői érdeklődést pedig az ingyenes hozzáférés és a meglepően erős első tesztek indították el. A Reddit-szálban ugyanakkor külön kiemelték, hogy az ingyenesség csak egy hétre szól, a készítő kiléte és a későbbi elérhetőség pedig továbbra sem ismert.</p>
+<p>Forrás: <a href="https://www.reddit.com/r/Futurology/comments/1vvth8x/a_mysterious_free_ai_model_is_impressing/">Reddit-beszélgetés az Ox Alpháról</a></p>
+<h2>A Netflix 587 millió dollárért vett AI-alapú filmes utómunkát</h2>
+<p>A Netflix 587 millió dollárért megvásárolta a Ben Affleck által 2022-ben alapított InterPositive filmes technológiai céget. A Netflix szerint generatív AI-t idén körülbelül 300 produkcióban használtak, főként hiányzó felvételek pótlására, hátterek cseréjére, világítás javítására, valamint korábban túl drága tömeg- és történelmi jelenetek elkészítésére. A hangsúly tehát nem teljes filmek egyetlen promptból történő előállításán, hanem az utómunka egyes lépéseinek célzott gyorsításán van.</p>
+<p>Forrás: <a href="https://futuretools.beehiiv.com/p/anthropic-assembles-a-chip-team">FutureTools beszámolója</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/agentrhq/webcmd">Webcmd</a></strong> - Saját tanuló böngésző-infrastruktúra AI-ügynökökhöz: valódi böngészőben vizsgál oldalakat, kattint, gépel, adatot nyer ki és hálózati hívásokat figyel. A megismert oldalakról ügynöknek szánt oldaltérképet készít, majd a stabilizálódó munkafolyamatokat strukturált kimenetű, újrahasználható `webcmd &lt;site&gt;` parancsokká fordítja. Apache-2.0 licencű, nem fork; 2026. július 2-án hozták létre, utolsó push-a 2026. augusztus 22-én volt, és 1363 csillagnál jár. A fejlesztők állítása szerint az ismert webhelyeken akár 90 százalékkal csökkentheti a böngészőügynök tokenhasználatát. Annak lehet hasznos, aki ugyanazokat a webes folyamatokat rendszeresen futtatja, egyszeri vagy folyton változó oldalakon kevésbé érvényesül az előnye.</p>
+<p><strong><a href="https://github.com/citrolabs/ego-lite">ego lite</a></strong> - Olyan böngésző, amelyben az ember és az ügynökei párhuzamosan dolgozhatnak: az ügynökök külön Spaces környezetekben futtatják a böngészési feladatokat, miközben hozzáférnek a meglévő bejelentkezési állapothoz és lapokhoz. Az ügynökök az `ego-browser` felületen érik el a böngészőt, külön automatizációs böngésző és új bejelentkezés nélkül. MIT licencű, nem fork; 2026. április 16-án jött létre, utolsó push-a 2026. augusztus 22-én volt, és 12 775 csillagot gyűjtött. Jelenleg macOS-en fut, a Windows és a Linux csak az ütemtervben szerepel. Saját ügynöknél kényelmes megoldás lehet a párhuzamos böngészésre, de a bejelentkezett munkamenet megosztása miatt csak olyan feladatoknál érdemes használni, amelyekhez ténylegesen szükséges ez a hozzáférés.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála a helyi modellek és a többügynökös fejlesztési munkafolyamatok gyakorlati használata.</p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 3.7 gyors terjedése miatt érdemes saját feladatokon is összevetni a helyben futó modellekkel és más távoli backendekkel.<br>> "Gemini 3.7 is our fastest growing model launch to date"<br><a href="https://x.com/OfficialLoganK/status/2091007303285887091">link</a></p>
+<p><strong>@AIHighlight</strong> -- Az AI-val készített előadás azt mutatja, hogy a generált videóknál már az érzelmi játék és nem csak a képi minőség kerül előtérbe.<br>> "This AI performance has more emotion than half of Hollywood."<br><a href="https://x.com/AIHighlight/status/2090834252912873837">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Vibe Search internet nélkül is futtat szemantikus keresést, átírást és képleírást, így a 2,4 TB-os gyűjtemény nem hagyja el a gépet.<br>> "Semantic search, local transcription and image description kept running like nothing happened."<br><a href="https://x.com/AIHighlight/status/2090753185929404870">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A közös kódolási munkatér a felülvizsgálatot és a jóváhagyást is láthatóvá teszi, ami több kódoló és ellenőrző ügynök koordinálásánál különösen hasznos.<br>> "the real unlock is moving code review and sign-off into the open"<br><a href="https://x.com/futurepedia_io/status/2090642250103705860">link</a></p>
+<p><strong>@itsPaulAi</strong> -- A Gemini 3.7 Flash olcsó és gyors háttérmodellként lehet érdekes kódoló ügynökökhöz, még ha a benchmarkokon nem is vezet.<br>> "it can handle basically any agentic/coding task I throw at it."<br><a href="https://x.com/itsPaulAi/status/2090923843401486790">link</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- Egy gyakorlati beszámoló a Codexet kódírásra, a Claude Code-ot pedig ellenőrzésre használja, vagyis külön szerepet ad a készítő és a felülvizsgáló ügynöknek. (8 pont, 14 komment)<br><a href="https://www.reddit.com/r/ChatGPTCoding/comments/1vv7wm3/codex_writes_claude_code_reviews_my_experience_so/">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A száz legnagyobb GitHub-tároló AGENTS.md fájljainak elemzése használható mintákat adhat a saját kódoló ügynökök utasításaihoz. (98 pont, 46 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1vujjq1/what_the_100_biggest_github_repos_put_in_their/">link</a></p>
+<p><strong>r/AI_Agents</strong> -- Egy 17 napos kísérletben az ügynök saját pénztárcát, domaint és e-mail-címet kapott, ami az önállóság mellett a jogosultságkezelés kockázatait is kézzelfoghatóvá teszi. (70 pont, 32 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1vvf0dc/my_claude_fable_5_agent_that_has_its_own_wallet/">link</a></p>
+<p><strong>r/MachineLearning</strong> -- Egy 30 milliárd tokenen tanított, kvantált LLM mindössze 60 MB-ban telepíthető, így gyenge hardveren futó szűk feladatú ügynökökhöz is érdekes lehet. (237 pont, 33 komment)<br><a href="https://www.reddit.com/r/MachineLearning/comments/1vv2nkh/i_developed_my_own_quantized_llm_from_scratch/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- Frissült a Minimax H3 ingyenes promptkészítője, ami ismételhetőbb videós utasításokat adhat a helyi médiagyártó folyamatokhoz. (786 pont, 66 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1vuty3p/big_update_to_the_free_minimax_h3_prompt_composer/">link</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Egy mindenes helyett ügynökcsapat: mit érdemes átvenni a Grok Bot munkamódszeréből?</strong>. A szerepkörök, a külön fiókok és a helyi modellek delegálása fontosabb lehet, mint maga a választott ügynökplatform.</p>
+<p><a href="https://maxineender.github.io/the-daily-report/reports/2026-08-23-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
