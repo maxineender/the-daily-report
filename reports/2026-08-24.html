@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb kontextus, több használható munkafolyamat — LocalAgent Digest</title>
+  <meta name="description" content="A mai eszközök a webes olvasástól a zeneszerkesztésig egyre több kézi lépést vesznek át.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-24</div>
+          <h1 class="article-title">Kevesebb kontextus, több használható munkafolyamat</h1>
+          <div class="article-sub">A mai eszközök a webes olvasástól a zeneszerkesztésig egyre több kézi lépést vesznek át.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb kontextus, több használható munkafolyamat" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép hétfőt! A DeepSeek ingyenes ügynökkerete hirtelen a fejlesztői figyelem középpontjába került. Mellette ma a kisebb tokenforgalom, a helyben kereshető fájlok és a szerkeszthető médiás munkafolyamatok kötik össze a híreket.</p>
+<h2>FOLYTATÁS: Saját hangeffektet is épít a Suno Studio beszélgetősávja</h2>
+<p>A Suno új bemutatója részletesen végigveszi a Studio 2.0 beépített kompresszorát, EQ-ját, zengetőjét, konvolúciós zengetőjét, késleltetőjét és torzítóját. Ezek sávonként kapcsolhatók be, egymás után is fűzhetők, a paramétereik pedig kézzel állíthatók. Az érdekesebb újdonság az, hogy a beszélgetősávból saját effektplugin is tervezhető, így az ügynök már nemcsak hanganyagot generálhat, hanem a sávok feldolgozásába is belenyúlhat.</p>
+<p>Forrás: <a href="https://youtu.be/59rEQZmGF24">Suno Studio 2.0</a></p>
+<h2>A DeepSeek Harness köré négy nap alatt 135 ezer csillag gyűlt</h2>
+<p>A The Stack beszámolója szerint az augusztus 13-án kiadott DeepSeek Harness négy nap alatt 135 ezer GitHub-csillagot és 8800 forkot szerzett. Maga a helyben telepíthető ügynökkeret ingyenes, de az általa használt modellekért továbbra is tokenenként kell fizetni. A gyors terjedés mellett korai hibák is előkerültek, köztük olyan feladatok, amelyek üres eszköznévvel indított hívás miatt álltak le.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha kipróbálod a keretet, az eszközhívás végrehajtása előtt utasítsd el az üres eszköznévmezőt, és naplózd külön ezt a hibát. A helyi keret nulla dolláros ára mellett a modell API-forgalmát külön mérd, mert a tényleges üzemeltetési költség ott keletkezik.</p></blockquote>
+<p class="price-line">Ár: ingyenes keret, tokenalapú modellköltséggel</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=4h6eRByaLpo">The Stack bemutatója</a></p>
+<h2>Az oc a teljes HTML helyett töredéknyi adatból olvastatná a webet</h2>
+<p>Ryan Shannon egy Hacker News-on felbukkant, oc nevű eszközre hívta fel a figyelmet, amely a poszt szerint egy élő weboldal tartalmát egyetlen rövid közösségi bejegyzésnél is kevesebb adatból teszi elérhetővé az ügynöknek. A cél az, hogy ne kerüljön a kontextusba az oldal teljes HTML-je a szkriptekkel, stílusokkal és követőkódokkal együtt, amikor az ügynöknek csak egy címre vagy hivatkozásra van szüksége. Ez elsősorban a sok oldalt bejáró kutatóügynökök előtöltési tokenforgalmán változtathat.</p>
+<p>Forrás: <a href="https://x.com/rryssf/status/2091548079497597018">Ryan Shannon beszámolója</a></p>
+<h2>A MUZIM helyben hagyja a fájlokat, mégis jelentés alapján keres bennük</h2>
+<p>A MUZIM bemutatója egy 2,4 TB-os, négy meghajtón szétszórt állományt alakított kereshető munkatérré. Az alkalmazás jelentésalapú keresést és automatikus rendszerezést kínál, miközben a fájlok az eredeti helyükön maradnak. A modellkapcsolathoz a felhasználó saját API-kulcsát használja, így egy fájlkezelő ügynöknek nem kell előbb felhőbe másolnia a teljes archívumot.</p>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://app.muzim.ai/">MUZIM</a></p>
+<h2>Az Animate Jam hét jelenetre bontott egyetlen videóutasítást</h2>
+<p>Egy szponzorált bemutatóban az Animate Jam egyetlen leírásból készített történetvázlatot, karakter- és helyszínképeket, majd hét, egyenként 15 másodperces jelenetet. Ezután narrációt és háttérzenét generált, végül a 105 másodperces anyagot a beépített idővonalra helyezte. A demóban volt tartalmi hiba is: a sérült veréb egy ponton patkányként szerepelt a narrációban, ezért az egyutas folyamat inkább kiindulópont, mint publikálható végeredmény.</p>
+<blockquote><p>Először csak az első jelenetet generáld le, és csak megfelelő karakter- és képi folytonosság esetén indítsd el a maradék hatot. Ha az automatikus Director mód rosszul bontja fel a történetet, a Workflow mód ad kézi hozzáférést az egyes lépésekhez.</p></blockquote>
+<p class="price-line">Ár: regisztrációkor 500 ingyenes kredit, napi belépéssel további 100 kredit</p>
+<p>Forrás: <a href="https://youtu.be/XE1ctJOQIpE">Animate Jam bemutató</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/firecrawl/anydoc">anydoc</a></strong> - A Rustban készült könyvtár Word-, PowerPoint-, Excel-, OpenDocument-, RTF-, EPUB-, CSV- és PDF-fájlokat alakít egységes GitHub Flavored Markdown formátumba, Node.js-, Python- és WebAssembly-kötésekkel. Parancssorból futtatható, és külön Agent Skill tanítja meg a kompatibilis ügynököknek a dokumentumkonverzió használatát. A böngészős demó helyben dolgozza fel a fájlokat, a beszkennelt oldalakhoz viszont maga a könyvtár nem biztosít OCR-t. MIT-licencű, nem fork, 2026. augusztus 3-án hozták létre, az utolsó push augusztus 20-án érkezett, és 18 111 csillagnál jár. Saját ügynöknél arra jó, hogy külön formátumspecifikus feldolgozók helyett egyetlen Markdown-bemeneti réteget adj a dokumentumolvasáshoz.</p>
+<p><strong><a href="https://github.com/JustVugg/colibri">Colibrì</a></strong> - A Colibrì tiszta C-ben, külső motorfüggőségek nélkül futtat nagy MoE-modelleket úgy, hogy a VRAM-ot, a rendszermemóriát és a háttértárat egyetlen többszintű memóriahierarchiaként kezeli. A szakértőket lemezről streameli, és ugyanazt a `coli chat`, `coli serve` vagy `coli web` felületet kínálja többek között a GLM-5.2, Kimi K3, DeepSeek V4 Flash és Qwen3.6 modellekhez. A projekt nem ígér meghatározott sebességet, viszont alapértelmezésben nem változtatja meg észrevétlenül a modell pontosságát vagy routerének működését. Apache-2.0 licencű, nem fork, 2026. július 1-jén indult, az utolsó push augusztus 24-én érkezett, és 25 985 csillaga van. Saját ügynöknél óriási MoE-modellek kísérleti futtatására használható meglévő hardveren, de kiszámítható válaszidőt igénylő szolgáltatáshoz nem ad teljesítménygaranciát.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fókusza az ügynökök költsége, a gépi munkafolyamatok bővülése és a helyben futó videó-, illetve nyelvi modellek hardverigénye.</p>
+<p><strong>@gdb</strong> -- Az OpenAI egyszerre célozza a feladatonkénti legalacsonyabb árat és a magasabb képességplafont, ami olcsóbb felhős tartalékot adhat a helyi ügynökök mellé.<br>> "the lowest price on the market for any task"<br><a href="https://x.com/gdb/status/2090969732568772909">link</a></p>
+<p><strong>@ylecun</strong> -- LeCun szerint a fizikai feladatokat gyorsan megtanuló ügynökökhöz az LLM-eken túli architektúrák kellenek, nem pusztán nagyobb nyelvi modellek.<br>> "methods and architectures beyond LLMs"<br><a href="https://x.com/ylecun/status/2091596538099196076">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Topview Codex-bővítménye egy beszélgetésben alakítja a promptot szerkeszthető videóvá, így a tervező ügynök közvetlenül vezérli az előállító eszközt.<br>> "prompt becomes storyboard, storyboard becomes video"<br><a href="https://x.com/AIHighlight/status/2091098839281222056">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- Egy 19 perces Claude-munkafolyamat a kontextusinterjút és a forrásokra alapozott kutatást emeli ki, ami kevesebb javítókört jelenthet saját ügynököknél.<br>> "Ground first, ask second"<br><a href="https://x.com/futurepedia_io/status/2090849386658246977">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A ChatGPT már közvetlenül szerkeszthet Docs-, Sheets- és Slides-fájlokat, így a dokumentumkezelő ügynökök kevesebb másolással és lapváltással dolgozhatnak.<br>> "ChatGPT now edits your actual Docs, Sheets &amp; Slides"<br><a href="https://x.com/futurepedia_io/status/2091693667425911023">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy felhasználó 16-ról 36 DGX Spark gépre bővíti helyi klaszterét, ami gyakorlati képet ad a nagy modellek többgépes futtatásának léptékéről. (712 pont, 505 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1vvv7iv/the_all_spark_cluster_upgrading_from_16_36_dgx/">link</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Egy teljes konfigurációs csomag azt mutatja be, hogyan lehet Oracle Free Tier erőforrásokon havi infrastruktúradíj nélkül AI-szolgáltatásokat futtatni. (9 pont, 7 komment)<br><a href="https://www.reddit.com/r/SelfHostedAI/comments/1vwbym3/i_run_a_0month_ai_empire_on_oracle_free_tier/">link</a></p>
+<p><strong>r/comfyui</strong> -- A MiniMax H3 kép-videó munkafolyamat 12 GB VRAM-on készít 30 másodperces videót körülbelül 14 perc alatt, ezért középkategóriás kártyán is kipróbálható. (240 pont, 40 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1vw036i/30second_minimax_h3_seamless_imagetovideo/">link</a></p>
+<p><strong>r/MachineLearning</strong> -- Kilenc modellen végzett mérés szerint a tömörebb kimenet csökkentheti a költséget pontosságvesztés nélkül, a bemeneti prompt rövidítése viszont nem hozott ilyen előnyt. (58 pont, 8 komment)<br><a href="https://www.reddit.com/r/MachineLearning/comments/1vulfei/does_telling_an_llm_to_be_concise_actually_save/">link</a></p>
+<p><strong>r/LocalLLM</strong> -- A Qwen 3.8 27B helyi futtatásáról szóló bemutató nagy figyelmet kapott, így érdemes figyelni a modell valós hardverigényéről és teljesítményéről érkező tapasztalatokat. (437 pont, 114 komment)<br><a href="https://www.reddit.com/r/LocalLLM/comments/1vu5x42/behold_the_unbridled_power_of_qwen_38_27b/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
