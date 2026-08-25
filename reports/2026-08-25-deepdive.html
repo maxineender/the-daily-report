@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Design: mozgógrafika és adatvizualizáció valós idejű kódból — LocalAgent Digest</title>
+  <meta name="description" content="Hogyan készíthetsz feliratszinkronos mozgógrafikát és animált diagramokat a Claude Design segítségével.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-25</div>
+          <h1 class="article-title">Claude Design: mozgógrafika és adatvizualizáció valós idejű kódból</h1>
+          <div class="article-sub">Hogyan készíthetsz feliratszinkronos mozgógrafikát és animált diagramokat a Claude Design segítségével.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Claude Design: mozgógrafika és adatvizualizáció valós idejű kódból" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Gyakorlati útmutató a Futurepedia Claude Design bemutatója alapján. A videó az eszköz animációs képességeit, a feliratszinkronos mozgógrafika készítését, a szerkesztési korlátokat és az utómunkát mutatja be.</p>
+<h2>Platform alapok és hozzáférés (00:00 - 01:42)</h2>
+<p>A Claude Design eléréséhez fizetős csomag szükséges: Claude Pro (havi 20 dollár, éves díjjal havi 17 dollár) vagy Claude Max (havi 100 dollártól). Elérési útvonal: `claude.ai/design` (a gépi leirat "clod.ai.design"-nak hallotta) vagy a Claude felületének bal oldalsávja.</p>
+<p>Választható sablonok a felületen: Slides, Mobile app design, Wireframe, Document, Animation, UI mockups, Resume, 3D object, Research, HTML email, Diagram.</p>
+<p>Működési elve eltér a hagyományos text-to-video eszközöktől (például Runway vagy Sora), amelyek zárt videófájlt adnak vissza. A Claude Design valós időben futó HTML, CSS és JavaScript (React/JSX) kódot ír. Ez adja a struktúrát, a stílust és a mozgást. Ennek előnye a precíz módosíthatóság természetes nyelven vagy kódszinten. A kész animáció a Share menüből 1080p MP4 videóként exportálható.</p>
+<h2>1. Szöveges promptból mozgógrafika (01:42 - 03:20)</h2>
+<p>Általános prompt esetén a rendszer tisztázó kérdéssort tesz fel a generálás előtt.</p>
+<p>Kezdő prompt:<br>"animate a visual explanation of how LLMs are trained and how they work"</p>
+<p>A felületen megválaszolt kérdések:<br>- Célközönség ("Who's watching?"): "Curious professionals / execs"<br>- Hossz ("Target length (seconds)"): "30"<br>- Képarány ("Aspect ratio"): "16:9 landscape" (választható 9/10 vertical is)<br>- Megjelenítés módja ("How does it explain itself?"): "minimal labels only - show, don't tell"<br>- Hangnem ("Tone of the copy"): "Playful and witty"</p>
+<p>Szerkesztési felület és iteráció:<br>- Tweaks panel (jobb oldalon): Accent színek, Look, Captions, Motion editor.<br>- Timeline (lent): a jelenetek hossza csúszkával állítható.<br>- Természetes nyelvű módosítás: a "The cat sat on the mat" példamondat cseréjére kiadott prompt: "use a different example phrase than the cat sat on the mat". A Claude módosította a komponenst (pipeline-scenes.jsx), a mondatot "The kettle began to boil" szövegre cserélte, és a lezáró kérdést is javította ("Why did you say \"boil\"?").</p>
+<h2>2. Animált adatvizualizáció promptolása (03:20 - 04:50)</h2>
+<p>A Claude Design képes önálló adatgyűjtésre és strukturált vizualizációra előzetes adatok nélkül.</p>
+<p>Bemutatott példa:<br>- Téma: Történelmi piaci buborékok és az AI hullám összehasonlítása ("Historic market bubbles and AI trade").<br>- Látvány: Logaritmikus grafikon (Railways 1845 +100%, Dot-com 2000 +580%, Telecom/Fiber 2000 +600%) és a Kindleberger mánia 5 fázisa (Displacement, Boom, Euphoria, Crisis, Panic).<br>- Működés: A prompt nem tartalmazott számokat, a Claude önállóan kutatta fel az adatokat és hozta létre az animált diagramot.</p>
+<h2>3. Animáció képernyőképből és felületi szimulációk (04:50 - 06:25)</h2>
+<p>Referenciakép feltöltésekor a modell nem képanimációt végez, hanem kódból újraépíti a struktúrát.</p>
+<p>Munkafolyamat:<br>- Bemenet: GPT Image 2 diagram (The Claude Ecosystem).<br>- Prompt: "Use this image as a style and structural reference. Start with just the text The Claude E"<br>- Logika: Rétegenkénti felépülés (Core Products, Universal Layer, Context &amp; Memory, Autonomous Layer), lépésenként 1,5 másodperces szünetekkel címsorként.<br>- Eredmény: 19 másodperces, 1920x1080 kódolt felület (Claude Ecosystem.dc.html), külön idővonallal.<br>- Felhasználás: Szoftveres felületek szimulálása (kurzormozgás, kattintás, felugró ablakok, prompt gépelés, párbeszéd).</p>
+<h2>4. Több referenciakép és feliratszinkronos mozgógrafika (06:25 - 09:30)</h2>
+<p>Munkafolyamat beszélő fejes (talking head) videók hátteréhez.</p>
+<p>Bemenetek:<br>- 4 referenciakép: Claude pixel figura, prompt beviteli mező, chat ablak, háttérkép (Background Style.png).<br>- Időzített SRT leirat: A Gemini generálja a videósávból erre a promptra: "Give me an SRT transcript for this".</p>
+<p>Univerzális mozgógrafika prompt szó szerint:<br>"I want motion graphics that will be used over a talking head video. The graphics should follow the transcript that is pasted below, illustrating the concepts at the matching timestamps. Default to graphics and icons to illustrate concepts whenever possible, use the interface when applicable, use text minimally when appropriate to emphasize key points or label things. The exception is if there's a definition where the exact text on screen makes sense. Leave blank space on the right third mostly or at times the top third for me to place the talking head. You can switch between the two locations as you see fit, typically leaving the top third open is when emphasizing large points or definitions. If it really calls for it, you can even go full screen with the animations and leave no talking head room. I also included an image that you can use as a style reference for the background throughout. Add some subtle animation to it and feel free to modify it however you see fit. Aspect Ratio 16:9 Transcript: [paste transcript]"</p>
+<p>Hibák és javítási lépések:<br>- Szövegfelhalmozás: Tiltás nélkül ("use text minimally") teleírja a képernyőt feliratokkal.<br>- Maszkhely elhibázása: Végig a jobb harmadban hagyott helyet, nem váltott felső harmadra.<br>- Javító prompt: "Move Conversation and OneTurn to the bottom center, leaving enough room up top for the talking head". A Claude belső jelenetcímeket ad (Surfaces, Partner, Projects, Connectors, Artifacts, Conversation, OneTurn), ezekre név szerint lehet hivatkozni.<br>- Export: Share menü, Video opció, 1080p felbontás.</p>
+<h2>5. Premiere Pro vágás és egyedi bővítmény (09:30 - 13:34)</h2>
+<p>A vágásnál a talking head sávot a Claude videó fölé kell illeszteni.</p>
+<p>Hagyományos vágási problémák:<br>- A pozicionálás, átméretezés, maszkolás és a Bézier görbés mozgássimítás manuálisan lassú.<br>- A kulcskockák másolása Premiere-ben körülményes.</p>
+<p>Bemutatott megoldás (saját Premiere plugin, Codexben írva):<br>- Zooms: kattintás a célpontra, lépték, Animate gomb.<br>- Highlights: kijelölő keret, Magnify funkció, Draw rajzolási animáció háttér-elhalványítással.<br>- Pop-up animációk.<br>- Talking Head elrendezések: előre beállított pozíciók, formák (Full, Portrait, Wide, Circle), keretek, árnyékok.<br>- Refresh Frame funkció: megmutatja az aktuális videókockát az igazításhoz.<br>- Animate to this state: egy kattintással generálja a kulcskockákat és átmeneteket.</p>
+<p>Korlát: Belső használatú fejlesztés ("This isn't something you can use right now if you want to, sorry."), nem nyilvános eszköz.</p>
+<h2>6. Újrahasznosítható Design Rendszerek (13:34 - 16:13)</h2>
+<p>A referenciaképek csak egy generálásra érvényesek. A hosszabb videók 30 másodperces vagy 2 perces blokkokból állnak, így a márkaegységhez központi design rendszer kell.</p>
+<p>Létrehozás:<br>- Design System menüpont, Create design system gomb.<br>- Útvonal: Create using Claude Code vagy Create here.<br>- Források: GitHub repó, helyi mappa, .fig fájl (böngészőben lokálisan feldolgozva), vagy stílusképek (3 db GPT Image 2 kép) leírással.<br>- Generálás: 5 perc alatt építi fel a teljes rendszert (a példában 108 fájlt hozott létre).<br>- Felépítés (Halo Neon Design System):<br>  - Content fundamentals: szabályok (harmadik személy, tömörség, csupa nagybetűs főnévi címkék, mint MEMORY, INPUT, ACTION, TOOL).<br>  - Vizuális elemek: kapcsolóvonalak, üveghatások (cyan glass, violet glass), glow elevation (bloom vetett árnyék helyett), Font Awesome 6 Solid ikonok, színpaletta.</p>
+<p>Használat:<br>A design rendszer és az Animation sablon kiválasztása után az univerzális prompt és az új SRT leirat beadásával azonnal kész a konzisztens mozgógrafika.</p>
+<h2>Képességek és korlátok összefoglalása</h2>
+<p>| Funkció | Mit tud? | Mit NEM tud? / Korlátok |<br>| :--- | :--- | :--- |<br>| <strong>Szöveg és SRT szinkron</strong> | Időbélyegek alapján pontosan jeleníti meg az elemeket és ábrákat. | Alapértelmezetten teletömi a képernyőt felirattal. Külön promptban kell tiltani a felesleges szöveget. |<br>| <strong>Elrendezés és maszkhely</strong> | Képes safe zone helyet hagyni a beszélő fej számára. | Gyakran elfelejti a pozícióváltást. Utólagos korrekciós prompt szükséges. |<br>| <strong>Adatvizualizáció</strong> | Kikutatja az adatokat és kódból interaktív grafikonokat épít. | Nem élő adatbázis-kapcsolat, statikus kutatási adatokból dolgozik. |<br>| <strong>Referenciaképek</strong> | Mockupokból újraépíti a felületeket és szimulálja a működést. | Nem képmorfoló generátor. Kódból rajzolja újra az elemeket. |<br>| <strong>Design rendszer</strong> | Figma, kód vagy képek alapján 5 perc alatt komplex vizuális rendszert épít. | Nagy kódbázisoknál csak frontend mappa csatolható. |<br>| <strong>Utómunka integráció</strong> | 1080p MP4 videóként exportálható Premiere Pro-ba. | A videóban látott Premiere plugin zárt, saját fejlesztés, nem letölthető. |</p>
+<h2>Gyakorlati alkalmazhatóság tartalomgyártásban</h2>
+<p>Gyakorlati értékelés egy zenei vagy videós tartalomgyártásban felmerülő feladatokhoz:</p>
+<h3>1. Dalklip (Hivatalos videóklip)
+- Értékelés: Nem használható.
+- Indoklás: A Claude Design webes felületeket, diagramokat és kódolt UI elemeket gyárt. Nem alkalmas fotorealisztikus, filmszerű vagy 3D narratív zenei klipek generálására. Erre továbbra is a videós generatív modellek (Runway, Kling) valók.</h3>
+<h3>2. TikTok / Reels kártya-videók (Rövid függőleges videók)
+- Értékelés: Kiválóan és közvetlenül használható.
+- Indoklás: A kulisszatitkokhoz, dalkészítési lépésekhez, statisztikákhoz és track breakdown kártyákhoz tökéletes. Az SRT szinkron miatt a narrációhoz pontosan illeszkedő, animált felugró ablakok készíthetők, fenntartott hellyel a beszélő fej számára.</h3>
+<h3>3. Borítókép (YouTube-thumbnail)
+- Értékelés: Korlátozottan, legfeljebb alapként használható.
+- Indoklás: A borítóképekhez és YouTube-thumbnailekhez szükséges intenzív fotómanipulációt és kollázsokat nem tudja előállítani. Letisztult, technikai jellegű háttérelemek kinyerhetők belőle, de grafikai szoftveres utómunkát igényel.</h3>
+<h3>4. Dalszöveg-animáció (Lyric video)
+- Értékelés: Specifikus, modern stílusban használható.
+- Indoklás: Az SRT időzítés révén képes a dalszöveg ütemére animálni a szöveget és grafikákat. Nem tud komplex részecske-effektes vagy hullámforma animációkat, de kártyás, chat-stílusú vagy minimál tipográfiai dalszöveg-videókhoz azonnal bevethető.</h3>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

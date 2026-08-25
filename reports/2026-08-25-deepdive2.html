@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boris (Anthropic) gyakorlati Claude Code tippjei a terminálban — LocalAgent Digest</title>
+  <meta name="description" content="A Claude Code megalkotójának bevált módszerei a konfigurációtól a headless automatizálásig.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-25</div>
+          <h1 class="article-title">Boris (Anthropic) gyakorlati Claude Code tippjei a terminálban</h1>
+          <div class="article-sub">A Claude Code megalkotójának bevált módszerei a konfigurációtól a headless automatizálásig.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Boris (Anthropic) gyakorlati Claude Code tippjei a terminálban" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Boris Cherny, az Anthropic fejlesztője és a Claude Code megalkotója egy 28 perces előadásban mutatta be az ágens leghatékonyabb gyakorlati használatát. A prezentáció a mindennapi fejlesztői munkafolyamatokra fókuszál: beállításokra, promptolási mintákra, a kontextushierarchiára, a terminál gyorsbillentyűire és a headless automatizációra. Ez az összefoglaló a konkrét parancsokat, promptokat és bevált módszereket gyűjti egybe mindazoknak, akik maximális hatékonysággal szeretnék használni a Claude Code-ot.</p>
+<h2>Környezet és beállítások (00:00 - 04:00)</h2>
+<p>A Claude Code nem kiegészítő eszköz, hanem autonóm ágens, amely komplett funkciókat épít, fájlokat kezel és hibákat javít bármely editor (VS Code, Xcode, JetBrains, Vim, Emacs) mellett, lokálisan vagy SSH/tmux alatt.</p>
+<p>Telepítés Node.js környezetben:<br>```bash<br>npm install -g @anthropic-ai/claude-code<br>```</p>
+<p>Kezdeti beállítási parancsok:<br>- `/terminal-setup`: bekapcsolja a Shift+Enter kombinációt az új sorokhoz.<br>- `/theme`: sötét, világos vagy daltonizált téma beállítása.<br>- `/install-github-app`: telepíti a GitHub appot (@claude említéshez issue-kban és PR-ekben).<br>- `/allowed-tools`: engedélyezett eszközök listája a felesleges jóváhagyások elkerülésére.<br>- `/config`: értesítések bekapcsolása.<br>- macOS Diktálás: Boris nem gépeli a hosszú promptokat; kétszer leüti a diktálás billentyűt, és élőszóban diktálja le a részletes feladatot.</p>
+<h2>Első szint: Kérdezz a kódbázisról (04:00 - 07:40)</h2>
+<p><strong>Tip #1: Használd a kódbázis Q&amp;A-t a kezdeti lépésekhez.</strong><br>Új fejlesztők betanításakor a kérdésfeltevés a legjobb kiindulópont. Az Anthropicnál a mérnökök onboarding ideje 2-3 hétről 2-3 napra csökkent, mert az első naptól kezdve a Claude-ot kérdezik a kódról.<br>- Zero setup és zero indexing: nincs előzetes indexelés, azonnal használható.<br>- Helyi adatkezelés: a forráskód helyben marad, nem töltődik fel adatbázisba, és nem tanítanak rajta generatív modelleket.</p>
+<p><strong>Tip #2: Gyakorold a promptolást a határok kiismerésére.</strong><br>A Q&amp;A során megismered, mit old meg a modell egyetlen utasításból, és mikor kell lépésről lépésre vezetni az interaktív REPL felületen.</p>
+<p>Konkrét prompt-példák:<br>- `How is @RoutingController.py used?` (Feltérképezi a példányosításokat és a hívási környezetet, a dokumentációkhoz hasonló mélységben).<br>- `How do I make a new @app/services/ValidationTemplateFactory?`<br>- `Why does recoverFromException take so many arguments? Look through git history to answer` (A git log és a commitok alapján önállóan összefoglalja a paraméterek történetét).<br>- `Why did we fix issue #18303 by adding the if/else in @src/login.ts API?`<br>- `In which version did we release the new @api/ext/PreHooks.php API?`<br>- `Look at PR #9383, then carefully verify which app versions were impacted`<br>- `What did I ship last week?` (Boris minden hétfői standup előtt ezt futtatja a saját commitjai kigyűjtésére).</p>
+<h2>Második szint: Kódszerkesztés és munkafolyamatok (07:40 - 12:00)</h2>
+<p>A beépített eszközkészlet (bash, fájlkeresés, fájllistázás, fájlírás/olvasás, webes lekérés/keresés, TODOs, alágensek) segítségével a modell önállóan szerkeszti a kódot.</p>
+<p><strong>Tip #3: Tanítsd meg a Claude-ot a saját eszközeid használatára.</strong><br>- Egyedi CLI eszközök: `Use the barley CLI to check for error logs in the last training run. Use --help to check how to use it.`<br>- MCP integráció: `$ claude mcp add barley<em>server -- node myserver`, majd: `Use the barley MCP server to check for error logs in the last training run.`</p>
+<p><strong>Tip #4: Válaszd a feladathoz illő munkafolyamatot.</strong><br>1. <em>Feltárás, tervezés, jóváhagyás:</em> <br>   `Figure out the root cause for issue #983, then propose a few fixes. Let me choose an approach before you code. ultrathink.` (vagy: `Propose a few fixes for issue #8732, then implement the one I pick.`, `think hard.`)<br>2. <em>Tesztvezérelt ciklus (TDD):</em><br>   `Write tests for @utils/markdown.ts to make sure links render properly (note the tests won't pass yet, since links aren't yet implemented). Then commit. Then update the code to make the tests pass.`<br>3. <em>Vizuális visszacsatolási hurok:</em><br>   `Implement [mock.png]. Then screenshot it with Puppeteer and iterate till it looks like the mock.` (A tesztekkel vagy Puppeteer képernyőképekkel támogatott iteráció 2-3 lépésben szinte tökéletes eredményt ad).</p>
+<p>Gyakori kombinált parancsok:<br>- `commit, push, pr`: a commit stílusának felmérése, branch készítés, commitolás, push és PR nyitás egyben.<br>- `Use 3 parallel agents to brainstorm ideas for how to clean up @services/aggregator/feed</em>service.cpp.`: párhuzamos ágensek indítása.</p>
+<h2>Harmadik szint: Kontextuskezelés és CLAUDE.md hierarchia (12:00 - 18:30)</h2>
+<p><strong>Tip #5: Minél több a releváns kontextus, annál jobb a végeredmény.</strong></p>
+<p><strong>Tip #6: Finomhangold a kontextust, és tartsd tömören.</strong><br>A túl hosszú CLAUDE.md feleslegesen terheli a kontextusablakot. Csak a legfontosabb bash parancsokat, kódolási konvenciókat és architektúrális döntéseket rögzítsd.</p>
+<p>A négyrétegű konfigurációs és memóriahierarchia:<br>1. <em>Enterprise policy:</em> `/Library/Application Support/ClaudeCode/CLAUDE.md` és `policies.json` (központi jóváhagyások és tiltások).<br>2. <em>Global (felhasználói):</em> `~/.claude/CLAUDE.md`, egyéni parancsok (`~/.claude/commands/foo.md` -&gt; `/user:foo`), `~/.claude/settings.json`.<br>3. <em>Project shared (gitbe mentve):</em> `CLAUDE.md`, közös parancsok (`.claude/commands/foo.md` -&gt; `/project:foo`), `.claude/settings.json`, `.mcp.json`.<br>4. <em>Project local (egyéni, nincs gitben):</em> `CLAUDE.local.md`, `.claude/settings.local.json`.</p>
+<p>Az almappák `CLAUDE.md` fájljai csak akkor töltődnek be automatikusan, amikor a Claude az adott mappában dolgozik. Az Anthropicnál a `.claude/commands/label-github-issues.md` parancsot GitHub Actions futtatja, míg a közös `.mcp.json` a Puppeteer MCP elérését biztosítja a csapatnak.</p>
+<p>Memóriakezelési parancsok:<br>- `/memory`: betöltött memóriafájlok megtekintése és szerkesztése.<br>- `#`: gyorsbillentyű új szabály hozzáadására a kiválasztott memóriafájlba.</p>
+<p><strong>Tip #7: Állítsd be a CLAUDE.md-t, MCP szervereket és parancsokat, majd mentsd a gitbe a csapatszintű előnyökért.</strong></p>
+<h2>Gyorsbillentyűk és terminál-trükkök (18:30 - 20:40)</h2>
+<ul><li>`Shift + Tab`: automatikus szerkesztés-elfogadás bekapcsolása (a kódszerkesztések megerősítés nélkül futnak, a bash parancsok továbbra is jóváhagyást kérnek).</li><li>`#`: memóriabeszúrás a `CLAUDE.md`-be.</li><li>`!`: közvetlen bash mód (a parancs és kimenete bekerül a következő kontextusba).</li><li>`@`: fájlok vagy könyvtárak behúzása a kontextusba.</li><li>`Esc`: megszakítás a munkamenet sérülése nélkül.</li><li>Dupla `Esc`: visszalépés az előzményekben.</li><li>`--resume` vagy `--continue`: előző munkamenet folytatása a parancssorból.</li><li>`Ctrl + R`: teljes, részletes kimenet megjelenítése.</li></ul>
+<h2>Automatizálás: Claude Code mint Unix segédprogram (20:40 - 22:20)</h2>
+<p>A `-p` (print) kapcsolóval a Claude Code beilleszthető a standard Unix adatfolyamokba (pipe in, pipe out):<br>```bash<br>claude -p "what did you just do?" --output-format=json | jq '.result'<br>git status | claude -p "what are my changes?" --output-format=json | jq '.result'<br>```<br>Ez a megoldás közvetlenül alkalmazható CI/CD scriptekben, incidenskezelésben, valamint GCP logok vagy Sentry hibák elemzésében.</p>
+<h2>Párhuzamosítás és multi-Claude stratégiák (22:20 - 23:30)</h2>
+<p>A power userek több párhuzamos Claude futtatásához az alábbi technikákat alkalmazzák:<br>1. Több terminálfül a repó külön példányaival.<br>2. Egyetlen repó Git worktree-kkel izolálva.<br>3. Távoli SSH kapcsolatok Tmux munkamenetekkel.<br>4. Párhuzamos GitHub Actions jobok.</p>
+<h2>Kérdezz-felelek tanulságok (23:30 - 27:30)</h2>
+<ul><li><strong>Biztonságos bash (23:54):</strong> Statikus kódanalízis és többszintű jogosultságkezelés határozza meg az automatikusan futtatható és az engedélyköteles parancsokat.</li><li><strong>Multimodalitás (25:02):</strong> Képek drag-and-drop behúzással, vágólapról beillesztve vagy fájlelérési úttal is átadhatók a terminálban UI mockupok megvalósításához.</li><li><strong>Miért CLI és nem IDE? (25:38):</strong> A sokféle belső editor (VS Code, Zed, Xcode, Vim, Emacs) miatt a terminál az egyetlen univerzális felület. Emellett a modellek gyors fejlődése feleslegessé teheti a vastag IDE felületekre fordított fejlesztést.</li><li><strong>Belső használat (26:40):</strong> Az Anthropic technikai munkatársainak 80%-a napi szinten használja az eszközt, beleértve a kutatókat is, akik Jupyter notebookokat szerkesztenek vele.</li></ul>
+<h2>Tanulságok ügynök-flották és ütemezett automatizációk üzemeltetéséhez</h2>
+<p>Ha valaki ügynök-flottát üzemeltet ütemezett feladatokkal és projekt-utasításfájlokkal, az alábbi szempontokat érdemes mérlegelnie a bemutatott gyakorlatokból:</p>
+<p><strong>Ami közvetlenül alkalmazható autonóm ügynököknél:</strong><br>- <em>Kontextus-fegyelem:</em> A gyökér utasításfájl (CLAUDE.md) karcsún tartása, az összetett instrukciók specializált modulokba és almappákba szervezése megvédi a kontextusablakot.<br>- <em>Zárt ellenőrzési ciklusok:</em> Az autonóm ügynökök promptjaiba épített kötelező teszt- és lintellenőrzési lépések garantálják a minőséget.<br>- <em>Headless automatizáció (`-p` mód):</em> Az ütemezett cron feladatok, hibaelemzések és standup összefoglalók közvetlenül építhetnek a standard ki- és bemenetekre.<br>- <em>Git worktree izoláció:</em> Párhuzamosan futó ügynököknél a fájlütközések elkerülésének legbiztosabb eszköze.</p>
+<p><strong>Ami kevésbé működik teljesen autonóm működésben:</strong><br>- <em>Interaktív terminál billentyűk:</em> A `Shift+Tab` és `Esc` gyorsbillentyűk emberi REPL használatra készültek; az autonóm háttérfolyamatokban strukturált hibakezelés és naplózás váltja ki őket.<br>- <em>Kötetlen commit és PR parancsok:</em> Az autonóm feladatvégzés során a módosításokat szigorúbb ellenőrző kapukhoz és külön review ágakhoz érdemes kötni a közvetlen commit/push helyett.<br>- <em>Indexelés nélküli forráskód-bejárás:</em> Nagyobb méretű kódbázisok és komplex dokumentációk esetén az autonóm ügynököknek célzott keresőeszközökre és specializált modulokra van szükségük a hatékony tájékozódáshoz.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
