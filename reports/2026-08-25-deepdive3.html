@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepgram körkép: Flux TTS, magyar nyelvi korlátok és árak — LocalAgent Digest</title>
+  <meta name="description" content="Átfogó elemzés a Deepgram újításairól, a kétirányú nyelvtámogatásról és a valós költségekről.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-25</div>
+          <h1 class="article-title">Deepgram körkép: Flux TTS, magyar nyelvi korlátok és árak</h1>
+          <div class="article-sub">Átfogó elemzés a Deepgram újításairól, a kétirányú nyelvtámogatásról és a valós költségekről.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Deepgram körkép: Flux TTS, magyar nyelvi korlátok és árak" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A <a href="https://deepgram.com/">Deepgram</a> augusztusi frissítése jelentős lépést tesz a valós idejű hangügynökök fejlesztésében. Alapértelmezetté vált a közvetlen hangfolyam-alapú Flux beszédszintézis, megjelent a kifejezőerő finomhangolása, bővült a beszédfelismerés nyelvkínálata, és megérkeztek a legújabb OpenAI modellek is. Ha valós idejű, angol nyelvű telefonos vagy webes hangasszisztenst fejlesztesz, a platform ma az egyik leggyorsabb és legköltséghatékonyabb megoldás. Ha viszont magyar nyelvű hangügynökre van szükséged, a kép kettős: a beszédfelismerés hibátlanul kezeli a magyar nyelvet, a hangképzéshez viszont külső szolgáltatót kell igénybe venned.</p>
+<h2>Mi az újdonság?</h2>
+<p>A <a href="https://e.deepgram.com/deepgram-digest-flux-tts-default-agent-voice-nova-3-languages-twilio-webinar">Deepgram augusztusi hírlevele</a> és a kapcsolódó dokumentációk alapján a legfontosabb fejlesztések:</p>
+<ul><li><strong>Flux TTS lett az alapértelmezett ügynök-hang:</strong> A Voice Agent API-ban mostantól a Flux TTS az alapértelmezett szintézis a `flux-kit-en` modellel a <a href="https://developers.deepgram.com/docs/voice-agent-tts-models">hangmodellek dokumentációja</a> szerint, amely 36 angol hangot kínál hét akcentussal.</li><li><strong>Kifejezőerő-szabályzó (Expressivity) béta:</strong> Elérhetővé vált az <a href="https://developers.deepgram.com/docs/tts-expressivity">expressivity paraméter</a>, amellyel a Flux hangok stílusa nyugodttól élénkig állítható egy -2 és +2 közötti skálán.</li><li><strong>Öt új Nova-3 nyelv:</strong> A Nova-3 beszédfelismerő immár támogatja az afrikaans, a grúz, az örmény, a pandzsábi és a nepáli nyelvet a <a href="https://developers.deepgram.com/docs/models-languages-overview">nyelvi áttekintő</a> alapján, miközben több mint húsz meglévő nyelv egynyelvű modellje is frissült.</li><li><strong>Menet közbeni modell- és nyelvváltás:</strong> A beszédfelismerésben az <a href="https://developers.deepgram.com/docs/voice-agent-update-listen">UpdateListen funkció</a> révén a kapcsolat megszakítása nélkül cserélhető a modell vagy a nyelv.</li><li><strong>Új OpenAI és Google LLM modellek:</strong> A Voice Agent API-ba bekerült a `gpt-5.6-luna` (Standard szint) és a `gpt-5.6-terra` (Advanced szint) az <a href="https://developers.deepgram.com/docs/voice-agent-llm-models">LLM dokumentáció</a> alapján, a Google Gemini modellek pedig elérhetők a Gemini Enterprise Agent (GEA) felületen keresztül európai uniós végpontokkal.</li><li><strong>Teljes Flux támogatás a parancssorban:</strong> A <a href="https://developers.deepgram.com/developer-tools/cli/getting-started">Deepgram CLI 0.3.0</a> a `dg speak` alatt alapértelmezetten a `flux-alexis-en` hangot indítja, a `dg listen` streameli a Flux modelleket, a CLI pedig szabványos kilépési kódokat biztosít a CI folyamatokhoz.</li><li><strong>További kiegészítések:</strong> Bővült a kimondott számokat számjegyekké alakító <a href="https://developers.deepgram.com/docs/numerals">számformázás</a> (bolgár, kantoni kínai, maláj, koreai), megjelent az STT késleltetés a <a href="https://developers.deepgram.com/docs/voice-agent-latency-report">késleltetési jelentésekben</a>, a munkamenetek kétórás automatikus korlátot kaptak, a <a href="https://developers.deepgram.com/docs/deploy-flux-tts">saját üzemeltetésű rendszerek</a> megkapták a Flux TTS korai hozzáférését, a konténerképek pedig <a href="https://developers.deepgram.com/changelog/2026/8/12">FIPS 140-3 minősítést</a> értek el.</li></ul>
+<h2>Használható angolra és magyarra?</h2>
+<p>Ez a legfontosabb kérdés, és a válasz határozottan kettős. A Deepgram rendszere teljesen eltérően teljesít a két nyelvi irányban.</p>
+<p><strong>Beszédfelismerés (hangból szöveg): a magyar működik.</strong> A Nova-3 és a Nova-2 általános modelljei teljes körűen támogatják a magyar nyelvet a `hu` kóddal. Ez felvételről (kötegelt feldolgozás) és valós idejű élő hangfolyamból is érvényes. A most bejelentett öt új nyelv a globális listát bővíti, a magyar nyelv támogatása korábban is része volt a rendszernek és kiválóan használható.</p>
+<p><strong>Beszédszintézis (szövegből hang): a magyar nem működik.</strong> A Deepgram saját szövegfelolvasói egyáltalán nem beszélnek magyarul. Az Aura család (Aura-1 és Aura-2) kizárólag angol, spanyol, német, francia, holland, olasz és japán nyelven szólal meg. Az új Flux TTS pedig csak angolul érhető el: a `flux-kit-en` katalógus 36 hangja kizárólag angol akcentusokat tartalmaz. Aki tehát magyar nyelvű hangkimenetet keres, annak a Deepgram saját szintézise ma nem opció.</p>
+<p>Ez a kettősség határozza meg a hangügynökök építését. Magyar nyelvű asszisztensnél a Deepgram a bejövő beszéd felismerésére és leiratozására kész megoldást ad. A válaszok kimondásához viszont külső beszédhang-szolgáltatót kell bekötni egyedi TTS konfigurációval. Angol projekteknél ezzel szemben a teljes lánc kulcsrakészen működik egyetlen platformon.</p>
+<h2>Mennyibe kerül?</h2>
+<p>A Deepgram árazása a Pay As You Go sávban használatalapú, minimális kötelezettségvállalás nélkül.</p>
+<p><strong>Beszédfelismerés (STT):</strong><br>- Élő folyam (streaming): A Nova-3 egynyelvű modellje promóciós áron 0,0048 dollár percenként (normál ára 0,0077 dollár), többnyelvű változata 0,0058 dollár percenként (normál ára 0,0092 dollár). A beépített beszédváltás-érzékeléssel ellátott Flux egynyelvű modell 0,0065 dollár percenként, többnyelvű változata 0,0078 dollár percenként érhető el.<br>- Előre rögzített hanganyagok: A Nova-3 egynyelvű 0,0043 dollár, a többnyelvű 0,0052 dollár percenként.</p>
+<p><strong>Beszédszintézis (TTS):</strong><br>- Az Aura-1 ára 0,0150 dollár, az Aura-2 ára 0,030 dollár 1000 karakterenként.<br>- Az új Flux TTS 2026. szeptember 12-ig promóciós jelleggel ingyenes (globálisan legfeljebb 45 párhuzamos stream-kapcsolatig, az EU-ban és Ausztráliában 5 kapcsolatig). Szeptember 13-tól a normál Pay As You Go ára 0,0450 dollár lesz 1000 karakterenként, vagyis a legújabb Flux hang lesz a legdrágább opció.</p>
+<p><strong>Voice Agent API percdíjak (kapcsolati idő alapján):</strong><br>- Standard szint: szeptember 12-ig 0,056 dollár percenként, utána 0,075 dollár percenként. Saját külső TTS esetén fix 0,065 dollár percenként.<br>- Egyedi szint saját LLM-mel (BYO LLM): szeptember 12-ig 0,050 dollár percenként, utána 0,065 dollár percenként.<br>- Advanced szint: szeptember 12-ig 0,122 dollár percenként, utána 0,163 dollár percenként.</p>
+<p>Új fiók nyitásakor 200 dollár értékű ingyenes kezdőkeret jár bankkártya megadása nélkül.</p>
+<h2>Milyen képességek vannak benne?</h2>
+<p>A platform legújabb kiadása több olyan funkciót tartalmaz, amelyek a valós idejű beszélgetések minőségét növelik.</p>
+<p><strong>Kifejezőerő-szabályzó (Expressivity):</strong> A Flux TTS modelleken a béta paraméter -2 és +2 közötti egész számmal állítja a beszédstílust. A negatív értékek (-2, -1) nyugodtabb, kimértebb tónust adnak (ügyfélszolgálati, de-eszkalációs vagy egészségügyi helyzetekhez), míg a pozitív értékek (+1, +2) élénkebb, dinamikusabb intonációt hoznak. A dokumentáció kiemeli: a nem alapértelmezett értékek növelik a kiejtési hibák és hallucinációk kockázatát, így éles rendszerekben a 0 marad a tesztelt, hivatalos beállítás.</p>
+<p><strong>Dinamikus beszédmodell- és nyelvváltás:</strong> Az UpdateListen révén a beszédfelismerő modell vagy nyelv hívás közben módosítható a WebSocket kapcsolat újranyitása nélkül, ami megszünteti a váltási késleltetést.</p>
+<p><strong>Rugalmas LLM választék és automatikus tartalék-lánc:</strong> A Voice Agent API közvetlenül támogatja az OpenAI legújabb modelljeit (`gpt-5.6-luna`, `gpt-5.6-terra`), az Anthropic Claude és a Google Gemini rendszereket. Az európai ügyfeleknek fontos, hogy a Gemini Enterprise Agent API garantálja az EU-n belüli adatkezelést. Emellett több LLM szolgáltatóból álló tartalék-lánc (fallback) is beállítható kiesés esetére.</p>
+<p><strong>Pontos késleltetésmérés és biztonsági korlát:</strong> A LatencyReport mostantól tartalmazza az STT késleltetést (`stt_latency`), így külön látható az STT, az LLM és a TTS komponensek válaszideje. A munkamenetek kétórás automatikus lezárást kaptak (figyelmeztetéssel 1 óra 55 percnél), megelőzve a nyitva felejtett kapcsolatok költségeit.</p>
+<p><strong>Nyers hangfolyamok és formázás:</strong> A Flux TTS nyers audióformátumokat (linear16, mulaw, alaw) kezel a minimális késleltetésért. A beszédfelismerő számformázása pedig bolgár, kantoni kínai, maláj és koreai nyelven is számjegyekké alakítja az elhangzott számokat.</p>
+<p><strong>Saját infrastruktúra és biztonság:</strong> A Flux TTS korai hozzáféréssel privát környezetben is futtatható dedikált GPU-val, a konténerképek pedig FIPS 140-3 minősítéssel rendelkeznek.</p>
+<h2>Kinek éri meg?</h2>
+<p>A Deepgram fejlesztései egyértelmű útmutatást adnak a felhasználási területekhez.</p>
+<p><strong>Kinek kiváló választás ma:</strong><br>- Nemzetközi, elsősorban angol nyelvű valós idejű hangasszisztenseket és telefonos botokat építő csapatoknak.<br>- Olyan fejlesztőknek, akiknek kritikus az ultraalacsony válaszidő és a természetes beszédváltás (turn-taking) felismerése.<br>- Azoknak, akik rugalmasan szeretnék kombinálni a nyelvi modelleket és tartalék-szolgáltatókat.</p>
+<p><strong>Kinek jelent kompromisszumot:</strong><br>- A kizárólag magyar nyelven megszólaló rendszerek készítőinek. A beszédfelismerés magyarul azonnal készen áll, de a hangképzés hiánya miatt a válaszok felolvasására külső TTS szolgáltatót kell bekötni.</p>
+<p><strong>Mi az az egy dolog, ami miatt érdemes figyelni rá:</strong><br>A Deepgram streaming-first architektúrája és a modellbe épített beszédváltás-kezelés ma a valós idejű hangos intelligencia élvonalába tartozik. Ha a beszédszintézisben is megjelenik a többnyelvű támogatás, a platform egyetlen kézből kínál majd komplett megoldást a többnyelvű hangügynökök számára is.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
