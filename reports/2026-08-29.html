@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A felület is az ügynök munkaterének részévé válik — LocalAgent Digest</title>
+  <meta name="description" content="Médiás munkafolyamatok, operációs rendszerek és nyílt modellek kerülnek közvetlenebb ügynökvezérlés alá.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-29</div>
+          <h1 class="article-title">A felület is az ügynök munkaterének részévé válik</h1>
+          <div class="article-sub">Médiás munkafolyamatok, operációs rendszerek és nyílt modellek kerülnek közvetlenebb ügynökvezérlés alá.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A felület is az ügynök munkaterének részévé válik" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma több kézzelfogható változás érkezett a saját gépen dolgozó ügynökök köré. A ComfyUI hivatalos MCP-kapcsolatot adott a képi és videós munkafolyamatokhoz. Emellett átalakulnak a Gemini Notebook korlátai, új Qwen-modell célozza a memóriabőséges gépeket, és az operációs rendszer felülete is szerkeszthetővé válik az ügynök számára.</p>
+<h2>A Gemini Notebook keretei ötóránként újratöltődnek</h2>
+<p>A Google napi korlátok helyett ötóránként frissülő, számításigény-alapú keretet vezet be a Gemini Notebookban. A fogyasztást a kérés összetettsége, a beszélgetés hossza, a források száma és a választott funkció együtt határozza meg. A felület jelzi a felhasználást, könnyebb alternatív kimenetet ajánlhat, a nagyobb feladatok, például a Video Overview vagy a prezentáció elkészítése pedig későbbre halasztható.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/">Google</a></p>
+<h2>A ComfyUI munkafolyamatait már hivatalos MCP-n keresztül is építheti az ügynök</h2>
+<p>A ComfyUI kiadta saját, jelenleg bétaállapotú MCP-megoldását, amellyel Claude, Codex vagy más kompatibilis modell node-gráfokat állíthat össze és futtathat. A bemutatóban Claude egy Krea 2 képgenerálásból és MiniMax H3 videógenerálásból álló helyi munkafolyamatot épített; az öt másodperces videó RTX 5090-en körülbelül 204 másodperc alatt készült el. Ugyanezen a felületen távoli modellek, köztük a Seedance 2.5 is beilleszthetők API-hívással.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A videó az official és a community ComfyUI MCP együttes telepítését javasolja, mert az előbbi még béta. A gráf felépítését bízd az ügynökre, de a promptot, képarányt és képkockaszámot utána közvetlenül a node-okban módosítsd, így nem fogyasztasz újabb modelltokeneket minden apró változtatásnál.</p></blockquote>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/ghCKziHvGXo">Theoretically Media bemutatója</a></p>
+<h2>Az OpenAI novemberben megszünteti a közvetlen Cursor-hozzáférést</h2>
+<p>Az OpenAI a Cursor SpaceX általi felvásárlása után bejelentette, hogy 2026. november 12-én lezárja modelljeinek közvetlen elérését a kódszerkesztőben. A közlés szerint a felhasználók saját OpenAI API-kulccsal továbbra is elérhetik a modelleket, így elsősorban a Cursor által közvetített hozzáférés szűnik meg. Ez az ügynökös fejlesztőkörnyezeteknél ismét láthatóvá teszi a különbséget a platformhoz kötött modellválasztó és a saját kulcsokra épülő konfiguráció között.</p>
+<p>Forrás: <a href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex">OpenAI</a></p>
+<h2>A Qwen 3.8 Flash Next ritka aktiválású modellként érkezett</h2>
+<p>A Qwen 3.8 Flash Next a korábban bemutatott, sűrű 27B-s változattól eltérően mixture-of-experts felépítést használ, vagyis tokenenként csak a modell egy részét aktiválja. Újdonságai közé tartozik a tokeneket kis blokkokba rendező Qwen Sparse Attention, a négyágú gated residual megoldás és az n-gram kombinációkhoz épített nagy keresőtábla. A Two Minute Papers tesztjében két DGX Spark együttesen körülbelül 38 tokent adott másodpercenként.</p>
+<p>Forrás: <a href="https://youtu.be/LBiNcdGNgrg">Two Minute Papers tesztje</a></p>
+<h2>FRISSÍTÉS: Az Ox Alpha a GLM modellcsalád része, és súlyokat is kap</h2>
+<p>A Z.ai megerősítette, hogy az OpenRouteren korábban névtelenül tesztelt Ox Alpha egy új GLM-sorozatú modell. A vállalat a modell súlyainak kiadását is tervezi, így a korábbi, ingyenesen kipróbálható rejtélymodellből letölthető kiadás lehet. A bejelentésre a Hacker News-on 433 pont és 146 hozzászólás érkezett.</p>
+<p>Forrás: <a href="https://www.bloomberg.com/news/articles/2026-08-26/china-s-z-ai-made-ox-alpha-stealth-model-that-rivals-deepseek">Bloomberg</a></p>
+<h2>Claude 48 órán át önállóan javított kisebb modelleket</h2>
+<p>Az Anthropic kutatásában Claude 48 órát és egyetlen GPU-t kapott arra, hogy kisebb modellek igazítási hibáit mérsékelje. Az ügynök maga keresett módszereket, állított össze javaslatokat, majd tréningeket és teszteket futtatott. A kísérlet nem általános autonóm kutatót mutat be, hanem egy szűk, mérhető feladatot, ahol az eredmények ismételt tanítási és értékelési ciklusokkal ellenőrizhetők.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures">Anthropic</a></p>
+<h2>Az Omarchy felületét futás közben alakította át az ügynök</h2>
+<p>Egy hosszabb bemutatóban az Omarchy nevű, nyílt forrású Linux-rendszeren több ügynök és terminál futott egymás mellett csempézett ablakokban. A szerző ügynökkel készíttetett `Super+E` gyorsbillentyűt az ablakok egyenlő méretezéséhez, bezárógombot adott az értesítésekhez, majd `Super+A` billentyűvel előhívható feladatbevitelt épített a rendszerbe. A lényeg nem az előtelepített alkalmazáslista, hanem az, hogy az ügynök a nyílt konfigurációt és a felület kódját is módosíthatja.</p>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/KO2T0oET9go">Alex Finn bemutatója</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/0xShug0/audio.cpp">audio.cpp</a></strong> - A ggml-re épülő, tisztán C++-os futtatókörnyezet TTS-, STT-, VAD-, hangkonverziós és zenegeneráló modelleket kezel Python nélkül. Windows, Linux és macOS alatt fut, NVIDIA-, AMD- és Apple Silicon-gyorsítással, illetve csak processzoros módban is; a `dev` ágon már tesztelhető a Fun-CozyVoice3 és a BreezeTTS 2. A README szerint minden kiadott modellcsaládhoz van GGUF-betöltés, az Arena felületen pedig közös bemenettel hasonlíthatók össze modellek és kvantált változatok. A GitHub API nem azonosít egyértelmű licencet, ezért a kód alapértelmezés szerint nem tekinthető szabadon újrafelhasználhatónak. A nem fork repó 2026. június 23-án indult, utolsó push-a 2026. augusztus 28-án érkezett, és 2082 csillaga van. Saját hangfeldolgozó ügynöknél egyetlen natív futtatóréteggel válthat ki több külön Python-környezetet.</p>
+<p><strong><a href="https://github.com/fullsend-ai/fullsend">Fullsend</a></strong> - A Fullsend GitHub-, GitLab- és Forgejo-szervezetekhez futtat fejlesztőügynököket, amelyek hibajegyeket osztályoznak, javításokat készítenek, kódot vizsgálnak és változtatásokat olvasztanak be. A részletes dokumentációt külön webhelyen tartja, a repó README-je pedig a hozzájárulási folyamatra és az architekturális anyagokra mutat. Apache-2.0 licencű, és nem fork. A projekt 2026. március 9-én jött létre, utolsó push-a 2026. augusztus 29-i, jelenleg 121 csillaggal és 2038 nyitott hibajeggyel rendelkezik. Saját fejlesztőügynökhöz teljes folyamatot adhat, de a sok nyitott hibajegy alapján még gyorsan változó rendszer.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála: az ügynökök egyre hosszabb munkákat visznek végig, miközben a helyi kép-, videó- és modellfuttatásnál továbbra is a sebesség a fő kérdés.</p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini Omni Flash 1.1 már 4K felskálázást és hosszabb videóbővítést kínál, így kevesebb különálló lépésből építhető videós munkafolyamat.<br>> "It now supports: - 360p drafts, 4K up samplers"<br><a href="https://x.com/OfficialLoganK/status/2093014204324417881">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Polsia példája azt mutatja, hogy egy kis csapat helyett ügynökök kezelhetik az átvilágítást, az operációt és a termékfejlesztést is.<br>> "The agents that ran his data room and diligence are the same ones shipping the products."<br><a href="https://x.com/AIHighlight/status/2093387136225415381">link</a></p>
+<p><strong>@rryssf</strong> -- A Gemini 3.5 Transcribe egyetlen modellben egyesíti a zajszűrést, a beszélők elkülönítését és a szöveg tisztítását, ami egyszerűsítheti a hangot feldolgozó ügynökök láncát.<br>> "Google just replaced whole multi-model audio pipelines with one."<br><a href="https://x.com/rryssf/status/2093520763278217677">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A ChatGPT Work hosszabb, több alkalmazást érintő feladatokat is önállóan visz végig, ami használható minta saját, eszközökkel dolgozó ügynökök tervezéséhez.<br>> "it's less 'answer my question,' more 'go do the whole job.'"<br><a href="https://x.com/futurepedia_io/status/2092590384631124272">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Claude Projects és az egyedi Skills együtt tartós utasításokat, háttértudást és ismételhető műveleteket adnak egy ügynöki munkafolyamathoz.<br>> "Use Projects so Claude remembers instructions, knowledge, and context"<br><a href="https://x.com/futurepedia_io/status/2092666283481297287">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- Megnyílt a Minimax H3, amely egyetlen GPU-n 13 másodperc alatt készíthet 15 másodperces, 768p videót, ezért helyi videógeneráláshoz is érdemes mérni. (601 pont, 159 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1w0xkpb/weve_open_sourced_minimax_h3_that_generates_15s/">link</a></p>
+<p><strong>r/comfyui</strong> -- Egy három hete bekerült H3-hiba egyes ComfyUI-rendszereken megfelezhette a sebességet, a poszt pedig javítást is mutat hozzá. (64 pont, 29 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1w13wfd/psa_a_bug_crept_in_3_weeks_ago_that_makes_h3_run/">link</a></p>
+<p><strong>r/LocalLLM</strong> -- A közösségi mérés azt vizsgálja, milyen beállításokkal nyerhető több token másodpercenként a meglévő helyi gépből, új hardver vásárlása nélkül. (33 pont, 67 komment)<br><a href="https://www.reddit.com/r/LocalLLM/comments/1w13ucw/your_ai_rig_is_probably_leaving_toks_on_the_table/">link</a></p>
+<p><strong>r/LLMDevs</strong> -- Egy modern LLM-futtatókörnyezet 700 soros C-megvalósítása áttekinthető alapot ad a helyi következtetés működésének és szűk keresztmetszeteinek megértéséhez. (36 pont, 9 komment)<br><a href="https://www.reddit.com/r/LLMDevs/comments/1w0r1ro/i_implemented_a_modern_llm_runtime_in_700_lines/">link</a></p>
+<p><strong>r/MachineLearning</strong> -- Egy latent flow transformer már RP2350 mikrokontrolleren is készít 128×128-as arcképeket, megmutatva, meddig zsugorítható egy helyben futó képgenerátor. (237 pont, 13 komment)<br><a href="https://www.reddit.com/r/MachineLearning/comments/1w10tax/i_implemented_a_very_tiny_image_generation_model/">link</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>ComfyUI MCP: amikor az ügynök rakja össze a node-gráfot</strong>. A hivatalos MCP nem tünteti el a ComfyUI összetettségét, de áthelyezi a legnehezebb kezdőlépést.</p>
+<p><a href="https://maxineender.github.io/the-daily-report/reports/2026-08-29-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

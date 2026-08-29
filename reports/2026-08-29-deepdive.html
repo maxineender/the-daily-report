@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComfyUI MCP: amikor az ügynök rakja össze a node-gráfot — LocalAgent Digest</title>
+  <meta name="description" content="A hivatalos MCP nem tünteti el a ComfyUI összetettségét, de áthelyezi a legnehezebb kezdőlépést.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-29</div>
+          <h1 class="article-title">ComfyUI MCP: amikor az ügynök rakja össze a node-gráfot</h1>
+          <div class="article-sub">A hivatalos MCP nem tünteti el a ComfyUI összetettségét, de áthelyezi a legnehezebb kezdőlépést.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="ComfyUI MCP: amikor az ügynök rakja össze a node-gráfot" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A ComfyUI ereje eddig is abban állt, hogy helyi és távoli kép-, videó- és hangmodellekből tetszőleges feldolgozási láncot lehetett építeni. A nehéz rész a node-ok kiválasztása, összekötése, valamint a mintavételezők, modellek és kimenetek összehangolása volt. A most megjelent hivatalos MCP azt teszi lehetővé, hogy ezt a szerkezeti munkát egy kompatibilis ügynök végezze el természetes nyelvű kérés alapján. A funkció jelenleg bétaállapotú. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<h2>Nem egy új generátor, hanem vezérlőréteg</h2>
+<p>Az MCP nem helyettesíti a ComfyUI-t, és nem hoz létre önálló kép- vagy videómodellt. Kommunikációs réteget ad a ComfyUI és egy olyan modell közé, amely képes eszközöket használni. Ennek segítségével az ügynök felmérheti a telepített modelleket, összeállíthatja a szükséges gráfot, elindíthatja a futást, majd átadhatja az eredményt. A tényleges generálás továbbra is a helyi GPU-n vagy a kiválasztott távoli API-n történik. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<p>A bemutató egyik példája Krea 2-vel készített állóképet, majd azt MiniMax H3-mal animálta. A szerzőnek nem kellett kézzel összekötnie a betöltő-, prompt-, mintavételező- és videókimeneti node-okat: Claude építette fel a munkafolyamatot. Egy öt másodperces videó RTX 5090-en körülbelül 204 másodperc alatt készült el, teljesen helyi futtatással. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<p>Ez fontos különbség a „készíts videót” típusú webes alkalmazásokhoz képest. Ott a feldolgozási lánc többnyire rejtett, itt viszont az ügynök által létrehozott gráf a felhasználó előtt marad. Megnézhető, módosítható és újra felhasználható, így az automatizálás nem feltétlenül jelent fekete dobozt. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<h2>Az ügynök a kezdést gyorsítja, nem minden kattintást</h2>
+<p>A videóban az ügynök képes volt referenciaképet behelyezni, modellt választani, node-okat telepíteni és LoRA-t hozzáadni egy megadott URL alapján. Ezek azok a feladatok, amelyeknél egy új ComfyUI-felhasználó könnyen elakad, különösen akkor, ha hiányzó egyéni node, rossz modellútvonal vagy eltérő munkafolyamat-verzió okoz hibát. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<p>Az apró iterációkat azonban nem érdemes minden alkalommal az ügynökre bízni. A prompt, a képarány, a lépésszám vagy a videó hossza közvetlenül a megfelelő node-ban gyorsabban módosítható. A bemutatóban a képkockaszámot 124-ről 248-ra állították át egy hosszabb kimenethez, ehhez nem kellett újabb modellbeszélgetés. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Használd az MCP-t a gráf létrehozására, a hiányzó összetevők telepítésére és a nagyobb szerkezeti módosításokra. A gyakori paramétereket utána közvetlenül a ComfyUI-ban állítsd, mert így rövidebb marad az ügynök kontextusa, és kevesebb modelltoken fogy.</p></blockquote>
+<h2>Helyi és távoli modellek egy gráfban</h2>
+<p>A ComfyUI már nem kizárólag letöltött modellekkel dolgozik. A sablonok között távoli API-k is megjelennek, a bemutatóban például Seedance 2.5, Grok Imagine, Recraft és Topaz integrációk látszottak. Ez lehetővé teszi, hogy az olcsóbb vagy ismétlődő lépések helyben fussanak, majd csak a végső, minőségérzékeny szakasz kerüljön fizetős szolgáltatáshoz. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<p>Egy ilyen láncban a saját gép elkészítheti a kiinduló képet, egy helyi videómodell létrehozhatja a mozgás első változatát, majd egy távoli modell átdolgozhatja vagy felskálázhatja az eredményt. Az MCP értéke itt nem pusztán a kényelem: az ügynök egységes feladatként kezelheti az eltérő futtatási helyeket, miközben a gráf megmutatja, melyik lépés hol történt. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<h2>A bétaállapot miatt kell tartalék</h2>
+<p>A hivatalos ComfyUI MCP még béta, ezért a videó készítője az official és a régebb óta használt community MCP együttes telepítését javasolja. Ha egy művelet az egyik kapcsolaton hibázik, az ügynök megpróbálhatja a másikat. Ez átmeneti megoldás, amely növeli a telepített komponensek számát, de a korai tesztelésnél csökkentheti annak esélyét, hogy egyetlen MCP-hiba megállítsa a teljes munkát. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<p>A gépigény ettől nem változik meg. Maga a ComfyUI szerényebb hardveren is elindulhat, de a választott modell memóriaigénye és sebessége továbbra is meghatározó. A bemutató RTX 5090-et használt, miközben felhős GPU-bérlést és a Comfy Cloudot is lehetséges alternatívaként említette. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+<h2>Mit változtat ez a gyakorlatban?</h2>
+<p>Az MCP legnagyobb nyeresége nem az, hogy soha többé nem kell látni a node-gráfot. Inkább az, hogy nem üres vászonnal kell kezdeni. Az ügynök létrehozza az első működő változatot, a felhasználó pedig fokozatosan megismerheti és finomíthatja annak részeit. Ez a ComfyUI-t a vizuális munkafolyamatok kézi szerkesztőjéből egyben ügynökvezérelhető végrehajtási környezetté teszi. <a href="https://youtu.be/ghCKziHvGXo">Forrás</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
