@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mit fizetsz valójában egy 30 másodperces AI-videóért? — LocalAgent Digest</title>
+  <meta name="description" content="A Seedance 2.5 új felbontása mögött az iteráció, nem a kliphossz a legnagyobb költség.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-30</div>
+          <h1 class="article-title">Mit fizetsz valójában egy 30 másodperces AI-videóért?</h1>
+          <div class="article-sub">A Seedance 2.5 új felbontása mögött az iteráció, nem a kliphossz a legnagyobb költség.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mit fizetsz valójában egy 30 másodperces AI-videóért?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Seedance 2.5 1080p-s változatánál könnyű egyetlen számra figyelni: egy 30 másodperces generálás a Curious Refuge tesztjében 31,62 USD-be került. Ez azonban csak egy próbálkozás ára. Ha a használható felvételhez tíz futás kell, ugyanaz a fél perc már több mint 300 dolláros generálási költséget jelent, még a vágás, a javítás és a felskálázás előtt. <a href="https://youtu.be/gnp86XUSzgg">A teszt készítője tíz generálást tekintett reális projektátlagnak</a>.</p>
+<h2>Az 1080p nem jelent kész felvételt</h2>
+<p>Az új változat legfeljebb 30 másodperces klipeket, akár 50 referenciaelemet és 10 bites színteret kínál. Utóbbi különösen fontos, ha a felvétel még színkorrekcióra kerül. A tesztben az 1080p láthatóan tisztább volt a korábbi 720p-s kimenetnél, kevesebb szivárványszerű képhibával és jobb emberi bőrtextúrával. Ettől azonban nem tűntek el az értelmetlen háttérfeliratok, a lebegő tárgyak vagy a remegő szélek. <a href="https://youtu.be/gnp86XUSzgg">A bemutatott jelenetek között olyan is volt, amelyben a képkockasebesség lassított és valós idejű hatás között váltott</a>.</p>
+<p>Ez azt jelenti, hogy az 1080p elsősorban jobb alapanyag, nem automatikusan végleges anyag. Egy 4K-s projektben továbbra is szükség lehet felskálázásra, a hibás részletek javítására és kézi vágásra. A nagyobb felbontás csökkenti a kiinduló hátrányt, de nem helyettesíti az utómunkát.</p>
+<h2>A harminc másodperc csábító, de kockázatos</h2>
+<p>A hosszú generálás előnye, hogy egyetlen promptból több beállítás, párbeszéd és kameramozgás készülhet. A Seedance időkódolt utasításokat is követ, így megadható, mikor váltson képet vagy mikor mondjon el egy szereplő egy mondatot. A gyakorlatban viszont egy korai hiba végigterjedhet a teljes klipen. Ha a szereplő rossz irányba indul, egy tárgy átalakul, vagy a tempó elcsúszik, a hátralévő másodpercek is elveszhetnek. <a href="https://youtu.be/gnp86XUSzgg">A Curious Refuge ezért rövidebb próbák használatát javasolta a teljes hosszúságú futások előtt</a>.</p>
+<p>A Dankieft munkafolyamata egy másik megoldást mutat: ugyanazt a jelenetet kétszer generálta, majd a jobb szakaszokat összevágta. A második változat nem egyszerű biztonsági másolat volt, hanem alternatív mozdulatokat és jelenetrészleteket adott a szerkesztéshez. A módszer több kreditet fogyaszt, de csökkenti annak esélyét, hogy egyetlen rossz részlet miatt az egész jelenetet újra kelljen készíteni. <a href="https://youtu.be/8gQ6qUmKjHg">A videó a jelenetek folytatására szolgáló extend funkciót is használta</a>.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A munkafolyamatban külön lépésként add meg a próbafutást és a végleges futást. Az ügynök először rövid klipen ellenőrizze a szereplőket, a hangot és a kameramozgást, majd csak jóváhagyott promptból indítsa el a 30 másodperces, 1080p-s változatot. A generálások számához érdemes feladatonként kemény felső korlátot rendelni.</p></blockquote>
+<h2>A referenciák fontosabbak lettek a promptnál</h2>
+<p>Az 50 referencia nem azt jelenti, hogy érdemes ötven véletlenszerű képet feltölteni. A részletes munkafolyamatok külön karakterlapot, helyszínképet, színvilágot, tárgyreferenciát és hangmintát használnak. Ezeket névvel címkézik, majd a promptban ugyanazokra a címkékre hivatkoznak. Így kisebb az esélye annak, hogy a modell összekeveri a szereplőket vagy a helyszíneket. <a href="https://youtu.be/8gQ6qUmKjHg">A Dankieft bemutatójában a karakterlap egy teljes alakos képet és nyolc arckifejezést tartalmazott</a>.</p>
+<p>Rourke Heath tesztje ugyanezt filmesebb oldalról közelítette meg. Előre rögzítette a kamera típusát, az objektívet, a mélységélességet, a színvilágot és az egyes beállítások időzítését. A 30 másodperces végső anyagot nem egyetlen tökéletes generálásként kezelte: három változat legjobb részeit vágta össze, és eltávolította a párbeszédek közötti felesleges szüneteket. <a href="https://youtu.be/MY6f9xnYOwU">Saját tapasztalata szerint egy teljes hosszúságú futás platformtól függően 40 és 60 USD közé is kerülhet</a>.</p>
+<h2>Hol fér el ebben a saját gép?</h2>
+<p>A zárt modell mellett továbbra is van helye a saját gépen futó videógenerálásnak. A Curious Refuge összevetésében a MiniMax H3 720p-s változata gyengébb bőrtextúrát és kevésbé stabil fizikát adott, de megfelelő hardveren generálási díj nélkül futtatható. Ez alkalmassá teszi mozgáspróbákra, képkivágások ellenőrzésére vagy olyan jelenetek előkészítésére, amelyeknél még nem indokolt fizetős modellt hívni. <a href="https://youtu.be/gnp86XUSzgg">A minőségi különbség ugyanakkor a bemutatott professzionális jelenetekben egyértelmű maradt</a>.</p>
+<p>A gazdaságos munkafolyamat ezért nem feltétlenül egyetlen modell kiválasztásáról szól. A saját gépen futó modell elkészítheti a próbát, az ügynök összeállíthatja és ellenőrizheti a referenciafájlokat, a drága API pedig csak a véglegesnek szánt beállításokat generálja. A Seedance 2.5 1080p valódi előrelépés, de az ára akkor tartható kordában, ha nem ötletelésre, hanem már eldöntött jelenetek kivitelezésére használod.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
