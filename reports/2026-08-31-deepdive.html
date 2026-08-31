@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogyan lesz az egyszeri videóból folytatható AI-sorozat? — LocalAgent Digest</title>
+  <meta name="description" content="A visszatérő szereplőhöz nem elég egy jó prompt: tartós eszköztár, folytonossági szabályok és javítható storyboard kell.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-08-31</div>
+          <h1 class="article-title">Hogyan lesz az egyszeri videóból folytatható AI-sorozat?</h1>
+          <div class="article-sub">A visszatérő szereplőhöz nem elég egy jó prompt: tartós eszköztár, folytonossági szabályok és javítható storyboard kell.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Hogyan lesz az egyszeri videóból folytatható AI-sorozat?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Egy rövid AI-videó elkészítése ma már viszonylag egyenes folyamat. Megírod a jelenetet, feltöltöd a referenciákat, lefuttatod a modellt, majd kiválasztod a használható változatot. A sorozatgyártás más probléma. A második epizódban ugyanannak kell látszania és hangzania a főszereplőnek, miközben a helyszínek, a kamerakezelés és a történet szabályai sem indulhatnak minden alkalommal tiszta lapról.</p>
+<p>A Flova bemutatója ezt a különbséget egy visszatérő szereplőre épített horrorsorozattal teszi kézzelfoghatóvá. A hangsúly nem egy mindent egy kattintással előállító generátoron van, hanem azon a gyártási rétegen, amely a különböző modellek körül megőrzi a projekt állapotát. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<h2>Először a világot kell rögzíteni</h2>
+<p>A bemutató készítője az első generálás előtt külön eszköztárba mentette a főszereplő képét, valamint a később újra felhasználható helyszíneket és környezeti elemeket. Ezek nem egyszeri promptmellékletek: ugyanazok az eszközök a következő epizód projektjében is elővehetők. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<p>Ezután készült el a projekt dokumentuma. Ebben szerepeltek a karakter szabályai, a világ felépítése, a vizuális stílus, a kameranyelv, a hang iránya, a kívánt hossz és a folytonossági korlátok. A rendszer ebből gyártási bibliát állított össze, amelyet még a költséges videógenerálás előtt lehetett átnézni és módosítani. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<p>Ez fontos sorrend. Ha egy szereplő ruhája, hangja vagy viselkedése csak a huszadik klip után bizonyul rosszul meghatározottnak, akkor nem egy promptot kell javítani, hanem a fél epizódot újragenerálni.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A médiás folyamatod tartós memóriáját ne a beszélgetési előzményre bízd. Külön fájlban vagy projektobjektumban tartsd a karakterképet, a hangreferenciát, a helyszíneket, a kameranyelvet és a folytonossági szabályokat, majd minden új epizód indításakor ezeket töltesd be az ügynökkel. A Flova bemutatójában pontosan ez tette lehetővé, hogy a második történet ugyanabból a világból induljon.</p></blockquote>
+<h2>A storyboard a legolcsóbb javítási pont</h2>
+<p>Az első epizódot a Flova 21 snittre bontotta. A storyboard külön kezelte a busz érkezését, a főszereplő felszállását, az utasok bemutatását, a fokozódó feszültséget és a végső felfedezést. A felhasználó még ebben a szakaszban vizsgálhatta meg, hogy minden kép szolgálja-e a történetet. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<p>A bemutató egyik módosításánál a szereplő eredetileg a busz hátsó sorában ült. A készítő ezt középső ülésre cserélte, mert közelebb akarta helyezni a többi utashoz, így erősebb lett a bezártság érzése. Nem az egész projektet indította újra, hanem csak az érintett snittet generáltatta újra, miközben megtartotta a karaktert, a fényt, a buszbelsőt és a vizuális stílust. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<p>Ez az ügynökös médiagyártás egyik lényegi mintája: a rendszer ne csak új anyagot tudjon készíteni, hanem értse azt is, melyik rész változhat és melyik maradjon zárolva. A teljes újragenerálás gyorsan elrontja a már elfogadott részleteket.</p>
+<h2>A generátor és a gyártásvezető két külön szerep</h2>
+<p>A munkafolyamatban a Seedance 2.5 készítette a videóklipeket, a Flova pedig a referenciákat, a dokumentumokat, a storyboardot, a javításokat és az idővonalat kezelte. A főszereplő hangjához Seed Audio 1.0-val készült hanghorgony, amelyet későbbi jelenetekben és epizódokban is újra lehet használni. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<p>Ez a felosztás azért hasznos, mert a videómodell cserélhető komponens marad. Ha később egy másik modell jobb mozgást vagy olcsóbb generálást kínál, a szereplő leírása, a világ szabályai és a storyboard ettől még nem vesznek el. A tartós érték nem egyetlen generált klipben, hanem a köré épített strukturált projektállapotban van.</p>
+<h2>A második epizód a valódi próba</h2>
+<p>Az első történet után a készítő nem üres projektből indult. Megtartotta ugyanazt a szereplőt, hangot, buszt és vizuális referenciákat, majd új történetet adott hozzá: a főszereplő hazaér, de az ablakból ismét meglátja a buszt, benne saját másával. (<a href="https://youtu.be/PE9_-M1qZFU">Forrás</a>)</p>
+<p>Ezzel derül ki, hogy a folyamat valóban sorozatgyártásra alkalmas-e. Egy jó első klip még lehet szerencsés generálás. A második epizódnál viszont már annak kell működnie, amit az ügynök eltárolt: a szereplőazonosságnak, a hanghorgonynak, a vizuális szabályoknak és a történeti folytonosságnak.</p>
+<p>A tanulság saját ügynök építésekor is általánosítható. A hosszabb projektekhez nem egyre nagyobb prompt kell, hanem külön kezelt állapot, verziózható eszközök és célzottan újrafuttatható lépések. A videómodell előállítja a snittet. A használható rendszer azt is tudja, hogyan illeszkedik az a következő húszhoz.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
