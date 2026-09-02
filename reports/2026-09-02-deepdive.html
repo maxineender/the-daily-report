@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fable 5.1 a vezérlőszékben: mikor érdemes drága modellt tenni a helyi ügynökök fölé? — LocalAgent Digest</title>
+  <meta name="description" content="Az új modell legérdekesebb ígérete nem a tokenár, hanem a kevesebb eszközhívással elvégzett munka.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-02</div>
+          <h1 class="article-title">Fable 5.1 a vezérlőszékben: mikor érdemes drága modellt tenni a helyi ügynökök fölé?</h1>
+          <div class="article-sub">Az új modell legérdekesebb ígérete nem a tokenár, hanem a kevesebb eszközhívással elvégzett munka.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Fable 5.1 a vezérlőszékben: mikor érdemes drága modellt tenni a helyi ügynökök fölé?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Claude Fable 5.1 megjelenése első pillantásra újabb modellfrissítésnek tűnik. A saját ügynökét futtató felhasználónak azonban nem az a legfontosabb kérdés, hogy néhány benchmarkon hány százalékponttal nőtt a pontszám. Sokkal többet számít, hogy egy feladat hány tokenből, hány eszközhívással és mennyi emberi beavatkozással készül el. Az <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic kiadása</a> és az első gyakorlati <a href="https://youtu.be/N3Me0Pf2hiY">ügynökteszt</a> alapján éppen ezen a szinten változott a modell.</p>
+<h2>Az azonos tokenár nem jelent azonos feladatköltséget</h2>
+<p>Alex Finn beszámolója szerint a Fable 5.1 tokenenkénti ára nem csökkent a Fable 5-höz képest, egy teljes feladat költsége viszont 25-40 százalékkal alacsonyabb lehet. Ez azért lehetséges, mert a modell kevesebb tokennel és kevesebb eszközhívással jut el ugyanahhoz vagy jobb eredményhez. A bemutatott hibakeresési próbában egy véletlenszerű GitHub-repó összes elrejtett hibáját megtalálta, miközben kevesebb hívást használt, mint a vele összevetett GPT-5.6 változat. Ez egyedi teszt, ezért általános következtetés helyett saját méréssel érdemes kezelni az állítást. (<a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn</a>)</p>
+<p>Ez a különbség fontos a saját ügynöknél. Egy modell lehet olcsó a nyilvános árlistán, de ha sokszor újraolvassa ugyanazokat a fájlokat, felesleges kereséseket indít vagy rossz irányba delegál, a végső futás mégis drágább lesz. A Fable 5.1 esetében ezért a teljes menet tokenjeit, eszközhívásait és sikertelen próbálkozásait kell összevetni, nem pusztán az egymillió tokenre jutó árat. Ezt a feladatszintű megközelítést támasztja alá a videóban közölt 25-40 százalékos megtakarítás is. (<a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn</a>)</p>
+<h2>Vezérmodellként érdekesebb, mint általános munkásként</h2>
+<p>Aravind Srinivas szerint a Perplexity Computer a Fable-t használja a nagy tétű feladatok vezérlésére, miközben a költséghatékonyabb részfeladatokat GPT-5.6 Terra modellek végzik. Ez nem helyi rendszer, de a minta átültethető: a drágább modell készíti el a tervet, választja ki az eszközöket és ellenőrzi az eredményt, a fájlműveleteket, kereséseket vagy rövid átalakításokat pedig kisebb modellek kapják. (<a href="https://x.com/AravSrinivas/status/2094866503460155700">Aravind Srinivas</a>)</p>
+<p>Saját gépen ez azt jelentheti, hogy a Fable 5.1 csak a vezérlési pontokon kap szerepet. A helyi modell összegyűjti a repó szerkezetét, lefuttatja a teszteket és elkészíti a tömör eredményeket; a felhős vezérmodell ezek alapján választ következő lépést. Így nem kell minden fájlt és terminálkimenetet elküldeni a drágább modellnek. Ez a felosztás a Perplexity által leírt vezérmodell és olcsóbb alügynökök mintájának saját gépre alkalmazott változata. (<a href="https://x.com/AravSrinivas/status/2094866503460155700">Aravind Srinivas</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Állíts be külön útvonalat a tervezésre és a végrehajtásra. A Fable 5.1 kapja a feladatfelbontást, az elakadás utáni újratervezést és a végső ellenőrzést; a helyi modell pedig a keresést, fájlolvasást, tesztfuttatást és formázást. A két útvonal token- és eszközhívás-számát külön naplózd.</p></blockquote>
+<h2>Először a saját feladataiddal mérd</h2>
+<p>A videó egyik használható javaslata egy saját tesztrendszer felépítése. A folyamat azzal indul, hogy a jelenlegi ügynök Markdown-fájlban összefoglalja a készségeit, alügynökeit és gyakori feladatait. Ezt követően a Fable 5.1 feladata öt visszatérő feladatkategória azonosítása, majd kategóriánként egy összetett, több lépéses próba elkészítése. Az eredmény nem általános modellranglista, hanem a saját munkádhoz kötött mérőkészlet. (<a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn</a>)</p>
+<p>Egy ilyen tesztben legalább négy adatot érdemes rögzíteni: sikerült-e a feladat, hány eszközhívás történt, mennyi token fogyott, és kellett-e emberi javítás. A bemutatóban szereplő hibakeresés, fájlok közé rejtett elemek megtalálása és weboldal-rekonstrukció is azt mutatja, hogy az összetett próbák jobban feltárják az ügynöki különbségeket, mint egyetlen kérdésre adott válasz. (<a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn</a>)</p>
+<h2>A kevesebb visszautasítás külön mérési kategória</h2>
+<p>A Fable 5 korábbi szűrője a tesztben egy ártalmatlan, fájlok között végzett keresési feladatot is visszautasított. A Fable 5.1 ugyanezt teljesítette. Ez nem pusztán kényelmi változás: egy hosszabb ügynökfutásnál a téves visszautasítás megszakíthat egy teljes munkaláncot, vagy drágább modellre kényszerítheti az útválasztót. A javulást ugyanakkor csak egyedi teszt mutatja, ezért saját, korábban tévesen blokkolt feladatokkal érdemes ellenőrizni. (<a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn</a>)</p>
+<h2>Nem kell mindent azonnal átköltöztetni</h2>
+<p>A Fable 5.1 legjobb első szerepe nem feltétlenül az alapértelmezett modell lecserélése. Biztonságosabb összehasonlítás, ha ugyanazt az öt-tíz valós feladatot lefuttatod a jelenlegi vezérmodellel és az új változattal, változatlan eszközkészlet mellett. A döntést ezután a teljes feladatköltség, az eszközhívások száma és a javítási igény alapján lehet meghozni. Ez közvetlenül ellenőrzi a kiadás legfontosabb gyakorlati állítását: valóban kevesebb munkából jut-e el a kész eredményig. (<a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic</a>, <a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn</a>)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

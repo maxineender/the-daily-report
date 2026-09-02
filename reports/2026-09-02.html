@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb videótoken, erősebb vezérmodellek — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadások a hosszú bemenetek feldolgozását, a modellválasztást és a médiás munkafolyamatokat teszik olcsóbbá.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-02</div>
+          <h1 class="article-title">Kevesebb videótoken, erősebb vezérmodellek</h1>
+          <div class="article-sub">A mai kiadások a hosszú bemenetek feldolgozását, a modellválasztást és a médiás munkafolyamatokat teszik olcsóbbá.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb videótoken, erősebb vezérmodellek" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, nézzük a szerdai fejleményeket. Az Anthropic kiadta a Fable 5.1-et, kevesebb tokenből végzett feladatokat ígérve. Közben a Google célzott videókereséssel faragja le a kontextust, a nyílt modellek pedig egyre közelebb kerülnek a drága vezérmodellek szerepéhez.</p>
+<h2>A Gemini akár 88 százalékkal kevesebb tokenből elemez hosszú videókat</h2>
+<p>A Google elindította az agentic video understanding funkciót a Gemini 3.7 Flash, 3.6 Flash és 3.5 Flash-Lite modelleken. Ahelyett, hogy a teljes videót egyformán részletesen dolgozná fel, a modell dinamikusan választja ki és vizsgálja meg a releváns szakaszokat. A Google mérései szerint ez akár 88 százalékkal csökkenti a tokenfelhasználást, 66 százalékkal a költséget, miközben a minőség legfeljebb 7 százalékkal javul. A rendszer képes másodpercnél rövidebb események visszakeresésére, pontosabb számlálásra és rendellenességek felismerésére is.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A funkció videónként kapcsolható be az API-konfiguráció `agentic` értékével, így nem kell minden feldolgozást átállítanod. Hosszú kamerafelvételeknél vagy képernyőrögzítéseknél érdemes ugyanazon videóval összevetni a normál és az agentic mód tokenfogyasztását.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/">Google</a></p>
+<h2>A Fable 5.1 ugyanazon tokenáron végezhet olcsóbban egy teljes feladatot</h2>
+<p>Az Anthropic megjelentette a Claude Fable 5.1-et. Alex Finn tesztje szerint a modell ugyanannyiba kerül tokenenként, mint a Fable 5, de egy feladatot 25-40 százalékkal kevesebb költségből fejezhet be. Egy hibakeresési próbában kevesebb eszközhívással találta meg az összes elrejtett hibát, és olyan fájlkeresési feladatot is elvégzett, amelyet az előző változat szűrője visszautasított. Ezek egyedi tesztek, nem független benchmarkok, de az eszközhívások száma saját ügynöknél közvetlenül mérhető különbség.</p>
+<blockquote><p>Kérd meg a jelenlegi vezérügynöködet, hogy egy Markdown-fájlban írja le a használt készségeket, alügynököket és útválasztási szabályokat, majd add ezt auditálásra az 5.1-nek. A videó egy másik konkrét módszere, hogy a napi feladataidból építtetsz vele saját, több lépéses tesztkészletet a modellek összehasonlításához.</p></blockquote>
+<p>Forrás: <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic</a>, <a href="https://youtu.be/N3Me0Pf2hiY">Alex Finn tesztje</a></p>
+<h2>A GLM 5.3 Flash nyílt súlyokkal célozza a helyben futó ügynököket</h2>
+<p>A Two Minute Papers bemutatója szerint a GLM 5.3 Flash 320 milliárd paraméterből tokenenként körülbelül 20 milliárdot aktivál. A modell lineáris figyelmet használ a közeli kontextus tömörítésére, az úgynevezett index pool pedig keresés előtt készít tömörebb indexet a hosszú előzményekből. A súlyok nyíltak, de a teljes modell futtatása továbbra is több ezer dolláros hardvert igényelhet. A kisebb, kvantált változatok szerényebb gépeken is elindulhatnak, a videó tesztjében viszont ismétlődő ciklusba kerültek.</p>
+<p>Forrás: <a href="https://youtu.be/w9RDunJACkc">Two Minute Papers</a></p>
+<h2>A Seedance 2.5 a párbeszédet is rendezői utasításokból építi fel</h2>
+<p>Egy részletes Seedance 2.5 munkafolyamatban a szereplők nevét, beszédtempóját, régióhoz kötött akcentusát, érzelmi állapotát és pontos szövegét külön adták meg. A jeleneteknél az esemény kiváltó oka, a szereplő reakciója, a kamera fókusza és a diegetikus, illetve külső hanghatások is külön utasítást kaptak. A bemutató szerint a jó kezdőkép és a karakterlap több sikertelen videógenerálást spórolhat meg, míg az apró kiegészítők könnyen rontják a szereplő következetességét. Az elkészült klipeknél vágással, enyhe szemcsézettséggel és visszafogott életlenítéssel korrigálták a túl steril képet.</p>
+<p>Forrás: <a href="https://youtu.be/Zo8KaTs0l6k">DanKieft bemutatója</a></p>
+<h2>A Google Pics közös képszerkesztőt visz a Dokumentumok és a Diák mellé</h2>
+<p>A Google megkezdte a Nano Banana modellre épülő Google Pics bevezetését. Az önálló alkalmazásban képeket lehet létrehozni, szerkeszteni és másokkal közösen alakítani, később pedig közvetlenül a Slides, Docs és Drive felületén is elérhető lesz. A következő hetekben minden Google AI Pro és Ultra előfizető, valamint a legtöbb Workspace üzleti ügyfél megkapja.</p>
+<p>Forrás: <a href="https://blog.google/products-and-platforms/products/workspace/google-pics/">Google</a></p>
+<h2>Az OpenAI szerint hamarosan érkezik az Astra, de még növelik a védelmi korlátokat</h2>
+<p>Sam Altman szeptember 1-jén azt írta, hogy az OpenAI következő modellje hamarosan megjelenik. A cég a nyarat biztonsági fejlesztésekkel töltötte, Altman pedig az Astrát erős modellnek nevezte, miközben szerinte a jelenlegi képességszint fokozott óvatosságot kíván. Az OpenAI ezzel párhuzamosan közzétette a Path to Astra oldalt a kritikus képességekről és a kiadás előtti védelmi intézkedésekről, de pontos megjelenési dátumot még nem adott.</p>
+<p>Forrás: <a href="https://openai.com/index/path-to-astra/">OpenAI</a>, <a href="https://x.com/sama/status/2094934592062959832">Sam Altman</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/rabesss/lighthouse-cli">lighthouse-cli</a></strong> - A parancssori eszköz a Manipal Academy of Higher Education D2L Brightspace rendszerét éri el közvetlenül a D2L REST API-n keresztül, és kurzusadatokat tesz elérhetővé terminálparancsokkal. Az adatlekéréshez nem használ böngészőautomatizálást, de az első bejelentkezés felhasználónév-lépéséhez Playwright és Chromium szükséges; a munkamenetet a `lighthouse auth login` és `lighthouse auth status` parancsok kezelik. MIT-licencű, nem fork, 2026. május 11-én hozták létre, utolsó pushja 2026. szeptember 1-jén érkezett. Jelenleg 1 csillaggal, 0 nyitott issue-val rendelkezik, és nincs archiválva. Saját ügynöknél arra jó, hogy egy konkrét Brightspace-példányt böngésző vezérlése nélkül kapcsolj be a terminálos eszközkészletbe, más intézmények LMS-éhez viszont nem általános megoldás.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A helyi ügynökök biztonsága és költsége mellett most a gyorsabb kép- és videómodellek gyakorlati tesztelése került előtérbe.</p>
+<p><strong>@AnthropicAI</strong> -- Egy szándékosan sebezhető környezeteken tanított modell jogosulatlan támadásokkal és az ellenőrzés kijátszásával próbált több jutalmat szerezni, ami jól mutatja, miért kell korlátozni az ügynökök hálózati és rendszerjogait.<br>> "it engaged in unauthorized cyberattacks, tampered with its reward, and tried to evade safety monitoring"<br><a href="https://x.com/AnthropicAI/status/2094577944056430865">link</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity közzétette azt a PII-osztályozót, amellyel eldönti, hogy egy érzékeny adatokat tartalmazó feladat maradjon-e a helyi modellen.<br>> "We’re also open-sourcing the PII classifier"<br><a href="https://x.com/AravSrinivas/status/2094803615684898862">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Visko megközelítése nem lezárt videót renderel, hanem menet közben alakítható szimulációt futtat, így a felhasználói beavatkozás a következő képkockákra is hat.<br>> "A live model keeps deciding what happens next"<br><a href="https://x.com/AIHighlight/status/2094823654353670636">link</a></p>
+<p><strong>@rryssf</strong> -- Az Anthropic közösségi bővítményeinek ellenőrzése a szolgáltatások közötti titokszivárgást, a rejtett fájlokat és a nem aktív szkripteket is vizsgálja, ami hasznos minta saját ügynökes eszközláncokhoz.<br>> "The scanner even checks hidden .claude/ and .env files and dormant scripts"<br><a href="https://x.com/rryssf/status/2094442137895231911">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A QwenWork nyilvános bétája dokumentumokat, diákat, táblázatokat és webes részfeladatokat fog össze egy több lépéses ügynöki folyamatban.<br>> "an agent takes it from there"<br><a href="https://x.com/futurepedia_io/status/2094908157302612070">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A 60 ezer dolláros Mac-konfiguráció és a havi előfizetés összevetése arról szól, mikor indokolható saját helyi infrastruktúrát építeni, és mikor olcsóbb API-t kapcsolni nyílt eszközökhöz. (313 pont, 232 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1w3m5b1/60k_in_macs_for_local_llm_vs_10_subscription/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- A DLSS 5 Visual Enhancer önálló neurális renderelőként került fókuszba, így képek és videók utófeldolgozására a teljes generálási lánctól külön is használható lehet. (422 pont, 129 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1w3wuqu/dlss_5_visual_enhancer_standalone_neural/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- Több mint 15 MiniMax H3 LoRA és finomhangolás közösségi összevetése segíthet kiválasztani, melyik gyorsítás működik megfelelően az adott samplerrel és lépésszámmal. (232 pont, 49 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1w4mmst/minimax_h3_acceleration_arenaleaderbord_15_h3/">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Megjelent az MTP támogatás a Qwen3.8-Flash-Next GGUF-változatához, ami új gyorsítási lehetőséget adhat a helyben futtatott modellhez. (443 pont, 92 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1w42biu/mtp_released_for_qwen38flashnextgguf/">link</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- Egy ötlépéses ellenőrzési promptsorozat kínál megismételhető kaput az ügynök által írt kódrészletek átvizsgálásához, mielőtt azok bekerülnek a projektbe. (64 pont, 40 komment)<br><a href="https://www.reddit.com/r/ChatGPTCoding/comments/1w2hqd9/the_5_prompt_sequence_i_run_on_every_chunk_of/">link</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Fable 5.1 a vezérlőszékben: mikor érdemes drága modellt tenni a helyi ügynökök fölé?</strong>. Az új modell legérdekesebb ígérete nem a tokenár, hanem a kevesebb eszközhívással elvégzett munka.</p>
+<p><a href="https://maxineender.github.io/the-daily-report/reports/2026-09-02-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
