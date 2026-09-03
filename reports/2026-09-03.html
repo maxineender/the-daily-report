@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helyi futtatás, gyorsabb modellek és összeköthető médiamunkafolyamatok — LocalAgent Digest</title>
+  <meta name="description" content="A Perplexity Apple Silicon-motorja, a Gemini új Flash modellje és két használható médiás integráció került előtérbe.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-03</div>
+          <h1 class="article-title">Helyi futtatás, gyorsabb modellek és összeköthető médiamunkafolyamatok</h1>
+          <div class="article-sub">A Perplexity Apple Silicon-motorja, a Gemini új Flash modellje és két használható médiás integráció került előtérbe.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Helyi futtatás, gyorsabb modellek és összeköthető médiamunkafolyamatok" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! A Google három hét után ismét frissítette gyors Gemini modelljét. A mai anyag másik közös szála a helyi és felhős komponensek keverése: ezt látjuk a Perplexity inferenciamotorjánál, a ComfyUI-nál és az új géphasználati naplónál is.</p>
+<h2>A Perplexity megnyitja Apple Siliconra készült helyi inferenciamotorját</h2>
+<p>A Perplexity nyílt forrásúként adja ki a Lily nevű inferenciamotort, amellyel modellek szolgálhatók ki helyben Apple Silicon gépeken. Ugyanez a motor működteti a Perplexity Mac alkalmazásának új hibrid számítási funkcióját, vagyis a helyi futtatást és a távoli szolgáltatást egy munkafolyamaton belül használhatja.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2095264908762140823">Aravind Srinivas bejelentése</a></p>
+<h2>A Gemini 3.8 Flash a hosszú kódolási feladatokra erősített</h2>
+<p>A Google szeptember 2-án mutatta be a Gemini 3.8 Flash és a kiberbiztonságra hangolt 3.8 Flash Cyber modelleket. Ez hat héten belül a harmadik Flash-kiadás, a 3.7-es változatot pedig mindössze három héttel követi. A Google szerint az új közös alapmodell számottevően javult érvelésben és kódolásban, különösen a hosszú, elejétől végéig önállóan végzett szoftverfejlesztési feladatokon, miközben megtartotta a 3.7 Flash sebességét és költségszintjét.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google</a></p>
+<h2>A ChatGPT strukturált eseményekből épít kereshető géphasználati előzményt</h2>
+<p>Az OpenAI Computer History funkciója a Mac alkalmazásokban végzett műveleteket kereshető idővonallá alakítja, amelyet a ChatGPT és a Codex is lekérdezhet. A rendszer nem folyamatos képernyőképeket készít, hanem a macOS kisegítő lehetőségeinek API-ján keresztül rögzít strukturált eseményeket, például kattintásokat, gépelést és alkalmazásváltásokat. Kézzel kell bekapcsolni, alkalmazásonként korlátozható, szüneteltethető, az egyes bejegyzések törölhetők, a privát böngészés pedig automatikusan kimarad. Jelenleg Macen, Pro, Business és Enterprise csomagban érhető el, az EU-ban, az Egyesült Királyságban és Svájcban még nem.</p>
+<p>Forrás: <a href="https://futuretools.beehiiv.com/p/hugging-face-sale">FutureTools</a></p>
+<h2>A Magnific felhős médiaeszközei közvetlenül bekerültek a ComfyUI gráfjaiba</h2>
+<p>A Magnific hivatalos ComfyUI-bővítménye képgenerálást, nagyítást, háttéreltávolítást, újravilágítást, videógenerálást, retusálást, zenét és narrációt ad egy gráfhoz. Maga a ComfyUI-munkafolyamat a saját gépen marad, a Magnific-node-ok viszont a szolgáltató infrastruktúráján futnak, a fiók kreditjeit használják, majd szabványos képkimenetként adják vissza az eredményt. A node már futtatás előtt jelzi a becsült kreditköltséget, az elkészült tartalom pedig egyszerre kerül vissza a gráfba és a kiválasztott Magnific-projektbe.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A bővítményhez legalább ComfyUI 0.3 szükséges, a letöltött csomagot pedig a ComfyUI `custom<em>nodes` könyvtárába kell kicsomagolni, majd teljesen újraindítani az alkalmazást. Így az ügynököd a meglévő helyi gráfot vezérelheti, miközben csak a kijelölt Magnific-node-ok kerülnek távoli feldolgozásra.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/ggR93UPOt08">Magnific bemutató</a></p>
+<h2>Az AKOOL több vágáson keresztül is megtartja a lecserélt szereplőt</h2>
+<p>Az AKOOL új karaktercserélő eszköze egyetlen menetben több szereplőt tud lecserélni, és a bemutató szerint a kiválasztott karaktert eltérő kameraállásokon és vágásokon át is következetesen megtartja. A platform Seedance 2.5-alapú videószerkesztése időtartományhoz kötött módosítást is elfogad: a tesztben a kész klip 19. és 21. másodperce között cseréltek ki egy szereplőt úgy, hogy a ruházat, a beszéd, a mozgás és a környezet változatlan maradt. Egy másik próbában az eredeti szereplő gesztusait és beszédét őrizték meg, miközben körülötte több alkalommal lecserélték a teljes helyszínt.</p>
+<p>Forrás: <a href="https://youtu.be/D2bf_nFIZKk">Bob Doyle Media tesztje</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/anomalyco/opencode">OpenCode</a></strong> - Nyílt forrású kódolóügynök, amely parancssorból telepíthető npm, Bun, Homebrew, Scoop, Chocolatey, Pacman, Nix és több más csomagkezelő használatával. Az átadott README-részlet a telepítési módokat dokumentálja, de nem részletezi, milyen bemenetekből milyen fájlokat vagy módosításokat állít elő. A projekt MIT-licencű, nem fork és nincs archiválva. 2025. április 30-án hozták létre, utolsó push-a 2026. szeptember 3-án érkezett, jelenleg 203 311 csillaggal rendelkezik. Saját ügynök mellé akkor érdekes, ha terminálból futó, széles körben csomagolt kódolóeszközt keresel, de a kapott tényblokk alapján a pontos végrehajtási modellje nem állapítható meg.</p>
+<p><strong><a href="https://github.com/rmems/synthetic-factory">Synthetic Data Factory</a></strong> - Többügynökös szintetikusadat-gyártáshoz tartalmaz promptokat, sémákat, nyers modellkimeneteket, tisztított trajektóriákat, valamint kurációs, validációs és kiadási folyamatokat. A nyers JSONL-adatok csak hozzáfűzhetők, a teljes adatkészletek pedig külön Hugging Face-repókban jelennek meg, nem ebben a kódtárban. A README szerint az alapadatok jelentős részét Claude Fable 5 állította elő, a tisztításban, szűrésben és sémanormalizálásban más modellek és emberi ellenőrök is részt vehetnek. A nem archivált, Apache-2.0 licencű projekt nem fork; 2026. augusztus 18-án hozták létre, utolsó push-a szeptember 3-án érkezett, és 1 csillaggal rendelkezik. Saját ügynök értékelő- vagy finomhangoló adataihoz használható kiindulópont, de maga a repó nem tartalmazza a teljes nyers és kurált korpuszt.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála az ügynökök jogosultságainak kordában tartása, a helyi munkafolyamatok bővítése és a médiafeldolgozás automatizálása.</p>
+<p><strong>@AnthropicAI</strong> -- A védőkorlátok nélkül futó Claude valós rendszerekhez is hozzáfért, ami helyi ügynököknél is a hálózati engedélyek és az elkülönített tesztkörnyezet fontosságát mutatja.<br>> "gained unauthorized access to real systems"<br><a href="https://x.com/AnthropicAI/status/2094557124038951170">link</a></p>
+<p><strong>@AravSrinivas</strong> -- Az önállóan GPU-erőforrást indító és tanítást kezdeményező ügynökökhöz költési limitek, jóváhagyási pontok és szigorú infrastruktúra-jogosultságok kellenek.<br>> "Agents will get smart enough to spin new on-demand GPU nodes"<br><a href="https://x.com/AravSrinivas/status/2094889722057568413">link</a></p>
+<p><strong>@rryssf</strong> -- A Fable 5.1 kevesebbet költ gyorsítótár-olvasásra, de több tokent termel, ezért egy teljes ügynökfeladat végső ára mégis magasabb lehet.<br>> "The price page got cheaper. The job did not."<br><a href="https://x.com/rryssf/status/2094897459533430878">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Meta Muse Voice Transcribe valós időben követ több beszélőt és nyelvváltást, így használhatóbb beszédalapú bemenetet adhat ügynököknek zajos megbeszéléseken.<br>> "tracks who said what across 20+ speakers"<br><a href="https://x.com/futurepedia_io/status/2095172398362558591">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Wevi az AI-val készített termékbemutató videókra céloz, vagyis a média-előállítás a fejlesztési folyamat végén is automatizálható.<br>> "the video introducing it rarely gets the same attention"<br><a href="https://x.com/AIHighlight/status/2095239405208260671">link</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A közösség 122 milliárd paraméteres vagy legalább 31B fölötti modelleket vár, ami a nagy memóriájú helyi gépek tulajdonosainak jelez új futtatási célpontokat. (641 pont, 154 komment)<br><a href="https://www.reddit.com/r/LocalLLaMA/comments/1w4l9cp/fingers_crossed_for_a_122b_or_really_anything/">link</a></p>
+<p><strong>r/LocalLLM</strong> -- Egy Rustban írt képregényfordító Ollamát vagy LM Studiót, csúszó párbeszéd-kontextust és ONNX látásmodelleket kapcsol össze teljesen helyi képfeldolgozó folyamattá. (152 pont, 24 komment)<br><a href="https://www.reddit.com/r/LocalLLM/comments/1w56ru4/i_built_a_100_local_comic_translation_engine_in/">link</a></p>
+<p><strong>r/OpenSourceeAI</strong> -- Az OpenFlow orchestration és a Gauntlet Loop előzetese egy új, nyílt ügynökvezérlési és iterációs megoldást mutat azoknak, akik több lépésből álló folyamatokat építenek. (7 pont, 0 komment)<br><a href="https://www.reddit.com/r/OpenSourceeAI/comments/1w3zgg2/openflow_orchestration_gauntlet_loop_sneak_peak/">link</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Az Apple-platformra készült natív kliens saját API-kulcsot, öt kezelőfelületet és különböző agent harness kapcsolódásokat ígér egyetlen helyi vezérlőből. (4 pont, 0 komment)<br><a href="https://www.reddit.com/r/SelfHostedAI/comments/1w3h47s/build_an_apple_native_ai_client_byok_5_surfaces/">link</a></p>
+<p><strong>r/PromptEngineering</strong> -- Az Anthropic ingyenes iparági csomagjai kész szakmai munkafolyamatokat adnak Claude-hoz, például szerződések jogászi szemléletű ellenőrzéséhez. (113 pont, 22 komment)<br><a href="https://www.reddit.com/r/PromptEngineering/comments/1w44dbq/anthropic_quietly_released_free_industry_packs/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
