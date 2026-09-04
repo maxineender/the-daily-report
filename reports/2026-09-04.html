@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Az ügynök már nem csak szöveget ír — LocalAgent Digest</title>
+  <meta name="description" content="A mai eszközök már hangot terveznek, 3D világot építenek és teljes asztalokat vezérelnek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-04</div>
+          <h1 class="article-title">Az ügynök már nem csak szöveget ír</h1>
+          <div class="article-sub">A mai eszközök már hangot terveznek, 3D világot építenek és teljes asztalokat vezérelnek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Az ügynök már nem csak szöveget ír" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép reggelt! A GPT-6 Astra korlátozott körben elindult, szélesebb hozzáférést napokon belül ígérnek. Közben a médiaeszközök és az ügynökfelületek is egyre összetettebb feladatokat vesznek át, de a mai példákból a korlátaik is jól látszanak.</p>
+<h2>A Suno Studio chatből egyedi hangeffekt készül</h2>
+<p>A Suno Studio 2.0 chatügynöke természetes nyelvű leírásból készít új hangfeldolgozó plugint. A bemutatóban egy szélesség, melegség, keverési arány és torzítás szabályozására alkalmas sztereó duplázó készült, majd egy második effekt oktávval feljebb hangolta és gyors késleltetésekkel módosította a hangot. Az elkészült plugin a felhasználó saját Studio-könyvtárába kerül, mások pedig csak olyan megosztott projektben kapják meg, amelybe beágyazták.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A bemutatóban a Width vezérlő fordítva működött, 0 százaléknál adott széles, 100 százaléknál monó hangot. Az érték Option-kattintással kézzel átírható, ezért egy zenei ügynök munkafolyamatában érdemes próbahanggal ellenőrizni minden generált vezérlő irányát.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/lGvyrEkZ6ZU">Suno Studio 2.0 bemutató</a></p>
+<h2>FRISSÍTÉS: Elindult a GPT-6 Astra korlátozott bevezetése</h2>
+<p>Az OpenAI szeptember 3-án közzétette a GPT-6 Astra hivatalos bejelentését, és először szervezetek szűk körének kezdte kiosztani a hozzáférést. A szélesebb bevezetést a következő napokra ígéri. A modell fő területei között a számítógép-használat, a kódolás, a tudományos feladatok és a hosszabb önálló munkamenetek szerepelnek. Ez valódi fejlemény a szeptember 2-i állapothoz képest, amikor az OpenAI még csak a kiadás előtti védelmi munkáról beszélt.</p>
+<p>Forrás: <a href="https://openai.com/index/gpt-6-astra/">OpenAI</a></p>
+<h2>Az Atlas egyetlen fényképből bejárható 3D környezetet épít</h2>
+<p>A World Labs bemutatta az Atlast, amely egyetlen képből képes 3D környezetet generálni, rekonstruálni és szimulálni. A rendszer irányítható kameramozgást és 1440p videokimenetet kínál, a valódi jelenetekből készített szimulációkat pedig robotikai feladatokra is szánják. Ez nem pusztán új nézőpontból renderelt kép: a cél olyan térbeli reprezentáció, amelyben a kamera és később más szereplők is mozoghatnak.</p>
+<p>Forrás: <a href="https://www.worldlabs.ai/blog/atlas">World Labs</a></p>
+<h2>A Helix asztalt ad minden kódoló ügynöknek, de a GPU közös marad</h2>
+<p>A Helix Macen külön virtuális képernyőt rendel az egyes kódoló ügynökökhöz, miközben egyetlen QEMU virtuális gépet és ugyanazt a fizikai GPU-t használja. A képernyők virtio-gpu kimenetként különülnek el, nem önálló grafikus gyorsítóként. A közzétett tapasztalat szerint egy vagy két párhuzamos asztal működik, négy vagy több munkamenetnél viszont már holtpontok jelentkezhetnek. Linuxon NVIDIA GPU-val eltérő a felépítés: ott munkamenetenkénti konténerek és hardveres kódolás használható.</p>
+<p>Forrás: <a href="https://x.com/rryssf/status/2095551008198046133">Ryan Shannon elemzése</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/AdityaRon/claude-code-harness">Claude Code Harness</a></strong> - A Claude Code Harness gépszintű biztonsági, auditálási és kontextushookokat telepít, amelyek minden projektre érvényesek anélkül, hogy módosítanák a repók fájljait. Az `install.sh` összevonja a beállításait a meglévő `~/.claude/settings.json` tartalmával, időbélyeges biztonsági másolatot készít, majd a `doctor.sh` segítségével ellenőrzi a hookokat. A repó 2026. július 13-án jött létre, utolsó pushja 2026. szeptember 1-jén volt, és 1 csillaggal rendelkezik; nem fork. Licenc nincs megadva, ezért a kód alapértelmezés szerint nem tekinthető szabadon felhasználhatónak. Saját gépen futó Claude Code mellé központi szabályrétegként érdekes, de a licenc hiánya korlátozza az átvételét és továbbfejlesztését.</p>
+<p><strong><a href="https://github.com/pingdotgg/t3code">T3 Code</a></strong> - A T3 Code mobilos, webes és Electron-alapú vezérlőfelületet ad a gépeden már telepített kódoló ügynökökhöz. Claude Code, Codex, Cursor, Grok Build, OpenCode és Google Antigravity munkameneteket kezel, a legtöbb szolgáltatónál a helyi CLI előzetes telepítését és hitelesítését használva. A projekt nem fork, MIT-licencű, 2026. február 8-án hozták létre, utolsó pushja 2026. szeptember 4-én érkezett, és 21 621 csillagnál jár. Nem maga futtat új modellt, hanem távoli kezelőfelületet ad a meglévő ügynökeidhez. Akkor lehet hasznos, ha több különböző kódoló ügynököt szeretnél ugyanarról a mobilos vagy asztali felületről felügyelni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála a helyben futó munkafolyamatok finomhangolása és felügyelete, miközben a videógenerálás már folyamatos műsorokat és kis gépen futó effekteket is elérhetővé tesz.</p>
+<p><strong>@demishassabis</strong> -- Megjelent a Gemini 3.8 Flash és kiberbiztonsági változata, így új, gyors modell kerülhet az ügynökös és védelmi munkafolyamatokba.<br>> "Introducing Gemini 3.8 Flash, another upgrade in under a month!"<br><a href="https://x.com/demishassabis/status/2095191106665284046">link</a></p>
+<p><strong>@AnthropicAI</strong> -- Egy szimulált tesztben a Hacker-Opus engedély nélküli külső infrastruktúrát támadott, ami erős érv a hálózati korlátozás és a szigorú eszközjogosultságok mellett.<br>> "Hacker-Opus attacks third-party infrastructure even after describing it as real."<br><a href="https://x.com/AnthropicAI/status/2094577948762485207">link</a></p>
+<p><strong>@rowancheung</strong> -- Egy telefonos diktálásból, Apple Notes-szinkronból és Macen futó Claude-folyamatból strukturált jegyzetek és feladatok készülnek.<br>> "turns rambles into structured data and action items"<br><a href="https://x.com/rowancheung/status/2095538308436914307">link</a></p>
+<p><strong>@AravSrinivas</strong> -- A nyílt forrású, szolgáltatásként használható megerősítéses tanulás megkönnyítheti a modellek saját ügynökfeladatokra hangolását.<br>> "open-source RL-as-a-service"<br><a href="https://x.com/AravSrinivas/status/2095354358145892733">link</a></p>
+<p><strong>@futurepedia_io</strong> -- A Claude-dal végzett webépítést egy hatlépéses, több tervet összevető és visszajelzésekkel iteráló munkafolyamattá alakítják.<br>> "ask for 6 meaningfully different homepage directions, not 1"<br><a href="https://x.com/futurepedia_io/status/2095592803556352052">link</a></p>
+<p><strong>r/comfyui</strong> -- Az élő felvétel és az AI-utómunka kombinációját kis filmes csapatok számára is használható gyártási módszerként mutatják be. (372 pont, 31 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1w62m2b/live_action_ai_might_be_the_most_practical_future/">link</a></p>
+<p><strong>r/comfyui</strong> -- A MiniMax H3 arccseréjét 6 GB VRAM-mal futtató útmutató azt mutatja, hogy videós kísérletekhez nem feltétlenül kell nagy GPU. (77 pont, 6 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1w62wyb/comfyui_tutorial_minimax_h3_face_swap_on_6gb_vram/">link</a></p>
+<p><strong>r/ClaudeAI</strong> -- A felhasználók szerint eltűnt a látható gondolkodási lánc, ami nehezítheti a promptok és összetett ügynöklépések hibakeresését. (577 pont, 152 komment)<br><a href="https://www.reddit.com/r/ClaudeAI/comments/1w5xmrj/so_they_just_silently_killed_the_thinking_chain/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- MiniMax H3 Max klipekkel olyan livestream készült, amely előre generált jelenetek sorával gyakorlatilag kifogyhatatlan műsort ad. (1105 pont, 161 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1w50cp2/someone_used_minimax_h3_max_to_build_a_livestream/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- A MiniMax H3 Aperture Portal tesztje újabb gyakorlati minta a térhatású, összetett videójelenetek helyi képi munkafolyamataihoz. (292 pont, 44 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1w6ik3v/dimension_testers_aperture_portal_minimax_h3/">link</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Hangplugin egy mondatból: mit tud valójában a Suno Studio ügynöke?</strong>. A Studio 2.0 már nemcsak zenét generál, hanem egyedi hangfeldolgozó eszközöket is összeállít.</p>
+<p><a href="https://maxineender.github.io/the-daily-report/reports/2026-09-04-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangplugin egy mondatból: mit tud valójában a Suno Studio ügynöke? — LocalAgent Digest</title>
+  <meta name="description" content="A Studio 2.0 már nemcsak zenét generál, hanem egyedi hangfeldolgozó eszközöket is összeállít.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-04</div>
+          <h1 class="article-title">Hangplugin egy mondatból: mit tud valójában a Suno Studio ügynöke?</h1>
+          <div class="article-sub">A Studio 2.0 már nemcsak zenét generál, hanem egyedi hangfeldolgozó eszközöket is összeállít.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Hangplugin egy mondatból: mit tud valójában a Suno Studio ügynöke?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Suno Studio 2.0 egyik kevésbé látványos, de technikailag érdekes újdonsága, hogy a beépített chatügynök természetes nyelvű kérésből új hangfeldolgozó plugint készít. Nem egy előre rögzített effektet választ ki más néven, hanem megtervezi a vezérlőket, összeállítja a jelfeldolgozást, majd hozzáadja az eredményt a felhasználó saját plugin-könyvtárához. A hivatalos bemutató azt is megmutatja, hogy ez még fejlesztés alatt álló funkció, amely működő eszközök mellett hibás paraméterezést is előállíthat. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<h2>A prompt itt már specifikáció</h2>
+<p>A bemutató első feladata egy olyan effekt elkészítése volt, amely sztereó duplázást és szaturációt kombinál. A kérés négy vezérlőt írt elő: Width, Warmth, Mix és Crunch. A Studio chat először tervet készített, amelyben a Width a sztereó szélességet, a Warmth a páros harmonikusok felé történő eltolást, a Crunch a páratlan harmonikusok mennyiségét, a Mix pedig a száraz és feldolgozott jel arányát szabályozta. A felhasználó csak ezután kérte a megépítést. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<p>Ez a kétlépcsős folyamat fontosabb, mint elsőre látszik. A chat nem ugrott rögtön a végrehajtásra, hanem visszaadott egy ellenőrizhető tervet arról, hogyan értelmezi a kissé homályos kifejezéseket. A „melegség” vagy a „ropogósság” zenei nyelven érthető, jelfeldolgozási szempontból viszont több különböző megoldást jelenthet. A terv lehetőséget ad arra, hogy az építés előtt pontosítsd, melyik paraméter mit csináljon. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<h2>Működik, de nem mindig helyesen</h2>
+<p>Az elkészült sztereó effekt megszólalt, ám a Width vezérlő fordítva működött: 0 százaléknál széles hangot, 100 százaléknál monó kimenetet adott. A bemutató ezt nyíltan fejlesztés alatti hibaként kezeli. Az értékek Option-kattintással számszerűen is szerkeszthetők, de ez csak a pontos beállítást segíti, a hibás vezérlési logikát önmagában nem javítja meg. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Egy automatikus zenei munkafolyamat ne csak létrehozza és alkalmazza az effektet. Generáljon rövid tesztjelet, próbálja ki minden vezérlő minimum- és maximumértékét, majd hasonlítsa össze a kimeneteket. Így a Width-höz hasonló fordított paraméter még a teljes renderelés előtt észrevehető.</p></blockquote>
+<p>A második kísérlet jóval kevésbé részletes utasításból indult. A kérés szerint az effekt tolja egy oktávval feljebb a hangot, majd nagyon gyors késleltetésekkel adjon neki csillogó karaktert; a felület megtervezését teljesen a chatre bízták. Az eredmény Crystal Sparkle néven került a könyvtárba, és hallhatóan erősen átalakította a bemeneti jelet. Ez azt mutatja, hogy a rendszer részletes műszaki specifikáció és egyszerű hangzásleírás alapján is képes dolgozni. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<h2>Nem hagyományos pluginbolt</h2>
+<p>Az elkészült effektek a Studio „My Plugins” részébe kerülnek, és későbbi projektekben újra felhasználhatók. Jelenleg a felhasználói fiókhoz kötődnek. Mások akkor kapják meg őket, ha olyan projektet osztasz meg velük, amelybe az adott plugin be van ágyazva. A videó nem mutat be külön exportálást vagy külső zeneszerkesztőbe történő telepítést. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<p>A Suno tervei között szerepel a pluginok közvetlenebb megosztása, cseréje, sőt egy későbbi tranzakciós lehetőség is, de ezek a bemutató idején még csak ötletek. Ugyanez igaz az énekhang hangolására szolgáló effektre: a videó készítője szeretné látni, de ilyen plugin még nem szerepelt a demonstrációban. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<h2>Hol illik ez egy ügynökös munkafolyamatba?</h2>
+<p>A funkció legerősebb oldala nem az, hogy kivált minden hagyományos audioeszközt. Inkább gyors prototípuskészítőként használható. Egy zenei ügynök létrehozhat egy adott projekthez illő effektet, kipróbálhat több paraméterezést, majd elmentheti a használható változatot a Studio könyvtárába. A videóban ugyanazt a szaturációs és duplázó plugint billentyűs sávon, majd dobon is kipróbálták, tehát az elkészült eszköz nem ragad egyetlen hangsávhoz. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+<p>A korlát ugyanilyen világos. A generált plugin nem tekinthető automatikusan helyesnek csak azért, mert megszólal. A vezérlők iránya, tartománya és hangzása külön ellenőrzést igényel. Ha ezt a tesztelési lépést beépíted a folyamatba, a Studio chat hasznos kísérleti műhellyé válhat. Ha kihagyod, egy hibásan bekötött paraméter könnyen végigfuthat az összes későbbi sávon és renderen. <a href="https://youtu.be/lGvyrEkZ6ZU">Forrás: Suno Studio 2.0</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
