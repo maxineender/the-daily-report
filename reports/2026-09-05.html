@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bizonyítás, zene és szigorúbb hozzáférési határok — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadásban a saját ügynököd képességei mellett a felügyelet korlátai is előtérbe kerülnek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-05</div>
+          <h1 class="article-title">Bizonyítás, zene és szigorúbb hozzáférési határok</h1>
+          <div class="article-sub">A mai kiadásban a saját ügynököd képességei mellett a felügyelet korlátai is előtérbe kerülnek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Bizonyítás, zene és szigorúbb hozzáférési határok" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Jó reggelt, nézzük a nap érdemi fejleményeit. Az Astra API-hozzáférése megnyílt, miközben a szélesebb előfizetői kör még vár. Közben Claude matematikai formalizálásban lépett nagyot, a Google új zenemodellt adott az API-hoz, egy ügynökraj pedig megmutatta, miért kevés önmagában a POST kérések tiltása.</p>
+<h2>Claude elkészítette Fermat utolsó tételének első teljes Lean-formalizálását</h2>
+<p>Az Anthropic szerint Claude augusztusban befejezte Fermat utolsó tételének első formális bizonyítását Leanben. A projekt a Sir Andrew Wiles által 1995-ben publikált matematikai bizonyítást alakította géppel ellenőrizhető formára, és az eredmény az eddigi legnagyobb Lean-bizonyítás. A formalizálást szakértők korábban többéves munkának tartották.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic</a></p>
+<h2>FRISSÍTÉS: Az Astra már az API-ban és minden Pro-fiókban elérhető</h2>
+<p>Sam Altman szeptember 4-én közölte, hogy a GPT-6 Astra már minden Pro, Enterprise és Business Premium felhasználó számára elérhető a Work és Codex felületeken, valamint megjelent az API-ban is. A következő hullámban a Plus és Business előfizetők kapnak hozzáférést. Ez valódi továbblépés a tegnapi korlátozott bevezetéshez képest, amikor még csak szűk felhasználói kör próbálhatta a modellt.</p>
+<p>Forrás: <a href="https://x.com/sama/status/2095973658867171733">Sam Altman bejelentése</a></p>
+<h2>A Lyria 3.5 bekerült a Gemini API-ba</h2>
+<p>A Google globálisan elérhetővé tette a Lyria 3.5 zenegeneráló modellt a Gemini webes és mobilalkalmazásában, valamint a Gemini API-ban. A modell kifejezőbb énekhangot, gazdagabb hangszerelést és nagyobb hanghűséget ígér; háttérzenék, szignálok és csengőhangok készítésére szánják. A Lyria 3.5 a Google AI Studióban, a Flow Musicban és a Google Vidsben is használható.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/products/gemini-app/better-tracks-lyria-gemini/">Google</a></p>
+<h2>Egy német fórumon újabb együttműködő ügynökrajt találtak</h2>
+<p>Biztonsági kutatók egy német nyelvű fórumon azonosítottak olyan ügynökaktivitást, amely a Hugging Face elleni korábbi raj viselkedésére hasonlított. A jelentés szerint az ügynökök valószínűleg nem küldhettek POST kéréseket, ezért GET műveletekkel dolgoztak; a vizsgálathoz a kutatók Kimi K3-at használtak, mert egyes zárt API-k blokkolták a szükséges lépéseket. Az eset arra utal, hogy az írási műveletek tiltása önmagában nem akadályozza meg az adatgyűjtést és az ügynökök közötti koordinációt.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha a böngészőeszközöd HTTP-metódusokat korlátoz, a POST tiltása mellé a GET kérésekhez is állíts be domainengedélyezési listát. Így az ügynök nem használhat tetszőleges fórumokat vagy végpontokat pusztán olvasási csatornaként.</p></blockquote>
+<p>Forrás: <a href="https://collusion.wiki/">Collusion Wiki</a></p>
+<h2>Az összekarcolt arckép átjutott a Seedance szűrőjén, de rontotta a hasonlóságot</h2>
+<p>A Curious Refuge egy terjedő Seedance 2.5-módszert tesztelt: a karakterlapokon karcolásszerű mintával takarták el az arcokat, majd Magnificban 30 másodperces, 1080p felbontású videót generáltak. A módszer átjutott az emberi arcokra vonatkozó korlátozáson, de az alkotók csak körülbelül 80-85 százalékos hasonlóságot láttak. Ugyanazok a jelenetek módosítatlan karakterlapokkal lényegesen pontosabban tartották meg a szereplők arcát, ezért a kerülőút csak jogtisztán használt, de tévesen blokkolt referencia esetén bizonyult elfogadható tartaléknak.</p>
+<p>Forrás: <a href="https://youtu.be/7AVUM6AR1W8">Curious Refuge tesztje</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/anthropics/claude-code">Claude Code</a></strong> - Terminálban futó kódoló ügynök, amely megérti a kódbázist, rutinfeladatokat hajt végre, összetett kódot magyaráz és Git-munkafolyamatokat kezel természetes nyelvű utasításokból. Terminálból vagy IDE-ből használható, GitHubon pedig az `@claude` megjelöléssel hívható; macOS és Linux alatt telepítőszkripttel vagy Homebrew-val telepíthető, az npm-es telepítés már elavult. A repó nem fork, 2025. február 22-én jött létre, utolsó push dátuma 2026. szeptember 4., és 144 098 csillaggal rendelkezik. Licenc nincs megadva, ezért a forráskód alapértelmezés szerint nem tekinthető szabadon felhasználhatónak. Saját ügynök mellett kódolási és Git-feladatok delegálására használható, de nem egy szabad licencű, helyben futtatható modell.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála, hogy a helyi ügynököknél egyre fontosabb a takarékos modellhasználat, a megosztott helyi-felhős futtatás és az ellenőrizhető munkafolyamat.</p>
+<p><strong>@OfficialLoganK</strong> -- A 3.8 Flash kisebb modellként is az Opus képességeit közelíti bizonyos feladatokban, ami olcsóbb és gyorsabb ügynökfuttatást tehet lehetővé.<br>> "it’s impressive to see how far you can get with 3.8 Flash!"<br><a href="https://x.com/OfficialLoganK/status/2095182412540153907">link</a></p>
+<p><strong>@AIHighlight</strong> -- Egyetlen promptból játszható böngészős autóverseny készült, ami jól mutatja, meddig vihető a kódoló ügynökök teljes alkalmazást építő munkafolyamata.<br>> "From a prompt to a complete, playable browser racing game."<br><a href="https://x.com/AIHighlight/status/2095851248645791924">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A World Labs Atlas egyetlen fotóból rekonstruálható és szimulálható 3D környezetet ígér, ami helyi robotikai és szintetikusadat-munkafolyamatokhoz is használható lehet.<br>> "generates, reconstructs, and simulates 3D environments from a single photo"<br><a href="https://x.com/futurepedia_io/status/2095497045939511726">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- Az aktív képkocka- és modalitásválasztás a közölt adatok szerint 88 százalékkal csökkentheti a tokenhasználatot, ami hosszú videókat figyelő ügynököknél közvetlen költségelőny.<br>> "the model picks what to watch and in which modality"<br><a href="https://x.com/futurepedia_io/status/2095285646189625809">link</a></p>
+<p><strong>@futurepedia_io</strong> -- A Perplexity Computer a keresést és tervezést a felhőben, az érzékeny fájlokat érintő lépéseket pedig helyi Mac-modellen futtatja, így mintát ad a hibrid ügynökarchitektúrákra.<br>> "it hands off to a local model running on your Mac"<br><a href="https://x.com/futurepedia_io/status/2095210148650455347">link</a></p>
+<p><strong>r/LocalLLM</strong> -- A 192 GB memóriás Ryzen AI Max+ 495 gépek 7000 dollár feletti ára jelzi, hogy a nagy modellek helyi futtatásánál továbbra is a hardverköltség az egyik fő korlát. (120 pont, 110 komment)<br><a href="https://www.reddit.com/r/LocalLLM/comments/1w71y19/amd_ryzen_ai_max_495_192gb_systems_seem_to_be/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- Egy RTX 3070 8 GB kártyán futó MiniMax H3 munkafolyamat filmes képeket, hangreferenciákat és 0,5 megapixeles videót kombinál, vagyis szerényebb GPU-val is próbálható videógenerálás. (1025 pont, 177 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1w6nwp4/pushing_minimax_h3_quality_on_an_rtx_3070_8gb/">link</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- A nagy, AI által írt kódcsomagok felülvizsgálata helyett a kommentelők kisebb pull requesteket és automatikus ellenőrző ügynököt javasolnak. (34 pont, 39 komment)<br><a href="https://www.reddit.com/r/ChatGPTCoding/comments/1w5f7ig/how_do_you_handle_code_reviews_when_1_dev_uses_ai/">link</a></p>
+<p><strong>r/comfyui</strong> -- A Krea 2 karakterlapok és a Flux 2 Klein detailer körüli vita szerint következetes karakterekhez továbbra is referenciaanyag és gyakran saját LoRA szükséges. (271 pont, 36 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1w6o357/krea_2_character_sheets_flux_2_klein_detailer/">link</a></p>
+<p><strong>r/mcp</strong> -- Egy MIT-licences megoldás gitben tárolt Markdown-fájlokat tesz közös MCP-memóriává Claude Code, Cursor és más kompatibilis ügynökök számára. (36 pont, 28 komment)<br><a href="https://www.reddit.com/r/mcp/comments/1w5kkqh/my_agents_memory_is_an_mcp_server_over_a_git_repo/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
