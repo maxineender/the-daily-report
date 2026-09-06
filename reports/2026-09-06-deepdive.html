@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Új kameraállás forgatás nélkül: mit tud valójában a Seedance munkafolyamata? — LocalAgent Digest</title>
+  <meta name="description" content="A videómodell már nemcsak új klipet készít, hanem meglévő alakítást és kameramozgást próbál más nézőpontból rekonstruálni.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-06</div>
+          <h1 class="article-title">Új kameraállás forgatás nélkül: mit tud valójában a Seedance munkafolyamata?</h1>
+          <div class="article-sub">A videómodell már nemcsak új klipet készít, hanem meglévő alakítást és kameramozgást próbál más nézőpontból rekonstruálni.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Új kameraállás forgatás nélkül: mit tud valójában a Seedance munkafolyamata?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A generatív videó eddig jellemzően a forgatás előtti vagy attól teljesen különálló eszköz volt: képből klipet készített, szövegből jelenetet épített, esetleg egy karakter kinézetét vitte tovább. A Curious Refuge friss tesztje más feladatot vizsgált. Adott egy már létező élőszereplős felvétel, és ebből kellett ugyanazt a jelenetet egy új kameraállásból elkészíteni. Nem egyszerű képkivágásról van szó, hanem olyan részletek létrehozásáról, amelyeket az eredeti kamera nem látott. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<h2>Mit kell kitalálnia a modellnek?</h2>
+<p>Ha egy közeli felvételből széles kép készül, a modellnek fel kell építenie az eredeti képen kívüli környezetet, a szereplő teljes testtartását és a tárgyak takarásban lévő részeit. Közben meg kell tartania az akció ritmusát: ha a szereplő az eredeti videóban megérint egy gördeszkát vagy követi a mozgó kamerát a tekintetével, az új kameraállásban is ennek kell történnie. A tesztben ehhez az eredeti videót töltötték fel, majd széles képet és eltérő kamerapozíciót kértek a Seedance 2.5-től. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<p>Az eredmény első pillantásra meggyőző volt, de hosszabb megfigyelésnél előjöttek a hibák. A haj mozgása nem mindig illett a jelenethez, a gördeszka indokolatlanul elmozdult, és a szereplő akciója sem egyezett képkockáról képkockára az eredetivel. A készítő szerint rövidebb, montázsba vágott részletként ezek a hibák kevésbé feltűnők, tíz másodperces folyamatos beállításként viszont már láthatók. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<h2>A Seedance és a Minimax nem ugyanott hibázott</h2>
+<p>Ugyanazokat a feladatokat a Minimax H3-mal is lefuttatták. Az egyik próbában az H3 valóban szélesebb képet adott, de a főszereplő arca fokozatosan szétesett, a bőr műanyagszerűvé vált, és a tekintet nem az eredeti kamera mozgását követte. Más jelenetekben a háttér vagy a ruházat részletei romlottak el. A Seedance sem teljesítette mindig az utasítást, de több próbában közelebb maradt az eredeti szereplőhöz és akcióhoz. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<p>A videó készítője a mozgás egyezését egy két szereplős jelenetnél 90-95 százalék körülire becsülte. Ez nem mérőszámos teszt, hanem vizuális értékelés, mégis jól jelzi a gyakorlati határt. Két hagyományosan felvett kameraállás között sincs tökéletes mozgásegyezés, mert a színészek minden ismétlésnél kissé másként mozognak. A generált változat akkor használható, ha az eltérések vágással kezelhetők, és nem sértik a jelenet folytonosságát. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<h2>A szürke doboz mint olcsó virtuális díszlet</h2>
+<p>A második munkafolyamatban már nem kész jelenetet alakítottak át. Egy színészt semleges, szürke háttér előtt vettek fel, a térben pedig követési pontokat és egyszerű dobozokat helyeztek el. A Seedance ezekből posztapokaliptikus környezetet, sérült autót és új hátteret épített, miközben megtartotta a színész mozgását, a kamera rázkódását és részben a fókuszváltást. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<p>A követési pontoknak gyakorlati szerepük volt. Egyszínű fehér vagy zöld háttérnél a modell kevesebb vizuális támpontból következtethet a kamera térbeli mozgására. A szürke felület, a jelölések és a dobozok segítik a parallaxis értelmezését, vagyis azt, hogy a közeli és távoli elemek eltérő sebességgel mozduljanak el a képen. A teszt nem bizonyítja, hogy minden jelenethez ilyen stúdió kell, de megmutatja, hogy a generálás minőségét már a forrásfelvétel kialakításával lehet javítani. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<h2>A színész teljesítménye is átvihető</h2>
+<p>A munkafolyamat egy karakterlappal is kiegészült. Ebben az esetben a modell nemcsak a környezetet cserélte le, hanem másik szereplőre vetítette át az eredeti színész alakítását. A testmozgás és a kamera fókuszváltása többnyire megmaradt, de a generált karakter arca egy ponton elkezdett az eredeti színész arcához hasonulni. Ez arra utal, hogy a forrásként használt előadó testalkata és aránya továbbra is számít. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<p>A tesztben mélységtérképet is használtak a nyers videó helyett. Ez közelebb tartotta a mozgást az eredeti alakításhoz, de nem szüntette meg az identitás keveredését. A gyakorlatban tehát a mélységtérkép jó köztes formátum lehet egy videós ügynök számára: megtartja a térbeli mozgás egy részét, miközben kevesebb eredeti vizuális részletet visz tovább. A karakterazonosságot azonban külön ellenőrizni kell. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A reprodukálható munkafolyamathoz külön mezőkben add át a forrásvideót, a kívánt kamerahelyet, a 16:9 képarányt, a 10 másodperces hosszt és az 1080p felbontást. Ha később az eredeti hangsávot használod, kapcsold ki a generált hangot. Helyszín-referencia esetén az ügynök ugyanahhoz a generálási feladathoz csatolja a videót és a környezet képét, majd a kimenetet arc-, tárgy- és mozgásfolytonosság szerint rangsorolja.</p></blockquote>
+<h2>A költség teszi próbára az automatizálást</h2>
+<p>A videó szerint a Seedance 2.5 közvetlen Dreamina-használata 1080p-ben körülbelül 1 dollár másodpercenként. Egy tíz másodperces próbálkozás így nagyjából 10 dollár, miközben a készítő becslése szerint 3-5 generálás is kellhet egy beilleszthető változathoz. Ez egyetlen végleges beállításnál 30-50 dolláros generálási költséget jelenthet, még a felskálázás, színillesztés és további utómunka előtt. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+<p>Ezért az ügynök legfontosabb feladata nem feltétlenül maga a generálás, hanem a próbálkozások számának kordában tartása. A kamerahely vázlata, a helyszín referenciafotója, a megfelelő képarány és a generált hang kikapcsolása mind csökkentheti a felesleges változatokat. A modell már képes olyan új képet előállítani, amely néhány másodpercig hihetően illeszkedik az eredeti felvételhez. A teljes jelenet folytonosságát azonban továbbra is vágással, összehasonlítással és célzott újragenerálással kell kialakítani. (<a href="https://youtu.be/4wva-82hHJ0">Curious Refuge</a>)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
