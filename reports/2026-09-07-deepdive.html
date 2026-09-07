@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telefonos játékból generált jelenet: mit érdemes automatizálni a Seedance körül? — LocalAgent Digest</title>
+  <meta name="description" content="A teljesen generált videó helyett egy rögzített emberi alakítás adhat stabil alapot az ügynök által vezérelt gyártáshoz.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-07</div>
+          <h1 class="article-title">Telefonos játékból generált jelenet: mit érdemes automatizálni a Seedance körül?</h1>
+          <div class="article-sub">A teljesen generált videó helyett egy rögzített emberi alakítás adhat stabil alapot az ügynök által vezérelt gyártáshoz.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Telefonos játékból generált jelenet: mit érdemes automatizálni a Seedance körül?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Seedance 2.5 egyik érdekes felhasználása nem szövegből indul. Először telefonnal felveszed a mozgást, a párbeszédet és a kameramunkát, majd a modell erre vetíti rá az új szereplőt, ruhát és környezetet. DanKieft bemutatója szerint ehhez nem kell különleges kamera: a példák egy telefonnal és egyszerű állvánnyal készültek, a tényleges átalakítást pedig a nyers videó és több referenciafájl együtt vezérelte. <a href="https://youtu.be/FJfMTvZvX7w">A teljes bemutató itt nézhető meg.</a></p>
+<p>Ez a megközelítés azért illik jól egy saját gépen futó ügynökhöz, mert a munkafolyamat nagy része fájlkezelésből, ellenőrzőlistákból és ismételhető lépésekből áll. Az ügynöknek nem kell művészeti döntést hoznia helyetted. Elég, ha összegyűjti a referenciákat, elkészíti a feltöltési csomagot, létrehozza a prompt első változatát, és nyilvántartja, mely snitteket kell újra lefuttatni.</p>
+<h2>A forgatókönyv itt technikai bemenet</h2>
+<p>A videó szerint a felvétel előtt el kell dönteni, hány szereplő lesz, hol játszódik a jelenet, hogyan viselkednek a karakterek, és hova kerül a kamera. Ha egyetlen ember játszik el két szerepet, állványra rögzített kamerával külön-külön felveheti mindkét alakítást, majd a két sáv egymásra illeszthető. A mozgásokat érdemes a szokásosnál hangsúlyosabban előadni, mert a modell a látható testmozgásból dolgozik. <a href="https://youtu.be/FJfMTvZvX7w">DanKieft ezt több párbeszédes és akciójelenettel mutatta be.</a></p>
+<p>Ezekből az adatokból az ügynök jelenetjegyzéket készíthet. Egy egyszerű struktúrában minden snitthez tartozhat időtartam, szereplő, kamerahelyzet, kellék, referenciafájl és kívánt átalakítás. Így generálás előtt kiderül, ha egy szereplőhöz nincs kép, egy kellék nem látszik jól, vagy két egymás utáni snitt eltérő környezetleírást használ.</p>
+<h2>A referencia nem merev másolat</h2>
+<p>A bemutatóban ugyanazt a nyers felvételt előbb férfi, majd női szereplővel generálták újra, ruhára, kalapra és faliképre vonatkozó külön referenciákkal. Az eredmények nem követték képkockáról képkockára az eredetit: az egyik szereplő másik irányból lépett be, a modell pedig olyan lámpát is hozzáadott, amelyet a referencia összeillesztéséhez szükségesnek ítélt. A referencia tehát erős iránymutatás, de nem determinisztikus rétegcsere. <a href="https://youtu.be/FJfMTvZvX7w">A különbségek egymás mellett is láthatók a videóban.</a></p>
+<p>Ezért hasznos, ha az ügynök minden generáláshoz eltárolja a nyers videót, a referenciafájlok sorrendjét, a promptot, a felbontást és az elkészült változat azonosítóját. Ha a második próbálkozás jobb arcot, de rosszabb belépési irányt ad, pontosan visszakereshető, mi változott a két futás között.</p>
+<h2>Egy jelenet, nem hat külön számla</h2>
+<p>A legerősebb költségcsökkentő fogás egy 30 másodperces lovagos jelenetnél jelent meg. DanKieft hat külön snitt nyers felvételét előbb egyetlen videóvá fűzte össze, majd a teljes csomagot egyszer generálta újra. Ha egy rész nem sikerült, csak annak eredeti felvételét vette elő és futtatta újra. <a href="https://youtu.be/FJfMTvZvX7w">A videó szerint ezzel időt és kreditet is megtakarított.</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Állíts be kétlépcsős sort: először 480p-s próbafutás, majd csak a jóváhagyott jelenet kerüljön 720p-s vagy 1080p-s sorba. Az ügynök a 30 másodperces korláton belül automatikusan összefűzheti a snitteket, a hibás időtartományt pedig külön fájlba vághatja az újrageneráláshoz.</p></blockquote>
+<p>Az automatizálásnál fontos, hogy az ügynök ne indítson korlátlanul új próbákat. Célszerű jelenetenként maximális futásszámot, célfelbontást és kézi jóváhagyási pontot rögzíteni. Ez közvetlenül követi a bemutató módszerét, amely először alacsony felbontást javasol, és a drágább változatot csak későbbre hagyja. <a href="https://youtu.be/FJfMTvZvX7w">A szerző 480p-s tesztet és gyakori 720p-s használatot említ.</a></p>
+<h2>A hibákhoz snittszintű javítás kell</h2>
+<p>A modell nem mindig őrizte meg pontosan a mozgás irányát, a kellékeket vagy a szereplő megjelenését. Egy másik tesztben a kívánt kézlevágás helyett csak egy köröm vált le, míg egy karaktercsere során a generált arc részben visszamorfózhatott az eredeti előadóéra. Ezek nem feltétlenül teszik használhatatlanná a teljes jelenetet, de indokolják a snittenkénti ellenőrzést. <a href="https://youtu.be/FJfMTvZvX7w">A hibás és újragenerált változatok is szerepelnek a bemutatóban.</a></p>
+<p>Egy helyi ügynök itt képkockákat emelhet ki a vágások környékéről, kontaktlapot készíthet, és egymás mellé teheti a különböző futásokat. A végső döntés továbbra is emberi marad, de nem kell minden változatot elejétől végéig kézzel megnyitni és rendszerezni.</p>
+<p>A tanulság nem az, hogy a telefonos felvétel kiváltja a generálást. Inkább az, hogy stabil mozgási alapot ad hozzá. A modellre marad a megjelenés átalakítása, az ügynökre pedig a fájlok, próbafutások és javítások kezelése. Ez jóval ellenőrizhetőbb rendszer, mint minden snittet külön, pusztán szövegből újra és újra elkészíteni.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
