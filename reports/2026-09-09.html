@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keresés, képek és referencia-vezérelt videó — LocalAgent Digest</title>
+  <meta name="description" content="A Hermes keresője mellett új kép- és videós munkafolyamatok, valamint két kutatási bejelentés érkezett.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-09</div>
+          <h1 class="article-title">Keresés, képek és referencia-vezérelt videó</h1>
+          <div class="article-sub">A Hermes keresője mellett új kép- és videós munkafolyamatok, valamint két kutatási bejelentés érkezett.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Keresés, képek és referencia-vezérelt videó" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma a keresés és a médiagyártás került közelebb az ügynöki munkafolyamatokhoz. A Hermesbe közvetlenül bekerült a Perplexity több százmilliárd oldalas keresőindexe. Mellette két médiás eszközt és két nagy kutatási bejelentést érdemes megnézni, utóbbiakat egyelőre óvatosabban kezelve.</p>
+<h2>Az Images 2.5 egyetlen karakterből építhet reklámképsorozatot</h2>
+<p>Az OpenAI szeptember 8-án kiadta a ChatGPT Images 2.5-öt. Egy korai külső tesztben Jacob Rodriguez ugyanabból a mesterséges szereplőből teljes UGC-reklámkönyvtárat készített, és 15 felhasználási mintát, illetve promptot mutatott hozzá. Ez arra utal, hogy az új verzió egyik gyakorlati erőssége a visszatérő karakter több beállításon és reklámváltozaton át történő használata lehet.</p>
+<p>Forrás: <a href="https://openai.com/index/introducing-chatgpt-images-2-5/">OpenAI</a>, <a href="https://x.com/jacobrodri_/status/2097484007156174877">Jacob Rodriguez tesztje</a></p>
+<h2>A Perplexity keresője közvetlenül bekerült a Hermesbe</h2>
+<p>Aravind Srinivas szeptember 9-i bejelentése szerint a Hermes már a Perplexity Search szolgáltatását használhatja. A Perplexity indexe jelenleg több mint 450 milliárd jó minőségű URL-t tartalmaz, és a vállalat célja, hogy ezt az év végéig ezermilliárdra bővítse, keresési kivonatokkal együtt. A bejelentés nem részletezi, mely Hermes-verziókban vagy milyen beállítással érhető el az integráció.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2097511314260414768">Aravind Srinivas bejelentése</a></p>
+<h2>Tizennégy Seedance-minta mutatja meg, mire valók a referenciák</h2>
+<p>Dan Kieft tizennégy Seedance 2.5-munkafolyamatot próbált ki, köztük termékfotóból készülő UGC-reklámot, karakterlapra épülő vlogot, Blender-videóval vezérelt kameramozgást, valós felvételbe illesztett jelenetet és fényképekből összeállított utazási videót. A példákban a prompt külön választja szét a szereplőt, a jelenetet, a kamerát, az akciót és a tempót. A húsz másodperces utazási videónál külön hangfelvétel szolgált hangreferenciaként, míg a Blender-példában egy előre elkészített videó adta át a kameramozgást.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Rövid közösségi videóknál a bemutató szerint érdemes 720p-re állítani a kimenetet, mert ez kevesebb kreditet fogyaszt. Ha kép- és videóreferenciát is használsz, a promptban külön címkézd őket, például `image 1` és `video 1` néven.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/StX3eflYq_o">Dan Kieft bemutatója</a></p>
+<h2>Az OpenAI megoldást jelentett be a Navier–Stokes-problémára</h2>
+<p>Az OpenAI szeptember 8-án publikált egy állítólagos megoldást a Navier–Stokes-egyenletekhez kapcsolódó Millennium-díjas problémára. Greg Brockman ezt az AI és a matematika fontos mérföldkövének nevezte, amely segítheti a nemlineáris parciális differenciálegyenletek megértését. A bejelentés súlya miatt a független matematikai ellenőrzés lesz a következő fontos lépés, ezért ezt egyelőre megoldási igényként, nem lezárt eredményként érdemes kezelni.</p>
+<p>Forrás: <a href="https://openai.com/index/navier-stokes-solution">OpenAI</a></p>
+<h2>Az AlphaGenome Atlas kilencmilliárd genetikai változat hatását számolta ki előre</h2>
+<p>A Google DeepMind AlphaGenome Atlas nevű adatbázisa az emberi genom összes lehetséges egybetűs változatához, összesen kilencmilliárd variánshoz készített szabályozási előrejelzést. Az így előállított adathalmaz mérete egy petabájt, és a fehérjét kódoló, illetve nem kódoló régiókat közös AlphaGenome Variant Impact pontszámmal teszi kereshetővé. Ez különösen a genom 98 százalékát kitevő, kevésbé értett nem kódoló területek vizsgálatát gyorsíthatja; az Atlas akadémiai kutatáshoz ingyenesen hozzáférhető.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-atlas/">Google DeepMind</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/looptroop-ai/LoopTroop">LoopTroop</a></strong> - A LoopTroop egy helyi kódolási koordinátor, amely egy feladatjegyből interjúval PRD-t készít, azt kisebb „bead” mérföldkövekre bontja, majd javítási ciklusokban hajtja végre. Az egyes feladatokat elkülönített OpenCode worktree-kben futtatja, automatizált tesztelés és végső ellenőrzés után pedig ember által jóváhagyható pull requestet ad át. MIT licencű, nem fork, és 2026. március 3-án hozták létre. Az utolsó push 2026. szeptember 8-án érkezett; a repónak 132 csillaga, 11 forkja és 5 nyitott issue-ja van. Saját kódoló ügynök mellett akkor lehet hasznos, ha a hosszú beszélgetések helyett elkülönített, ellenőrizhető munkaszakaszokra bontanád a teljes repót érintő feladatokat.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála a kontroll: helyben futó modellek, szűk jogosultságú ügynökök és testre szabható kreatív munkafolyamatok kerültek előtérbe.</p>
+<p><strong>@Thom<em>Wolf</strong> -- A Mistral 3 milliárdos tőkebevonása hosszabb kifutópályát adhat a nyílt súlyú modelleknek, amelyek saját gépes futtatásnál valódi választási lehetőséget jelentenek.<br>> "Largest equity round by a company open-sourcing models"<br><a href="https://x.com/Thom_Wolf/status/2097356014873931777">link</a></p>
+<p><strong>@itsPaulAi</strong> -- A Huawei operációs rendszerbe épített ügynökei helyi és felhős modelleket kombinálnak, ami mintát adhat a gyors helyi végrehajtás és a nagyobb távoli modellek szétválasztására.<br>> "And it combines both local AND cloud models."<br><a href="https://x.com/itsPaulAi/status/2097405110221733931">link</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A ChatGPT Work már webhelyet telepít, adatot tárol és saját hibáit is javítja, így az ügynöki kódolás a prototípustól a működő szolgáltatásig ér.<br>> "Watch ChatGPT debug its own broken skill in real time"<br><a href="https://x.com/futurepedia_io/status/2097401330536939825">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Fable 5.1 és a GPT-6 Astra ugyanarra a Pringles-reklámra adott eredménye közvetlen összehasonlítást kínál a generatív kreatív modellek között.<br>> "Fable 5.1 vs GPT-6 Astra."<br><a href="https://x.com/AIHighlight/status/2097265303667249515">link</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Google Pics tárgyszintű képszerkesztése lehetővé teszi, hogy egy generált kép egyetlen elemét módosítsd az egész jelenet újragenerálása nélkül.<br>> "click one object in it and change only that"<br><a href="https://x.com/futurepedia_io/status/2097166549144793307">link</a></p>
+<p><strong>r/AI</em>Agents</strong> -- Egy belső bot a wiki olvasására kapott hozzáférés ellenére kiszivárogtatott egy be nem jelentett átszervezést, ami jól mutatja, miért kell az ügynökök adatforrásait és jogosultságait külön korlátozni. (98 pont, 50 komment)<br><a href="https://www.reddit.com/r/AI_Agents/comments/1waini0/our_internal_bot_answered_a_question_with_the/">link</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- Egy fő ágat eltörő ügynöki pull request vitája arra figyelmeztet, hogy az automatikusan írt kódhoz továbbra is kötelező tesztelés és emberi jóváhagyás kell. (78 pont, 75 komment)<br><a href="https://www.reddit.com/r/ChatGPTCoding/comments/1w9pwx3/reverted_a_teammates_agent_pr_that_broke_main_and/">link</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy fejlesztői tapasztalat nélküli alkotó hét nap alatt készített játékot és előzetest, ami konkrét példa az ügynökkel támogatott teljes kreatív munkafolyamatra. (593 pont, 77 komment)<br><a href="https://www.reddit.com/r/ClaudeAI/comments/1waax5s/7_days_of_making_a_cozy_game_with_no_dev/">link</a></p>
+<p><strong>r/comfyui</strong> -- A CMYK Magic egy ingyenes, testre szabható ComfyUI-node 37 előbeállítással és 17 mintával, így a retro Ben Day-pontozás közvetlenül beépíthető a helyi képi folyamatokba. (159 pont, 14 komment)<br><a href="https://www.reddit.com/r/comfyui/comments/1wat4qr/i_wanted_to_give_my_images_a_retro_feel_and_since/">link</a></p>
+<p><strong>r/StableDiffusion</strong> -- A poszt szerint mikrokifejezésekkel, címkékkel és kontextussal erősebb érzelmek vihetők generált szereplőkbe, a kommentek pedig már a pontos promptot és beállításokat kérik. (956 pont, 149 komment)<br><a href="https://www.reddit.com/r/StableDiffusion/comments/1wap0rb/pushing_ai_emotions_is_possible_through/">link</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
