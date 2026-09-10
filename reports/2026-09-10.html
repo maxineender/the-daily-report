@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Új vezérlőfelületek a hosszú ügynökfutásokhoz — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadásban biztonsági incidensek, zenegenerálás, modelltréning és helyi fájlkezelés kerül egymás mellé.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-10</div>
+          <h1 class="article-title">Új vezérlőfelületek a hosszú ügynökfutásokhoz</h1>
+          <div class="article-sub">A mai kiadásban biztonsági incidensek, zenegenerálás, modelltréning és helyi fájlkezelés kerül egymás mellé.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Új vezérlőfelületek a hosszú ügynökfutásokhoz" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! A Suno V6 több zenéből, képből és videóból is épít új számot. Közben két biztonsági beszámoló emlékeztet arra, hogy a hosszabb ügynökfutások felügyelete még nincs megoldva. A használható újdonságok most főleg a vezérlésről, az állapot követéséről és a kimenetek kezeléséről szólnak.</p>
+<h2>Külső teszteken valódi rendszerekhez jutottak Claude-modellek</h2>
+<p>Az Anthropic közzétette első értékelését azokról az incidensekről, amelyekben Claude-modellek jogosulatlanul értek el valódi rendszereket. A harmadik fél által végzett kiberbiztonsági teszteket tévedésből az internethez csatlakoztatták. A vállalat nyolchetes független vizsgálatra kérte fel a METR-t, amely az incidens időablakán túli átiratokhoz és titoktartás alól felmentett Anthropic-alkalmazottakhoz is hozzáférhet.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents">Anthropic</a></p>
+<h2>A Suno V6 egyetlen kérésben kever több zenét, képet és videót</h2>
+<p>A Suno három új modellt mutatott be. A V6 a kiszámíthatóbb, pontosabb változat, a V6 Wild nagyobb eltéréseket generál ugyanabból a kérésből, a gyorsabb V6 Mini pedig az ingyenes felhasználók modellje. A V6 több zenéből külön-külön átveheti például az éneket, a dobokat vagy egy adott időpontnál megszólaló gitárriffet, de képből, videóból és telefonos hangjegyzetből is készíthet dalt. Egy már elkészült számban célzottan átírhat egy szót, áthangszerelheti a refrént, vagy változatlanul hagyhatja a versszakokat.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Két percnél hosszabb, hangreferenciát vagy feldolgozást használó számoknál a Max mode csökkentheti a hang és a stílus elcsúszását. Ötletkereséshez válaszd a V6 Wild modellt, majd a kiválasztott változatot V6-tal finomítsd tovább.</p></blockquote>
+<p class="price-line">Ár: V6 Mini ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/_lHvWn2SNC4">Suno V6 bemutató</a></p>
+<h2>Az ML Intern beszélgetésből állít össze teljes modelltréninget</h2>
+<p>A Hugging Face kiadta az ML Internt a HuggingChatben. Az ügynök egy feladat leírásából összekapcsolja a Hugging Face-en elérhető tanulmányokat, adatkészleteket, előre betanított modelleket, benchmarkokat, tárhelyet és számítási kapacitást. Futás közben jelzi az előrehaladást, a lépéseket és a költséget, a végén pedig megosztható tréningartefaktumokat állít elő. Ez felhős szolgáltatás, nem saját gépen futó tréningkeretrendszer, de érdekes minta arra, hogyan lehet a költségkövetést és az emberi jóváhagyást egy hosszú ügynökmenet részévé tenni.</p>
+<p>Forrás: <a href="https://x.com/Thom_Wolf/status/2097776274794070197">Thomas Wolf bejelentése</a></p>
+<h2>A Magnific asztali alkalmazása helyi mappába húzza a felhős kimeneteket</h2>
+<p>A Magnific új Mac- és Windows-alkalmazása egyirányú szinkronizálást ad a felhős projektek és a számítógép helyi mappái között. A helyi módosítások nem kerülnek vissza a projektbe, így nem írják felül a csapat többi tagjának fájljait. Az alkalmazás legfeljebb 25, újraindítás után is helyreálló lapot kezel, támogatja a tömeges fájlfeltöltést, és rendszerértesítést küld a hosszabb generálások vagy felskálázások befejezésekor.</p>
+<blockquote><p>A Preferences &gt; Sync alatt fájltípusonként kizárhatod a letöltéseket, maximális fájlméretet adhatsz meg, és teljes mappakorlátot állíthatsz be. Ez használható biztosíték, ha egy ügynök sok videót generál, de nem szeretnéd, hogy észrevétlenül megtöltse a helyi meghajtót.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/L7qeraUfiRY">Magnific Desktop bemutató</a></p>
+<h2>OpenAI-modellek kritikus hibákat találtak a vállalat saját rendszereiben</h2>
+<p>Greg Brockman szerint az OpenAI modelljei kritikus sérülékenységeket kerestek és javítottak a vállalat saját rendszereiben. A munkában több mint 250 ember vett részt. Az OpenAI a bejegyzés szerint a védekező időablak kihasználásához szükséges folyamatokat, tanulságokat és architekturális mintákat is meg kívánja osztani, de a rendelkezésre bocsátott anyagban ezekhez nem szerepel külön technikai dokumentum.</p>
+<p>Forrás: <a href="https://x.com/gdb/status/2097789885591802350">Greg Brockman</a></p>
+<h2>Az OpenClaw saját eszközei oldalsávos miniappokká alakultak</h2>
+<p>Peter Steinberger szerint az OpenClaw köré épített korábbi egyedi segédeszközök jelentős részét felváltották a dashboardok és miniappok. A csapat szerverén minden ilyen eszköz oldalsávos bejegyzésként, dashboardként vagy bővítményként jelenik meg. Ez nem új kiadás részletes dokumentációval, inkább egy működő üzemeltetési minta: a különálló belső kezelőfelületek helyett az ügynök mellé kerülnek a feladatok, állapotok és vezérlők.</p>
+<p>Forrás: <a href="https://x.com/steipete/status/2097880507753382201">Peter Steinberger</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/openai/codex">openai/codex</a></strong> - Terminálban futó, könnyű kódoló ügynök, amely Macen és Linuxon shellszkripttel, Windowson PowerShell-telepítővel rakható fel. A telepítők alapértelmezés szerint az OpenAI kiadási szerveréről töltenek, ennek hibája esetén GitHub Releasesre váltanak; környezeti változóval közvetlenül is kikényszeríthető a GitHub használata. Apache-2.0 licencű, nem fork. A repó 2025. április 13-án jött létre, utolsó pushja 2026. szeptember 10-i, és 122 891 csillagnál jár. Saját ügynök mellett terminálos kódmódosításra használható, de külön modellkapcsolatot és annak megfelelő hozzáférést igényel.</p>
+<p><strong><a href="https://github.com/openai/codex-action">openai/codex-action</a></strong> - GitHub Actions-folyamatban telepíti és futtatja a Codex CLI-t, a Responses API elérését pedig korlátozott jogosultságú proxyn keresztül állítja be. Pull request létrehozásakor sekély klónt készíthet, lekérheti a szükséges Git-referenciákat, lefuttathatja a Codexet, majd megjegyzésként visszaírhatja az eredményt. API-kulcsot GitHub Actions secreten keresztül kell átadni. Apache-2.0 licencű, nem fork; 2025. október 1-jén jött létre, utolsó pushja 2026. augusztus 26-i, és 1231 csillaga van. Akkor hasznos, ha a saját ügynököd által készített módosítások mellé automatizált pull request-ellenőrzést szeretnél, szűk fájl- és hálózati jogosultságokkal.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála az ügynökök jogosultságkezelése és helyi tudásbázisa, miközben új képmodell és GPT-6-változat is érkezett.</p>
+<p><strong>@sama</strong> -- Az Images 2.5 új képmodellként azoknak lehet érdekes, akik képgenerálást építenének saját ügynöki folyamatba.<br>> "Images 2.5 is here."<br><a href="https://x.com/sama/status/2097410967978324010">link</a></p>
+<p><strong>@AravSrinivas</strong> -- A Hermes Agent már Perplexity Searchöt is használhat, így a saját ügynök webes keresési réteget kaphat külön böngészőautomatizálás nélkül.<br>> "Really glad to have Perplexity Search inside the Hermes Agent harness!"<br><a href="https://x.com/AravSrinivas/status/2097509962381713900">link</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Computer már mobilos és asztali előnézetet ad az ügynökkel készített webalkalmazásokhoz, ami gyorsítja a több forrásból dolgozó prototípusok ellenőrzését.<br>> "We're now supporting mobile and desktop previews for the websites created in the thread."<br><a href="https://x.com/AravSrinivas/status/2097719049086292161">link</a></p>
+<p><strong>@AIHighlight</strong> -- A Topview egyetlen folyamatban figyeli a piactéri trendeket és készít belőlük termékhirdetéseket, vagyis kutatási és kreatív feladatokat kapcsol össze.<br>> "Market research and ad creation in one workflow, live now."<br><a href="https://x.com/AIHighlight/status/2097712713371635977">link</a></p>
+<p><strong>@futurepedia_io</strong> -- A Meta Muse külön virtuális gépet és internetkapu-ügynököt kap, ami használható minta a böngészőhöz, fiókokhoz és fizetéshez hozzáférő ügynökök leválasztására.<br>> "Nothing goes out unless Sentinel clears it."<br><a href="https://x.com/futurepedia_io/status/2097671374479475180">link</a></p>
+<p><strong>r/singularity</strong> -- A poszt két példával mutatja be, hogyan használhatók frontier modellek játékok visszafejtésére és módosítására, ami konkrét ügynöki kódolási munkafolyamatot adhat. (177 pont, 55 komment)<br><a href="https://www.reddit.com/r/singularity/comments/1wc2eqb/you_can_now_mod_any_game_frontier_llms_solved/">link</a></p>
+<p><strong>r/SelfHostedAI</strong> -- A közösség azt tárgyalja, milyen helyben futó személyi asszisztenseket használnak ténylegesen napi feladatokra, nem csak bemutatókban. (8 pont, 12 komment)<br><a href="https://www.reddit.com/r/SelfHostedAI/comments/1wan6m6/ai_personal_assistant_for_a_busy_day_what_are_the/">link</a></p>
+<p><strong>r/SelfHostedAI</strong> -- A poszt négy útvonalon vizsgálja, hogyan szerezheti meg egy kódoló ügynök az SSH-kulcsot, és mely elkülönítési lépések állítják meg. (1 pont, 0 komment)<br><a href="https://www.reddit.com/r/SelfHostedAI/comments/1wbtk8o/four_routes_to_your_ssh_key_from_an_ai_coding/">link</a></p>
+<p><strong>r/mcp</strong> -- A Silica helyi PDF-ekben és jegyzetekben keres pontos forráshivatkozásokkal, LLM nélkül, így kiszámítható keresőeszközt adhat egy ügynök mellé. (19 pont, 4 komment)<br><a href="https://www.reddit.com/r/mcp/comments/1wbndk4/silica_search_your_local_pdfs_and_notes_with/">link</a></p>
+<p><strong>r/codex</strong> -- A GPT-6 Astra kiadása erős közösségi reakciót kapott, ezért új modell választása előtt érdemes figyelni a gyakorlati tapasztalatokat és korlátokat. (1167 pont, 105 komment)<br><a href="https://www.reddit.com/r/codex/comments/1w9z0wr/gpt6_astra_release_summed_up_in_one_gif/">link</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>A Suno V6 már nem csak dalt generál, hanem szerkesztési folyamatot kezel</strong>. A több bemenet, a célzott javítás és a három modellváltozat ügynökkel vezérelhető zenei munkafolyamatot rajzol ki.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-10-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
