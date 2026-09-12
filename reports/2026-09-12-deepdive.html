@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miért nem egyetlen hosszú generálás a Seedance 2.5 valódi munkafolyamata? — LocalAgent Digest</title>
+  <meta name="description" content="A 30 másodperces videó csak a végpont, előtte karakterlapok, helyszínreferenciák és költséges iterációk jönnek.">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-12</div>
+          <h1 class="article-title">Miért nem egyetlen hosszú generálás a Seedance 2.5 valódi munkafolyamata?</h1>
+          <div class="article-sub">A 30 másodperces videó csak a végpont, előtte karakterlapok, helyszínreferenciák és költséges iterációk jönnek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Miért nem egyetlen hosszú generálás a Seedance 2.5 valódi munkafolyamata?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Seedance 2.5 egyik látványos újdonsága, hogy egy kérésből akár 30 másodperces videót készíthet, és legfeljebb 50 kép-, videó- vagy hangreferenciát fogad. Ez könnyen úgy hangzik, mintha egy teljes reklámhoz már csak egy jó prompt kellene. Rourke Heath részletes bemutatója ennek éppen az ellenkezőjét mutatja: a hosszabb generálás akkor működik, ha előtte külön megtervezed a szereplőket, a helyszínt, a kamerát, a hangot és a jelenet időzítését. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<h2>Az ötletből előbb rendezői terv lesz</h2>
+<p>A bemutatott, naptejet reklámozó jelenethez először egy rövid alapötlet készült. Ezt nem közvetlenül adták át a videómodellnek, hanem leírták a szereplők mozdulatait, a párbeszédet, a kamera helyzetét, a háttérben hallható strandzajt és még azt is, meddig tartson egy nevetés. A 30 másodperces jelenet terve végül körülbelül másfél oldalnyi szöveg lett. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<p>Ennek oka nem pusztán az, hogy a Seedance sok részletet képes feldolgozni. A hosszabb jelenetben minden pontatlan utasításnak több ideje van látható hibává nőni. Ha nincs megadva, meddig tartson egy reakció, a modell elnyújthatja. Ha nincs leírva, hogy a háttérben emberek mozognak, a helyszín könnyen üres díszletnek hat. Ha a kamera és a fókusz sincs rögzítve, két egymást követő snitt más produkcióból származónak tűnhet. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<h2>A referenciák nem dísznek vannak</h2>
+<p>A munkafolyamat minden fontos szereplőhöz külön karakterlapot használt. Ezeken elöl-, oldal- és hátulnézet, arcközelkép, magasság, ruházat, tetoválások és színek szerepeltek. A helyszínhez szintén külön referencia készült, amely nemcsak a tárgyakat, hanem az egész jelenet színvilágát meghatározta. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<p>Ez azért lényeges, mert az 50 referencia önmagában nem jelent konzisztenciát. A modellnek a promptban azt is meg kell mondani, melyik kép melyik szereplőhöz, tárgyhoz vagy helyszínhez tartozik. A bemutatóban a karaktereket és a környezetet név szerint hozzárendelték a megfelelő referenciákhoz, majd ugyanazokat a leírásokat használták a teljes jelenet során. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A videógenerálást ne egyetlen szabad szöveges feladatként add át. Az ügynököd külön fájlban tárolhatja a szereplők szabályait, a helyszínleírást és az időzített snittlistát, majd ezekből állíthatja össze a végső promptot. Így egy újragenerálásnál csak a hibás időszakaszt vagy szereplőutasítást kell módosítania.</p></blockquote>
+<h2>A kamera folytonossága külön feladat</h2>
+<p>A példában a prompt globális képi beállításokat is tartalmazott: kameratípust, objektívet, fókuszmélységet, világítást és szemcsézettséget. Ezeket minden snittre egységesen alkalmazták, miközben az egyes időszakaszok külön megkapták a saját kameraállásukat és szereplőmozgásukat. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<p>A Seedance videóreferenciát is használhat kameramozgásként. A bemutatóban Blenderben készített egyszerű 3D jelenet szolgált mozgási mintaként: a modell ebből vette át a kamera útját, miközben a végleges környezetet és szereplőt a képi referenciákból építette fel. Ez pontosabb vezérlést ad, mint a „kamera körbemozog a szereplő körül” jellegű szöveges utasítás. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<h2>A harminc másodperc költségkeret is</h2>
+<p>A videó szerint egy 30 másodperces Seedance 2.5-generálás 40-60 dollárba kerülhet, szolgáltatótól függően. A bemutató szponzorált Higgsfield-anyag, ezért ezt nem érdemes minden platformra érvényes listaárként kezelni, de a nagyságrend jól jelzi az iteráció költségét. Három teljes változat már 120-180 dollár lehet, még az utómunka előtt. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<p>A kész reklám sem egyetlen érintetlen generálásból született. A készítők először tesztelték a színészi játékot és az időzítést, módosították a promptot, majd három teljes változatot futtattak. Ezekből kivágták a legjobb részeket, eltávolították a kínos szüneteket, feliratot és zenét adtak hozzá, végül kézzel rakták össze a 30 másodperces eredményt. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<h2>Mire érdemes automatizálást építeni?</h2>
+<p>A drága rész maga a videógenerálás, ezért az ügynök feladata elsősorban az előkészítés lehet. Ellenőrizheti, hogy minden szereplőhöz tartozik-e referencia, az időzítések kiadják-e a teljes játékidőt, ugyanaz a kamera- és helyszínleírás szerepel-e minden snittben, illetve nincs-e ellentmondás a párbeszéd és a mozdulatok között. Ezzel a generálások száma nem lesz automatikusan egy, de kevesebb próbálkozás mehet el egyszerű szerkezeti hibákra. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+<p>A Seedance 2.5 tehát nem váltja ki a vágást és a rendezői döntéseket. Inkább hosszabb, jobban vezérelhető nyersanyagot készít, ha előtte elég pontos gyártási tervet kap. Saját ügynökkel ennek a tervnek az összeállítása, ellenőrzése és verziózása jól automatizálható. A végső jelenet kiválasztása viszont továbbra is emberi döntés marad. <a href="https://youtu.be/MY6f9xnYOwU">Forrás</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
