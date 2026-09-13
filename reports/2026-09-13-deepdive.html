@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyílt súlyú, de nem helyben futó: kettéválik a nyílt AI — LocalAgent Digest</title>
+  <meta name="description" content="A modell letölthetősége már nem jelenti automatikusan azt, hogy saját gépen érdemes futtatni.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-13</div>
+          <h1 class="article-title">Nyílt súlyú, de nem helyben futó: kettéválik a nyílt AI</h1>
+          <div class="article-sub">A modell letölthetősége már nem jelenti automatikusan azt, hogy saját gépen érdemes futtatni.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Nyílt súlyú, de nem helyben futó: kettéválik a nyílt AI" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A nyílt AI-ról szóló viták gyakran egyetlen kérdésre egyszerűsödnek: letölthetők-e a modell súlyai? Ez fontos feltétel, de annak, aki saját gépen futtat ügynököt, csak a történet eleje. A fájl birtoklása nem sokat ér, ha az elfogadható sebességű következtetéshez több gyorsító, nagy memóriakapacitás és komoly villamosenergia-keret szükséges.</p>
+<p>Kai szeptember 12-i elemzése szerint éppen ez okozza azt az érzést, hogy a nyílt AI veszített a lendületéből. Nem azért, mert elfogytak a kiadások, hanem mert az igazán erős modellek mérete gyorsabban nő, mint az otthon vagy egy kisebb szerveren elérhető hardver kapacitása. Az elemzés példaként olyan korábbi méretosztályokat említ, mint a 7, 13 és 34 milliárd paraméter, amelyek még belátható kompromisszumokkal elfértek helyi gépeken. (<a href="https://www.youtube.com/watch?v=zxnXemN98d0">Forrás</a>)</p>
+<h2>A nyílt súly és a helyi futtathatóság két külön tulajdonság</h2>
+<p>Egy modell lehet nyílt súlyú akkor is, ha a teljes változatát gyakorlatilag csak adatközpontban lehet használni. Az elemzésben szereplő DeepSeek-modell 1,6 billió paraméteres, miközben MIT-licenc alatt jelent meg. Ez jogi szempontból kedvező hozzáférést jelent, de semmit nem mond arról, hogy hány GPU, mennyi memória és milyen infrastruktúra kell a futtatásához. (<a href="https://www.youtube.com/watch?v=zxnXemN98d0">Forrás</a>)</p>
+<p>Ugyanez a különbség látszik a Moonshot július 16-án közzétett Kimi K3 modelljénél is. A súlyok nyilvános modellközpontba kerülhetnek, miközben a felhasználók jelentős része továbbra is távoli API-n keresztül éri el a rendszert. Ilyenkor a nyitottság előnye elsősorban az auditálhatóságban, a finomhangolás lehetőségében és a szolgáltatók közötti hordozhatóságban jelenik meg, nem feltétlenül abban, hogy a modell egyetlen munkaállomáson fut. (<a href="https://www.youtube.com/watch?v=zxnXemN98d0">Forrás</a>)</p>
+<p>Ez a saját ügynököt futtatók számára fontos fogalmi váltás. A választás többé nem egyszerűen helyi vagy zárt felhős modell között történik. Megjelent egy harmadik kategória: nyílt súlyú modell bérelt infrastruktúrán vagy külső szolgáltatón keresztül.</p>
+<h2>A hardverköltség visszahozza az API-kat</h2>
+<p>A videóban idézett AWS-árazás szerint nyolc megfelelő gyorsító óránként 113 dollárba kerülhet. Folyamatos működés mellett ez körülbelül havi 82 ezer dollár. Ez nem az a költségszint, amelyet egy személyes ügynök üzemeltetője pusztán a modell feletti nagyobb ellenőrzésért vállalni fog. (<a href="https://www.youtube.com/watch?v=zxnXemN98d0">Forrás</a>)</p>
+<p>A modell súlyai tehát lehetnek ingyenesen hozzáférhetők, miközben az inferencia drága marad. A két költséget érdemes külön kezelni:</p>
+<ol><li>a modellhez való jogi és technikai hozzáférés;</li><li>a futtatáshoz szükséges számítási kapacitás;</li><li>a folyamatos üzemeltetés, frissítés és felügyelet.</li></ol>
+<p>A nagyobb modelleknél a második és harmadik tétel könnyen fontosabbá válik az elsőnél. Emiatt a nyílt modellek növekedése paradox módon az API-használatot is növelheti.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: a modellválasztást érdemes legalább két rétegre bontani. A gyakori, rövid és érzékeny feladatokat kisebb helyi modellre lehet irányítani, míg a ritka, hosszú vagy nehéz meneteket nyílt súlyú, de távol futó modell kaphatja. Így nem kell minden kéréshez adatközponti méretű modellt fenntartani.</p></blockquote>
+<h2>Kína már nem csak az olcsó alternatívát adja</h2>
+<p>Kai az OpenRouter forgalmi adataira hivatkozva azt állítja, hogy 2026 májusára kínai nyílt súlyú modellek futtatták a platform tokenforgalmának mintegy 61 százalékát. Ez azt jelzi, hogy ezek a modellek nem csupán letölthető kísérletek: nagy mennyiségű tényleges alkalmazás és ügynök használja őket közvetítő szolgáltatón keresztül. (<a href="https://www.youtube.com/watch?v=zxnXemN98d0">Forrás</a>)</p>
+<p>A saját gépen futó ügynök szempontjából ez több modellválasztási lehetőséget és kisebb szolgáltatói függést jelenthet. Ugyanakkor önmagában a nyílt súly nem garantál alacsony késleltetést, kis memóriaigényt vagy könnyű telepítést. Ezeket külön kell mérni az adott kvantált változaton és a tényleges hardveren.</p>
+<h2>Nem haldoklik, hanem két irányba fejlődik</h2>
+<p>A „nyílt AI haldoklik” megfogalmazás túl erős. Pontosabb azt mondani, hogy kettéválik a mezőny. Az egyik irányt a kisebb, kvantálható, személyes gépeken is használható modellek adják. Ezek alkalmasak útválasztásra, egyszerű eszközhívásokra, dokumentumfeldolgozásra és olyan feladatokra, amelyeknél fontos, hogy az adat ne hagyja el a gépet.</p>
+<p>A másik irányt a hatalmas, nyílt súlyú rendszerek jelentik. Ezek hozzáférhetők, átalakíthatók és több szolgáltatónál futtathatók, de nem feltétlenül helyben. A nyitottság itt nem a laptopon történő futtatást, hanem a zárt labor-API-knál nagyobb választási és ellenőrzési lehetőséget jelenti.</p>
+<p>Annak, aki saját ügynököt üzemeltet, nem kell választania a két irány között. A gyakorlatban valószínűleg a vegyes felépítés lesz tartós: kisebb modell helyben, nagyobb modell szükség szerint távol, az ügynök pedig feladat, adatérzékenység és költség alapján dönt közöttük. A valódi nyitottság mércéje így már nem pusztán a letölthető súly, hanem az is, hogy mennyire szabadon választható meg a futtatás helye és szolgáltatója.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
