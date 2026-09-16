@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hang, képernyő és fájlok kerülnek az ügynökök kezébe — LocalAgent Digest</title>
+  <meta name="description" content="A mai eszközök már beszélgetés közben dolgoznak, videót rendeznek és Androidot tesztelnek.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-16</div>
+          <h1 class="article-title">Hang, képernyő és fájlok kerülnek az ügynökök kezébe</h1>
+          <div class="article-sub">A mai eszközök már beszélgetés közben dolgoznak, videót rendeznek és Androidot tesztelnek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-16.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-16.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Hang, képernyő és fájlok kerülnek az ügynökök kezébe" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! A Google két új Gemini-modellt adott a valós idejű hangügynökökhöz. Közben kézzelfoghatóbbá vált, hogyan használhatók ügynökök videós utómunkára, értekezletekre, Android-tesztekre és saját munkaállomások vezérlésére.</p>
+<h2>Az Astra 64 videoklipet rendezett el, majd Premiere-projektet is készített</h2>
+<p>A Curious Refuge két utómunka-feladaton próbálta ki a ChatGPT Work Astra modelljét. Az elsőben 64 nyers klipet rendezett mappákba 17 perc és 5 dollár alatt, átnevezési jegyzéket, kontaktlapokat, hang-kép párosítást és böngészhető HTML-oldalt készítve. A második feladatban egy Loom-videón elmondott instrukciók alapján körülbelül 80 perc alatt állított össze egy hétperces oktatóvideót és szerkeszthető Adobe Premiere Pro-projektet. Ez 60 dollárba került, a vágás ritmusa, hangja és színkorrekciója pedig még jelentős emberi munkát igényelt.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Nyersanyag-rendezésnél külön másolaton dolgoztasd az ügynököt, és kérj tőle visszaállító parancsfájlt. A tesztben az Astra magától létrehozott egy ilyen fájlt, amellyel az eredeti mappaszerkezet visszaállítható volt.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/_fSIhcZqm2g">Curious Refuge tesztje</a></p>
+<h2>A Gemini 3.8 Live beszélgetés közben is futtat eszközöket</h2>
+<p>A Google szeptember 15-én kiadta a Gemini 3.8 Live és a 3.8 Live Extended Thinking modelleket a Gemini API-ban, a Google AI Studióban, a Workspace-ben és a Gemini alkalmazásban. A natív beszédmodellek 97 nyelvet kezelnek, beszélgetés közben válthatnak közöttük, és aszinkron eszközhívásokat futtathatnak anélkül, hogy megszakítanák a párbeszédet. Az Extended Thinking összetettebb feladatokra kapott hosszabb következtetést, míg a fejlesztői csomagban szereplő Gemini 3.5 Transcribe 85-nél több nyelvet támogat; a Google 4,0 százalékos streaming és 2,6 százalékos nem streaming átlagos szóhibaarányt közöl.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/">Google</a></p>
+<h2>Két mérnök és több száz ügynök építette a Perplexity új adatbázisát</h2>
+<p>Aravind Srinivas szerint a Perplexity két mérnöke több száz tartósan futó számítógép-kezelő ügynökkel, két hónap alatt készített házon belüli alternatívát az AWS DynamoDB helyett. A kulcs-érték adatbázist gyors webes tartalomlekérésekhez használják, az átállástól pedig évente akár 100 millió dolláros megtakarítást várnak. A poszt nem részletezi az architektúrát, a felügyeleti rendszert vagy azt, hogy az ügynökök pontosan mennyi munkát végeztek önállóan.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2099957318935028173">Aravind Srinivas</a></p>
+<h2>A Claude szöveges ujjlenyomata másolás után is megmaradhat</h2>
+<p>A Two Minute Papers bemutatója szerint az Anthropic olyan statisztikai ujjlenyomatot vezet be, amely a generálás során bizonyos szóválasztásokat kis mértékben előnyben részesít. Az így keletkező minta emberi szemmel nem látható, és egyszerű másolás vagy kisebb szerkesztés után is felismerhető maradhat. A videó szerint az ellenőrző eszköz jelenleg csak kijelölt szervezetek számára hozzáférhető, a jel pedig nem azonosítja a felhasználót, csak azt valószínűsíti, hogy a szöveget Claude írta vagy jelentősen átdolgozta. Teljes újrafogalmazás esetén a minta elveszhet.</p>
+<p>Forrás: <a href="https://youtu.be/YoEWjZSwoys">Two Minute Papers</a></p>
+<h2>Egy saját gépen futó avatar beülhet a Zoom-hívásba helyetted</h2>
+<p>Bob Doyle egy letölthető mintaprojektben olyan értekezleti ügynököt épített, amely képpel, Fish Audio-hanggal és feltöltött tudásbázissal csatlakozik Zoom-hívásokhoz. Az avatar csak a nevének kimondásakor válaszolhat, menet közben új információt kaphat egy külön kezelőfelületről, a hívás végén pedig összefoglalót, döntési listát és teendőket készít. A rendszer a videó alapján LiveKitet, Lemon Slice-t, Fish Audio-t és egy Gmail-alkalmazásjelszót használ. A bemutatott elemzési teszt nem volt hibátlan: az ügynök egyes összesítő kérdésekre csak példákat adott, pontos eredmény helyett.</p>
+<p>Forrás: <a href="https://youtu.be/TzKcwU7qNA8">Bob Doyle Media bemutatója</a></p>
+<h2>Az Omarchy asztalán külön munkatér jut minden ügynöknek</h2>
+<p>Alex Finn teljesen Omarchy-alapú Linux-környezetre váltott, ahol csempézett ablakokban, billentyűparancsokkal választja szét a böngészőt, terminálokat és ügynököket. A bemutatott rendszerben Hermes, OpenClaw és több kódoló asszisztens is elérhető, a saját Herder HUD kiegészítő pedig lebegő panelen mutatja a párhuzamosan futó ügynököket. Finn egy fókuszidő alatt közösségi oldalakat blokkoló bővítményt és egy rendszerbe épített feladatlistát is készíttetett ügynökkel. A videó személyes munkakörnyezetet mutat be, nem összehasonlító teljesítménytesztet.</p>
+<p class="price-line">Ár: ingyenes</p>
+<p>Forrás: <a href="https://youtu.be/UJKkS4KLVOo">Alex Finn bemutatója</a></p>
+<h2>A Flova 21 jeleneten keresztül tartotta egyben ugyanazt a horrorvilágot</h2>
+<p>A Flova egyik bemutatója egy visszatérő szereplőre épülő animációs horrorsorozat munkafolyamatát járta végig. A rendszer eszköztárban tárolta a főszereplő, a busz és a környezet referenciáit, majd produkciós bibliát, videós specifikációt és 21 jelenetes storyboardot készített. A klipeket Seedance 2.5, a visszatérő hangot Seed Audio 1.0 állította elő; az egyes beállításokat külön lehetett újragenerálni a teljes epizód érintése nélkül. A második epizód ugyanazokat a karakter-, hang- és környezeti elemeket örökölte, így nem kellett újra felépíteni a sorozat alapjait.</p>
+<p>Forrás: <a href="https://youtu.be/PE9_-M1qZFU">Flova horror-munkafolyamat</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/google/artemis">google/artemis</a></strong> - Az ARTEMIS természetes nyelvű utasításokból futtat Android-munkafolyamatokat valódi készüléken vagy emulátoron, és az elemek indexét, koordinátákat vagy vizuális helymeghatározást használja a kezelőfelület vezérléséhez. MCP-n keresztül többek között Claude Code, Codex, OpenClaw és Windsurf indíthat teszteket, kérhet képernyőképeket és gyűjthet Logcat-kimenetet; az indítószkript ADB-t, scrcpy-t, FFmpeget és Python-függőségeket is telepít. A Google 99 százalék feletti feladatteljesítést közöl az AndroidWorld több mint száz többlépéses feladatán, az egyes lépések jellemzően 3-5 másodpercig tartanak. A nem fork repó Apache-2.0 licencű, 2026. augusztus 13-án jött létre, utolsó pushát szeptember 12-én kapta, és 6000 csillagnál jár. Saját ügynök mellé főként Android-alkalmazások végponttól végpontig tartó tesztelésére és hibadiagnosztikájára használható.</p>
+<p><strong><a href="https://github.com/ThePlenkov/kilo-ai-cli">ThePlenkov/kilo-ai-cli</a></strong> - A kilo-ai-cli terminálos és Ink/React-alapú TUI-felületet ad a kilo.ai felhős tRPC API-jához, böngészős OAuth-bejelentkezéssel és helyben tárolt hitelesítési adatokkal. Kezeli a munkameneteket, szervezeteket, kvótákat, KiloClaw-példányokat, kódellenőrzéseket, használati kimutatásokat, alkalmazástelepítéseket és a Security Agent megállapításait. Nem fork, 2026. szeptember 11-én hozták létre, utolsó pushát szeptember 15-én kapta, jelenleg 0 csillaggal és 1 nyitott hibajeggyel rendelkezik. Licenc nincs megadva, ezért a kód alapértelmezés szerint nem tekinthető szabadon felhasználhatónak. Saját ügynök üzemeltetéséhez akkor lehet hasznos, ha a kilo.ai felhős szolgáltatásait böngésző helyett terminálból akarod irányítani, de nem helyi modellfuttató eszköz.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az olcsóbb modellek, a gépen futó automatizálás és a generatív médiás eszközök gyakorlati használata dominál.</p>
+<p><strong>@AIHighlight</strong> -- A Jev bemutatása szerint a kimeneti tokenekért nem kell fizetni, így költséges, sok választ generáló ügynöki folyamatokhoz is érdekes modell lehet.<br>Forrás: <a href="https://x.com/AIHighlight/status/2099949255783821689">@AIHighlight</a></p>
+<p><strong>@AIHighlight</strong> -- A Boreal másodpercenként egy centért készít reklámvideókat szövegből vagy képből, ami olcsóvá teheti több kreatív változat automatikus tesztelését.<br>Forrás: <a href="https://x.com/AIHighlight/status/2099938806354874496">@AIHighlight</a></p>
+<p><strong>@AIHighlight</strong> -- Az OpenArt Arena tesztje szerint más modell teljesít jól filmhez, animációhoz, reklámhoz és videóvágáshoz, ezért érdemes feladatonként modellt választani.<br>Forrás: <a href="https://x.com/AIHighlight/status/2099901898312610284">@AIHighlight</a></p>
+<p><strong>@futurepedia_io</strong> -- A Cursor Projects koordinátorügynöke felhőben osztja ki a kódolási feladatokat, figyelheti a Slacket és a pull requesteket, így a munka a laptop bezárása után is folytatódik.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2099525058041643158">@futurepedia_io</a></p>
+<p><strong>@itsPaulAi</strong> -- A Google nyílt forrású ARTEMIS eszköze mobilos feladatokat automatizál, MCP-n keresztül kódoló ügynökökhöz kapcsolható, a tervekben pedig helyi képfeldolgozás is szerepel.<br>Forrás: <a href="https://x.com/itsPaulAi/status/2099960192125325488">@itsPaulAi</a></p>
+<p><strong>r/ClaudeAI</strong> -- A Claude Opus 5 JavaScriptben rajzolta meg egy animáció minden képkockáját, ami programozható és könnyen módosítható alternatívát mutat a hagyományos videógenerálás mellett. (1176 pont, 60 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wgvklo/claude_opus_5_drew_every_frame_of_this_animation/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy fejlesztő Claude segítségével készített nyílt forrású, asztali CapCut-alternatívát, amely helyi médiás folyamatokba is beépíthető. (1144 pont, 117 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wgu8g3/i_used_claude_to_write_a_capcut_replacement_and/">r/ClaudeAI</a></p>
+<p><strong>r/mcp</strong> -- A közösség saját MCP-szervereket gyűjtött össze a virtuális műhelytől a VS Code vezérléséig, konkrét ötleteket adva helyi ügynökök új eszközökkel való bővítéséhez. (64 pont, 84 komment)<br>Forrás: <a href="https://www.reddit.com/r/mcp/comments/1wghabe/whats_the_best_mcp_server_youve_built_or_used/">r/mcp</a></p>
+<p><strong>r/SunoAI</strong> -- A Suno V6 első felhasználói szerint jobb promptokkal javult a zenei eredmény, de a hosszabb számok második felében továbbra is romolhat a hangminőség. (11 pont, 15 komment)<br>Forrás: <a href="https://www.reddit.com/r/SunoAI/comments/1whkftz/i_might_soon_have_to_apologize_to_suno_for_all/">r/SunoAI</a></p>
+<p><strong>r/codex</strong> -- Az Astra High visszafejtett egy irodai nyomtatóillesztőt, ami azt mutatja, hogy a kódoló ügynökök dokumentálatlan hardverhibáknál is használhatók, bár a módosított firmware telepítése komoly kockázat. (1856 pont, 178 komment)<br>Forrás: <a href="https://www.reddit.com/r/codex/comments/1wfajwi/astra_high_just_reverseengineered_the_printer/">r/codex</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Mire jó ma egy képernyőt kezelő ügynök a videós utómunkában?</strong>. Az Astra tesztje megmutatta, mely feladatokat érdemes már delegálni, és hol drágább még az automatizálás.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-16-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
