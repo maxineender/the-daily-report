@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Így maradhat egyben a termék egy generált videóreklámban — LocalAgent Digest</title>
+  <meta name="description" content="A jó prompt önmagában kevés: külön stílus-, termék- és címkereferencia kell a következetes képsorokhoz.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-17</div>
+          <h1 class="article-title">Így maradhat egyben a termék egy generált videóreklámban</h1>
+          <div class="article-sub">A jó prompt önmagában kevés: külön stílus-, termék- és címkereferencia kell a következetes képsorokhoz.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Így maradhat egyben a termék egy generált videóreklámban" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Egy AI-val készített reklám könnyen működik az első két másodpercben, majd szétesik, amikor ugyanazt a csomagolást más szögből kellene megmutatnia. Megváltozik a tasak szélessége, elcsúszik a logó, a címke olvashatatlanná válik, a következő jelenet pedig már más színvilágban folytatódik. Dankieft Seedance 2.5-munkafolyamata nem egyetlen hosszú prompttal próbálja ezt megoldani, hanem külön kezeli a koncepciót, a vizuális stílust, a terméket és a feliratokat. <a href="https://youtu.be/kGku3TTiYO8">A teljes bemutató itt nézhető meg.</a></p>
+<h2>A koncepció megelőzi a generálást</h2>
+<p>A videó első tanulsága meglepően hagyományos: a modell előtt el kell dönteni, mitől működik a reklám. Egy látványos, de történet és termékelőny nélküli jelenet nem lesz jobb attól, hogy filmes a világítása. A bemutatott példák ezért egyetlen könnyen érthető ötlet köré épülnek, például arra, hogy egy fókuszt segítő ital használója egy káoszos helyzetben is a feladatára figyel. <a href="https://youtu.be/kGku3TTiYO8">Dankieft szerint az alapötletet érdemes emberként megfogalmazni, és csak utána továbbfejleszteni egy nyelvi modellel.</a></p>
+<p>Rövid közösségi reklámnál az első öt másodperc külön feladatot kap. A bemutató ezt „scroll stoppernek” nevezi: olyan szokatlan eseménynek, amely megállítja a görgetést, mielőtt a videó elmagyarázná a terméket. A példák szándékosan abszurdak, de a szerkezetük következetes: előbb figyelem, utána termék és üzenet. <a href="https://youtu.be/kGku3TTiYO8">A jelenetekhez idővonalas prompt készült, amely másodpercekhez rendeli a szereplők mozgását és a váratlan eseményeket.</a></p>
+<h2>A stílus legyen újra felhasználható adat</h2>
+<p>A képi folytonosságot a munkafolyamat nem olyan jelzőkre bízza, mint a „filmes” vagy a „prémium”. Pinterest, ShotDeck és Film.ai képeiből előbb lookbook készül, majd egy nyelvi modell elemzi a fényeket, színeket és vizuális karaktert. Ebből áll elő egy stílusblokk, amely minden kép- és videópromptba változatlanul bekerül. <a href="https://youtu.be/kGku3TTiYO8">Így a külön generált jelenetek ugyanahhoz a színpalettához és világítási logikához igazodhatnak.</a></p>
+<p>Ez saját ügynökkel is jól automatizálható. A referenciaelemzés kimenete lehet egy verziózott Markdown- vagy JSON-fájl, amelyet az ügynök minden jelenet promptjához hozzáilleszt. Ha később változik a kampány kinézete, nem kell húsz külön promptot átírni, elég a közös stílusblokkot cserélni.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A stílusblokkot, a terméklapot és a címke közeli referenciáját három külön bemenetként kezeld. Az ügynök csak a jelenet leírását módosítsa generálásonként, a három rögzített referencia maradjon változatlan.</p></blockquote>
+<h2>A terméklap többet mond egyetlen fotónál</h2>
+<p>Egyetlen elölnézeti kép nem mutatja meg a modellnek, mi van a csomag oldalán, milyen vastag a doboz, vagy hogyan néz ki felülről. A bemutató ezért karakterlaphoz hasonló terméklapot generál: elölnézetet, hátoldalt, oldalt, közeliket, csomagolási részleteket és hozzávetőleges méreteket helyez egyetlen referenciaoldalra. <a href="https://youtu.be/kGku3TTiYO8">Ezt a terméklapot az eredeti nagy felbontású termékfotóval együtt kapja meg a videómodell.</a></p>
+<p>A módszer nem garantál hibátlan eredményt. A videóban a távolabbról látható címkék még a terméklap mellett is értelmetlen karakterekké alakulnak. A javítás külön, közeli címkereferencia készítése volt, amely pontosan tartalmazta a kívánt szöveget, betűvastagságot, színt, sortöréseket és elrendezést. A prompt ezt a képet nevezte meg a felirat hiteles forrásaként. <a href="https://youtu.be/kGku3TTiYO8">Közeli képeken ez jelentősen javította az olvashatóságot, távoli beállításokban azonban továbbra is maradt bizonytalanság.</a></p>
+<h2>Egy reklámból több változat</h2>
+<p>Ha az alapvideó már működik, a következő feladat gyakran nem új reklám készítése, hanem ugyanannak a változatai. Más íz, eltérő csomagolás vagy új szereplő kerülhet ugyanabba a jelenetbe. A bemutató a Higgsfield MCP-jét és az Ad Multiplier eszközt kapcsolta egy asszisztenshez, majd minden változathoz feltöltötte az adott terméklapot és címkereferenciát. <a href="https://youtu.be/kGku3TTiYO8">Az asszisztens ezekből külön promptokat és videóváltozatokat állított össze.</a></p>
+<p>Ügynökös folyamatban ezt érdemes táblázatos vagy strukturált bemenettel kezelni. Egy sor tartalmazhatja a termék nevét, a terméklap fájlját, a címkereferenciát, a szereplőt és a kívánt képarányt. Az ügynök ugyanazt a jelenetet futtatja végig minden soron, miközben nem nyúl a kamera- és stílusbeállításokhoz.</p>
+<h2>A végén továbbra is kell válogatás</h2>
+<p>A folyamat legfontosabb korlátja, hogy a referenciák nem teszik determinisztikussá a videómodellt. A feliratok távoli képeken romolhatnak, a termék arányai elmozdulhatnak, és egy humoros jelenet időzítése sem biztos, hogy elsőre működik. <a href="https://youtu.be/kGku3TTiYO8">A bemutató ezért több generálást, összehasonlítást és kézi finomítást használ a végleges változat előtt.</a></p>
+<p>A saját ügynök feladata itt nem feltétlenül az, hogy emberi beavatkozás nélkül kiadja a kész reklámot. Hasznosabb szerep lehet a referenciák összerendezése, a promptváltozatok elkészítése, a fájlok következetes elnevezése és az eredmények táblázatos nyilvántartása. Így a kreatív döntés nálad marad, miközben a sok ismétlődő előkészítő lépést már nem kell kézzel elvégezned.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

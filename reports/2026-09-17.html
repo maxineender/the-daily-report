@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A hosszú kontextus beköltözik a kisebb modellekbe — LocalAgent Digest</title>
+  <meta name="description" content="Helyi kódmodell, olcsó döntési réteg és pontosabb keresés kerülhet az ügynökök mögé.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-17</div>
+          <h1 class="article-title">A hosszú kontextus beköltözik a kisebb modellekbe</h1>
+          <div class="article-sub">Helyi kódmodell, olcsó döntési réteg és pontosabb keresés kerülhet az ügynökök mögé.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-17.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-17.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A hosszú kontextus beköltözik a kisebb modellekbe" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép reggelt! Egy négymilliárd paraméteres helyi modell egymillió tokenes kontextusablakot kínál. Mellette ma a keresés, a finomhangolás és az olcsó kimenetellenőrzés kap hangsúlyt. A médiás oldalon egy részletes reklámkészítési munkafolyamatot nézünk meg.</p>
+<h2>A Perplexity külön keresési receptet adott a kódoló ügynököknek</h2>
+<p>A Perplexity új szakácskönyve azt mutatja be, hogyan használható a `pplx-search-sdk` kódoló ügynökök keresési rétegeként. A megoldás párhuzamosan indít több keresést, hivatalos dokumentációkra szűkítheti a találatokat, majd részletes részleteket emelhet ki belőlük. Ez célzottabb folyamat annál, mint amikor az ügynök egyetlen általános webes lekérdezésből próbál API-használatot vagy hibajavítást levezetni.</p>
+<p>Forrás: <a href="https://docs.perplexity.ai/docs/cookbook/articles/search-as-code-coding-agents/README">Perplexity szakácskönyv</a></p>
+<h2>A Sparkx 2.5 egymillió tokenes ablakot tett egy 4B modellbe</h2>
+<p>A Sparkx 2.5 teljes mérete négymilliárd paraméter, miközben a beállítható kontextushatára valamivel egymillió token fölött van. Ez egy hosszabb kódolási menetben elég helyet adhat forrásfájloknak, dokumentációnak, hibanaplóknak és az eszközhívások előzményeinek. A bemutatott eredmények szerint egyes utasításkövetési és ügynökös teszteken megelőz felsorolt Qwen-modelleket, de nem minden mérésben vezet.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Eszközhívásokhoz a készítők 8 bites vagy teljes pontosságú súlyokat javasolnak. A 4 bites kvantálás csökkentheti a strukturált argumentumok pontosságát, ezért JSON-t vagy függvényhívásokat használó helyi ügynöknél ne ez legyen az első konfiguráció.</p></blockquote>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=UzYlemYewFU">Cloud Codes bemutatója</a></p>
+<h2>A Jev olcsó döntési réteget kínál az ügynökkimenetek elé</h2>
+<p>A TypeSafe szeptember 15-én nyitotta meg a Jev korai hozzáférését. A modell nem szabad szöveget ír, hanem előre megadott válaszok közül választ: igen vagy nem valószínűséggel, felsorolt kategóriák egyikével, illetve pontszámmal és konfidenciaértékkel. Használható például kérelmek osztályozására, rekordok pontozására vagy jailbreak-gyanús ügynökkimenetek szűrésére. A „nem hallucinál” állítás csak a válasz formátumára igaz: a Jev nem találhat ki új kategóriát, de a meglévők közül továbbra is választhat rosszat.</p>
+<p class="price-line">Ár: 0,042 USD / egymillió bemeneti token, a kimenet ingyenes</p>
+<p>Forrás: <a href="https://www.therundown.ai/news/typesafe-jev-ai-decisions-software">The Rundown</a></p>
+<h2>Ingyenes Colabban finomhangolható több mint 500 nyílt modell</h2>
+<p>Az Unsloth Studio Colab-verziója több mint 500 modell futtatását és finomhangolását teszi elérhetővé böngészőből. PDF- és CSV-fájlokból szintetikus tanítóadatot is készíthet, a végén pedig exportálható a betanított modell. A folyamat telepítőblokkok futtatásával indul, így külön helyi GPU nélkül is kipróbálható.</p>
+<blockquote><p>A Colab-jegyzetfüzetben először futtasd a telepítőblokkokat, majd válassz modellt és tölts fel adathalmazt. Exportálás előtt érdemes egy elkülönített tesztkészleten ellenőrizni, hogy a finomhangolás nem rontotta-e az ügynök által használt strukturált kimeneteket.</p></blockquote>
+<p class="price-line">Ár: ingyenes Google Colab</p>
+<p>Forrás: <a href="https://colab.research.google.com/github/unslothai/unsloth/blob/main/studio/Unsloth_Studio_Colab.ipynb">Unsloth Studio Colab</a></p>
+<h2>Terméklapokkal és külön címkereferenciával javítható az AI-reklámok folytonossága</h2>
+<p>Dankieft Seedance 2.5-munkafolyamata előbb vizuális stílusblokkot készít referenciafotókból, majd több nézetes terméklappal rögzíti a csomagolás alakját, arányait és részleteit. Mivel a távoli felvételeken a feliratok továbbra is széteshetnek, külön közeli címkereferenciát ad a modellnek a pontos szöveggel, betűképpel és sortörésekkel. A bemutatóban a Higgsfield MCP és az Ad Multiplier ugyanannak a reklámnak több termékízre és szereplőre cserélt változatát is elkészíti.</p>
+<p>Forrás: <a href="https://youtu.be/kGku3TTiYO8">Dankieft teljes útmutatója</a></p>
+<h2>Egy egészségellenőrzés ideiglenes mappákkal tölthette meg a lemezt</h2>
+<p>A T3 Code 12008-as pull requestje az Antigravity ismétlődő egészségellenőrzését javítja. A korábbi működés minden ellenőrzéskor újra kicsomagolhatta az ügynököt, és `<em>MEI` ideiglenes könyvtárakat hagyhatott maga után, amelyek idővel megtöltötték a lemezt. A módosítás szerint a rendszeres ellenőrzések már nem végzik el ezt a kicsomagolást, miközben a valódi indítási folyamat megmarad.</p>
+<p>Forrás: <a href="https://github.com/pingdotgg/t3code/pull/12008">T3 Code pull request</a></p>
+<h2>A Freebuff felhasználói a napi keret és az „ingyenes” ígéret miatt tiltakoznak</h2>
+<p>A Freebuff egyik szeptember 16-i GitHub-vitájában felhasználók azt állítják, hogy a kommunikált napi 100 Freebuck helyett aznap 40-et kaptak, miközben a weboldal továbbra is a magasabb keretet mutatta. Más hozzászólók az „unmetered” és „100% free” megfogalmazásokat kifogásolják, illetve az OpenCode és a Cline ingyenes modellválasztékával hasonlítják össze a szolgáltatást. Ezek felhasználói beszámolók, nem hivatalos díjszabás, de jelzik, hogy automatizált kódolási folyamatot nem érdemes a hirdetett napi keretre méretezni annak tényleges megfigyelése nélkül.</p>
+<p>Forrás: <a href="https://github.com/CodebuffAI/freebuff/issues/1369">Freebuff GitHub-vita</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/unslothai/unsloth">Unsloth</a></strong> - Helyi kezelőfelület LLM-ek és diffúziós modellek futtatásához és tanításához, többek között GGUF, MLX, Qwen 3.8, DeepSeek V4, MiniMax H3, Gemma 4 és FLUX támogatással. Natív asztali alkalmazásként tölthető le, vagy macOS, Linux és WSL alatt shelles, Windows alatt PowerShelles telepítővel futtatható. Apache 2.0 licencű, és nem fork. A repót 2023. november 29-én hozták létre, utolsó pushja 2026. szeptember 17-én érkezett, jelenleg 76 260 csillaga van. Saját ügynök mellett helyi modellfuttatásra és egyedi finomhangolások elkészítésére használható.</p>
+<p><strong><a href="https://github.com/pingdotgg/t3code">T3 Code</a></strong> - A gépeden már telepített Codex, Claude Code, Cursor, Grok Build, OpenCode és Google Antigravity ügynökökhöz ad közös vezérlőfelületet. Mobilalkalmazásból, webes felületről és Electron-alapú asztali alkalmazásból irányítható, de az adott szolgáltatót előbb telepíteni és hitelesíteni kell. MIT licencű, és nem fork. A repó 2026. február 8-án indult, utolsó pushja 2026. szeptember 17-i, csillagszáma 22 902. Akkor hasznos, ha több helyi kódoló ügynököt szeretnél egyetlen, távolról is elérhető felületről követni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban a hangalapú ügynökök, az egységesebb munkafolyamatok és a kis hardveren is futtatható modellek viszik a prímet.</p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 3.8 Live modellek 97 nyelvet, folyamatos beszélgetést és aszinkron eszközhívásokat kínálnak, ami természetesebb hangvezérelt ügynökök építését teszi lehetővé.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2099909465705447807">@OfficialLoganK</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A ChatGPT Image 2.5 egy bemutatóban összetett történelmi plakátot generált, ami a sok szöveget és vizuális elemet kezelő helyi kreatív munkafolyamatokhoz is hasznos viszonyítási pont.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2099927702249619656">@futurepedia_io</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Claude egyesítette a csevegést és a Cowork munkateret, közös kontextust adott a dokumentumoknak, diáknak és terveknek, a hosszabb feladatok pedig a gép bezárása után is folytatódhatnak.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2100416179504656503">@futurepedia_io</a></p>
+<p><strong>@gdb</strong> -- A ChatGPT vállalati adatforrásokhoz és BI-eszközökhöz kapcsolódva már műveleteket és irányítópult-építést is végezhet, ami jól mutatja, merre tartanak az adatkezelő ügynökök.<br>Forrás: <a href="https://x.com/gdb/status/2099919674544898298">@gdb</a></p>
+<p><strong>@Thom</em>Wolf</strong> -- A Hugging Face, a Baseten és a Goodfire közös biztonsági és értelmezhetőségi gyakorlatokon dolgozik nyílt modellekhez, így a helyben futtatók több eszközt kaphatnak a modell viselkedésének vizsgálatához.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2100327168421277779">@Thom_Wolf</a></p>
+<p><strong>r/singularity</strong> -- A Google bemutatott egy hurkot, amelyben a modell a saját ügynökkörnyezetét és utasításait javítja, nem a súlyait, ami közvetlenül átültethető lehet nyílt agent keretrendszerekbe. (959 pont, 182 komment)<br>Forrás: <a href="https://www.reddit.com/r/singularity/comments/1whwy4m/google_demonstrated_rsi_loop_for_ai_discovery/">r/singularity</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy Mozilla-jelentés szerint a kínai nyílt súlyú modellek már csak körülbelül négy hónappal maradnak el az amerikai csúcsmodellektől, miközben jóval olcsóbban használhatók. (818 pont, 184 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wi32jg/chinas_openweight_ai_models_are_now_just_4_months/">r/LocalLLaMA</a></p>
+<p><strong>r/MachineLearning</strong> -- Egy 44 millió paraméteres, nulláról tanított kvantált modell 19,8 MB-ban elfér és CPU-n másodpercenként körülbelül 1900 tokent ér el, ami érdekes alap lehet gyors helyi részfeladatokhoz. (227 pont, 35 komment)<br>Forrás: <a href="https://www.reddit.com/r/MachineLearning/comments/1wgzpli/i_trained_a_44m_parameter_quantized_llm_from/">r/MachineLearning</a></p>
+<p><strong>r/SunoAI</strong> -- A Sunóban már pontosan kijelölhető a V6 által elrontott zenerészlet, így a visszajelzés konkrét időszakaszhoz köthető a teljes dal általános értékelése helyett. (43 pont, 22 komment)<br>Forrás: <a href="https://www.reddit.com/r/SunoAI/comments/1whxpnz/suno_may_finally_be_collecting_useful_v6_feedback/">r/SunoAI</a></p>
+<p><strong>r/StableDiffusion</strong> -- Egy magasra értékelt rövid útmutató konkrét képgenerálási munkafolyamatot bont le, így a látvány mögötti lépések helyben is reprodukálhatók és módosíthatók. (702 pont, 53 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wi85by/for_anyone_wondering_how_i_manage_to_do_this/">r/StableDiffusion</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Így maradhat egyben a termék egy generált videóreklámban</strong>. A jó prompt önmagában kevés: külön stílus-, termék- és címkereferencia kell a következetes képsorokhoz.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-17-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
