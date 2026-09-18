@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mit érdemes átvenni az ügynökkel készített rövidfilm munkafolyamatából? — LocalAgent Digest</title>
+  <meta name="description" content="A legerősebb rész nem az automatikus vágás, hanem a projektmemória és az eszközök közötti vezérlés.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-18</div>
+          <h1 class="article-title">Mit érdemes átvenni az ügynökkel készített rövidfilm munkafolyamatából?</h1>
+          <div class="article-sub">A legerősebb rész nem az automatikus vágás, hanem a projektmemória és az eszközök közötti vezérlés.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mit érdemes átvenni az ügynökkel készített rövidfilm munkafolyamatából?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Theoretically Media másfél nap alatt készítette el egy korábbi rövidfilmjének új változatát. A látványos rész az, hogy az Astra Runwayt, Premiere Pro-t és DaVinci Resolve-ot is kezelt. A fontosabb tanulság viszont az, hogy az ügynök nem egyetlen hosszú beszélgetésből próbálta megjegyezni a produkciót. A projekt állapotát fájlok, referenciák és naplók tartották össze, amelyeket bármelyik kompatibilis modell újra be tudott olvasni. <a href="https://youtu.be/WKO-YgMQhLI">A teljes munkafolyamat a videóban látható.</a></p>
+<h2>A filmes skill valójában egy hordozható projektmemória</h2>
+<p>A rendszer közepén egy filmes skill állt, benne `CLAUDE.md` és `SKILL.md` fájlokkal, valamint külön mappákkal a brief, az eszközök, a referenciák és a gyártási fázisok számára. Ezek rögzítették, hogyan épül fel a történet, milyen stílust kell követni, kik a szereplők, hol játszódnak a jelenetek, és hogyan kell nyilvántartani a snitteket. Ugyanezt a mappát több különböző modell is használhatta, így a munkafolyamat nem kötődött egyetlen szolgáltató beszélgetési előzményeihez. <a href="https://youtu.be/WKO-YgMQhLI">A videó ezt egy folyamatosan frissített stúdiórendszerként mutatja be.</a></p>
+<p>Ez a szerkezet saját ügynöknél is többet érhet, mint egy egyre hosszabb rendszerprompt. A tartós szabályok külön fájlba kerülnek, az aktuális munka pedig saját könyvtárat kap. Ha modellt váltasz, vagy új munkamenetet indítasz, nem kell a teljes előzményt visszatölteni. Elég a megfelelő projektfájlokat átadni. A filmnél ez biztosította, hogy az Astra az eredeti alkotás megtekintése után ugyanabba a struktúrába írja a forgatókönyvet és a snittlistát. <a href="https://youtu.be/WKO-YgMQhLI">A bemutatóban az ügynök közvetlenül az eredeti filmből indította el az új produkciót.</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: hozz létre külön `SKILL.md` fájlt a tartós munkafolyamatnak, és munkamenetenként vezess rövid naplót arról, mi készült el, mit utasítottál el, és melyik fájl a jóváhagyott változat. Így a következő munkamenetnek nem kell a teljes beszélgetést visszaolvasnia.</p></blockquote>
+<h2>A műszerfal az embernek készült, nem a modellnek</h2>
+<p>A produkciós mappa hamar túl sűrűvé vált ahhoz, hogy könyvtárnézetből könnyen áttekinthető legyen. Erre készült egy helyi HTML-műszerfal, amely megjelenítette a snitteket, storyboardokat, referenciákat, helyszíneket, promptokat és megjegyzéseket. Minden munkamenet végén az Astra rövid naplót írt az elvégzett feladatokról, így később az alkotó és az ügynök is visszakereshette, mi történt. <a href="https://youtu.be/WKO-YgMQhLI">A videóban a műszerfal közvetlenül a produkciós mappából olvasta az adatokat.</a></p>
+<p>Ez fontos különbség egy szép csevegőfelülethez képest. Az ügynöknek elég lehet a strukturált JSON vagy Markdown, az ember viszont képeket, állapotjelzőket és összehasonlítható változatokat akar látni. Egy saját gépen futó vezérlőfelület ezért nem feltétlenül új adatbázis. Sok esetben elég egy generált HTML-oldal, amely a projekt könyvtárát indexeli.</p>
+<h2>MCP ott működött jól, ahol volt hozzá valódi integráció</h2>
+<p>A Runway MCP-n keresztül kapcsolódott az ügynökhöz. Az Astra elkészítette a promptot, elküldte a generálást, letöltötte az eredményt, majd a megfelelő mappába helyezte. Ez lassabbnak érződött, mint a kézi kattintgatás, de a teljes film még így is körülbelül másfél nap alatt elkészült. <a href="https://youtu.be/WKO-YgMQhLI">A videó szerint a várakozás jelentős része az ügynök, a Runway és a fájlrendszer közötti átadásokból jött.</a></p>
+<p>Premiere Pro esetén nem volt ugyanez a tiszta eszközkapcsolat. Az Astra képernyővezérléssel dolgozott, lefoglalt egy monitort, és érzékeny volt arra, ha közben az ember megmozdított valamit. A vágási kísérlet ezért túl lassúnak bizonyult, az alkotó pedig a végső összeállítást maga gyorsabban elvégezte. <a href="https://youtu.be/WKO-YgMQhLI">A tesztben az automatikus Premiere-vágás nem hozott időnyereséget.</a></p>
+<p>A DaVinci Resolve már jobb célpontnak bizonyult. Az Astra importálta a Premiere-ből exportált XML-t, színkorrekciót végzett, Dehancer-effektet alkalmazott, néhány snittet rövidített, áttűnést adott hozzá, Fusionben elkészítette a címeket, majd külön párbeszéd-, zene- és környezeti hangsávokon keverte az audiót. Az alkotó állítása szerint mindezt egérhasználat nélkül irányította. <a href="https://youtu.be/WKO-YgMQhLI">A DaVinci-szakasz teljes folyamata szerepel a bemutatóban.</a></p>
+<h2>Az ügynök nem ismeri automatikusan az összes kapcsolót</h2>
+<p>A munkafolyamat egyik konkrét hibája az volt, hogy az Astra nem ajánlotta fel a Runway ProRes 422 HQ kimenetét. Ez csökkenthette volna a Seedance 2.5 anyagain látható tömörítési sávosodást. Az alkotó csak később, a Runway felületét átnézve találta meg az opciót. <a href="https://youtu.be/WKO-YgMQhLI">A videó külön kiemeli, hogy az ügynök nem gondolkodott előre az elérhető kodekekről.</a></p>
+<p>Ez jól mutatja, miért nem elég annyit mondani egy ügynöknek, hogy „készítsd el a filmet”. Az eszközök képességlistáját, az engedélyezett modelleket, a kívánt fájlformátumot és a költségkorlátot érdemes előre beleírni a skillbe. A bemutatóban a heti keret körülbelül 70 százaléka fogyott el, részben azért, mert több rutinlépés véletlenül Ultra módban futott. Az alkotó szerint ezek jelentős részéhez közepes vagy alacsony szint is elég lett volna. <a href="https://youtu.be/WKO-YgMQhLI">A fogyasztásról és a hibás erőfeszítési beállításról a videó végén esik szó.</a></p>
+<p>A használható minta tehát nem az, hogy minden kreatív döntést át kell adni. Az ügynök jól kezelte a projektmemóriát, a fájlmozgatást, a generálási kéréseket és az olyan alkalmazásokat, amelyeket az alkotó kevésbé ismert. Ahol viszont gyors vizuális döntések és időzítés kellett, ott a kézi munka maradt gyorsabb. A saját ügynököd számára ugyanez jó felosztás lehet: ő tartsa rendben az állapotot és mozgassa az anyagokat, te pedig ott avatkozz be, ahol azonnali ízlésbeli döntésre van szükség.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
