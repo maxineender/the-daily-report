@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Új kameranézetek egyetlen felvételből: mire elég a Seedance 2.5? — LocalAgent Digest</title>
+  <meta name="description" content="A teljes jelenet újragenerálása még szétesik, rövid snittekkel viszont már használható utómunka-folyamat építhető.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-19</div>
+          <h1 class="article-title">Új kameranézetek egyetlen felvételből: mire elég a Seedance 2.5?</h1>
+          <div class="article-sub">A teljes jelenet újragenerálása még szétesik, rövid snittekkel viszont már használható utómunka-folyamat építhető.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Új kameranézetek egyetlen felvételből: mire elég a Seedance 2.5?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Egy forgatáson a nagytotál, a közelik és a váll fölötti beállítások rendszerint külön felvételek. Más helyre kerül a kamera, változhat a világítás, a szereplők pedig megismétlik ugyanazt a mozdulatot. A Curious Refuge tesztje azt vizsgálta, hogy egyetlen széles felvételből előállíthatók-e ezek a nézetek utólag, a Seedance 2.5 segítségével. A rövid válasz: igen, de nem egyetlen automatikus utasítással. A használható eredményhez továbbra is snittekben kell gondolkodni. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<h2>Miért nem működött a teljes jelenet?</h2>
+<p>Az első tesztben egy 24 másodperces főzős jelenet teljes felvétele került a modellbe. Az utasítás azt kérte, hogy az akció és a környezet maradjon változatlan, a rendszer pedig válasszon közeli és érdekes kameranézeteket. A generálás 1080p felbontásban készült, körülbelül tíz percig futott, és 25 000 kreditbe, vagyis 25 dollárba került. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<p>A modell valóban készített új nézeteket, de közben átírta a cselekményt. Egyes tárgyak megváltoztak, az egyik hozzávaló például tojássá alakult. A mozdulatok sem minden vágásnál folytatódtak következetesen. Ez fontos különbség: a modell nem egy meglévő 3D-jelenet virtuális kameráját mozgatja, hanem új videót állít elő az eredeti alapján. Minden új nézet egyben újabb lehetőség arra, hogy a tartalom is megváltozzon. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<p>A második próbában időkódok határozták meg, hogy mikor maradjon nagytotál, és mikor váltson közeli vagy felső nézetre. Ez több irányítást adott, de nem oldotta meg a folytonossági hibákat. Az egyik beállításban például más tárgy került a szereplő kezébe. Az időkód tehát a vágás helyét szabályozta, de a jelenet tartalmát nem rögzítette elég szigorúan. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<h2>A működő egység nem a jelenet, hanem a snitt</h2>
+<p>A jobb eredményhez a készítők előbb egy hagyományos vágóprogramban kijelölték azokat a 3-5 másodperces részeket, amelyekhez új nézet kellett. Csak ezeket a rövid klipeket adták át a modellnek. A prompt külön hangsúlyozta, hogy a cselekmény ne változzon, maradjon normál sebességű, ne legyen lassítás és ne kerüljön bele új vágás. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<p>Ebben a formában a Seedance 2.5 már lényegesen jobban megtartotta a kézmozdulatokat és a tárgyak útját. Egy zöldséget felemelő szereplőről úgy készült új követő közelkép, hogy az akció felismerhetően ugyanaz maradt. Az AI-val létrehozott jelenetnél hasonlóan működött egy kortyot ivó szereplő közeli képe és egy levélre néző karakter váll fölötti beállítása. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: ne azt add feladatul, hogy „készíts több kameranézetet ebből a jelenetből”. Az ügynök először vágja 3-5 másodperces részekre a felvételt, minden részhez rendeljen egyetlen kívánt nézetet, majd csak a hibás snittet generálja újra. Így a költség, a várakozás és a folytonossági hibák is egy rövid részletre korlátozhatók.</p></blockquote>
+<h2>Az iterációt bele kell számolni</h2>
+<p>A bemutató szerint egy megfelelő snitthez rendszerint 2-3 generálás kellett. A készítők körülbelül egy dolláros másodpercenkénti költséggel számoltak, így egy ötmásodperces nézet több próbával már könnyen 10-15 dolláros tétellé válhat. Ez még mindig lehet olcsóbb egy helyszíni újraforgatásnál, de csak akkor, ha nem a teljes jelenetet ismétli újra a rendszer minden apró hiba miatt. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<p>Az ügynök feladata ezért nem pusztán a generálás. Nyilván kell tartania, melyik snitt melyik eredeti részlethez tartozik, milyen kameranézetet kértek, hány próbálkozás készült, és melyik változatot fogadta el az ember. Hasznos lehet egy egyszerű mappaszerkezet vagy JSON-nyilvántartás, amely az eredeti időkódot, a promptot, a generálás azonosítóját és az elfogadott fájlt kapcsolja össze. Ez már nem új videomodell-funkció, hanem a saját ügynök köré épített gyártási fegyelem.</p>
+<h2>Milyen felvételnél érdemes próbálkozni?</h2>
+<p>A teszt alapján a módszer jobban teljesített beállított, könnyen értelmezhető mozgásoknál, például beszélő szereplőknél vagy tárgyak lassabb kezelésénél. Nagyon dinamikus mozgásnál nagyobb az esélye annak, hogy a modell átírja a testhelyzetet, egy tárgy pályáját vagy a jelenet időzítését. A rövidebb klip ezt a kockázatot csökkenti, de nem szünteti meg. (<a href="https://youtu.be/6QC6nOotxrU">Curious Refuge</a>)</p>
+<p>A folyamat ezért jelenleg inkább pótfelvétel-készítő, mint teljes virtuális operatőr. Akkor erős, ha hiányzik egy közeli, egy reakciókép vagy egy váll fölötti nézet, és az eredeti mozdulat viszonylag egyszerű. Ha a cselekmény pontos fizikai folytonossága nélkülözhetetlen, a valódi második kamera továbbra is biztosabb választás. A változás inkább az, hogy egy korábban elveszettnek hitt nézetet már érdemes megpróbálni helyreállítani, különösen akkor, ha egy ügynök a vágást, a generálást és a változatok rendszerezését is kézben tartja.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
