@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helyi futtatás CPU-n, számítógépes ügynök Macen — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadásban a helyi modellfuttatás, az asztali automatizálás és a kreatív munkafolyamatok kerülnek előtérbe.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-20</div>
+          <h1 class="article-title">Helyi futtatás CPU-n, számítógépes ügynök Macen</h1>
+          <div class="article-sub">A mai kiadásban a helyi modellfuttatás, az asztali automatizálás és a kreatív munkafolyamatok kerülnek előtérbe.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-20.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-20.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Helyi futtatás CPU-n, számítógépes ügynök Macen" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Egy nagy Qwen-modell natív C-ben, GPU nélkül fut egy laptop processzorán. Mellette egy Macet kezelő ügynök, egy divattervezési munkafolyamat és az önfejlesztő AI kutatási térképe mutatja, merre tartanak a használható rendszerek.</p>
+<h2>A Meta Muse már a Macen is képes feladatokat elvégezni</h2>
+<p>A Meta Muse Mac-változata fájlokat rendez, űrlapokat tölt ki, és engedéllyel adatokat kér le a csatlakoztatott alkalmazásokból. A kontextust eszközök között is megtartja, így egy számítógépen elindított feladat telefonról folytatható. Ez már nem egyszerű chatfelület, hanem a grafikus asztalon dolgozó ügynök, bár a Meta pontos helyi és felhős adatkezelési határait az átadott anyag nem részletezi.</p>
+<p>Forrás: <a href="https://www.superhuman.ai/p/openai-incident-report-or-science-fiction">Superhuman</a></p>
+<h2>A Qwen3.8-Flash-Next natív C-ben, GPU nélkül is kiszolgálható</h2>
+<p>A `qwen3.8-flash-next-in-c` a 125B-A6B modell és a 51B PLE komponens futtatását valósítja meg natív C-ben, Python, PyTorch, CUDA és külső inferenciamotor nélkül. Terminálos chatet és állandó, OpenAI-kompatibilis API-t ad, a projekt leírása pedig közel 10 token/másodperces pontos batch teljesítményt állít egyetlen laptopprocesszoron. Automatikus, 8 GB memóriára szabott futtatási útvonalat is tartalmaz.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Az OpenAI-kompatibilis végpont miatt a meglévő kliensed modelloldali átírás nélkül kapcsolódhat hozzá. Ubuntu, Debian vagy WSL2 alatt a repó klónozása után a `./qwen4.sh` indítja a gyors telepítési és futtatási folyamatot.</p></blockquote>
+<p>Forrás: <a href="https://github.com/shyringo/qwen3.8-flash-next-in-c">GitHub</a></p>
+<h2>Saját tervezőeszközöket építettek a Google Flow-ban a divathéthez</h2>
+<p>A Google Envisioning Studio Jane Wade és Sergio Hudson tervezőkkel készített két specializált Flow-eszközt a New York-i divathétre. Wade virtuálisan állította össze a kifutóra szánt megjelenéseket, Hudson pedig a költségkerethez igazítva előre megjelenítette a bemutató látványát. A Flow-ban ezekhez hasonló egyedi kreatív eszközök természetes nyelven, programozás nélkül rakhatók össze.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/">Google</a></p>
+<h2>Öt szintre bontották, hogyan fejlesztheti tovább magát egy AI</h2>
+<p>Harmincöt, többek között a ByteDance-hez, a Tsinghuához és a Shanghai AI Labhez kötődő kutató szeptember 15-én frissítette az önfejlesztő AI-ról szóló térképét. Az első szinten a rendszer ember által megtervezett javításokat hajt végre, a másodikon már maga keresi a gyenge pontjait, az ötödiken pedig az egész fejlesztési folyamatot újratervezheti. A szerzők 491 tanulmányt soroltak be: 75,4 százalékuk az első két szintre, mindössze 5,9 százalékuk az ötödikre került. A kódolást tartják a legkézenfekvőbb terepnek, mert a változtatások hatása automatikus tesztekkel gyorsan mérhető.</p>
+<p>Forrás: <a href="https://www.therundown.ai/news/chinese-researchers-ai-recursive-self-improvement-roadmap">The Rundown</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/karpathy/autoresearch">autoresearch</a></strong> - Egyetlen NVIDIA GPU-n futó nanochat-kísérleti környezet, amelyben az ügynök a `train.py` modellt, optimalizálót és tanítási ciklust módosítja, majd ötperces futások után a `val<em>bpb` érték alapján megtartja vagy elveti a változtatást. A `prepare.py` tölti le a tanítási adatokat, elkészíti a BPE-tokenizálót és biztosítja a kiértékelést, míg az ember a `program.md` utasításait szerkeszti. A nem fork repó 2026. március 6-án jött létre, utolsó pushja március 26-án volt, és 96 376 csillagot gyűjtött. Licenc nincs megadva, ezért a kód alapértelmezés szerint nem szabadon felhasználható. Saját ügynökhöz jól körülhatárolt kutatási tesztpad, de általános feladatvégző keretrendszernek nem készült.</p>
+<p><strong><a href="https://github.com/robbietilton/Compositor">Compositor</a></strong> - Macre készült képszerkesztő, amely rétegeket, mappákat, keverési módokat, maszkokat, korrekciós rétegeket és nem destruktív transzformációkat kezel. A projektek között rétegek mozgathatók, több réteg együtt alakítható, a pozíciók és méretek pedig pontos értékekkel is beállíthatók. A nem fork repó MIT-licencű, 2026. szeptember 16-án jött létre, utolsó pushja szeptember 18-án volt, és 2626 csillagnál jár. Saját ügynök közvetlen vezérléséhez nem ad API-t vagy integrációt. Helyi kreatív munkafolyamatban viszont ingyenes utómunkaeszköz lehet az ügynök által előállított képekhez.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála, hogy a modellek köré épített ügynökök már kutatást és alkalmazásfejlesztést is automatizálnak, miközben a helyi futtatás hardveres lehetőségei bővülnek.</p>
+<p><strong>@gdb</strong> -- Az Astra for Law adatvédelmi funkciókkal és 73 jogi bővítménnyel mutatja meg, hogyan állhat össze egy szakterületi ügynök eszközkészlete.<br>Forrás: <a href="https://x.com/gdb/status/2100699190448042165">@gdb</a></p>
+<p><strong>@rryssf</strong> -- Az autoresearch egyetlen gépen, emberi felügyelet nélkül futtatott le 700 gépi tanulási kísérletet egy éjszaka alatt, ami jól példázza a helyi kutatóügynökök gyakorlati értékét.<br>Forrás: <a href="https://x.com/rryssf/status/2101392207999889475">@rryssf</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A GPT-6 Astra egyetlen utasításból készített működő alkalmazásokat, de a teszt a hibapontját is megmutatta, így érdemes nemcsak a látványos eredményt, hanem az elakadást is vizsgálni.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2100585822743392573">@futurepedia_io</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A GPT Image 2.5 az Astra kutatási lépésére támaszkodva állított össze szöveggel sűrűn kitöltött infografikát, vagyis a képgenerálást már külön információgyűjtő ügynök előzheti meg.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2100985273421095288">@futurepedia_io</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Google CC külön fiókkal működő családi ügynökként legfeljebb hat ember megosztott adataiból készít napi összefoglalót és szervezi a teendőket.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2100930336901480808">@futurepedia_io</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy fejlesztő szerint a Jev architektúrát már egy éve nyilvánossá tette a modellel, az adatkészlettel és a tanulmánnyal együtt, ami újabb vitát indított a modellek eredetének elismeréséről. (2468 pont, 246 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wijo3e/i_literally_built_the_jev_architecture_one_year/">r/LocalLLaMA</a></p>
+<p><strong>r/singularity</strong> -- A beszámoló szerint a ChatGPT-6 Astra megfejtett egy 108 éve megoldatlan német katonai kódot, ami érdekes próba a modell következtetési képességére. (1122 pont, 121 komment)<br>Forrás: <a href="https://www.reddit.com/r/singularity/comments/1wkwzzj/chatgpt6_astra_cracks_108yearold_unsolved_wwi/">r/singularity</a></p>
+<p><strong>r/OpenSourceeAI</strong> -- Egy gyakorlati kísérlet Vulkan használatával tanított neurális hálót AMD MI50 gyorsítókon, alternatívát mutatva azoknak, akik helyben és régebbi hardveren dolgoznának. (4 pont, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/OpenSourceeAI/comments/1wkd81s/training_a_neural_network_on_amd_mi50s_using/">r/OpenSourceeAI</a></p>
+<p><strong>r/PromptEngineering</strong> -- Egy megosztott egyszeri utasítási stratégia rövidebb és célzottabb magyarázatokra tereli a modelleket, ami ügynökláncokban is csökkentheti a felesleges szöveget. (109 pont, 34 komment)<br>Forrás: <a href="https://www.reddit.com/r/PromptEngineering/comments/1wj4f59/how_i_make_llms_shut_up_and_explain_like_a_boss/">r/PromptEngineering</a></p>
+<p><strong>r/codex</strong> -- Egy Codexre épített felületkészítési munkamenet azt mutatja be, hogyan lehet az ügynököt a kezelőfelület gyors megtervezésére és megvalósítására használni. (538 pont, 118 komment)<br>Forrás: <a href="https://www.reddit.com/r/codex/comments/1wkhzv3/i_found_the_best_way_to_build_insane_uis_with/">r/codex</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
