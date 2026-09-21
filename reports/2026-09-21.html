@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb token a döntésekhez, olcsóbb hang az ügynököknek — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadás a kisebb döntési modellektől a hangfelismerésen át az MCP-eszközök rendezéséig jut.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-21</div>
+          <h1 class="article-title">Kevesebb token a döntésekhez, olcsóbb hang az ügynököknek</h1>
+          <div class="article-sub">A mai kiadás a kisebb döntési modellektől a hangfelismerésen át az MCP-eszközök rendezéséig jut.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-21.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-21.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb token a döntésekhez, olcsóbb hang az ügynököknek" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép vasárnapot! A Laya egyetlen előremenetben hoz többnyelvű, típusos döntéseket az ügynököknek. Mellette olcsóbb lett a beszédfelismerés, az Anthropic pedig külső értékelőket enged közelebb a modelljeihez. A közös kérdés az, mennyi infrastruktúra kell egy megbízható ügynökhöz.</p>
+<h2>A Grok új átírója óránként 10 centért dolgozik kötegelt módban</h2>
+<p>Az xAI kiadta a Grok Voice Transcribe 2.0-t, amelynél a közölt többnyelvű hibaarány 20,6 százalékról 6,8 százalékra csökkent. A szolgáltatás a beszélők elkülönítését felár nélkül végzi, a gyártó szerint pedig 32 vizsgált streaming modell közül az első helyen végzett. A kötegelt feldolgozás ára óránként 0,10 USD, a valós idejű streamingé 0,20 USD.</p>
+<p class="price-line">Ár: 0,10 USD/óra kötegelt, 0,20 USD/óra streaming</p>
+<p>Forrás: <a href="https://x.ai/news/grok-voice-transcribe-2">xAI</a></p>
+<h2>A Laya szöveggenerálás nélkül hoz döntéseket 100-nál több nyelven</h2>
+<p>A Laya egy nem autoregresszív System 1 döntési motor, amely `choice`, `score` és `noul` típusú kérdéseket értékel szövegek, e-mailek, hibajegyek vagy JSON-dokumentumok alapján. Egy T4 GPU-n egy kérdéshez 33 ms-ra, kötegelt futásnál kérdésenként 7,2 ms-ra volt szüksége. Három ellenőrzőpont érhető el: a 421 millió paraméteres angol modell, a 322 milliós, 100-nál több nyelvet kezelő változat és egy 421 milliós, típusos döntésekre hangolt modell. Mivel nem állít elő szöveget, nincs szükség az eredmény visszafejtésére vagy strukturált formátumba kényszerítésére.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A mellékelt `Router` segítségével a `laya-multilingual` ellenőrzőpontot választhatod nem angol bemenethez, a `laya-typed-decisions` változatot pedig típusos döntési munkafolyamatokhoz. Így a gyors besorolást különválaszthatod a drágább generáló modelltől.</p></blockquote>
+<p>Forrás: <a href="https://github.com/NandhaKishorM/laya">Laya GitHub-repó</a></p>
+<h2>Egy apró modell helyben egyesítené az eszközválasztást és a szándékfelismerést</h2>
+<p>A Needle 3-ról készült bemutató szerint a modell 8 és 29 MB közötti csomagokban fut telefonon, okosórán vagy más kis fogyasztású eszközön. A fejlesztők egyetlen helyi modellben próbálják egyesíteni a szándékfelismerést, az eszközválasztást és a paraméterek előállítását, ami csökkentheti a több különálló osztályozóból álló ügynökrendszerek bonyolultságát. A videó a nagyobb modellekkel szembeni erős eredményeket is említ, de ezekhez nem ad független mérést, ezért egyelőre inkább érdekes futtatási iránynak, mint bizonyított minőségi ugrásnak érdemes tekinteni.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=qiZITfI0wQE">Panda Making Money bemutatója</a></p>
+<h2>Az Accenture értékelői az Anthropic rendszerein belül dolgozhatnak</h2>
+<p>Az Anthropic és az Accenture ötéves együttműködést indított a fejlett modellek független értékelésére. Mindkét fél legalább 1 milliárd dollár befektetését tervezi a szükséges kapacitás kiépítésébe. A program részeként az értékelők az Anthropic szervezetébe beágyazva vizsgálhatják a modelleket, ami több hozzáférést adhat nekik a belső rendszerekhez és tesztekhez, mint egy külső benchmark vagy egyszeri audit.</p>
+<p>Forrás: <a href="https://www.anthropic.com/news/accenture-embedded-evaluation">Anthropic</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/docker/mcp-gateway">Docker MCP Gateway</a></strong> - A Docker CLI bővítménye MCP-szervereket futtat elkülönített konténerekben, majd egy közös átjárón keresztül teszi elérhetővé őket az MCP-klienseknek. Dinamikus eszközfelderítést, OAuth-folyamatokat és Docker Desktop-alapú titokkezelést támogat, miközben az `npx` és `uvx` szerverek csak minimális gazdagép-jogosultságot kapnak. Nem fork, MIT licencű, 2025. április 22-én hozták létre, utolsó pushja 2026. szeptember 16-án érkezett, és 1578 csillagnál jár. Azoknak hasznos, akik több MCP-szervert szeretnének egyetlen, következetesen konfigurált végpont mögé tenni, nem pedig minden ügynökkliensben külön regisztrálni őket.</p>
+<p><strong><a href="https://github.com/mflux-community/mflux">MFLUX</a></strong> - Az MFLUX generatív képmodellek natív MLX-megvalósításait futtatja Apple Silicon alapú Mac gépeken. A Hugging Face Diffusers és Transformers modelljeit soronként ülteti át MLX-re, miközben csak a Transformers tokenizálóit használja, és a megvalósítást szándékosan minimálisra tartja. Nem fork, MIT licencű, 2024. augusztus 10-én hozták létre, utolsó pushja 2026. szeptember 21-én érkezett, és 2350 csillaga van. Akkor jó kiegészítője a saját ügynöködnek, ha a képgenerálást vagy képszerkesztést Macen, külső képgeneráló API nélkül szeretnéd futtatni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fókusza az ügynökök kontextus- és eszközkezelése, valamint a helyben futtatható kép- és videómodellek gyakorlati használata.</p>
+<p><strong>@gdb</strong> -- A ChatGPT új funkciója több forrás kontextusának összekapcsolását könnyíti meg, ami kevesebb kézi adatmozgatást jelenthet az ügynöki munkafolyamatokban.<br>Forrás: <a href="https://x.com/gdb/status/2101036303597044101">@gdb</a></p>
+<p><strong>@rryssf</strong> -- Az MCP kódmódja nem tölti be előre minden eszköz teljes leírását, így sok szervernél csökkentheti az ügynök kontextusterhelését.<br>Forrás: <a href="https://x.com/rryssf/status/2101674437175341563">@rryssf</a></p>
+<p><strong>@rryssf</strong> -- A Docker MCP Gateway konkrét belépési pontot ad a kódmódra épülő, több eszközt kezelő helyi ügynöki környezet kipróbálásához.<br>Forrás: <a href="https://x.com/rryssf/status/2101674450001514858">@rryssf</a></p>
+<p><strong>@Thom<em>Wolf</strong> -- Egy robotfej újabb iterációja azt mutatja, hogyan kaphatnak a helyben futó ügynökök fizikai érzékelőkkel és mozgatással összekötött felületet.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2100873791085666418">@Thom_Wolf</a></p>
+<p><strong>@AIHighlight</strong> -- A három év AI-fejlődését egymás mellé állító bemutató gyors viszonyítási pontot ad ahhoz, mennyit változott a generált tartalmak minősége.<br>Forrás: <a href="https://x.com/AIHighlight/status/2100863013112750266">@AIHighlight</a></p>
+<p><strong>r/StableDiffusion</strong> -- Megjelentek a Qwen-Image-2.1 súlyai a Hugging Face-en, így a transzparens képgenerálást is támogató modell saját gépen is tesztelhető. (539 pont, 180 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wlgh7c/qwenimage21_weights_are_available_on_hugging_face/">r/StableDiffusion</a></p>
+<p><strong>r/Seedance</em>AI</strong> -- A fotószerű videók kapcsán a közösség szerint a modellválasztás mellett a prompt szóhasználata is döntő, és valószínű jelöltként a Seedance 2.5 merült fel. (18 pont, 19 komment)<br>Forrás: <a href="https://www.reddit.com/r/Seedance_AI/comments/1wlke8z/what_ai_modelworkflow_is_being_used_to_create/">r/Seedance_AI</a></p>
+<p><strong>r/Seedance_AI</strong> -- Egy éjszakai étkezőt ábrázoló rövid animáció gyakorlati mintát ad a stilizált, filmszerű videógenerálási munkafolyamatokra. (12 pont, 15 komment)<br>Forrás: <a href="https://www.reddit.com/r/Seedance_AI/comments/1wlbscq/made_a_little_pixarstyle_midnight_diner_animation/">r/Seedance_AI</a></p>
+<p><strong>r/SunoAI</strong> -- A Universal és a Sony ismét beperelte a Sunót, ezúttal a v6 modellek miatt, ami a saját zenegeneráló folyamatok modell- és szolgáltatásválasztását is érintheti. (105 pont, 270 komment)<br>Forrás: <a href="https://www.reddit.com/r/SunoAI/comments/1wjzjsm/universal_and_sony_sue_suno_for_a_second_time/">r/SunoAI</a></p>
+<p><strong>r/artificial</strong> -- A vita megkérdőjelezi az autonóm hackelésről szóló állításokat, és arra figyelmeztet, hogy az ügynök képességeit külön kell választani az ember által kialakított munkafolyamattól. (225 pont, 169 komment)<br>Forrás: <a href="https://www.reddit.com/r/artificial/comments/1wkz17p/ai_models_are_not_hacking_autonomously/">r/artificial</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
