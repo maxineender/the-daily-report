@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plugin4Shell: amikor a commit hash csak látszólag rögzített — LocalAgent Digest</title>
+  <meta name="description" content="A négy kódoló ügynököt érintő hiba megmutatja, miért nem elég leírni egy commit azonosítóját.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-23</div>
+          <h1 class="article-title">Plugin4Shell: amikor a commit hash csak látszólag rögzített</h1>
+          <div class="article-sub">A négy kódoló ügynököt érintő hiba megmutatja, miért nem elég leírni egy commit azonosítóját.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Plugin4Shell: amikor a commit hash csak látszólag rögzített" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A kódoló ügynökök pluginrendszerei lényegében fiatal csomagkezelők. Kódot töltenek le, verziót rögzítenek, frissítenek, majd a plugint ugyanazokkal a jogosultságokkal futtatják, amelyekkel maga az ügynök rendelkezik. A Plugin4Shell azért fontos, mert nem egy egzotikus modellhiba áll mögötte, hanem egy kihagyott ellenőrzés a Git működésében.</p>
+<p>Az AIR Security által feltárt hiba a Claude Code, a Codex, a GitHub Copilot és a Gemini CLI pluginbetöltőjét érintette. A kutatók májusban találták meg, júniusban jelezték a négy gyártónak, majd szeptember 17-én tették közzé a részleteket. A Claude Code és a Codex javítást kapott, a másik két rendszer védelme viszont továbbra is korlátozott vagy közvetett maradt. (<a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a>)</p>
+<h2>Mit ígér a commit rögzítése?</h2>
+<p>Egy pluginpiactér a felülvizsgált kód pontos commitját, vagyis annak 40 karakteres SHA-azonosítóját tárolja. Frissítéskor a kliens ezt az azonosítót adja át a Gitnek, majd letölti és futtatja a hozzá tartozó kódot. Elméletben ez megakadályozza, hogy a plugin készítője utólag, ugyanazon verziónév alatt lecserélje a tartalmat.</p>
+<p>A probléma az, hogy a Git bizonyos helyzetekben egy kért commitazonosítót ágnévként is értelmezhet. A sérülékeny kliensek kiadták a checkout parancsot, de utána nem oldották fel és nem ellenőrizték a munkakönyvtár tényleges `HEAD` commitját. A rögzítés tehát szerepelt a konfigurációban, csak a végrehajtás eredményét nem hasonlították hozzá. (<a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a>)</p>
+<h2>Hogyan használható ki?</h2>
+<p>A támadó először közzétehet egy ártalmatlan plugint. Miután az bekerült a piactérre, és a rendszer rögzítette a felülvizsgált commit hashét, a támadó létrehozhat egy pontosan ugyanígy elnevezett ágat. Ezt az ágat teheti alapértelmezetté, és ráhelyezheti a rosszindulatú kódot.</p>
+<p>A következő automatikus frissítéskor a pluginbetöltő azt hiheti, hogy a megadott commitot töltötte le, miközben valójában az azonos nevű ág tartalmára került. Ha nincs checkout utáni ellenőrzés, a kliens nem áll le, hanem futtatja a kódot. Ehhez a felhasználónak nem kell új engedélyt adnia vagy linkre kattintania. (<a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a>)</p>
+<p>Kódoló ügynöknél ennek nagyobb a tétje, mint egy egyszerű szerkesztőbővítménynél. A plugin elérheti a shellt, a forráskódot, a környezeti változókat, az API-kulcsokat és azokat a hálózati szolgáltatásokat, amelyekhez az ügynök hozzáfér. A támadás határa ezért nem maga a plugin, hanem az ügynök futtatási környezete.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Claude Code esetén a javított minimum a 2.1.179, Codex esetén a 0.146.0. Ha saját pluginbetöltőt vagy piacteret használsz, a checkout után futtasd a `git rev-parse HEAD` ellenőrzést, és szakítsd meg a telepítést, ha az eredmény nem egyezik a rögzített commit teljes SHA-értékével.</p></blockquote>
+<h2>Négy eltérő gyártói válasz</h2>
+<p>Az Anthropic június 17-én javította a hibát a Claude Code 2.1.179-es verziójában. Az OpenAI Codex 0.146.0 javítását augusztus 12-én ellenőrizték. Mindkét kliens a kézenfekvő megoldást választotta: a checkout után feloldja a tényleges commitot, majd megszakítja a műveletet, ha az nem egyezik a rögzített értékkel. (<a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a>)</p>
+<p>A GitHub nem a Copilot ügynökoldali betöltőjét javította. Ehelyett a GitHub tárhelyszolgáltatás nem enged olyan ág- vagy címkenevet, amely commit hashre hasonlít. Ez védi a GitHubon tárolt pluginokat, de nem feltétlenül segít GitLab, saját Git-szerver vagy más tárhely használatakor.</p>
+<p>A Google azt közölte, hogy nem készít javítást a Gemini CLI-hez, és az Antigravity használatát ajánlotta, amelyet a leírt támadás nem ér el. Ez azt jelenti, hogy a Gemini CLI felhasználójának nem elég egy új verziószámot keresnie. Magát a pluginfrissítési folyamatot kell korlátoznia, vagy másik betöltési módra kell váltania. (<a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a>)</p>
+<h2>Mit érdemes átállítani?</h2>
+<p>Elsőként érdemes kikapcsolni az automatikus pluginfrissítést minden olyan kliensben, amelynél nincs igazolt javítás. A kézi frissítés önmagában nem szünteti meg a hibát, de lehetőséget ad a letöltött commit ellenőrzésére, mielőtt az ügynök elindítja a kódot.</p>
+<p>Másodszor, a pluginok futtatási környezetét érdemes külön folyamatba vagy konténerbe tenni. Ez nem helyettesíti az integritás-ellenőrzést, de csökkenti egy sikeres támadás hatókörét. A plugin ne örökölje automatikusan az összes környezeti változót, és ne kapjon írási jogot minden repóhoz csak azért, mert a fő ügynöknek szüksége van rá.</p>
+<p>Harmadszor, a saját betöltőknél nem elég a verziót, az ágnevet vagy a kért SHA-t naplózni. A ténylegesen checkoutolt `HEAD` értéket is rögzíteni kell. Így utólag megállapítható, hogy a futtatott kód valóban megegyezett-e azzal, amit a piactér vagy a konfiguráció jóváhagyott.</p>
+<p>A Plugin4Shell tanulsága nem az, hogy kerülni kell a plugineket. Inkább az, hogy egy ügynök pluginpiacát ugyanúgy kell kezelni, mint bármely más csomagkezelőt: ellenőrzött tartalommal, pontos integritásvizsgálattal és a lehető legszűkebb futtatási jogosultságokkal. A commit hash csak akkor jelent valódi rögzítést, ha a kliens azt is ellenőrzi, mi került ténylegesen a lemezre.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

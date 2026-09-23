@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A csomagkezelő lett az ügynökök gyenge pontja — LocalAgent Digest</title>
+  <meta name="description" content="Kódfuttatási rés, új modellek és két kreatív munkafolyamat a napi válogatásban.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-23</div>
+          <h1 class="article-title">A csomagkezelő lett az ügynökök gyenge pontja</h1>
+          <div class="article-sub">Kódfuttatási rés, új modellek és két kreatív munkafolyamat a napi válogatásban.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-23.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-23.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A csomagkezelő lett az ügynökök gyenge pontja" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép reggelt! Egy pluginbetöltési hiba négy nagy kódoló ügynökön nyitott távoli kódfuttatási utat. Mellette az új modellek gyakorlati kompatibilitási gondjait, valamint kép- és videókészítő eszközök frissítéseit nézzük meg.</p>
+<h2>A Plugin4Shell felülírhatta a kódoló ügynök rögzített pluginverzióját</h2>
+<p>Az AIR Security szeptember 17-én hozta nyilvánosságra a Plugin4Shell nevű, kattintás nélkül kihasználható távoli kódfuttatási hibát. A Claude Code, a Codex, a GitHub Copilot és a Gemini CLI pluginbetöltője egy rögzített commit hash lekérése után nem ellenőrizte, hogy valóban az adott commit került-e a munkakönyvtárba. Egy támadó a hash értékével megegyező nevű ágat hozhatott létre, majd azon keresztül tetszőleges kódot futtathatott az ügynök jogosultságaival. A Claude Code 2.1.179 és a Codex 0.146.0 már javított; a Gemini CLI-hez a Google nem tervez javítást, a Copilot pedig csak a GitHub hash-szerű ág- és címkeneveket tiltó védelmére támaszkodik.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Claude Code esetén legalább a 2.1.179-es, Codex esetén legalább a 0.146.0-s verziót használd. Gemini CLI-nél és nem GitHubon tárolt Copilot-plugineknél kapcsold ki az automatikus pluginfrissítést, amíg a kliens nem ellenőrzi a checkout utáni `HEAD` commitot.</p></blockquote>
+<p>Forrás: <a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a></p>
+<h2>Két üzemmódot kapott a GPT Image 2.5</h2>
+<p>Az OpenAI új képgenerátora gyors és precíz változattal érkezett. A gyors modell a GPT Image 2 minőségét és szerkesztési képességeit ígéri körülbelül fele akkora késleltetéssel, miközben a precíz mód az összetettebb módosításokra koncentrál. A frissítés erőssége nem egy új képtípus, hanem a meglévő jelenet pontosabb megőrzése: tárgycsere vagy helyi javítás közben kevésbé változtatja meg a kép többi részét.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=20vo5nW9yXI">ElevenLabs bemutatója</a></p>
+<h2>A Sol és a Luna az Astra képességeit viszi olcsóbb modellekbe</h2>
+<p>Az OpenAI szeptember 22-én bemutatta a GPT-6 Sol és Luna modelleket. A vállalat gyorsabb, kedvezőbb árú változatokként pozicionálja őket, amelyek az Astra professzionális munkában, programozásban, számítógép-használatban, tényszerűségben és igazításban elért fejlesztéseire épülnek. Konkrét API-ár az átadott anyagban nem szerepel, így egyelőre a tényleges futási költség és a sebesség lesz a fontosabb összehasonlítási pont.</p>
+<p>Forrás: <a href="https://openai.com/index/introducing-gpt-6-sol-and-luna">OpenAI</a></p>
+<h2>Az Opus 5.5 rögtön megakasztott néhány külső Anthropic-klienst</h2>
+<p>Az Anthropic új Opus 5.5 modellje legalább Claude Code 2.1.280-as kliensazonosítót vár az OAuth-kéréseknél. Emiatt az olyan külső kliensek, amelyek régebbi Claude Code-verziót utánzó fejlécet küldenek, `claude<em>code</em>version<em>too</em>old` hibát kaptak. A `pi-anthropic-auth` javítása már a 2.1.280-as értéket használja, az oh-my-pi repójában pedig a módosítás bekerült a fő ágba, de a beszélgetésben ajánlott 18.2.9-es kiadás a hiba dokumentálásakor még nem volt telepíthető.</p>
+<blockquote><p>OAuth használatakor nézd meg, hogy a kliensed által küldött `cc<em>version` legalább `2.1.280` legyen. Az oh-my-pi esetén ne egy még ki nem adott 18.2.9-es verzióra építs automatizált frissítést; várd meg a tényleges csomagkiadást vagy használd a javított fő ágat tudatosan.</p></blockquote>
+<p>Forrás: <a href="https://github.com/gotgenes/pi-anthropic-auth/issues/74">pi-anthropic-auth hibajegy</a>, <a href="https://github.com/can1357/oh-my-pi/issues/12870">oh-my-pi hibajegy</a></p>
+<h2>Az ElevenLabs Studio 4.0 egy idővonalra hozza a képet és a hangot</h2>
+<p>A Studio 4.0 már közvetlenül a projekt idővonalára generál videót szöveges leírásból, a narráció, a zene és a hangeffektek mellé. Egy majdnem megfelelő jelenet helyben tovább finomítható, így nem kell exportálni, másik alkalmazásban újragenerálni, majd visszatölteni. Ez elsősorban a több szolgáltatás között széteső videós munkafolyamatot rövidíti le.</p>
+<p>Forrás: <a href="https://x.com/futurepedia_io/status/2102427367503454651">Futurepedia</a></p>
+<h2>A House of David generált nagytotálokat illesztett az élő felvételek közé</h2>
+<p>A House of David második évadának készítői generált nagytotálokkal, kibővített helyszínekkel és stílusátvitellel egészítették ki a hagyományos forgatást. John Erwin showrunner szerint a Magnific segítségével a generált képkockák színeit és megjelenését az élő felvételekhez igazították, hogy egy jeleneten belül lehessen váltani a kétféle anyag között. A munkafolyamat nem a teljes forgatás kiváltására, hanem a helyszínen felvett képek kiterjesztésére épült.</p>
+<p>Forrás: <a href="https://youtu.be/C7NgJ8E46hs">Magnific</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/can1357/oh-my-pi">oh-my-pi</a></strong> - Egy IDE-funkciókkal összekötött kódoló ügynök, amely több mint 60 modellszolgáltatót, 31 beépített eszközt, 14 LSP- és 28 DAP-műveletet fog össze. macOS és Linux alatt telepítőszkripttel futtatható, a magja körülbelül 80 ezer sornyi Rust-kód. A README a badlogic/pi-mono projektből származó ágként nevezi meg, miközben a GitHub metaadatai szerint nem hivatalos fork. MIT-licencű, 2025. december 31-én hozták létre, utolsó pushja 2026. szeptember 23-án érkezett, és 32 807 csillaga van. Saját kódoló ügynökhöz széles eszközkészletet ad, de a 3044 nyitott hibajegy miatt a gyors változásokat és a kiadásokat különösen szorosan kell követni.</p>
+<p><strong><a href="https://github.com/gotgenes/pi-anthropic-auth">pi-anthropic-auth</a></strong> - Pi-kiegészítő, amely az Anthropic Claude Pro és Max OAuth-előfizetésekkel javítja a kompatibilitást. Csak `sk-ant-oat` hozzáférési token észlelésekor aktiválódik; az API-kulcsos Anthropic-kéréseket és más szolgáltatókat változatlanul hagyja, a formázást pedig a Pi saját transzportja köré épített vékony rétegben végzi. Pi 0.86.0 vagy újabb verziót igényel, miközben a háttérügynökök külön agent loopja ismert kivétel a 0.80.8 utáni kiadásokban. MIT-licencű, nem fork, 2026. április 22-én készült, utolsó pushja 2026. szeptember 23-i, és 275 csillagot gyűjtött. Akkor hasznos, ha saját Pi-alapú ügynöködben Anthropic-előfizetést használnál OAuth-on keresztül, de a háttérfolyamatokhoz külön kompatibilitási megoldás kellhet.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban a nyílt modellek mellett az ügynökök tárhelye, kódellenőrzése és eszközválasztása kerül előtérbe.</p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Computerben a Seedance és a MiniMax H3 már több eszközt összekapcsoló videógenerálási folyamatokba is beilleszthető.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2102073431449817200">@AravSrinivas</a></p>
+<p><strong>@rryssf</strong> -- Egy új GitHub-gyűjtemény több száz Jev-alapú eszközt sorol fel, amelyek a döntéshozást a szöveggenerálástól külön kezelik az ügynökökben.<br>Forrás: <a href="https://x.com/rryssf/status/2102012750553825489">@rryssf</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A nyílt súlyú, 7 milliárd paraméteres Qwen-Image-2.1 átlátszó képrétegeket és akár tíz referenciaképet kezel, ezért helyben futó képes munkafolyamatokhoz is érdekes.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2102110614839525476">@futurepedia_io</a></p>
+<p><strong>@Thom<em>Wolf</strong> -- Az altar-1 egy GLM 5.3-ból tömörített, nyílt súlyú biztonsági modell, amely négy H200 GPU-s gépen már futtatható védelmi feladatokra.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2102177501250273748">@Thom_Wolf</a></p>
+<p><strong>@Thom</em>Wolf</strong> -- A nyílt súlyok, licencek és műszaki jelentések több futtatási szolgáltatót, saját finomhangolást és ellenőrizhetőbb modellválasztást tesznek lehetővé.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2102349373858340874">@Thom_Wolf</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Az Alibaba állítólag 5-10 billió paraméteres modellt és új gyorsítóchipet készít, ami a kisebb helyi modellekhez kerülő technikákra is hatással lehet. (474 pont, 98 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wmyh9z/alibaba_plans_ai_model_with_5_trillion_to_10/">r/LocalLLaMA</a></p>
+<p><strong>r/AI_Agents</strong> -- A beszélgetés azt járja körül, hogyan érdemes tartós fájltárat adni az ügynököknek, hogy az állapot és a létrehozott fájlok újraindítás után is megmaradjanak. (29 pont, 31 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1wn01hi/how_are_you_handling_persistent_file_storage_for/">r/AI_Agents</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- A közösség arról vitázik, mennyit kell ténylegesen elolvasni az ügynök által írt kódból, és hol válik kockázatossá a puszta jóváhagyás. (15 pont, 38 komment)<br>Forrás: <a href="https://www.reddit.com/r/ChatGPTCoding/comments/1wmnm6n/how_much_of_the_agents_code_are_you_actually/">r/ChatGPTCoding</a></p>
+<p><strong>r/openclaw</strong> -- A Hermes és az OpenClaw összevetése azt próbálja tisztázni, van-e gyakorlati különbség köztük saját ügynöki környezet építésekor. (43 pont, 71 komment)<br>Forrás: <a href="https://www.reddit.com/r/openclaw/comments/1wlqz67/hermes_vs_openclaw_is_there_actually_a_meaningful/">r/openclaw</a></p>
+<p><strong>r/StableDiffusion</strong> -- Egy népszerű beszélgetés konkrét testtartás megnevezését és Pony vagy ILL modellekhez használható leírását keresi, ami jól mutatja a pózok szöveges vezérlésének korlátait. (624 pont, 145 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wm3ro9/any_idea_how_this_pose_would_be_called_and_how_to/">r/StableDiffusion</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Plugin4Shell: amikor a commit hash csak látszólag rögzített</strong>. A négy kódoló ügynököt érintő hiba megmutatja, miért nem elég leírni egy commit azonosítóját.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-23-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
