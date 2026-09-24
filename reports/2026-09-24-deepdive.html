@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A 3D előnézet visszaadja a kamerát az AI-videó készítőjének — LocalAgent Digest</title>
+  <meta name="description" content="A generálás előtti térbeli jelenet olcsóbb próbálkozásokat és következetesebb kameramozgást tehet lehetővé.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-24</div>
+          <h1 class="article-title">A 3D előnézet visszaadja a kamerát az AI-videó készítőjének</h1>
+          <div class="article-sub">A generálás előtti térbeli jelenet olcsóbb próbálkozásokat és következetesebb kameramozgást tehet lehetővé.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="A 3D előnézet visszaadja a kamerát az AI-videó készítőjének" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A szövegből videót készítő modellek egyik alapvető korlátja, hogy a kamera útját sokszor ugyanabban a drága generálásban kell kikísérletezni, amelyben a szereplőket, a fényt és a részleteket is. A Magnific 3D Scene és az Astra által vezérelt Blender-munkafolyamat más sorrendet használ: először egyszerű, szerkeszthető térben rögzíti a kompozíciót, és csak utána bízza a végső képet videómodellre. Ez nem automatikus filmrendező, hanem egy köztes tervezési réteg a prompt és a render között. (<a href="https://youtu.be/k8YaZIJeQ0k">Magnific Academy</a>, <a href="https://youtu.be/qwGIwxZFc2I">Dankieft bemutatója</a>)</p>
+<h2>Előbb a tér, utána a képi stílus</h2>
+<p>A Magnific eszközében virtuális és valós környezetből is indulhat a munka. A virtuális jelenet leírásból, képből vagy videóból épülhet fel, de üres tér is választható. Valós környezetnél egy fotó, Google Maps-helyszín vagy kompatibilis feltöltött fájl szolgálhat alapként. A létrejött jelenet nem puszta kép: külön rétegeken jelennek meg az objektumok, karakterek, alakzatok és képi elemek, amelyeket az ügynök utasítással vagy a felhasználó kézzel rendezhet át. (<a href="https://youtu.be/k8YaZIJeQ0k">Magnific Academy</a>)</p>
+<p>Ez a szétválasztás lehetővé teszi, hogy ugyanabból a díszletből több beállítás készüljön anélkül, hogy minden alkalommal újra le kellene írni a helyszín geometriáját. Dankieft példájában egy Blenderben felépített bárhoz több kameranézet és egy bejárható webes változat készült. A Blender-render ezután képreferenciaként került a GPT Image 2.5-be, majd a kidolgozott állóképek a Seedance 2.5 videógenerálásának alapjául szolgáltak. (<a href="https://youtu.be/qwGIwxZFc2I">Dankieft bemutatója</a>)</p>
+<h2>A kamera útja külön szerkeszthető</h2>
+<p>A Magnific három munkaterületre bontja a folyamatot. A Compose a jelenet elemeit rendezi, a Shoot állóképet készít beállítható képkivágással, objektívvel és mélységélességgel, a Motion pedig a kameramozgást kezeli. A Motion idővonalán kulcspontokkal állítható be a kamera pozíciója, és több kamera is elhelyezhető ugyanabban a jelenetben. Az ügynök természetes nyelvű kérésből is felépítheti az útvonalat, például erdőn áthaladó, majd hegycsúcsra emelkedő folyamatos drónmozgásként. (<a href="https://youtu.be/k8YaZIJeQ0k">Magnific Academy</a>)</p>
+<p>A mozgás előnézete után a felhasználó kézzel módosíthatja a kamerát és a kulcsképeket, vagy új utasítással javíttathatja az útvonalat. A kész referencia exportálható, illetve a Use video paranccsal közvetlenül átadható a Seedance 2.5-nek. A generálásnál külön állítható a felbontás, a hossz, a formátum és a hang használata. Ha a kért videó rövidebb a mozgásreferenciánál, a rendszer levágja azt; ha hosszabb, a modell generált folytatást ad hozzá. (<a href="https://youtu.be/k8YaZIJeQ0k">Magnific Academy</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A feladatot két ellenőrizhető szakaszra bonthatod. Az ügynök először csak a 3D jelenetet és a kamerakulcsokat készíti el, majd jóváhagyás után indítja a videógenerálást. Így a hibás kamerairány vagy rossz jelenethossz még a költségesebb render előtt észrevehető.</p></blockquote>
+<h2>A Blender több szabadságot ad, de tudást is kér</h2>
+<p>A Blender-alapú útvonal kevésbé zárt. Dankieft a Blender MCP-t kapcsolta a ChatGPT-hez, majd szöveges utasításokkal építtetett díszletet, kamerákat és különböző nézeteket. Ugyanezt a jelenetet később webes, körbejárható változattá alakíttatta, a kameraképeket pedig más kép- és videómodellek referenciájaként használta. A bemutatóban valós stúdiófotókból is készült Blender-rekonstrukció, amelyben különböző berendezéseket és kamerahelyeket próbált ki. (<a href="https://youtu.be/qwGIwxZFc2I">Dankieft bemutatója</a>)</p>
+<p>A videó ugyanakkor kifejezetten cáfolja azt az elképzelést, hogy az MCP telepítése után nincs szükség Blender-ismeretre. A szerző szerint legalább a kameramozgatás, a jelenetben való tájékozódás és az ügynök által végzett módosítások megértése szükséges a használható eredményhez. A saját kísérletében az Astra önállóan is összeállított egy rövidfilmet, de a kézi rendezésű változat jobb folytonosságot és következetesebb képi döntéseket adott. (<a href="https://youtu.be/qwGIwxZFc2I">Dankieft bemutatója</a>)</p>
+<h2>Nem csak generált videóra használható</h2>
+<p>Ugyanez a megközelítés hagyományos szerkesztőprogramokba is átvihető. Dankieft példájában az Astra száz képből épített szerkeszthető match cut idővonalat DaVinci Resolve-ban, majd külön színkorrekciós változatokat készített. Egy másik feladatnál After Effects-projektet állított elő szerkeszthető rétegekkel, nem pedig egyetlen végleges videófájlt. A beszámoló szerint a DaVinci MCP-s kapcsolata kiszámíthatóbban működött, míg a Premiere Pro és az After Effects képernyővezérlése könnyebben megszakadt, főleg párhuzamos műveleteknél. (<a href="https://youtu.be/qwGIwxZFc2I">Dankieft bemutatója</a>)</p>
+<p>A gyakorlati tanulság nem az, hogy a 3D tervezés minden videónál kötelező. Akkor indokolt, amikor ugyanazt a helyszínt több nézetből kell megtartani, pontos kameramozgás szükséges, vagy a generált jelenetek közötti térbeli folytonosság fontos. A Magnific ehhez integrált, vizuális folyamatot ad, a Blender MCP pedig több kézi szabadságot és szerkeszthetőbb köztes állapotokat kínál. Mindkét út arra épít, hogy az ügynök ne rögtön a végső videót készítse el, hanem előbb egy ellenőrizhető jelenetmodellt állítson össze. (<a href="https://youtu.be/k8YaZIJeQ0k">Magnific Academy</a>, <a href="https://youtu.be/qwGIwxZFc2I">Dankieft bemutatója</a>)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

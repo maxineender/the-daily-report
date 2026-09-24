@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb hibás eszközhívás, pontosabban rendezett képkockák — LocalAgent Digest</title>
+  <meta name="description" content="A mai fejlesztések az ügynökök döntési hibáitól a vezérelhető kameramozgásokig érnek.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-24</div>
+          <h1 class="article-title">Kevesebb hibás eszközhívás, pontosabban rendezett képkockák</h1>
+          <div class="article-sub">A mai fejlesztések az ügynökök döntési hibáitól a vezérelhető kameramozgásokig érnek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-24.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-24.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb hibás eszközhívás, pontosabban rendezett képkockák" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Egy teszt furcsa kapcsolatot talált a Claude Code telemetriája és az AGENTS.md között. Mellette megnézzük, hogyan javítható az eszközhasználat valós munkamenetekből, és miként kerül több kézi kontroll a generált videókba.</p>
+<h2>A sikeres menetek hibás eszközhívásaiból is tanul a Perplexity Computer</h2>
+<p>A Perplexity új utótanítási eljárása valós felhasználói munkamenetekből válogat jó útvonalakat, de külön megjelöli azokat az elkerülhető hibákat is, amelyek mellett a feladat végül mégis sikerült. A rejection sampling finomhangolást útmutatással támogatott öndesztillációval kombináló módszer a vállalat szerint körülbelül 21 százalékkal csökkentette az eszközhívási hibákat élő A/B teszteken. Ez azért érdekes, mert a puszta végső siker helyett a köztes lépéseket is tanítási jellé alakítja.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2102497917185802737">Aravind Srinivas bejelentése</a></p>
+<h2>Egy teszt szerint a Claude Code telemetriától függően olvassa az AGENTS.md fájlt</h2>
+<p>Egy független vizsgálat arra jutott, hogy a Claude Code csak bekapcsolt telemetria mellett vette figyelembe az AGENTS.md utasításfájlt. Ez különösen kellemetlen hibafajta, mert ugyanaz a repó és ugyanaz a kérés eltérően viselkedhet pusztán egy megfigyelési beállítás miatt. A jelentés egyelőre egy külső teszt eredménye, ezért nem világos, mely verziókat és környezeteket érinti.</p>
+<p>Forrás: <a href="https://blog.szypowi.cz/p/claude-code-reads-agents.md-only-when-telemetry-is-on/">Szypowi.cz vizsgálata</a></p>
+<h2>A Magnific 3D jelenetből vezérelt kameramozgást küld a videómodellnek</h2>
+<p>A Magnific 3D Scene eszközében szövegből, képből, videóból, valós helyszínből vagy feltöltött 3D fájlból lehet környezetet építeni. A jelenet elemei rétegenként szerkeszthetők, a kamera útja pedig kulcspontokkal vagy természetes nyelvű utasítással állítható össze. Az elkészült mozgásreferencia közvetlenül átadható a Seedance 2.5-nek, amely a megadott kompozíciót és kameramozgást követve készíti el a végső videót.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A renderelés előtt külön ellenőrizhető a kamerák útvonala és minden kulcspont. A videó hosszát a mozgásreferenciához érdemes igazítani, mert rövidebb beállításnál a rendszer levágja a referenciát, hosszabbnál pedig új mozgással egészíti ki.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/k8YaZIJeQ0k">Magnific Academy</a></p>
+<h2>Több mint kétezer hangot kapott a Gemini 3.8 szövegfelolvasó családja</h2>
+<p>A Google bemutatta a Gemini 3.8 Flash és Flash-Lite TTS modelleket, amelyek több mint kétezer gyártásra kész hangot, száz nyelvet, hangreplikációt és új hangtervező felületet kínálnak. A hangok keverése később érkezik. A vállalat szerint az új modellek olcsóbbak a korábbi Gemini 3.1 Flash TTS-nél, de a bejelentéshez átadott anyag nem közölt konkrét egységárat.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/">Google</a></p>
+<h2>Claude egy ismeretlen enzimrendszert jelölt meg bakteriofágok DNS-ében</h2>
+<p>Az Anthropic molekuláris biológiai laborjának első eredményeként Claude egy korábban nem ismert enzimrendszert azonosított bakteriofágok DNS-ében. Az enzim génje mellett hosszú, ismétlődő DNS-szakasz található, amely bizonyos vonásaiban a CRISPR-rendszerekre hasonlít, de a kutatók még nem tudják, pontosan mit csinál. Claude az adatokat és a szakirodalmat dolgozta fel, majd hipotéziseket és vizsgálandó rendszereket javasolt; a jelöltek kiválasztását és a laboratóriumi ellenőrzést emberek végezték.</p>
+<p>Forrás: <a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system">Anthropic</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></strong> - A Gemini CLI egy terminálban futó AI-ügynök, amely Gemini modelleket ér el, és beépítve kezel Google-keresést, fájlműveleteket, shellparancsokat és webes lekéréseket. MCP-kliensként és MCP-szerverként is bővíthető, személyes Google-fiókkal pedig a README szerint percenként 60, naponta 1000 ingyenes kérés használható. Apache-2.0 licencű, nem fork, 2025. április 17-én hozták létre, az utolsó push 2026. szeptember 24-én érkezett. A repónak 107 141 csillaga, 14 624 forkja és 820 nyitott hibajegye van. Saját ügynökhöz akkor praktikus alap, ha a fájl-, shell- és webes eszközöket egy terminálközpontú, MCP-vel bővíthető környezetben szeretnéd összefogni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az olcsóbb modellek, a többügynökös kódolás és a kis hardveren futó hang- és avatármegoldások viszik a főszerepet.</p>
+<p><strong>@sama</strong> -- A GPT-6 Sol és Luna a GPT-5.6 családnál jobb kódolást és számítógép-kezelést ígér feleakkora tokenáron, ami csökkentheti a hosszú ügynökmenetek költségét.<br>Forrás: <a href="https://x.com/sama/status/2102464672519815512">@sama</a></p>
+<p><strong>@AnthropicAI</strong> -- A kongói Ebola-válaszban Claude adatok és szakirodalom feldolgozását segíti, ami jól mutatja az emberi ellenőrzéssel működő ügynöki munkafolyamatok szerepét érzékeny feladatoknál.<br>Forrás: <a href="https://x.com/AnthropicAI/status/2102897863097545197">@AnthropicAI</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Gemini köré épített Googlebook képernyőt értelmező segítséget, beszédből készített feladatlistákat és leírásból létrehozott widgeteket kínál, vagyis az ügynöki funkciókat közvetlenül az operációs rendszerbe viszi.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2102529624618201515">@futurepedia_io</a></p>
+<p><strong>@Thom</em>Wolf</strong> -- Az új nyílt modellek összesítése többek között kis nyelvi, látási és kódoló modelleket sorol fel, így jó kiindulópont a saját gépre illő alternatívák kereséséhez.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2102123398230954053">@Thom_Wolf</a></p>
+<p><strong>@rryssf</strong> -- Az ügynökkérések célzott útválasztása és szűrése mérsékelheti az API-költséget, különösen akkor, ha nem minden lépéshez ugyanazt a drága modellt használod.<br>Forrás: <a href="https://x.com/rryssf/status/2102012762796986789">@rryssf</a></p>
+<p><strong>r/MachineLearning</strong> -- A Xiaomi kiadta a több modalitást kezelő MiMo-V2.6 modellt, amely új lehetőség lehet összetett, képet és szöveget is feldolgozó helyi munkafolyamatokhoz. (76 pont, 17 komment)<br>Forrás: <a href="https://www.reddit.com/r/MachineLearning/comments/1wn36d4/xiaomi_releases_mimov26_frontier_intelligence_all/">r/MachineLearning</a></p>
+<p><strong>r/google_antigravity</strong> -- Nyílttá vált egy Antigravityt, Claude Code-ot és Codexet összekapcsoló többügynökös kódolási rendszer, amely már mintegy ötvenezer letöltésnél jár. (80 pont, 27 komment)<br>Forrás: <a href="https://www.reddit.com/r/google_antigravity/comments/1wo1gde/opensource_my_multiagent_coding_setup_with/">r/google_antigravity</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Egy windowsos, kevés VRAM-mal is működő beszélő emberi avatár megoldás kínál alapot helyben futó hangos asszisztensek vizuális felületéhez. (5 pont, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/SelfHostedAI/comments/1wm4j9v/human_avatar_voice_chat_low_vram_on_windows/">r/SelfHostedAI</a></p>
+<p><strong>r/OpenSourceeAI</strong> -- Az NVIDIA nyílt súlyú, százmillió paraméteres Nemotron 3 Diarization modellje valós időben akár nyolc beszélőt követ, ami hasznos lehet helyi értekezlet-feldolgozó ügynökökhöz. (8 pont, 1 komment)<br>Forrás: <a href="https://www.reddit.com/r/OpenSourceeAI/comments/1woeb94/nvidia_releases_nemotron_3_diarization_a/">r/OpenSourceeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- Megjelent a Claude Opus 5.5, amely hosszú kódolási és elemzési feladatokra ad új modellt azoknak, akik külső API-t kapcsolnak a saját ügynökrendszerükhöz. (2518 pont, 472 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wnecg9/introducing_claude_opus_55_the_first_model_in_our/">r/ClaudeAI</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>A 3D előnézet visszaadja a kamerát az AI-videó készítőjének</strong>. A generálás előtti térbeli jelenet olcsóbb próbálkozásokat és következetesebb kameramozgást tehet lehetővé.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-24-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
