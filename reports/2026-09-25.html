@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Az ügynök már nemcsak beszél, hanem képet és szerkeszthető projektet is ad — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadás a hosszú menetek javításairól, élő avatárokról és kreatív eszközláncokról szól.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-25</div>
+          <h1 class="article-title">Az ügynök már nemcsak beszél, hanem képet és szerkeszthető projektet is ad</h1>
+          <div class="article-sub">A mai kiadás a hosszú menetek javításairól, élő avatárokról és kreatív eszközláncokról szól.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-25.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-25.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Az ügynök már nemcsak beszél, hanem képet és szerkeszthető projektet is ad" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, nézzük a saját ügynököd szempontjából fontos újdonságokat. A Gemini élő beszélgetései mostantól valós időben generált avatárt is kaphatnak. Közben a terminálos ügynökök hosszú meneteit foltozzák, a kreatív munkában pedig egyre fontosabbá válik, hogy az eredmény szerkeszthető maradjon.</p>
+<h2>Korlátot kapott az eszközkimenet a Gemini CLI hosszú meneteiben</h2>
+<p>A Gemini CLI szeptember 23-án megjelent v0.61.0 kiadásához tartozó változtatások korlátozzák az eszközhívások kimenetének méretét, és átdolgozzák a memória életciklusát a hosszú ügynökmenetekben. Javították a szüneteltetett szabványos bemenet visszaállítását, az MCP engedélyezésének hiánya és a hibás JSON-beállítás közötti különbségtételt, valamint a kapcsolat helyreállításakor látható újrapróbálkozási jelzést is.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha Gemini CLI-alapú folyamatod hosszú eszközkimenetekkel dolgozik, a minimális verziót érdemes v0.61.0-ra emelni. A kimeneti korlát közvetlenül csökkentheti annak esélyét, hogy egy nagy napló vagy eszközválasz felzabálja a hosszú menet memóriáját.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0">Gemini CLI v0.61.0</a></p>
+<h2>Élő videóavatárt kapott a Gemini 3.8 Live</h2>
+<p>A Google szeptember 24-én bemutatta a Gemini 3.8 Live Live Avatar funkcióját, amely az élő párbeszédet kis késleltetésű, folyamatosan generált videóval kapcsolja össze. Az avatár hallja és látja a beszélgetés résztvevőjét, miközben szinkronizált szájmozgással, arckifejezésekkel és folyamatos szerepváltással válaszol. A funkció elsőként a Gemini Enterprise részeként érhető el, elsősorban ügyfélszolgálati és interaktív bemutatóhelyzetekhez.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/">Google</a></p>
+<h2>A Muse külön, zsebben hordható eszközt kapott</h2>
+<p>A Meta a Connect 2026 rendezvényen mutatta be a Muse Charm nevű, zsebméretű készüléket, amely a Muse személyes ügynököt külön telefon vagy számítógép nélkül teszi elérhetővé. A beszámoló egy beszélő, Tamagotchi-szerű eszközként írja le, miközben a Meta az okosszemüvegeiben is állandóan elérhető ügynököt vezet be. A Charm azt jelzi, hogy a személyes ügynökökért folyó verseny már nemcsak alkalmazásokról és modellekről, hanem saját hardveres felületről is szól.</p>
+<p>Forrás: <a href="https://www.superhuman.ai/p/meta-surprises-everyone-with-an-ai-device-for-muse">Superhuman</a></p>
+<h2>A kreatív ügynök már Blender- és DaVinci-projektet is épít</h2>
+<p>Egy részletes munkafolyamatban GPT-6 Astra Blender MCP-n keresztül 3D díszleteket, kameranézeteket és bejárható helyszíneket készített, majd a renderelt képekből GPT Image 2.5-tel fotórealisztikus referenciák születtek. Ugyanez az ügynök DaVinci Resolve-ban száz képből másodpercenként tíz képet használó match cutot rakott össze, színkorrekciót végzett, illetve rétegekre bontott After Effects-projektet állított elő. A tesztelő szerint a Blender alapismerete továbbra is szükséges, a kizárólag ügynökkel rendezett rövidfilm pedig gyengébb folytonosságot és képi döntéseket mutatott, mint a kézzel irányított változat.</p>
+<p>Forrás: <a href="https://youtu.be/qwGIwxZFc2I">Dan Kieft bemutatója</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/yuseferi/opencode-litellm">opencode-litellm</a></strong> - Ez az OpenCode TypeScript-plugin automatikusan felismeri a futó LiteLLM proxyt, lekéri annak `/v1/models` végpontjáról az összes modellt, majd regisztrálja őket az OpenCode-ban. Az npm-csomag neve `opencode-plugin-litellm`, és a README szerint nincs szükség kézzel karbantartott modelllistára vagy újraindításokra. MIT licencű, nem fork, 2026. április 27-én hozták létre, az utolsó push 2026. szeptember 23-án érkezett. Jelenleg 72 csillaggal, 26 forkkal és három nyitott hibajeggyel rendelkezik. Akkor hasznos, ha a saját ügynököd modelljeit LiteLLM-en keresztül váltogatod, és nem szeretnéd ugyanazt a listát külön az OpenCode beállításaiban is vezetni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban a kisebb helyi modellek, az ügynökök feladatmegosztása és a programozott vizuális, illetve hangos tartalom kerül előtérbe.</p>
+<p><strong>@gdb</strong> -- A GPT-6 Sol és Luna az Astra képességeit hozza gyorsabb, olcsóbb modellekbe, ami mérsékelheti a kódoló és számítógépet kezelő ügynökök futtatási költségét.<br>Forrás: <a href="https://x.com/gdb/status/2102470107826159755">@gdb</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 3.8 Flash és Flash-Lite TTS több mint kétezer hangot, hangmásolást és száz nyelvet kínál, így egy ügynök egyetlen modellcsaláddal készíthet többnyelvű beszédet.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2102785495726219305">@OfficialLoganK</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A nyílt súlyú, 7 milliárd paraméteres FLUX 3 Action egyszerre jósol képkockákat és robotmozgásokat, ezért fizikai vagy játékbeli ügynökök alapja lehet.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2103243081470419120">@futurepedia_io</a></p>
+<p><strong>@itsPaulAi</strong> -- A Xiaomi Qwen-alapú, MIT-licences 9B modellje képet és szöveget is kezel, kódolási feladatokra használható, és akár 8 GB memórián is elfuthat.<br>Forrás: <a href="https://x.com/itsPaulAi/status/2103228804198175051">@itsPaulAi</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity szerint a Photon keresőrendszer fejlesztését több száz automatikus kutatási ciklus segítette, ami jól mutatja az ismétlődő mérésre épülő ügynöki optimalizálást.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2103195385804238972">@AravSrinivas</a></p>
+<p><strong>r/LocalLLM</strong> -- Egy egymilliárd paraméteres helyi modellt vezetési asszisztensként kötöttek az autó támogató rendszeréhez, de a hozzászólások komoly biztonsági kockázatokra figyelmeztetnek. (463 pont, 140 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLM/comments/1wp3vnh/loaded_1b_local_ai_for_driving_assistant/">r/LocalLLM</a></p>
+<p><strong>r/ClaudeAI</strong> -- Az Opus 5.5 teljes egészében JavaScriptből készített animált vonatutat, ami a vizuális eredmény és a futtatható kód közvetlen összekapcsolását szemlélteti. (2288 pont, 98 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wnkvys/opus_55_creates_a_train_journey_drawn_entirely_in/">r/ClaudeAI</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Egy nyílt forrású alkalmazás több saját ügynök közös kezelését ígéri, ami hasznos lehet a különálló folyamatok egyetlen helyről történő indításához és felügyeletéhez. (9 pont, 3 komment)<br>Forrás: <a href="https://www.reddit.com/r/SelfHostedAI/comments/1woxzoz/opensource_project_an_app_to_harness_all_of_your/">r/SelfHostedAI</a></p>
+<p><strong>r/google</em>antigravity</strong> -- A közösségi munkamódszerben az Opus előre megtervezi a feladatokat, majd a 3.8 Flash alügynök hajtja végre őket, így a drágább modell használata a döntési pontokra korlátozható. (104 pont, 48 komment)<br>Forrás: <a href="https://www.reddit.com/r/google_antigravity/comments/1wo7mvi/a_simple_way_to_get_much_better_results_from/">r/google_antigravity</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy felhasználónál a Qwen-3.8-27B már kiváltotta a külső API-t, a beszélgetés pedig 16 GB-os gépen elérhető hosszú kontextusú beállításokat is tárgyal. (449 pont, 201 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wp0z3i/qwen3827b_is_good_enough_that_i_stopped_using_api/">r/LocalLLaMA</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Miért fontosabb a szerkeszthető projekt, mint az ügynök látványos demója?</strong>. A Blender, a DaVinci Resolve és az After Effects példája megmutatja, hol ad valódi értéket egy kreatív ügynök.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-25-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
