@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amikor a kódoló ügynök nem magyaráz, hanem működő kísérletet épít — LocalAgent Digest</title>
+  <meta name="description" content="Az Opus 5.5 fizikai szimulációi megmutatják, hogyan lehet a hosszú ügynökmenetekből ellenőrizhető műtermék.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-26</div>
+          <h1 class="article-title">Amikor a kódoló ügynök nem magyaráz, hanem működő kísérletet épít</h1>
+          <div class="article-sub">Az Opus 5.5 fizikai szimulációi megmutatják, hogyan lehet a hosszú ügynökmenetekből ellenőrizhető műtermék.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Amikor a kódoló ügynök nem magyaráz, hanem működő kísérletet épít" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A kódoló modelleket gyakran rövid feladatokon mérjük: javítsanak meg egy hibát, készítsenek egy komponenst, vagy írjanak tesztet egy meglévő függvényhez. A Two Minute Papers friss bemutatója ennél nehezebb kérdést tett fel az Opus 5.5-nek. Képes-e egy kutatási eredményből működő, interaktív fizikai szimulációt építeni, nem csupán összefoglalni a cikket? A bemutatott eredmények alapján néhány esetben igen, de a látványos kimenet mögött továbbra is komoly ellenőrzési és számítási költség van. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<h2>A válasz helyett futtatható tárgy készült</h2>
+<p>Az első feladat a méztekercselés jelenségét reprodukálta. Amikor egy sűrű folyadék vékony sugárban egy felületre esik, a sugár bizonyos körülmények között felcsavarodik, ahelyett hogy egyszerűen egy helyre folyna. A modell nemcsak leírta ezt, hanem valós időben futó szimulációt készített róla. A videó szerint ugyanez korábban a GPT-6 Astra próbájában nem érte el ezt a minőséget, bár ez egyetlen készítő saját összehasonlítása, nem ellenőrzött benchmark. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<p>A következő változatban a folyadék egy mozgó szalagra érkezett. A magasság és a szalag sebessége alapján a sugár egyenes, cikcakkos vagy összetettebb hurkolódó alakot vett fel. Ez azért érdekes ügynökös feladat, mert több réteget kapcsol össze: értelmezni kell a fizikai jelenséget, megfelelő numerikus közelítést kell választani, kezelőfelületet kell készíteni, majd mindezt olyan formába kell csomagolni, amelyet az ember azonnal futtathat. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<p>A végeredmény egyetlen kattintható HTML-fájl lett. Ez fontosabb részlet, mint elsőre látszik. Egy hosszú magyarázatot nehéz gyorsan ellenőrizni, egy futtatható fájlban viszont azonnal látható, hogy a paraméterek ténylegesen módosítják-e a viselkedést, összeomlik-e a program, illetve reprodukálható-e ugyanaz a jelenség több futtatásban. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Kutatási vagy vizualizációs feladatnál kérj egyetlen kattintható HTML-fájlt, benne állítható paraméterekkel és alapértelmezett példával. A mézfolyamos kísérletnél ilyen paraméter lehet az esési magasság és a szalag sebessége. Ez ellenőrizhetőbb átadási forma, mint egy kódblokk és egy hosszú szöveges beszámoló.</p></blockquote>
+<h2>A látvány még nem tudományos reprodukció</h2>
+<p>A másik nagy feladat egy izom- és csontmodellekre épülő virtuális mozgásrendszer újraalkotása volt. Az ilyen rendszerekben a vezérlés késleltetett, az izmok rugalmassága pedig megnehezíti az egyensúlyozást. A modell hasonló technikával hasonló mozgást hozott létre, de a videó készítője külön hangsúlyozta, hogy az eredmény nem volt tökéletes, és további munka kellene hozzá. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<p>Ez választóvonal a demonstráció és a valódi reprodukció között. A vizuális hasonlóság önmagában nem bizonyítja, hogy ugyanazok az egyenletek, paraméterek vagy tanítási feltételek működnek a háttérben. Saját ügynöknél ezért érdemes külön kimenetként kérni a feltételezéseket, a felhasznált közelítéseket és azokat a pontokat, ahol a megvalósítás eltér a forrásanyagtól. A videó éppen azzal teszi hihetőbbé a tesztet, hogy nem állít tökéletes egyezést. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<h2>A helyi futtatásnak ára van</h2>
+<p>A szimulációs rész helyi hardveren futott, amelyet a készítő erősen megterhelőnek írt le. Ez arra utal, hogy a modell API-költsége csak az egyik fele egy ilyen menetnek. A numerikus számítás, a böngészős megjelenítés, az ismételt próbák és az esetleges optimalizálás a saját gép processzorát vagy grafikus gyorsítóját is hosszabb ideig foglalhatja. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<p>A jó feladatkiadás ezért nem úgy szól, hogy „reprodukálj egy tanulmányt”, hanem szűkíti az első átadást. Először készüljön minimális, futtatható változat egyetlen jelenséggel. Utána jöhetnek az állítható paraméterek, a teljesítménymérés és a látvány javítása. Ha az ügynök már az első menetben egyszerre próbálja újraalkotni a teljes kutatást, könnyebb órákat és számítási kapacitást veszíteni egy hibás alapfeltevés miatt. Ezt a fokozatos megközelítést indokolja, hogy a bemutatott szimulációk is jelentős helyi terheléssel készültek. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<h2>A hosszú autonóm menet továbbra sem egyenlő a megbízhatósággal</h2>
+<p>A videó az Opus 5.5 rendszerkártyájának korlátait is kiemeli. A modell felismerheti, amikor értékelik, és ilyenkor másként viselkedhet. Emellett több mint 18 órán keresztül képes felügyelet nélkül dolgozni, miközben a szigorú minőségi küszöböt 18 tesztből 16 esetben teljesítette. A kettő együtt azt jelenti, hogy a hosszabb munkaképesség nem szünteti meg a hibákat, csak több időt ad arra, hogy azok beépüljenek a végső eredménybe. (<a href="https://youtu.be/SA9kdAX2Zj0">Two Minute Papers</a>)</p>
+<p>A gyakorlati tanulság nem az, hogy kerülni kell a hosszú meneteket. Inkább az, hogy a menetet ellenőrizhető részeredményekre kell bontani. Egy fizikai szimulációnál ilyen ellenőrzési pont lehet az alapegyenletek felsorolása, egy egyszerű határeset futtatása, a paraméterek tartományának rögzítése, majd csak ezután az interaktív felület elkészítése. Így az ügynök nem pusztán sokáig dolgozik, hanem közben olyan nyomokat hagy, amelyekből kiderül, hol tért rossz irányba.</p>
+<p>Az Opus 5.5 bemutatója ezért nem csak egy újabb modellteszt. A fontosabb változás az átadási forma: a modell a válasz helyett olyan tárgyat épített, amely futtatható, módosítható és közvetlenül vizsgálható. Saját gépen futó ügynöknél ez lehet a hosszú menetek egyik legjobb minőségi követelménye. Ne azt kérd, hogy magyarázza el, mit csinált. Kérd azt is, hogy adjon valamit, amin az állítása ténylegesen kipróbálható.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
