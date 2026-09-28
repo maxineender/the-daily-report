@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gray boxból kész jelenet: így kap több kontrollt a videógenerálás — LocalAgent Digest</title>
+  <meta name="description" content="Az első képkocka, a mozgásreferencia és a mélységtérkép együtt csökkentheti az újragenerálások számát.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-28</div>
+          <h1 class="article-title">Gray boxból kész jelenet: így kap több kontrollt a videógenerálás</h1>
+          <div class="article-sub">Az első képkocka, a mozgásreferencia és a mélységtérkép együtt csökkentheti az újragenerálások számát.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Gray boxból kész jelenet: így kap több kontrollt a videógenerálás" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A videómodellek látványos jeleneteket készítenek, de egy hosszabb produkcióban nem az első sikeres generálás a nehéz rész. A környezetnek, a világításnak, a szereplőnek és a kamerának a következő snittben is ugyanúgy kell viselkednie. A Curious Refuge által bemutatott gray box folyamat ezt nem újabb, részletesebb szöveges utasítással próbálja megoldani, hanem többféle vizuális referencia összekapcsolásával. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<h2>Először a mozgást kell rögzíteni</h2>
+<p>A kiindulás egy egyszerűen berendezett helyszínen felvett jelenet. A háttér lehet semleges, a világítás pedig egyenletes, de a szereplő mozgása, a kamera útja és a kellékek helyzete már a végleges snittet követi. A bemutatóban így készült felvétel egy sziklaszirt, egy bár és egy fantasy enteriőr alapja lett. A videómodell feladata nem a jelenet teljes kitalálása volt, hanem a meglévő mozgás új környezetbe helyezése. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<p>Ez fontos különbség az egyszerű videógeneráláshoz képest. Ha a modell csak szöveges leírást kap, minden rendernél újraértelmezheti a helyszínt, a kameraszöget és a szereplő mozgását. Ha megkapja a felvett videót, akkor már van időbeli váza. Az alkotó előre eldöntheti, hol áll meg a színész, merre néz és mikor nyúl egy tárgyért. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<h2>Az első képkocka határozza meg a látványt</h2>
+<p>A folyamat következő lépése az első képkocka exportálása. Ezt egy képmodell alakítja át a kívánt helyszínné, miközben külön referencia adható a színvilághoz, a fényeléshez és a filmes stílushoz. A videóban GPT Image 2.5-öt és Seedreamet hasonlítottak össze. A készítő tapasztalata szerint a Seedream erősebben változtatta meg a világítást, míg a GPT Image 2.5 gyakrabban őrizte meg az eredeti felvétel fényviszonyait. Ez egyetlen bemutató tapasztalata, nem általános modellteszt. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<p>Az átalakított kép ezután a generált videó első képkockája lesz. Ezzel jóval pontosabban rögzíthető a helyszín, mint egy szöveges leírással. A bemutatóban egy semleges stúdióból ír sziklaszirt, elegáns bár és gyertyafényes szoba készült. A képhez további ruházati és kellékreferenciákat is csatoltak, így a rendszer egy csavarhúzót tekerccsé, a szereplő öltözékét pedig fantasy jelmezzé alakította. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A folyamat jól bontható külön eszközhívásokra: első képkocka exportálása, legalább 2K-s stíluskép készítése, opcionális mélységtérkép létrehozása, majd 1080p-s Seedance-render az eredeti klip hosszával. A bemutatott módszer 30 másodpercig használható, ezért a hosszabb felvételt az ügynöknek előbb snittekre kell vágnia. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p></blockquote>
+<h2>Mire jó a mélységtérkép?</h2>
+<p>A mélységtérkép egy fekete-fehér videó, amely a képpontok színeivel jelzi, mi van közel és mi távol a kamerától. A Seedance ezt mozgásreferenciaként kaphatja meg az eredeti felvétel mellett. A cél az, hogy a generált környezet jobban kövesse a szereplő térbeli helyzetét és a kamera mozgását. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<p>A Curious Refuge ugyanazt a jelenetet eredeti videóval és mélységtérképpel is elkészítette. A sziklaszirtes példában a mélységtérképes eredmény valamivel pontosabban tartotta a mozgást. A készítők ugyanakkor hangsúlyozták, hogy ez opcionális lépés, és bizonyos jeleneteknél rosszabb eredményt is adhat. Érdemes tehát nem kötelező állomásként, hanem kétváltozatos tesztként kezelni. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<p>Egy ügynök ezt egyszerű döntési ponttá alakíthatja: ugyanabból a rövid snittből készít egy renderelést az eredeti videóval, egyet pedig mélységtérképpel, majd összehasonlításra átadja a két eredményt. Ez többletköltséget jelenthet, ezért célszerű csak azokra a jelenetekre alkalmazni, ahol nagy kameramozgás, takarás vagy pontos térbeli kapcsolat van a szereplő és a környezet között. A videó nem közölt konkrét árakat, csak azt jelezte, hogy a többszöri generálás gyorsan növelheti a költséget. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<h2>A világítást nem lehet teljesen kiszervezni</h2>
+<p>A semleges megvilágítás rugalmasságot ad, de lapos eredményt is okozhat. A bemutató szerint ha már a forgatáskor ismert a végső jelenet fő fényiránya, érdemes azt legalább hozzávetőlegesen létrehozni. Ablakfénynél oldalról, felső világításnál felülről érkező nagy, lágy fényforrás segítheti a modellt. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<p>Ez rámutat a módszer korlátjára is. A modell képes lecserélni a hátteret, az öltözéket és egyes tárgyakat, de a színészi játék apró részleteit szintén módosíthatja. A bárjelenetben a kézmozdulat és a testtartás kissé eltért az eredeti felvételtől. Ha egy gesztusnak vagy tárgyátadásnak pontos dramaturgiai szerepe van, azt külön ellenőrizni kell. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+<p>A gray box folyamat ezért nem egygombos filmkészítés. Inkább olyan köztes rendszer, amelyben az ember rögzíti a mozgást, a kamerát és a látvány fő szabályait, a modell pedig lecseréli a gyártás költségesebb részeit. Saját ügynökkel ennek az az előnye, hogy a fájlelőkészítés, a referenciaanyagok rendezése és a változatok elkészítése automatizálható, miközben a végső képi döntés az alkotónál marad. (<a href="https://youtu.be/HVeHHAfiR44">Curious Refuge</a>)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
