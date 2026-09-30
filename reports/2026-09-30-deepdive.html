@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amikor az ügynök belép a vágószobába — LocalAgent Digest</title>
+  <meta name="description" content="A mai videós munkafolyamatokban már nem a generálás, hanem az alkalmazások összehangolása a fontos lépés.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-30</div>
+          <h1 class="article-title">Amikor az ügynök belép a vágószobába</h1>
+          <div class="article-sub">A mai videós munkafolyamatokban már nem a generálás, hanem az alkalmazások összehangolása a fontos lépés.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Amikor az ügynök belép a vágószobába" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A videógenerálás látványos, de önmagában ritkán old meg egy teljes szerkesztési feladatot. A nyersanyagot át kell írni, ki kell vágni a szüneteket, helyet kell találni a bevágásoknak, össze kell hangolni a hangot és a képet, végül pedig olyan projektet kell átadni, amelyben egy ember még módosíthat. <a href="https://youtu.be/AgUATWAOaKY">Dan Kieft bemutatója</a> azért érdekes, mert nem egy újabb rövid klipet mutat, hanem ezt a teljes láncot próbálja ügynökre bízni.</p>
+<h2>Nem egyetlen modell végzi a munkát</h2>
+<p>A bemutatott rendszerben GPT-6 Astra tervezi és irányítja a feladatokat, egy médiageneráló MCP készíti a képi és videós elemeket, a Premiere Pro, az After Effects vagy a DaVinci Resolve pedig a tényleges vágási környezetet adja. Az ügynök tehát nem közvetlenül készít el mindent, hanem különböző eszközöket hív meg és azok eredményét rendezi össze. <a href="https://youtu.be/AgUATWAOaKY">A videóban</a> ugyanez a felépítés szolgál egyszerű vágásra, mesterséges kameraállások készítésére, mozgógrafikára, képhatásokra, színkorrekcióra és hangtervezésre.</p>
+<p>Ez fontos különbség. Egy generált MP4 nehezen javítható, egy Premiere Pro-, After Effects- vagy DaVinci-projekt viszont átadható egy vágónak, aki módosíthatja a rétegeket, jelöléseket és időzítéseket. A bemutató során az ügynök nemcsak renderelt videót adott vissza, hanem szerkeszthető projektfájlokat és a vágó számára elhelyezett megjegyzéseket is készített. <a href="https://youtu.be/AgUATWAOaKY">A szerző ezt kifejezetten ember és ügynök közös munkájaként mutatja be</a>, nem egygombos helyettesítésként.</p>
+<h2>Az első használható lépés a nyersanyag rendezése</h2>
+<p>A legegyszerűbb munkafolyamatban az ügynök átírja a beszélt szöveget, eltávolítja az üres részeket, majd megjelöli, hol férne el második kameraállás vagy kiegészítő kép. A bemutatóban adjustment layereken hagyott szerkesztői utasításokat, és külön markerekkel jelölte a lehetséges bevágásokat. <a href="https://youtu.be/AgUATWAOaKY">Egy ilyen menet körülbelül 14 percig is eltartott</a>, ezért ez jelenleg inkább háttérben futó előkészítés, mint valós idejű vágótárs.</p>
+<p>A nagy fájlok miatt az alkalmazás helye is számít. A felhős felület 512 MB-os feltöltési korlátja kevés lehet nyers kamerafájlokhoz, ezért a bemutató az asztali kliens helyi fájlkezelését használja. <a href="https://youtu.be/AgUATWAOaKY">Az „On your computer” módban</a> az ügynök közvetlenül a számítógépen lévő anyaggal dolgozik, és a telepített vágóprogramot vezérli.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A médiás feladatokat ne egyetlen hosszú, teljes hozzáférésű menetként indítsd. Először csak az átírást és a markerek elhelyezését engedélyezd, majd külön hagyd jóvá a generálást és a renderelést. A bemutató szerint az automatikus jóváhagyás rossz irány esetén gyorsan elégetheti a generálási keretet.</p></blockquote>
+<h2>Kameraállás felvétel nélkül</h2>
+<p>A rendszer egyik látványosabb része egyetlen kamerafelvételből készít második és harmadik nézőpontot. Ehhez a szerző referenciaképet adott a stúdióról, majd arra kérte az ügynököt, hogy a környezet, a világítás és a szereplő alapján generáljon oldalirányú kameraállásokat. <a href="https://youtu.be/AgUATWAOaKY">Az elkészült képek</a> megőrizték a stúdió több részletét, de egyes tárgyakat kitaláltak, és nem minden nézőpont bizonyult előnyösnek.</p>
+<p>Ezért a mesterséges kameraállás nem tekinthető az eredeti felvétel dokumentarista másolatának. Magyarázó vagy közösségi videónál használható ritmusváltásként, de olyan anyagnál, ahol a környezet pontos ábrázolása számít, félrevezető részleteket tehet a jelenetbe. <a href="https://youtu.be/AgUATWAOaKY">A videó készítője is csak a megfelelőnek ítélt második kameraállást tartotta meg</a>, a harmadikat elvetette.</p>
+<h2>A képhatásnál az időzítés a kulcs</h2>
+<p>A képhatásokhoz a munkafolyamat képkockaszámokat használ. A készítő előre kijelölte például a 107., 279. és 567. képkockát, majd külön referenciát adott a megjelenő lényhez, tárgyhoz és járműhöz. <a href="https://youtu.be/AgUATWAOaKY">Az ügynök ezekből részletes, időzített generálási utasítást állított össze</a>. Ez jóval megbízhatóbb, mint egy általános kérés arra, hogy „tegyél valami látványosat a jelenetbe”, mert rögzíti az ok, mozgás és következmény sorrendjét.</p>
+<p>Hasonló elv működik a hangnál is. Az ügynök képkockánként elemezte a néma animációt, majd időzített hanghatás-leírást készített hozzá. A generált videó képe gyengébb lett az eredetinél, ezért <a href="https://youtu.be/AgUATWAOaKY">csak a hangsávot emelték ki belőle</a>, és azt illesztették vissza a jobb minőségű forrásvideó alá.</p>
+<h2>Hol tart most ez a munkamód?</h2>
+<p>A bemutató alapján az ügynök már képes egy videós projekt több alkalmazását összekötni és szerkeszthető eredményt hagyni maga után. Ugyanakkor lassú, időnként megáll jóváhagyásra, hibás részleteket generálhat, és teljes hozzáférés mellett gyorsan növelheti a költséget. <a href="https://youtu.be/AgUATWAOaKY">A szerző ezért több lépést kézzel ellenőrzött</a>, a generálási promptokat pedig gyakran külön másolta át, mielőtt kreditet költött volna rájuk.</p>
+<p>A jelenlegi erősség nem az, hogy a rendszer egyetlen utasításból kész videót ad. Inkább az, hogy elvégzi a hosszadalmas előkészítést, projektfájlba rendezi az eredményt, és megőrzi az emberi beavatkozás lehetőségét. Saját gépen futó ügynöknél ez a minta más területekre is átvihető: az érték nem feltétlenül a végső fájlban van, hanem abban, hogy az ügynök a meglévő szakmai alkalmazásokban hagy folytatható munkát.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

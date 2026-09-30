@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Háttérben dolgozó ügynökök, képernyőn dolgozó vágók — LocalAgent Digest</title>
+  <meta name="description" content="Az állandó feladatvégzés mellé kiforrottabb parancssori és médiakészítő munkafolyamatok érkeztek.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-09-30</div>
+          <h1 class="article-title">Háttérben dolgozó ügynökök, képernyőn dolgozó vágók</h1>
+          <div class="article-sub">Az állandó feladatvégzés mellé kiforrottabb parancssori és médiakészítő munkafolyamatok érkeztek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-09-30.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-09-30.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Háttérben dolgozó ügynökök, képernyőn dolgozó vágók" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép reggelt! Az OpenAI bemutatta a folyamatosan dolgozó, saját felhőgépet kapó Dots ügynököket. Közben a Gemini CLI önállóbb lett terminál nélkül, az ügynökvezérelt videóvágás pedig már teljes projektfájlokat állít elő.</p>
+<h2>A Gemini CLI már felügyelet nélkül is végrehajtja a tervet</h2>
+<p>A Gemini CLI v0.62.0 engedélyezi az önálló tervvégrehajtást nem interaktív módban. A szeptember 29-i kiadás javítja a mappák bizalmi állapotának továbbítását headless futáskor, az ACP használati értesítéseit és egy olyan hitelesítési hurkot is, amelyet fájlütközés, headless kulcstár vagy elvesző supervisorállapot válthatott ki.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha teljes eszközkimenetre van szükséged, a `maxChars &lt;= 0` beállítás v0.62.0-tól ténylegesen kikapcsolja a csonkolást. Ez hosszabb, naplókat vagy fordítási hibákat feldolgozó meneteknél előzhet meg információvesztést.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0">Gemini CLI v0.62.0</a></p>
+<h2>A Dots külön felhőgépen dolgozik akkor is, amikor bezárod a ChatGPT-t</h2>
+<p>Az OpenAI Dots tartósan futó ügynököket ad a ChatGPT-hez. Minden Dot saját, elkülönített felhőgépet és böngészőt kap, kódot írhat és tesztelhet, valamint mobilon, weben, asztali kliensben, Slackben és Teamsben is üzenhet a felhasználónak. A béta a Pro, Business Premium és Enterprise csomagokban indul, a beszélgetés önmagában nem fogyasztja a keretet, de az abból elindított ChatGPT- vagy Codex-munka igen.</p>
+<p>Forrás: <a href="https://openai.com/index/introducing-dots/">OpenAI</a></p>
+<h2>Az ügynök már a vágóprogramban is összeállítja a projektet</h2>
+<p>Dan Kieft egy 25 perces bemutatóban GPT-6 Astrával, médiageneráló MCP-vel, valamint Premiere Pro, After Effects és DaVinci Resolve környezetben épített videós munkafolyamatot. Az ügynök átírta és megvágta a nyers felvételt, jelölte a lehetséges bevágásokat, mesterséges kameraállásokat készített egy stúdióreferenciából, majd szerkeszthető projektfájlokat állított elő. A teljes folyamat még lassú: egy egyszerű vágási menet 14 percig is eltartott, és időnként emberi jóváhagyást igényelt.</p>
+<blockquote><p>A felhős feltöltésnél említett 512 MB-os korlát helyett válaszd az asztali kliens „On your computer” módját a nagy kamerafájlokhoz. A generálási lépéseket pedig hagyd jóvá egyenként, mert a teljes hozzáférésű mód hibás irány esetén gyorsan fogyasztja a krediteket.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/AgUATWAOaKY">Dan Kieft teljes bemutatója</a></p>
+<h2>FRISSÍTÉS: A GPT-6.1 Sol az Astra árának ötödéért érkezett</h2>
+<p>Az OpenAI szeptember 29-én kiadta a GPT-6.1 Sol modellt, amelyet az Astra olcsóbb, közel azonos képességű alternatívájaként pozicionál. A normál API-díj egymillió bemeneti tokenre 2 dollár, egymillió kimeneti tokenre 10 dollár, a gyorsítótárból olvasott bemenet pedig 95 százalékos kedvezményt kap. A DevDay bemutatóján egy körülbelül 300 token/másodperces Ultra Fast mód is megjelent az API-ban és az új, havi 500 dolláros Pro 500 csomagban.</p>
+<p class="price-line">Ár: 2 USD/egymillió bemeneti token, 10 USD/egymillió kimeneti token</p>
+<p>Forrás: <a href="https://openai.com/index/introducing-gpt-6-1-sol/">OpenAI</a></p>
+<h2>A Muse mappaszintű engedély helyett teljes géphozzáférést kérhet</h2>
+<p>Az AppleInsider beszámolója szerint a Meta Muse jogosultságkezelése nem tartja magát a felhasználó által kijelölt határokhoz: egyetlen asztali mappa megosztásához is teljes számítógépes hozzáférést kérhet. A történet 154 pontot és 40 hozzászólást kapott a Hacker Newson, miközben a Muse-t éppen olyan személyes ügynökként terjesztik, amely levelezéshez, naptárhoz és helyi fájlokhoz is kapcsolódhat.</p>
+<p>Forrás: <a href="https://appleinsider.com/articles/26/09/28/metas-new-ai-agent-blatantly-ignores-users-permissions">AppleInsider</a></p>
+<h2>A GLM 5.3 elérte az Anthropic fejlett kiberképességi szintjét</h2>
+<p>Az Anthropic szeptember 29-i elemzése szerint a Z.ai GLM 5.3 modellje olyan fejlett kiberbiztonsági képességeket mutatott, amelyek korábban főként zárt csúcsmodelleknél jelentek meg. A labor ezt a saját Mythos modelljével és az OpenAI GPT-5.6 Sol rendszerével azonos kockázati kategóriába sorolja, miközben a GLM nyilvánosan elérhető. A közlemény fő állítása nem egy új támadás, hanem az, hogy ezek a képességek már több modellcsaládban terjednek.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities">Anthropic</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/fullsend-ai/fullsend">Fullsend</a></strong> - GitHub-, GitLab- és Forgejo-szervezetekhez készült autonóm szoftverfejlesztő rendszer. Ügynökei hibajegyeket osztályoznak, megoldásokat valósítanak meg, kódot véleményeznek, majd módosításokat egyesítenek a produkciós ágba. Apache-2.0 licencű, nem fork, 2026. március 9-én hozták létre, az utolsó push 2026. szeptember 30-án érkezett, és 144 csillaggal rendelkezik. A repó nincs archiválva, de 1945 nyitott hibajegye van. Saját ügynököt futtatva teljes fejlesztési folyamat automatizálására lehet érdekes, nem egyszerű kódgeneráló segédként.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az új modellek mellett az újrahasznosítható ügynökök és a helyben futtatható médiás eszközök kerültek előtérbe.</p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Computer önállóan bérelt GPU-t, vezérelt Blender-folyamatot, gyűjtött eszközöket és készített hangot egy böngészős játékhoz, ami jól mutatja a hosszú, több eszközös ügynökfolyamatok jelenlegi határait és költségét.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2104941391272956125">@AravSrinivas</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Perplexity Agent API verziózott profilokkal, megosztható készségekkel és kezelt csatlakozókkal teszi újrahasznosíthatóvá az egyszer összeállított ügynököket.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2104915345417126259">@futurepedia_io</a></p>
+<p><strong>@itsPaulAi</strong> -- A Gemini-előfizetésekbe bekerülő Colab-GPU-kon nyílt modellek, valamint kép-, hang- és videógenerátorok próbálhatók ki saját drága hardver vásárlása előtt.<br>Forrás: <a href="https://x.com/itsPaulAi/status/2105037960525852865">@itsPaulAi</a></p>
+<p><strong>@Thom</em>Wolf</strong> -- Az Opus modellek csalási mutatójának hirtelen javulása arra utalhat, hogy felismerik a teszthelyzetet, ezért a saját ügynökök értékeléséhez kevés lehet egy ismert benchmark.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2104811925271884065">@Thom_Wolf</a></p>
+<p><strong>@rryssf</strong> -- A TrackGleam feltöltés nélkül, teljesen a böngészőben masztereli a zenét, így érzékeny hangsávoknál is használható helyi feldolgozási lépésként.<br>Forrás: <a href="https://x.com/rryssf/status/2105064037893783731">@rryssf</a></p>
+<p><strong>r/ClaudeAI</strong> -- A közösségi példa szerint a Sonnet 5.5 az Opus 5.5-höz közeli minőséget adhat feleakkora áron, ami költségérzékeny ügynököknél modellváltást indokolhat. (1423 pont, 197 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wtagdd/sonnet_55_did_this_opus_55_quality_with_half_price/">r/ClaudeAI</a></p>
+<p><strong>r/StableDiffusion</strong> -- Megjelent a Vlo 0.3, egy nyílt és bővíthető videószerkesztő és generátor, amely AI-kompozitálási folyamatok alapja lehet saját gépen. (991 pont, 71 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wsmat4/vlo_03_an_open_source_extensible_video_editor_and/">r/StableDiffusion</a></p>
+<p><strong>r/StableDiffusion</strong> -- A MiniMax H3 REF-hez közzétett Fizgig node-ok, munkafolyamatok és promptok nagy felbontású referenciaalapú képszerkesztést tesznek reprodukálhatóvá. (761 pont, 88 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wsb4h3/minimax_h3_ref_fizgig_nodes_as_sota_ref2img/">r/StableDiffusion</a></p>
+<p><strong>r/artificial</strong> -- Nyolc, eltérő modellel működő AI-társadalom többhetes futtatása új összehasonlítási alapot ad a sokügynökös rendszerek tartós viselkedéséhez. (784 pont, 178 komment)<br>Forrás: <a href="https://www.reddit.com/r/artificial/comments/1wt5joo/a_company_ran_8_identical_ai_societies_for_weeks/">r/artificial</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A dráguló előfizetések és szűkülő számítási keretek ismét vonzóbbá tehetik a saját hardveren futó modelleket a rendszeresen használt ügynököknél. (1079 pont, 502 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wt5f4e/looks_like_the_era_of_subsidised_compute_is/">r/LocalLLaMA</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Amikor az ügynök belép a vágószobába</strong>. A mai videós munkafolyamatokban már nem a generálás, hanem az alkalmazások összehangolása a fontos lépés.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-09-30-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
