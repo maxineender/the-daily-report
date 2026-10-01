@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amikor a commitzár csak látszólag zár — LocalAgent Digest</title>
+  <meta name="description" content="Egy bővítményhiba, egy visszatartott csúcsmodell és két nyílt komponens a mai mérleg.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-01</div>
+          <h1 class="article-title">Amikor a commitzár csak látszólag zár</h1>
+          <div class="article-sub">Egy bővítményhiba, egy visszatartott csúcsmodell és két nyílt komponens a mai mérleg.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-01.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-01.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Amikor a commitzár csak látszólag zár" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, nézzük, mi változtat ma ténylegesen a saját ügynököd körül. A Plugin4Shell hibás Git-hivatkozással fordította támadási felületté a kódolóügynökök bővítménybetöltését. A mai képben a verzióellenőrzés, a korlátozott modell-hozzáférés és a nyílt komponensek számítanak.</p>
+<h2>A rögzített commit helyett támadói ág futhatott</h2>
+<p>Az AIR Security szeptember 17-én hozta nyilvánosságra a Plugin4Shell hibát, amely a Claude Code, a Codex, a GitHub Copilot és a Gemini CLI bővítménybetöltését érintette. A piactér egy ellenőrzött commit SHA-ját rögzítette, de az ügynök nem ellenőrizte, hogy a Git valóban ezt a commitot töltötte-e be. Egy támadó így a SHA-val azonos nevű ágat hozhatott létre, majd azon keresztül kódot futtathatott. A Claude Code és a Codex javítást kapott, a Gemini CLI fejlesztői viszont nem terveznek javítást, a Copilot pedig csak a GitHub SHA-szerű ágneveket tiltó védelmére támaszkodik.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Claude Code esetén legalább a 2.1.179-es, Codex esetén legalább a 0.146.0-s verzió szükséges a javításhoz. Gemini CLI-ben és Copilotban a GitLabon vagy saját Git-szerveren tárolt külső bővítmények továbbra sem kapnak ugyanilyen védelmet.</p></blockquote>
+<p>Forrás: <a href="https://thedebrief.ai/p/your-coding-agent-pinned-a-hash-it-got-a-branch">The AI Debrief</a></p>
+<h2>A Gemini 4 Argon még nem kerülhet be a modellválasztóba</h2>
+<p>A Google bemutatta a hosszú, összetett munkafolyamatokra fejlesztett Gemini 4 Argont, de egyelőre csak válogatott kibervédelmi partnerek használhatják a Fairwind programban. A vállalat szoftverfejlesztési, jogi, pénzügyi és kibervédelmi feladatokat emel ki, miközben a szélesebb fejlesztői és fogyasztói hozzáférést a korlátok korai teszteléséhez köti. A Google az amerikai kormány önkéntes, megjelenés előtti modellvizsgálati folyamatában is részt vesz.</p>
+<p class="price-line">Ár: bevezető áron 2 USD/millió bemeneti és 10 USD/millió kimeneti token</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/">Google</a></p>
+<h2>A Perplexity megnyitja kontextusérzékeny embedding modelljeit</h2>
+<p>A Perplexity bejelentette, hogy nyíltan hozzáférhetővé teszi saját kontextusérzékeny embedding modelljeit. A vállalat szerint ezek érték el a legjobb eredményt a turbopuffer context-bench mérésén. A közlemény egyelőre nem részletezi a modellek méretét, futtatási igényét vagy licencét, ezért a saját gépes keresőrendszerekben való tényleges használhatóság még nem ítélhető meg.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2105377088249426229">Aravind Srinivas közleménye</a></p>
+<h2>Nyílt eszköz jelölheti meg a mesterségesen előállított fehérjéket</h2>
+<p>A Google DeepMind bemutatta a SynthID Bio technológiát, amely vízjelet helyezhet mesterséges intelligenciával tervezett fehérjékbe. A Nature-ben közölt módszerhez tartozó eszközöket a vállalat nyíltan hozzáférhetővé teszi, hogy más kutatócsoportok is vizsgálhassák és továbbépíthessék a megközelítést. Ez nem közvetlen ügynökfunkció, de új példája annak, hogy a generált tartalom eredetének jelölése a képek és szövegek után biológiai szekvenciákra is kiterjed.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synthid-bio/">Google DeepMind</a></p>
+<h2>E-mailben, fiók nélkül is átadható feladat a Perplexity Computernek</h2>
+<p>A Perplexity ideiglenesen mindenki előtt megnyitotta e-mailes ügynökét, Perplexity-fiók nélkül is. A `computer@perplexity.com` cím továbbításával vagy másolatba vételével az ügynök megkapja a levél előzményeit, majd a háttérben végrehajtja a delegált feladatot. A vállalat nem közölte, meddig tart az ingyenes időszak.</p>
+<p class="price-line">Ár: ingyenes, korlátozott ideig</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2105369479190601754">Aravind Srinivas bejelentése</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/community-outpost/GenHub">GenHub</a></strong> - A GenHub a C&amp;C: Generals és Zero Hour játékok indítására készült launcher, tervezett automatikus javításkezeléssel, modtelepítéssel és Windows 10/11 kompatibilitási javításokkal. A README nem ad meg parancssori indítást, adatforrást vagy előállított kimenetet, a felsorolt fő funkciók pedig még befejezetlenként szerepelnek. GPL-3.0 licencű, nem fork. A repót 2025. március 14-én hozták létre, utolsó push-a 2026. október 1-jén érkezett, és 45 csillaggal rendelkezik. Saját ügynök futtatásához nem ad infrastruktúrát vagy integrációt.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatást a tartósan dolgozó ügynökök, a helyi futtatás gyorsítása és a kiszámíthatóbb kreatív munkafolyamatok kötik össze.</p>
+<p><strong>@sama</strong> -- A Dots folyamatosan dolgozó asszisztensként kezeli a feladatokat, ami a saját ügynököknél is a tartós memória, az időzítés és a felügyelet fontosságára irányítja a figyelmet.<br>Forrás: <a href="https://x.com/sama/status/2104995014208258235">@sama</a></p>
+<p><strong>@gdb</strong> -- Az OpenAI gyakorlati biztonsági irányelveket közölt a fejlett megerősítéses tanításhoz, amelyekből az elkülönített futtatás és a hozzáférések korlátozása kisebb agentrendszereknél is hasznosítható.<br>Forrás: <a href="https://x.com/gdb/status/2104821232441160070">@gdb</a></p>
+<p><strong>@AIHighlight</strong> -- Az Agents API weboldalak böngészésére és szoftverek kezelésére képes ügynökök építését támogatja, így közvetlen alternatívát ad a saját böngészőautomatizálási réteg mellé.<br>Forrás: <a href="https://x.com/AIHighlight/status/2105277151750578225">@AIHighlight</a></p>
+<p><strong>@AIHighlight</strong> -- A Codex Cloudban a programozási feladatok a háttérben folytatódhatnak, ami jól mutatja, milyen feladatlistára, állapotmentésre és visszajelzésre van szüksége egy helyben futó kódoló ügynöknek is.<br>Forrás: <a href="https://x.com/AIHighlight/status/2105277147724091739">@AIHighlight</a></p>
+<p><strong>@futurepedia_io</strong> -- Egy új készségválogatás kutatási, videós, tervezési és biztonsági lépéseket csomagol ügynökök számára, és mintát ad saját, célzott eszközmodulok kialakításához.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2105323681065177216">@futurepedia_io</a></p>
+<p><strong>r/ClaudeAI</strong> -- Az OpenAI saját mérései szerint a GPT-6.1 Sol több feladatban megelőzi az Opus 5.5-öt, de helyi vagy vegyes modellválasztás előtt érdemes független teszteket is megvárni. (4340 pont, 278 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wtoi3e/open_ais_internal_benchmarks_show_gpt61_sol/">r/ClaudeAI</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Nyílt WebGPU-kernelek gyorsíthatják a böngészőben, helyi hardveren futó modelleket, ami telepítés nélküli agentfelületekhez és kisebb döntési modellekhez lehet hasznos. (351 pont, 27 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wu8tpg/we_just_opensourced_the_worlds_fastest_webgpu/">r/LocalLLaMA</a></p>
+<p><strong>r/PromptEngineering</strong> -- Kilenc promptszabály a beszámoló szerint akár 70 százalékkal csökkentette a GLM-alapú kódoló ügynök fölösleges gondolkodását, ami kevesebb késleltetést és számítási költséget jelenthet. (36 pont, 7 komment)<br>Forrás: <a href="https://www.reddit.com/r/PromptEngineering/comments/1wt2xo7/9_prompt_rules_cut_my_coding_agents_wasted/">r/PromptEngineering</a></p>
+<p><strong>r/StableDiffusion</strong> -- A továbbfejlesztett H3 Refmods kevesebb referenciafotóból pontosabb identitást ígér, videós szerkesztésnél pedig maszkolással korlátozható a módosított terület. (610 pont, 38 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wtu82e/improved_h3_refmods_better_accuracy_and_low/">r/StableDiffusion</a></p>
+<p><strong>r/LocalLLM</strong> -- Egyetlen RTX 3090-en a Qwen 3.8 27B feladata 114 percről 43 percre rövidült, amikor a GPT-6.1 Sol koordinálta munkásmodellként, ami kézzelfogható példa a helyi és távoli modellek vegyes használatára. (96 pont, 73 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLM/comments/1wtr4fo/qwen_38_27b_on_a_single_3090_114_min_solo_43_min/">r/LocalLLM</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Plugin4Shell: miért nem elég egy commit SHA rögzítése?</strong>. A négy nagy kódolóügynököt érintő hiba megmutatta, hol csúszhat félre egy bővítménypiactér bizalmi modellje.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-10-01-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
