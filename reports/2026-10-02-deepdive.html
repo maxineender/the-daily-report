@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mit tanít egy AI-val készített rövidfilm az ügynökös médiagyártásról? — LocalAgent Digest</title>
+  <meta name="description" content="A működő folyamat nem egyetlen nagy promptból, hanem rendezett assetekből, sablonokból és ellenőrizhető állapotokból áll.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-02</div>
+          <h1 class="article-title">Mit tanít egy AI-val készített rövidfilm az ügynökös médiagyártásról?</h1>
+          <div class="article-sub">A működő folyamat nem egyetlen nagy promptból, hanem rendezett assetekből, sablonokból és ellenőrizhető állapotokból áll.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mit tanít egy AI-val készített rövidfilm az ügynökös médiagyártásról?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Az AI-videós bemutatók gyakran a látványos végeredménnyel kezdődnek, majd néhány mondatban elintézik a gyártás közben keletkező káoszt. A Contanimation csapatának Magnific-videója azért érdekesebb az átlagnál, mert nem pusztán képkockákat mutat. Végigveszi, hogyan szervezték meg távolról egy rövidfilm karaktereit, kellékeit, jeleneteit, változatait és jóváhagyását. Ez már közelebb áll ahhoz a folyamathoz, amelyet egy saját gépen futó ügynök is kezelni tud. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<h2>A referenciaanyag valójában gyártási állapot</h2>
+<p>A csapat az előkészítés után külön választotta a karaktereket, tárgyakat és helyszíneket. Don Quijotéról, Sanchóról, a lóról, a szamárról, a fegyverekről és a jelmezekről több nézetet készítettek. Külön változatot tartottak fenn például a sérülés előtti és utáni karakterállapothoz, valamint közös csoportképet használtak a szereplők méretarányának rögzítésére. A karaktereket jellemzően fehér háttéren, semleges vagy gyakran használt pózokban tárolták. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<p>Ez ügynökös szemmel azért fontos, mert egy kép önmagában nem csupán vizuális referencia. Állapotot is hordoz: melyik jelmez aktív, sérült-e a karakter, milyen fegyver van nála, és mekkora a többi szereplőhöz képest. Ha ezek a változatok név és címke nélkül kerülnek egy könyvtárba, az ügynöknek minden menetben újra ki kell következtetnie a jelentésüket. A videóban bemutatott assetmappák ezt a bizonytalanságot csökkentik. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Hozz létre külön `assets/characters`, `assets/props`, `shots` és `lipsync` könyvtárat, az egyes fájlokhoz pedig tárolj állapotot, szereplőnevet és jóváhagyási jelölést. Így az ügynök keresési feladatot kap a teljes képtár újraértelmezése helyett.</p></blockquote>
+<h2>A narratív prompt nem egyenlő a homályos prompttal</h2>
+<p>A készítők szerint az újabb videómodellek jobban reagáltak a narratív leírásokra, mint a kizárólag mechanikus utasításokra. A bemutatott jelenetben nem egyszerűen azt kérték, hogy Don Quijote álljon fel. Leírták a kiinduló testhelyzetét, a ló menekülését, a kard elővételét, a lábak sorrendjét, a felegyenesedést, majd a háttérben becsapó villámot és az ezt követő öt másodperces kitartást. A prompt tehát okot, mozgást és következményt kapcsolt össze. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<p>Ez nem mond ellent a strukturált munkának. A jelenet történetszerűen fogalmazható meg, miközben a bemeneti assetek, a folytonossági szabályok és a kívánt végállapot továbbra is géppel olvasható mezőkben maradnak. Egy ügynök összeállíthatja a promptot a jelenetleírásból, a szereplők aktuális állapotából és a kiválasztott helyszínből, de a generálás előtt még mindig megmutathatja jóváhagyásra a teljes csomagot. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<h2>A sablon többet spórol, mint az újabb modell</h2>
+<p>Az ismétlődő helyszínekhez és jelenetcsoportokhoz a csapat sablonokat mentett. Ezek tartalmazták a technikai és környezeti kontextust, valamint a már feltöltött asseteket, így egy új képsorhoz csak az adott akciót kellett hozzáírni. A videóban példaként szerepel a szélmalmokkal teli mező és a végső küzdelem környezete. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<p>Saját ügynöknél ugyanez készségfájl vagy paraméterezett feladatsablon lehet. A globális stílus, a szereplők listája, a képarány és a tiltott elemek változatlan részbe kerülnek. A jelenet akciója, a kamera és a kezdő állapot változó mező marad. Ez mérsékli annak esélyét, hogy egy hosszú menet közben kimaradjon egy folytonossági szabály, és a gyorsabb modellváltást is megkönnyíti, mert nem kell minden korábbi beszélgetést magaddal vinni.</p>
+<h2>A generálás után kezdődik a valódi rendezés</h2>
+<p>A készítők harminc másodperces generálásokból olykor csak néhány használható részletet emeltek ki. A platformon megvágták ezeket, címkézték az állapotukat, megjegyzéseket fűztek hozzájuk, majd közösen döntöttek arról, mely változat kerüljön az idővonalra. A teljes generálás tehát nem kész snittként, hanem nyersanyagként működött. <a href="https://youtu.be/OexQmCKxZh8">Forrás: Magnific Originals</a></p>
+<p>Egy médiás ügynök folyamatát ezért nem érdemes a `generate` hívással lezárni. Legalább négy következő állapot kell: átnézendő, kiválasztott, javítandó és elutasított. Az ügynök ezután csak a kiválasztott részleteket adja át a vágásnak, a javítandó változatokból pedig új promptot készít a megjegyzések alapján. A Contanimation munkája azt mutatja, hogy a tartós előny nem feltétlenül a legújabb videómodellből jön. Sokkal inkább abból, hogy az ügynök tudja, melyik asset érvényes, melyik snitt jóváhagyott, és pontosan mi változott két generálás között.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

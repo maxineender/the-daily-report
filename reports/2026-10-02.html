@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Döntés, beszéd és képi gyártás külön modellekre válik — LocalAgent Digest</title>
+  <meta name="description" content="A nagy nyelvi modellek mellé gyors döntési rétegek és célzott médiás eszközök érkeznek.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-02</div>
+          <h1 class="article-title">Döntés, beszéd és képi gyártás külön modellekre válik</h1>
+          <div class="article-sub">A nagy nyelvi modellek mellé gyors döntési rétegek és célzott médiás eszközök érkeznek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-02.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-02.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Döntés, beszéd és képi gyártás külön modellekre válik" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép reggelt! A Suno már beszédet, narrációt és hozzá illesztett zenét is készít. A mai kiadás közös szála a feladatok szétválasztása: más modell dönt, más beszél, és más állítja össze a képi világot.</p>
+<h2>A döntési modellek külön réteget kapnak az ügynökökben</h2>
+<p>A Cloudflare két saját döntési modellt adott ki Clef és Clef-flash néven. Ugyanezen a napon a Perplexity bemutatta a nyílt pplx-decider-27b multimodális modellt, valamint a Decisions API-t. Ezek nem általános beszélgetésre készültek, hanem előre meghatározott lehetőségek kiválasztására, így az ügynöknek nem kell minden osztályozási vagy útválasztási lépéshez teljes értékű nyelvi modellt hívnia.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: A pplx-decider-27b helyben is kipróbálható külön döntési rétegként, míg az API alternatívát ad a gyors összehasonlításhoz. Elsőként az eszközválasztást, a feladatok modellhez irányítását vagy egy engedélyezési lista elemei közötti választást érdemes kiszervezni neki.</p></blockquote>
+<p class="price-line">Ár: Decisions API, 0,04 USD egymillió bemeneti tokenenként, a kimeneti tokenek ingyenesek</p>
+<p>Forrás: <a href="https://blog.cloudflare.com/clef-decision-models/">Cloudflare</a></p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2105774153903268288">Perplexity bejelentése</a></p>
+<h2>A Suno nyolcperces beszédet és hozzá illesztett zenét generál</h2>
+<p>Bétában elindult a Suno Speech, amely narrációt, történetet, szinkronszöveget vagy bejelentést készít legfeljebb körülbelül nyolc percben. Prompt módban a rendszer a szöveget és az aláfestést is megírja, Custom Script módban pedig a felhasználó adja meg a pontos szöveget, majd külön leírhatja a hangnemet, tempót és előadásmódot. A háttérzene kikapcsolható, a funkció pedig weben és mobilon is elérhető.</p>
+<blockquote><p>Ha az ügynököd videóhoz vagy napi hangos összefoglalóhoz készít anyagot, a Custom Script mezőben rögzítheted a végleges szöveget, a Style mezőben pedig külön szabályozhatod az előadást. A háttérzene kapcsolóját kapcsold ki, ha a hangot később saját vágási folyamatban használod.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/rTezej0UyIE">Suno bemutató</a></p>
+<h2>A számolási eszköz fontosabb lehet, mint az emberi munkatárs szerepjátéka</h2>
+<p>Matthew Schwartz harvardi fizikus az Anthropic vendégcikkében azt állítja, hogy a nyelvi modellek és a tudomány között illeszkedési probléma van: a modell több feladatban erős, de nem feltétlenül akkor adja a legjobb eredményt, ha emberi kutatótársként kezelik. Schwartz ezért pontos kvantitatív számításokra szolgáló eszközkészletet épített, amelyben Claude strukturált számítási lépésekkel dolgozik a szabad szöveges együttműködés helyett.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/claude-shaped-science">Anthropic</a></p>
+<h2>Egy rövidfilm munkafolyamata már assetekre, sablonokra és állapotokra épül</h2>
+<p>A Contanimation csapata a Magnific felületén készítette el Don Quijote-történetét, külön mappákba rendezve a karaktereket, kellékeket, képkockákat és szájszinkron-anyagokat. A csapat a karaktereket több nézetből, semleges háttérrel rögzítette, majd ezeket és a helyszínképeket referenciaként adta a videómodellnek. A jelenetekhez újrahasználható sablonokat, jóváhagyási állapotokat, címkéket és megjegyzéseket használtak, miközben a mozgást inkább történetként, mint technikai parancsok soraként írták le.</p>
+<p>Forrás: <a href="https://youtu.be/OexQmCKxZh8">Magnific Originals</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/maanya145/BitChord-dev">BitChord</a></strong> - A README esztétikus YouTube Music-kliensként írja le, de az átadott részlet nem közli, milyen adatot milyen interfészen kér le, mit állít elő, vagy hogyan futtatható. GPL-3.0 licencű, nem fork, és nincs archiválva. A repót 2026. szeptember 30-án hozták létre, az utolsó push is ezen a napon történt; jelenleg 0 csillaga és 33 nyitott issue-ja van. A rendelkezésre álló dokumentáció alapján egyelőre nem látszik olyan programozható felület, amelyhez saját ügynököt lehetne megbízhatóan csatlakoztatni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az olcsóbb modellek, az előre csomagolt ügynöki munkafolyamatok és a helyben futtatható vizuális eszközök adják a fő szálat.</p>
+<p><strong>@sama</strong> -- A GPT-6.1 Sol az Astra árának ötödéért és 95 százalékos gyorsítótár-olvasási kedvezménnyel kínál új lehetőséget az API-modelleket is használó helyi ügynökök költségének csökkentésére.<br>Forrás: <a href="https://x.com/sama/status/2104994395980533804">@sama</a></p>
+<p><strong>@demishassabis</strong> -- A Gemini 4 Argon hosszú, összetett feladatokra érkezik, de első körben csak kormányzati és ellenőrzött kiberbiztonsági szereplők kapnak hozzáférést.<br>Forrás: <a href="https://x.com/demishassabis/status/2105417239432200636">@demishassabis</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Computer előre elkészített készségei utasításírás nélkül indítanak pénzügyi és marketinges folyamatokat, ami jól mutatja az újrahasznosítható ügynöki modulok irányát.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2105660740799717599">@AravSrinivas</a></p>
+<p><strong>@AIHighlight</strong> -- Az Opus 5.5 és a Boreal-H3 egyetlen kérésből készít videóhirdetést, miközben a termék alakját, címkéjét, a szereplőket és a kameramozgást is következetesen tartja.<br>Forrás: <a href="https://x.com/AIHighlight/status/2105401560763433211">@AIHighlight</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A DOTS személyes asszisztens már teljes feladatok átvételére épül, ezért a kérdés-válasz helyett a feladatátadás és az eredmény későbbi ellenőrzése kerül előtérbe.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2105341292628586623">@futurepedia_io</a></p>
+<p><strong>r/StableDiffusion</strong> -- Az Orbiting LoRA és a MiniMax első-utolsó képkockás vezérlése stabil kamerakörözést ad, a videóból pedig akár 3D-modellhez használható nézetek is kinyerhetők. (1290 pont, 127 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wuzyq0/orbiting_lora_first_and_last_frame_in_minimax/">r/StableDiffusion</a></p>
+<p><strong>r/MachineLearning</strong> -- Egy kutatás a képértelmezést és a képgenerálást egymást javító folyamatként kapcsolja össze, ami kevesebb külső ellenőrzési lépést igénylő vizuális ügynökökhöz vezethet. (112 pont, 3 komment)<br>Forrás: <a href="https://www.reddit.com/r/MachineLearning/comments/1wtyl5m/concurrent_image_understanding_and_generation/">r/MachineLearning</a></p>
+<p><strong>r/AI</em>Agents</strong> -- Egy hangügynök átugorja a kötelező beleegyezési szöveget, ha a hívó túl korán megszólal, ami jól példázza, miért kell a jogi lépéseket megszakíthatatlan állapotként kezelni. (23 pont, 6 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1wv5wj6/the_consent_line_on_our_voice_agent_gets_skipped/">r/AI_Agents</a></p>
+<p><strong>r/comfyui</strong> -- Megjelent a ComfyUI-RMBG 3.2.0, amely gyorsabbá és egyszerűbbé teszi a háttér eltávolítását a helyben futó képfeldolgozó folyamatokban. (125 pont, 6 komment)<br>Forrás: <a href="https://www.reddit.com/r/comfyui/comments/1wuhk2h/comfyuirmbg_v320_run_faster_and_more_convenient/">r/comfyui</a></p>
+<p><strong>r/Seedance_AI</strong> -- Egy harminc másodperces bemutató mozgás közben alakítja át a valós jelenetet kínai tusfestménnyé, és megmutatja, hogy a stílusváltás hosszabb videón is következetesen vezérelhető. (89 pont, 3 komment)<br>Forrás: <a href="https://www.reddit.com/r/Seedance_AI/comments/1wsydey/30s_inkwash_superpower_showcase_reality_turns/">r/Seedance_AI</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Mit tanít egy AI-val készített rövidfilm az ügynökös médiagyártásról?</strong>. A működő folyamat nem egyetlen nagy promptból, hanem rendezett assetekből, sablonokból és ellenőrizhető állapotokból áll.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-10-02-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
