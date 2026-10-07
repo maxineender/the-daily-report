@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LocalAgent Digest</title>
   <meta name="description" content="LocalAgent Digest: napi AI-hír figyelő és jelentési portál.">
-  <link rel="stylesheet" href="assets/style.css?v=cb06a54e">
+  <link rel="stylesheet" href="assets/style.css?v=4b6fbf10">
 </head>
 <body>
 
@@ -1412,6 +1412,48 @@
     }
 
     enableSearch();
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function apply() {
+        try {
+          var data = readAll();
+          var cards = document.querySelectorAll('.news-card[id^="card-"]');
+          for (var i = 0; i < cards.length; i++) {
+            var card = cards[i];
+            var entry = data[card.id.slice(5)];
+            var isRead = !!(entry && typeof entry === 'object' && entry.opened);
+            var badge = card.querySelector('.read-badge');
+            if (isRead) {
+              card.classList.add('is-read');
+              if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'read-badge';
+                badge.textContent = 'OLVASVA';
+                (card.querySelector('.card-image-wrap') || card).appendChild(badge);
+              }
+            } else {
+              card.classList.remove('is-read');
+              if (badge && badge.parentNode) badge.parentNode.removeChild(badge);
+            }
+          }
+        } catch (e) { /* never break the index page */ }
+      }
+
+      apply();
+      window.addEventListener('pageshow', function (e) { if (e.persisted) apply(); });
+      window.addEventListener('storage', function (e) { if (!e.key || e.key === KEY) apply(); });
+    })();
   </script>
 
 </body>
