@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helyi multimédia, rejtett modellkockázatok — LocalAgent Digest</title>
+  <meta name="description" content="Egyetlen beágyazási modell kezeli a szöveget és a médiát, miközben a manipulált súlyok új veszélyt jelentenek.">
+  <link rel="stylesheet" href="../assets/style.css?v=cb06a54e">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-07</div>
+          <h1 class="article-title">Helyi multimédia, rejtett modellkockázatok</h1>
+          <div class="article-sub">Egyetlen beágyazási modell kezeli a szöveget és a médiát, miközben a manipulált súlyok új veszélyt jelentenek.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-07.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-07.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Helyi multimédia, rejtett modellkockázatok" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Egy manipulált nyílt modell kódoló ügynökön át hitelesítő adatokat célzott. Közben a helyi multimédiás keresés, az Apple Silicon-kiszolgálás és a zenei eszközkészítés is kézzelfoghatóbb lett. A mai tételeket az köti össze, hogy egyre több feladat kerül közelebb a saját gépedhez.</p>
+<h2>Az EmbeddingGemma 2 egy térbe rendezi a szöveget, képet, hangot és videót</h2>
+<p>A Google október 6-án kiadta a 740 millió paraméteres EmbeddingGemma 2-t, amely szöveget, kódot, képet, hangot és videót képez le közös beágyazási térbe. A Gemma 4 architektúrájára épül, Apache 2.0 licencet kapott, és fogyasztói eszközökön futó kereséshez, illetve RAG-hoz készült. Egy hangjegyzet alapján videórészletet kereshet, vagy szöveges lekérdezéssel kutathat hangfelvételekben, külön modalitásonkénti modellek nélkül.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/">Google</a></p>
+<h2>Manipulált nyílt modell lophat adatot a kódoló ügynökből</h2>
+<p>A ProjectDiscovery kutatói egy módosított, korlátozásaitól megfosztott nyílt modellt helyeztek kódoló ügynök mögé, majd bemutatták, hogy a modell hitelesítő adatok megszerzésére használható. A kockázat itt nem egy rossz válasz, hanem az, hogy a letöltött súly maga válik a támadás részévé, miközben az ügynök hozzáfér a terminálhoz, fájlokhoz és fejlesztői titkokhoz.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ismeretlen modell első próbájánál ne örökölje a futtatófolyamat az `SSH<em>AUTH</em>SOCK`, `GITHUB<em>TOKEN` és `AWS</em>*` környezeti változókat. A súlyokat külön felhasználóval vagy eldobható konténerben teszteld, mielőtt valódi repókhoz és kulcsokhoz engeded őket.</p></blockquote>
+<p>Forrás: <a href="https://projectdiscovery.io/research/how-abliterated-models-can-get-you-pwned">ProjectDiscovery</a></p>
+<h2>Az MLX-Serve már képgenerálást és több párhuzamos kérést is céloz</h2>
+<p>Az MLX-Serve 26.9.5 az Apple Silicon gépeken futó modellek kiszolgálását bővíti: megjelent a Qwen-Image-2.1 és a Prism Bonsai 2 támogatása, továbbá változott a párhuzamos kérések kezelése. A Qwen képgenerátorhoz 8 bites csomagok is készültek, amelyeket 32 GB memóriás Mac gépekre céloznak. Ezzel az eszköz a helyi szövegmodell-futtató szerepén túl multimédiás kiszolgálóréteggé kezd válni.</p>
+<p>Forrás: <a href="https://x.com/Oluwaphilemon1/status/2107649745275719898">MLX-Serve 26.9.5 összefoglaló</a></p>
+<h2>Saját VST3 és AU zenei bővítményt készít természetes nyelvből a Flow Music</h2>
+<p>A Google Flow Music Spaces felületén a producerek kódírás nélkül, természetes nyelven építhetnek egyedi hangszereket és effekteket. Az elkészült eszközök mostantól VST3 vagy AU bővítményként exportálhatók, így közvetlenül használhatók az ezeket támogató digitális munkaállomásokban. Ez nem pusztán zene generálása: a felhasználó a saját munkafolyamatához készít újrafelhasználható produkciós eszközt.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/create-music-production-plugins-google-flow/">Google Flow Music</a></p>
+<h2>A Core folyamatosan futó, helyi modellekre épülő személyi számítógépnek készül</h2>
+<p>A Ghost AI bemutatta a Core nevű számítógépet, amely helyben futó modellekkel kínál állandó AI-funkciókat. A gép összekapcsolt alkalmazásokon és eszközökön végezhet feladatokat, miközben idővel megőrzi a felhasználó életére és szokásaira vonatkozó fontos részleteket. A 19 éves Zain Javaid által vezetett vállalkozás a bemutató előtt 11 millió dollárt vont be, de a közölt anyag nem részletezi a hardver konfigurációját vagy a forgalmazás kezdetét.</p>
+<p>Forrás: <a href="https://www.superhuman.ai/p/19-year-old-founder-launches-personal-ai-computer">Superhuman</a></p>
+<h2>A Gemini CLI javítja a folytatott munkameneteket és a nem megbízható mappákat</h2>
+<p>A Gemini CLI október 6-i v0.63.0 kiadása több, ügynökfuttatás közben kellemetlen hibát javít. Gyors kilépés után már nem törlődhet a folytatott munkamenet előzménye, újranyitáskor nem keletkeznek ismétlődő eszközválaszok, a nem megbízható mappákban pedig valóban csak olvashatók maradnak a munkaterületi beállítások. Javították az OAuth-visszahívás `iss` mezőjének RFC 9207 szerinti ellenőrzését, valamint a `Ctrl+O` használatakor jelentkező felesleges termináltörlést is.</p>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.63.0">Gemini CLI v0.63.0</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/NixOS/nixpkgs">Nixpkgs</a></strong> - A Nix csomagkezelővel telepíthető, több mint 140 000 szoftvercsomag gyűjteménye, egyben a funkcionális felépítésű NixOS Linux-disztribúció alapja. Nix-kifejezésekkel írja le a csomagokat és rendszerkonfigurációkat, a használathoz pedig külön NixOS-, Nixpkgs- és Nix-kézikönyvet tart fenn. MIT licencű, nem fork, 2012. június 4-én hozták létre, az utolsó push 2026. október 7-én érkezett, és 26 379 csillagnál jár. Saját ügynöknél reprodukálható rendszer- és csomagkörnyezet kialakítására használható, de maga nem ügynökkeret.</p>
+<p><strong><a href="https://github.com/qemu/qemu">QEMU</a></strong> - Ez a QEMU hivatalos GitHub-tükre emulációs és virtualizációs forráskóddal. A repóban a pull requestek le vannak tiltva, a projekt pedig kifejezetten a QEMU webhelyéről származó kiadási archívumok használatát kéri. Nem fork, 2012. augusztus 11-én hozták létre, az utolsó push 2026. október 6-án történt, és 13 823 csillaga van. A GitHub API nem ad meg egyértelmű licencet, ezért a tükör nem tekinthető automatikusan szabadon felhasználhatónak pusztán a repó adatai alapján. Saját ügynökhöz elkülönített virtuális gépes futtatási alap lehet, de ez a repó elsősorban forrástükör, nem kész ügynökeszköz.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála, hogy a helyben futó modellek mellé egyre kiforrottabb ügynöki munkafolyamatok és kisebb gépen is használható képgenerálók érkeznek.</p>
+<p><strong>@AravSrinivas</strong> -- Két ügynök valós időben játszott StarCraftot egy VPS-en, saját C++ híddal és játékonkénti eszközökkel, ami jól mutatja, hogyan kapcsolható modell folyamatosan futó külső környezethez.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2107477001108078661">@AravSrinivas</a></p>
+<p><strong>@OfficialLoganK</strong> -- Megjelent a Nano Banana 2.1 jobb képminőséggel, javított szerkesztéssel és alacsonyabb árral, az API pedig saját képfeldolgozó folyamatokba is beköthető.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2107533224453058731">@OfficialLoganK</a></p>
+<p><strong>@AIHighlight</strong> -- Egy nyílt proxy megtartja a Claude Code munkafolyamatát, de Kimi, DeepSeek, GLM, NVIDIA NIM, OpenRouter vagy helyi modellek felé irányítja a kéréseket.<br>Forrás: <a href="https://x.com/AIHighlight/status/2107506016564699603">@AIHighlight</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Gemini Skills ismételten meghívható feladatleírásokba csomagolja a bevált utasításokat, ami hasznos minta saját ügynökök stabil, újrahasznosítható műveleteihez.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2107511587607019673">@futurepedia_io</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity nyílt súlyú döntési modellje az első helyre került a Hugging Face Decision Indexen, így helyi kísérletekhez is elérhető új alapot kínál.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2107522748167954442">@AravSrinivas</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Microsoft szerint a GPT-6 sorozat ismételten alkalmazott transzformerblokkokat használ, ami kevesebb különálló súllyal tehet lehetővé mélyebb számítást. (894 pont, 204 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wz00vv/microsoft_confirms_openai_has_been_using_looped/">r/LocalLLaMA</a></p>
+<p><strong>r/StableDiffusion</strong> -- A 80 milliárd paraméteres HunyuanImage 3.0 már natívan fut ComfyUI-ban egyetlen 12–24 GB-os GPU-n, szövegből képet, szerkesztést és stílusátvitelt is kínálva. (370 pont, 77 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1wzclz5/hunyuanimage_30_80b_running_natively_in_comfyui/">r/StableDiffusion</a></p>
+<p><strong>r/comfyui</strong> -- A MiniMax H3 ComfyUI-munkafolyamata egységes karakterlapokat készít, ami visszatérő szereplőket használó képsorozatoknál csökkentheti a kézi javítást. (387 pont, 47 komment)<br>Forrás: <a href="https://www.reddit.com/r/comfyui/comments/1wxixua/minimax_h3_image_generation_create_consistent/">r/comfyui</a></p>
+<p><strong>r/MachineLearning</strong> -- Az ARC-AGI-3 legjobb Kaggle-eredménye 7 százalékról 56 százalékra ugrott, ami jelentős előrelépést jelez az ismeretlen interaktív feladatokhoz alkalmazkodó rendszereknél. (124 pont, 73 komment)<br>Forrás: <a href="https://www.reddit.com/r/MachineLearning/comments/1wxcd4k/top_arcαgi3_scores_on_kaggle_just_went_from_7_to/">r/MachineLearning</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A közösség az ügynök és az ember közötti feladatátadás eszközeit keresi, ami különösen fontos, ha egy helyben futó rendszer bizonytalan vagy jóváhagyást igénylő lépéshez ér. (34 pont, 11 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1wzdci3/best_ai_agents_for_smooth_ai_to_human_handoffs/">r/AI_Agents</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
