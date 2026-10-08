@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A végrehajtási réteg lett a szűk keresztmetszet — LocalAgent Digest</title>
-  <meta name="description" content="A mai tételek azt mutatják, hogy a modell mellett egyre többet számít a feladatkiosztás, a hozzáférés és a műveletek ellenőrzése.">
+  <title>Új rétegek kerülnek a modell és a feladat közé — LocalAgent Digest</title>
+  <meta name="description" content="Interaktív válaszok, olcsó döntési hívások és két új modell alakítja az ügynökök felépítését.">
   <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
 </head>
 <body>
@@ -27,50 +27,70 @@
 
       <article>
         <header class="article-header">
-          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-05</div>
-          <h1 class="article-title">A végrehajtási réteg lett a szűk keresztmetszet</h1>
-          <div class="article-sub">A mai tételek azt mutatják, hogy a modell mellett egyre többet számít a feladatkiosztás, a hozzáférés és a műveletek ellenőrzése.</div>
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-08</div>
+          <h1 class="article-title">Új rétegek kerülnek a modell és a feladat közé</h1>
+          <div class="article-sub">Interaktív válaszok, olcsó döntési hívások és két új modell alakítja az ügynökök felépítését.</div>
           <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             Megosztás
           </button>
         </header>
 
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-08.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-08.mp3"></audio>
+        </div>
 
         
         <div class="article-hero-img-wrap">
-          <img src="../assets/placeholder-1.jpg" alt="A végrehajtási réteg lett a szűk keresztmetszet" class="article-hero-img">
+          <img src="../assets/placeholder-1.jpg" alt="Új rétegek kerülnek a modell és a feladat közé" class="article-hero-img">
         </div>
 
         <div class="article-content">
-          <p>Jó reggelt! Az Amazon letiltotta a Muse vásárlási hozzáférését a saját piacterén. Közben új megközelítés érkezett a többmodelles munkához, a karakteranimációhoz és a gyors döntési hívásokhoz.</p>
-<h2>A Raven külön futtatási keretet épít minden modellhez és feladattípushoz</h2>
-<p>Az EverMind AI nyílt forrású Raven rendszere nem egyetlen közös ügynökkörnyezetbe kényszeríti a modelleket. Külön futtatási keretet épít minden modellhez és szakterülethez, majd a korábbi hibák alapján módosítja ezeket. A vezérügynök feladatgráfra bontja a célt, és annak részeit kutatási, programozási, tervezési vagy üzemeltetési szerepre összeállított modell és futtatási keret párosokhoz küldi.</p>
-<p>Forrás: <a href="https://x.com/dair_ai/status/2106902948173529447">@dair_ai bejelentése</a></p>
-<h2>Az Amazon kizárta a Muse ügynököt a vásárlási folyamatból</h2>
-<p>Az Amazon letiltotta a Meta Muse ügynökének vásárlási hozzáférését, mert állítása szerint a Meta nem kért engedélyt, és kérdéses volt az ügynök azonosítása, valamint a vásárlói hitelesítő adatok kezelése. A két cég közben infrastruktúra-partner: a Meta áprilisban több milliárd dolláros megállapodást kötött, hogy a Muse egyes feladatait Amazon Graviton chipeken futtassa. Az eset arra utal, hogy a böngészőt vezérlő ügynökök hozzáférése nem tekinthető tartósnak akkor sem, ha technikailag képesek végigvinni egy folyamatot.</p>
-<p>Forrás: <a href="https://futuretools.beehiiv.com/p/youtube-adds-ai">FutureTools</a></p>
-<h2>Az Unimate szövegből mozgat riggelt 3D karaktereket</h2>
-<p>Az Unimate riggelt 3D karakterekhez készít animációt szöveges leírásból, legyen szó emberről, robotról vagy nem emberi figuráról. A PixelArtistry bemutatója szerint a nem riggelt modelleket előbb külön eszközzel kell előkészíteni, az elkészült rig ezután adható át az Unimate-nek. A videó nyílt forrású eszközként mutatja be a rendszert, de a konkrét licencet és repót nem nevezi meg.</p>
-<p class="price-line">Ár: 15 USD</p>
-<p>Forrás: <a href="https://www.youtube.com/watch?v=x-WSSlHNcJQ">PixelArtistry bemutatója</a></p>
-<h2>A Decisions API 137 hívással játszotta végig a Pokémon végjátékát</h2>
-<p>A Perplexity Decisions API egyetlen nekifutásra teljesítette a Pokémon FireRed Elite Four és Champion szakaszát. A futás során 137 élő API-hívást használt, a medián válaszidő 592 milliszekundum, a p95 érték 987 milliszekundum volt, a válaszok 96,4 százaléka pedig egy másodpercen belül érkezett meg. A teljes becsült inferenciaköltség 0,028 dollár lett, ami konkrét adatot ad arról, milyen költséggel járhat egy sok apró döntésből álló ügynökfolyamat.</p>
-<p>Forrás: <a href="https://x.com/AravSrinivas/status/2106688463542333795">Aravind Srinivas futási adatai</a></p>
-<h2>RepoCheck</h2>
-<p><strong><a href="https://github.com/hashgraph-online/hol-guard">HOL Guard</a></strong> - A HOL Guard helyben futó biztonsági réteg, amely végrehajtás előtt átvizsgálja az ügynök shellparancsait, fájlműveleteit, csomagtelepítéseit és MCP-eszközhívásait. Titokszivárgást, romboló műveleteket, promptinjekciót és ellátásilánc-kockázatokat keres, majd a beállított szabályzat szerint engedélyezi, blokkolja vagy jóváhagyásra küldi a műveletet; a CLI és a helyi vezérlőpult fiók nélkül is használható. Apache-2.0 licencű, nem fork, 2026. március 28-án hozták létre, az utolsó push 2026. október 5-én érkezett, és 768 csillagnál jár. A telepítéshez Python 3.10 vagy újabb verzió és `pipx` kell, az induló varázsló pedig megkeresi a támogatott ügynököket, és minden integrációs változtatás előtt engedélyt kér. Saját ügynök mellett akkor lehet hasznos, ha a tényleges eszközhívásokat is szabályozni szeretnéd, nem csak a modell bemenetét és kimenetét naplóznád.</p>
+          <p>Jó reggelt! A Mistral 1 billió paraméteres, nyílt modellt állított a zárt élmezőny mellé. Közben az olcsó almodellek, a generált kezelőfelületek és a médiatartalmak ellenőrzése is önálló réteggé válik.</p>
+<h2>A GPT-6 válasz közben építi fel a kezelőfelületet</h2>
+<p>Az OpenAI október 7-én jelentette be a GPT-6 szélesebb elérhetőségét és az Intelligent UI funkciót. Ez utóbbi a hagyományos szöveges válasz helyett interaktív kezelőfelületet állíthat elő az adott kéréshez. A bejelentés szerint így a válasz nemcsak magyarázat, hanem közvetlenül használható vizuális felület is lehet.</p>
+<p>Forrás: <a href="https://openai.com/index/gpt-6-for-everyone">OpenAI</a></p>
+<h2>A Mistral Large 4 egy nyílt, 1 billió paraméteres modell</h2>
+<p>A Mistral bemutatta a Large 4 modellt, amelyet „Le Chonk” becenéven emleget, és a nem kínai nyílt modellek élére helyez. A vállalat saját kódolási összevetésében 62 százalékot ért el, szemben a Kimi K3 68 és a Reflection Beam 44 százalékával. A Mistral szerint egy biztonsági hibakeresési teszten 82 százalékot kapott, miközben több zárt modell számos feladatot visszautasított.</p>
+<p>Forrás: <a href="https://therundownai.beehiiv.com/p/openai-math-avalanche-continues">The Rundown</a></p>
+<h2>A Haiku 5.5 már állítható gondolkodási ráfordítást kínál</h2>
+<p>Az Anthropic kiadta a Claude Haiku 5.5-öt, ezzel teljessé vált az Opus, Sonnet és Haiku 5.5 modellcsalád. A kis modell támogatja az állítható gondolkodási ráfordítást, a közölt Humanity’s Last Exam eredménye pedig eszközök nélkül 45,9, eszközökkel 57,4 százalék. Az alacsonyabb díjsáv a 100 ezer token alatti kéréseknek kedvez, az Anthropic szerint a korábbi Haiku-forgalom mintegy 90 százaléka ebbe a tartományba esett.</p>
+<p>Forrás: <a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic</a></p>
+<h2>A Nano Banana 2.1 az ultraszéles képeket és a referenciasorozatokat javítja</h2>
+<p>A Nano Banana 2.1 már 1K, 2K és 4K felbontásban is élesebb képeket céloz, valamint javítja a szövegek és infografikák elrendezését. A frissítés a 4:1 és 8:1 képarányoknál jelentkező ismétlődő illesztési hibákat is kezeli. Egy generáláshoz legfeljebb 14 referenciakép adható, amelyekből négy karakter és tíz másik objektum következetességét próbálja megőrizni.</p>
+<p>Forrás: <a href="https://x.com/futurepedia_io/status/2107814448840774069">Futurepedia</a></p>
+<h2>FRISSÍTÉS: felére csökkent a Perplexity Decisions API bemeneti díja</h2>
+<p>A Perplexity a múlt heti Decisions API-bejelentés után közölte az új árat: a bemeneti tokenek díja 50 százalékkal csökkent, és most egymillió tokenenként 0,02 dollár. Ez a szolgáltatás nem általános beszélgetőmodell, hanem strukturált döntésekhez, útvonalválasztáshoz és osztályozáshoz szánt réteg.</p>
+<p class="price-line">Ár: 0,02 USD / egymillió bemeneti token</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2107573198145663233">Aravind Srinivas</a></p>
+<h2>Az OpenAI 722 matematikai tanulmányt tett közzé</h2>
+<p>Az OpenAI egy még nem kiadott belső modell eredményeiből 722 tanulmányt publikált, 372 eredménycsaládba rendezve. A cég szerint ezek nyitott problémákat oldanak meg vagy visznek előre, 162 tanulmány fő eredményeit pedig Lean formális bizonyításellenőrzővel írták le. A közölt adatok alapján a feladatok többsége egyetlen promptból indult, átlagosan háromórányi ChatGPT Pro számítási idővel.</p>
+<p>Forrás: <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">OpenAI</a></p>
+<h2>Mindenki számára megnyílt a SynthID Detector</h2>
+<p>A Google világszerte, angol nyelven elérhetővé tette a SynthID Detectort, amellyel kép-, video- és hangfájlokban kereshető a SynthID vízjel. Az ellenőrzés a Google és partnerei eszközeivel készült tartalmakra terjed ki, tehát nem általános AI-detektor. A Google eddig több mint 180 milliárd képet és videót, valamint 240 ezer évnyi hanganyagot látott el ilyen jelöléssel.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/">Google</a></p>
 <h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
-<p>A mai válogatás közös szála az órákig dolgozó ügynökök infrastruktúrája, a tartós memória és az otthoni hardver jobb kihasználása.</p>
-<p><strong>@AravSrinivas</strong> -- A Computer órákig dolgozhat egy összetett feladaton, ami saját ügynököknél is fontossá teszi a részletes naplózást és a megszakítható futást.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2106128438507532492">@AravSrinivas</a></p>
-<p><strong>@AravSrinivas</strong> -- A Perplexity saját sandboxait Vera hardverre optimalizálja, jelezve, hogy az ügynökök sebességét egyre inkább a teljes futtatási környezet együtt határozza meg.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2106313275797352674">@AravSrinivas</a></p>
-<p><strong>@AravSrinivas</strong> -- A Computerben egyedi, szakterületre szabott alkalmazás építhető, például képek helyének meghatározására 3D-s és műholdas nézettel.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2106826752169312760">@AravSrinivas</a></p>
-<p><strong>@rryssf</strong> -- A Microsoft Agent Framework leváltja a Semantic Kernelt és az AutoGent, ezért érdemes a saját ügynök logikáját lazán csatolni az éppen használt keretrendszerhez.<br>Forrás: <a href="https://x.com/rryssf/status/2106861709394870693">@rryssf</a></p>
-<p><strong>@futurepedia<em>io</strong> -- A Synthesia Sessions interaktív avatárokkal gyakoroltat beszélgetéseket és készít visszajelzést, vagyis a generált videós szereplők már munkafolyamatokat is vezetnek.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2106081786451361859">@futurepedia_io</a></p>
-<p><strong>r/ClaudeAI</strong> -- Claude 106 OLED-háttérkép elkészítését segítette valódi tudományos adatokból és kódból, képgenerátor helyett programozott grafikával. (2088 pont, 90 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wwxsle/i_used_claude_to_make_106_almost_all_black_oled/">r/ClaudeAI</a></p>
-<p><strong>r/ClaudeAI</strong> -- Egy felhasználó személyes alkalmazásokat épít Claude-dal, ami jól mutatja, hogyan válthatók ki helyben futó, célzott eszközökkel az előfizetéses szolgáltatások. (1548 pont, 435 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1wx7nnw/claude_has_enabled_me_to_make_apps_for_personal/">r/ClaudeAI</a></p>
-<p><strong>r/google</em>antigravity</strong> -- Az Antigravity megkapta az Opus 5.5 és Sonnet 5.5 modelleket, de a szűk heti keret miatt ügynökös használat előtt érdemes mérni a fogyasztást. (459 pont, 186 komment)<br>Forrás: <a href="https://www.reddit.com/r/google_antigravity/comments/1wwfcav/google_finally_added_opus_55_and_sonnet_55_on/">r/google_antigravity</a></p>
-<p><strong>r/LocalLLM</strong> -- A Strata a MoE-modellek rétegeit egyesített VRAM- és rendszermemória-készleten kezeli, így nagyobb modellek válhatnak futtathatóvá vegyes otthoni hardveren. (131 pont, 110 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLM/comments/1wx3g89/strata_takes_the_promise_of_moe_models_just_need/">r/LocalLLM</a></p>
-<p><strong>r/hermesagent</strong> -- Egy Hermes-felhasználó egy másik ügynök tartósmemória-megoldását átvéve érdemi javulást tapasztalt, ami a memória felépítését önálló optimalizálási területté teszi. (146 pont, 20 komment)<br>Forrás: <a href="https://www.reddit.com/r/hermesagent/comments/1wxu98g/i_copied_muses_memory_setup_for_my_own_hermes/">r/hermesagent</a></p>
+<p>A mai válogatás közös szála a saját ügynökök gyakorlati használata: multimodális keresés, biztonsági korlátok, MCP-eszközök és videógenerálás.</p>
+<p><strong>@AnthropicAI</strong> -- Az Anthropic ellenőrzött hozzáférést ad erős modelljeihez védekező és engedélyezett támadó biztonsági munkákra, ami új lehetőséget nyit a helyi eszközöket vezérlő kiberbiztonsági ügynököknek.<br>Forrás: <a href="https://x.com/AnthropicAI/status/2107546569654636883">@AnthropicAI</a></p>
+<p><strong>@rowancheung</strong> -- Egy GPT-6 Astra által készített alkalmazás időjárás, méretek és saját fotók alapján állít össze napi öltözéket, jól szemléltetve a személyes adatokkal dolgozó ügynöki folyamatokat.<br>Forrás: <a href="https://x.com/rowancheung/status/2107859082036334613">@rowancheung</a></p>
+<p><strong>@AravSrinivas</strong> -- A nyílt pplx-embed-v2-late modellek közös térben indexelnek szöveget és képet, a kisebb változat pedig eszközön futó multimodális kereséshez is használható.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2107871834205196784">@AravSrinivas</a></p>
+<p><strong>@AIHighlight</strong> -- Egy friss bemutató szerint az AI-videók vizuális hibái tovább fogynak, ezért a generáló folyamatok mellé egyre fontosabb eredetjelzést és ellenőrzést építeni.<br>Forrás: <a href="https://x.com/AIHighlight/status/2107827367469105218">@AIHighlight</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Higgsfield Ads Studio egy webcímről termékeket, arculatot és értékesítési érveket gyűjt, majd akár húsz hirdetésváltozatot készít, vagyis több kézi lépést egyetlen ügynöki folyamatba von össze.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2107591730275168421">@futurepedia_io</a></p>
+<p><strong>r/AI</em>Agents</strong> -- A beszélgetés tanulsága, hogy több ügynöknél a jogosultságokat és eszközhívási szabályokat érdemes az ügynökökön kívüli közös házirendrétegben kikényszeríteni. (29 pont, 13 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1x04gwn/how_are_you_securing_your_ai_infrastructure/">r/AI_Agents</a></p>
+<p><strong>r/LocalLLaMA</strong> -- PewDiePie helyi modellépítés közben kétszer is elvesztette OpenAI-hozzáférését, ami látványosan mutatja, miért előny a saját gépen futó munkafolyamat szolgáltatói függés nélkül. (4226 pont, 477 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wymgu6/pewdiepie_getting_banned_twice_by_openai_while/">r/LocalLLaMA</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy Claude-napló rendőrségi jelentéséről szóló eset ismét ráirányította a figyelmet arra, hogy érzékeny személyes adatokat célszerű helyben futó modellre és ellenőrzött adattárolásra bízni. (782 pont, 303 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wz5b30/woman_used_claude_as_her_diary_and_got_reported/">r/LocalLLaMA</a></p>
+<p><strong>r/Seedance_AI</strong> -- A Minimax H3 Max és a Seedance 2.5 azonos arccal, hat érzelemmel és több próbával készült összevetése használhatóbb képet ad az arcazonosság és az érzelemvezérlés stabilitásáról. (11 pont, 2 komment)<br>Forrás: <a href="https://www.reddit.com/r/Seedance_AI/comments/1wz2b1c/minimax_h3_max_vs_seedance_25_same_face_six/">r/Seedance_AI</a></p>
+<p><strong>r/mcp</strong> -- A közösség azt gyűjti, mely MCP-szerverek maradnak tartósan hasznosak a napi munkában, ami jó kiindulópont egy helyi ügynök minimális, megbízható eszközkészletéhez. (36 pont, 42 komment)<br>Forrás: <a href="https://www.reddit.com/r/mcp/comments/1wz1uzg/which_mcp_servers_do_you_actually_use_regularly/">r/mcp</a></p>
         </div>
       </article>
     </div>
@@ -168,7 +188,7 @@
   <script>
     (function () {
       var KEY = 'ldr-reading-v1';
-      var PAGE = "2026-10-05";
+      var PAGE = "2026-10-08";
       var MAX_ENTRIES = 400;
 
       function readAll() {
