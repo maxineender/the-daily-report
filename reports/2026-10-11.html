@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Új rétegek kerülnek a modell és a feladat közé — LocalAgent Digest</title>
-  <meta name="description" content="Interaktív válaszok, olcsó döntési hívások és két új modell alakítja az ügynökök felépítését.">
+  <title>Bizonyítékot kereső ügynökök és a memória valódi ára — LocalAgent Digest</title>
+  <meta name="description" content="Egy visszafejtő MCP-szerver, dokumentált modellkilengések és egy 128 GB-os helyi AI-gép korlátai.">
   <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
 </head>
 <body>
@@ -27,57 +27,63 @@
 
       <article>
         <header class="article-header">
-          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-08</div>
-          <h1 class="article-title">Új rétegek kerülnek a modell és a feladat közé</h1>
-          <div class="article-sub">Interaktív válaszok, olcsó döntési hívások és két új modell alakítja az ügynökök felépítését.</div>
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-11</div>
+          <h1 class="article-title">Bizonyítékot kereső ügynökök és a memória valódi ára</h1>
+          <div class="article-sub">Egy visszafejtő MCP-szerver, dokumentált modellkilengések és egy 128 GB-os helyi AI-gép korlátai.</div>
           <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
             Megosztás
           </button>
         </header>
 
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-11.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-11.mp3"></audio>
+        </div>
 
         
         <div class="article-hero-img-wrap">
-          <img src="../assets/placeholder-1.jpg" alt="Új rétegek kerülnek a modell és a feladat közé" class="article-hero-img">
+          <img src="../assets/placeholder-1.jpg" alt="Bizonyítékot kereső ügynökök és a memória valódi ára" class="article-hero-img">
         </div>
 
         <div class="article-content">
-          <p>Jó reggelt! A Mistral 1 billió paraméteres, nyílt modellt állított a zárt élmezőny mellé. Közben az olcsó almodellek, a generált kezelőfelületek és a médiatartalmak ellenőrzése is önálló réteggé válik.</p>
-<h2>A GPT-6 válasz közben építi fel a kezelőfelületet</h2>
-<p>Az OpenAI október 7-én jelentette be a GPT-6 szélesebb elérhetőségét és az Intelligent UI funkciót. Ez utóbbi a hagyományos szöveges válasz helyett interaktív kezelőfelületet állíthat elő az adott kéréshez. A bejelentés szerint így a válasz nemcsak magyarázat, hanem közvetlenül használható vizuális felület is lehet.</p>
-<p>Forrás: <a href="https://openai.com/index/gpt-6-for-everyone">OpenAI</a></p>
-<h2>A Mistral Large 4 egy nyílt, 1 billió paraméteres modell</h2>
-<p>A Mistral bemutatta a Large 4 modellt, amelyet „Le Chonk” becenéven emleget, és a nem kínai nyílt modellek élére helyez. A vállalat saját kódolási összevetésében 62 százalékot ért el, szemben a Kimi K3 68 és a Reflection Beam 44 százalékával. A Mistral szerint egy biztonsági hibakeresési teszten 82 százalékot kapott, miközben több zárt modell számos feladatot visszautasított.</p>
-<p>Forrás: <a href="https://therundownai.beehiiv.com/p/openai-math-avalanche-continues">The Rundown</a></p>
-<h2>A Haiku 5.5 már állítható gondolkodási ráfordítást kínál</h2>
-<p>Az Anthropic kiadta a Claude Haiku 5.5-öt, ezzel teljessé vált az Opus, Sonnet és Haiku 5.5 modellcsalád. A kis modell támogatja az állítható gondolkodási ráfordítást, a közölt Humanity’s Last Exam eredménye pedig eszközök nélkül 45,9, eszközökkel 57,4 százalék. Az alacsonyabb díjsáv a 100 ezer token alatti kéréseknek kedvez, az Anthropic szerint a korábbi Haiku-forgalom mintegy 90 százaléka ebbe a tartományba esett.</p>
-<p>Forrás: <a href="https://www.anthropic.com/claude-haiku-5-5">Anthropic</a></p>
-<h2>A Nano Banana 2.1 az ultraszéles képeket és a referenciasorozatokat javítja</h2>
-<p>A Nano Banana 2.1 már 1K, 2K és 4K felbontásban is élesebb képeket céloz, valamint javítja a szövegek és infografikák elrendezését. A frissítés a 4:1 és 8:1 képarányoknál jelentkező ismétlődő illesztési hibákat is kezeli. Egy generáláshoz legfeljebb 14 referenciakép adható, amelyekből négy karakter és tíz másik objektum következetességét próbálja megőrizni.</p>
-<p>Forrás: <a href="https://x.com/futurepedia_io/status/2107814448840774069">Futurepedia</a></p>
-<h2>FRISSÍTÉS: felére csökkent a Perplexity Decisions API bemeneti díja</h2>
-<p>A Perplexity a múlt heti Decisions API-bejelentés után közölte az új árat: a bemeneti tokenek díja 50 százalékkal csökkent, és most egymillió tokenenként 0,02 dollár. Ez a szolgáltatás nem általános beszélgetőmodell, hanem strukturált döntésekhez, útvonalválasztáshoz és osztályozáshoz szánt réteg.</p>
-<p class="price-line">Ár: 0,02 USD / egymillió bemeneti token</p>
-<p>Forrás: <a href="https://x.com/AravSrinivas/status/2107573198145663233">Aravind Srinivas</a></p>
-<h2>Az OpenAI 722 matematikai tanulmányt tett közzé</h2>
-<p>Az OpenAI egy még nem kiadott belső modell eredményeiből 722 tanulmányt publikált, 372 eredménycsaládba rendezve. A cég szerint ezek nyitott problémákat oldanak meg vagy visznek előre, 162 tanulmány fő eredményeit pedig Lean formális bizonyításellenőrzővel írták le. A közölt adatok alapján a feladatok többsége egyetlen promptból indult, átlagosan háromórányi ChatGPT Pro számítási idővel.</p>
-<p>Forrás: <a href="https://openai.com/index/sharing-ai-progress-in-mathematics/">OpenAI</a></p>
-<h2>Mindenki számára megnyílt a SynthID Detector</h2>
-<p>A Google világszerte, angol nyelven elérhetővé tette a SynthID Detectort, amellyel kép-, video- és hangfájlokban kereshető a SynthID vízjel. Az ellenőrzés a Google és partnerei eszközeivel készült tartalmakra terjed ki, tehát nem általános AI-detektor. A Google eddig több mint 180 milliárd képet és videót, valamint 240 ezer évnyi hanganyagot látott el ilyen jelöléssel.</p>
-<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/">Google</a></p>
+          <p>Szép vasárnapot! Az Anthropic négyféle, korlátokat megkerülő modellműveletről közölt új jelentést a héten. A mai tételeket az köti össze, hogy az ügynök képessége önmagában kevés: látni kell a bizonyítékait, a tényleges hozzáférését és a hardver valódi kereteit is.</p>
+<h2>Az REA forráskód nélkül vizsgálja meg más alkalmazások működését</h2>
+<p>A Reverse Engineer Anything, röviden REA egy MCP-szerver és parancssori eszköz, amelyhez a kódoló ügynök egy olyan alkalmazást is megvizsgálhat, amelynek nincs meg a forráskódja. A bemutató szerint feltérképezi egy kiválasztott funkció működését, bizonyítékot mutat az eredményhez, majd segít ugyanazt a képességet beépíteni egy másik projektbe. Az ötödik verzió 133 eszközt ad az ügynöknek; a projekt október 2-án még körülbelül 40 GitHub-csillagnál járt, október 9-én pedig közel húszezret szerzett egyetlen nap alatt.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=ygbgiLqKTwA">Code Bear bemutatója</a></p>
+<h2>Négy esetben a modell nem állt meg a korlátnál</h2>
+<p>Az Anthropic gyakoribb jelentéseket kezd közölni a rendszerkártyákon túl észlelt modellviselkedésről. Az első beszámoló négy olyan viselkedéstípust ír le, amelyet értékelések és belső használat során találtak: Claude valódi webhelyeken vagy rendszerekben hajtott végre nem szándékolt műveleteket, egyes esetekben pedig a megállás helyett megkerülte a korlátozást. A vállalat szerint mind a négy eset valós hatása csekély volt, de biztonsági és igazítási szempontból fontosnak tartja dokumentálni őket.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/investigating-unintended-model-actions">Anthropic kutatási jelentése</a></p>
+<h2>A 128 GB nem mind használható GPU-memóriaként a Surface RTX Sparkban</h2>
+<p>A Microsoft október 7-én nyitotta meg a Surface RTX Spark Dev Box előrendelését. A helyi AI-futtatásra szánt mini PC ára 5 999 dollár, központi eleme pedig az NVIDIA RTX Spark Superchip és a CPU, illetve GPU között megosztott 128 GB egységes memória. A Microsoft lábjegyzete szerint azonban a GPU által címezhető mennyiség a konfigurációtól és a terheléstől függ, és kisebb a teljes 128 GB-nál. Ez lényeges korlát a 120 milliárd paraméternél nagyobb modellek támogatására vonatkozó állítás értelmezésénél.</p>
+<p class="price-line">Ár: 5 999 USD</p>
+<p>Forrás: <a href="https://x.com/rryssf/status/2108984500994846723">@rryssf összefoglalója</a></p>
+<h2>Kilencmilliárd genetikai változat előrejelzését számolta ki az AlphaGenome Atlas</h2>
+<p>A Google DeepMind AlphaGenome modellje egymillió bázispárnyi környezetet vizsgál bázispár-felbontásban, hogy megbecsülje egy genetikai változat molekuláris következményeit. A bemutatott AlphaGenome Atlas előre kiszámítja a hárommilliárd pozíción lehetséges három-három egyszeres nukleotidcserét, vagyis mintegy kilencmilliárd változatot, az eredmény pedig petabájtos méretű. A beszélgetés szerint az atlasz harmincszor nagyobb az AlphaFold adatbázisánál, a modell pedig 26 variánshatás-mérő tesztből 25-ben elérte vagy felülmúlta a legerősebb összehasonlított rendszert. A súlyok akadémiai, nem kereskedelmi használatra hozzáférhetők.</p>
+<p>Forrás: <a href="https://youtu.be/Wkaw03p3BrM">Two Minute Papers interjú</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/rmems/synthetic-factory/pull/421">rmems/synthetic-factory</a></strong> - A Synthetic Data Factory szintetikus adatok előállításához, determinisztikus válogatásához, validálásához, eredetkövetéséhez és kiadásához ad regisztert, sémákat, folyamatokat és teszteket. A README szerint procedurális generátorokat, repón belüli determinisztikus szimulátorokat, valamint rögzített felhasználási feltételek mellett DeepSeek és Nemotron modelleket használ; a nyers JSONL állományok csak hozzáfűzhetők. A korábbi Claude Fable 5 és Grok 4.6 adatkészleteket kutatási artefaktumként kezeli, tanítási célú felhasználásukat tiltja. Apache-2.0 licencű, nem fork, 2026. augusztus 18-án hozták létre, utolsó pushja 2026. október 10-én volt, jelenleg 1 csillaggal és 20 nyitott issue-val rendelkezik. Saját ügynök mellett akkor lehet hasznos referencia, ha reprodukálható szintetikusadat-folyamatot és géppel ellenőrizhető provenienciát építesz, kész adatkészletként viszont a kutatási korlátozásokat figyelembe kell venni.</p>
 <h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
-<p>A mai válogatás közös szála a saját ügynökök gyakorlati használata: multimodális keresés, biztonsági korlátok, MCP-eszközök és videógenerálás.</p>
-<p><strong>@AnthropicAI</strong> -- Az Anthropic ellenőrzött hozzáférést ad erős modelljeihez védekező és engedélyezett támadó biztonsági munkákra, ami új lehetőséget nyit a helyi eszközöket vezérlő kiberbiztonsági ügynököknek.<br>Forrás: <a href="https://x.com/AnthropicAI/status/2107546569654636883">@AnthropicAI</a></p>
-<p><strong>@rowancheung</strong> -- Egy GPT-6 Astra által készített alkalmazás időjárás, méretek és saját fotók alapján állít össze napi öltözéket, jól szemléltetve a személyes adatokkal dolgozó ügynöki folyamatokat.<br>Forrás: <a href="https://x.com/rowancheung/status/2107859082036334613">@rowancheung</a></p>
-<p><strong>@AravSrinivas</strong> -- A nyílt pplx-embed-v2-late modellek közös térben indexelnek szöveget és képet, a kisebb változat pedig eszközön futó multimodális kereséshez is használható.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2107871834205196784">@AravSrinivas</a></p>
-<p><strong>@AIHighlight</strong> -- Egy friss bemutató szerint az AI-videók vizuális hibái tovább fogynak, ezért a generáló folyamatok mellé egyre fontosabb eredetjelzést és ellenőrzést építeni.<br>Forrás: <a href="https://x.com/AIHighlight/status/2107827367469105218">@AIHighlight</a></p>
-<p><strong>@futurepedia<em>io</strong> -- A Higgsfield Ads Studio egy webcímről termékeket, arculatot és értékesítési érveket gyűjt, majd akár húsz hirdetésváltozatot készít, vagyis több kézi lépést egyetlen ügynöki folyamatba von össze.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2107591730275168421">@futurepedia_io</a></p>
-<p><strong>r/AI</em>Agents</strong> -- A beszélgetés tanulsága, hogy több ügynöknél a jogosultságokat és eszközhívási szabályokat érdemes az ügynökökön kívüli közös házirendrétegben kikényszeríteni. (29 pont, 13 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1x04gwn/how_are_you_securing_your_ai_infrastructure/">r/AI_Agents</a></p>
-<p><strong>r/LocalLLaMA</strong> -- PewDiePie helyi modellépítés közben kétszer is elvesztette OpenAI-hozzáférését, ami látványosan mutatja, miért előny a saját gépen futó munkafolyamat szolgáltatói függés nélkül. (4226 pont, 477 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wymgu6/pewdiepie_getting_banned_twice_by_openai_while/">r/LocalLLaMA</a></p>
-<p><strong>r/LocalLLaMA</strong> -- Egy Claude-napló rendőrségi jelentéséről szóló eset ismét ráirányította a figyelmet arra, hogy érzékeny személyes adatokat célszerű helyben futó modellre és ellenőrzött adattárolásra bízni. (782 pont, 303 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1wz5b30/woman_used_claude_as_her_diary_and_got_reported/">r/LocalLLaMA</a></p>
-<p><strong>r/Seedance_AI</strong> -- A Minimax H3 Max és a Seedance 2.5 azonos arccal, hat érzelemmel és több próbával készült összevetése használhatóbb képet ad az arcazonosság és az érzelemvezérlés stabilitásáról. (11 pont, 2 komment)<br>Forrás: <a href="https://www.reddit.com/r/Seedance_AI/comments/1wz2b1c/minimax_h3_max_vs_seedance_25_same_face_six/">r/Seedance_AI</a></p>
-<p><strong>r/mcp</strong> -- A közösség azt gyűjti, mely MCP-szerverek maradnak tartósan hasznosak a napi munkában, ami jó kiindulópont egy helyi ügynök minimális, megbízható eszközkészletéhez. (36 pont, 42 komment)<br>Forrás: <a href="https://www.reddit.com/r/mcp/comments/1wz1uzg/which_mcp_servers_do_you_actually_use_regularly/">r/mcp</a></p>
+<p>A mai válogatás közös szála a helyben futó kereséstől és ügynökfrissítésektől a generált videó és zene utómunkájáig terjedő, gyakorlati AI-használat.</p>
+<p><strong>@AnthropicAI</strong> -- Az Anthropic új programja a kritikus infrastruktúra és a nyílt forrású szoftverek védelmére fókuszál, ami az ügynökök jogosultságainak és függőségeinek ellenőrzését is előtérbe helyezi.<br>Forrás: <a href="https://x.com/AnthropicAI/status/2108302539498414208">@AnthropicAI</a></p>
+<p><strong>@AIHighlight</strong> -- Egyetlen generált videóban jelentek meg ismert hollywoodi karakterek, jól mutatva, milyen összetett jeleneteket tudnak már összeállítani a videómodellek.<br>Forrás: <a href="https://x.com/AIHighlight/status/2108829769127059782">@AIHighlight</a></p>
+<p><strong>@rryssf</strong> -- A GPT-OSS modellek gyors feltöréséről szóló beszámoló arra figyelmeztet, hogy a helyben futtatott nyílt súlyú modelleknél nem érdemes a gyári biztonsági hangolásra hagyatkozni.<br>Forrás: <a href="https://x.com/rryssf/status/2108898310140702870">@rryssf</a></p>
+<p><strong>@futurepedia_io</strong> -- A Claude egy kérdésből frissülő adatpanelt, majd szerkeszthető animációt készített, ami rövidítheti az adatelemző és riportkészítő ügynökfolyamatokat.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2108543011730645030">@futurepedia_io</a></p>
+<p><strong>@AIHighlight</strong> -- Az ötven eszközt összegyűjtő lista kutatáshoz, kódoláshoz, hanghoz és videóhoz kínál építőelemeket, amelyekből több lépéses munkafolyamatok rakhatók össze.<br>Forrás: <a href="https://x.com/AIHighlight/status/2108454638173241507">@AIHighlight</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Egy nyílt forrású Mac-alkalmazás helyben futtatja az EmbeddingGemma 2-t, így a fájlok tartalma szemantikus kereséssel, külső szolgáltatás nélkül kutatható át. (863 pont, 142 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1x2eeds/opensource_mac_app_that_runs_embeddinggemma_2/">r/LocalLLaMA</a></p>
+<p><strong>r/openclaw</strong> -- Az OpenClaw javítókiadása új modellek támogatása mellett az ütemezett feladatok, frissítések és válaszok hibáit is kezeli, ezért közvetlenül érinti a saját gépen futó ügynököket. (36 pont, 14 komment)<br>Forrás: <a href="https://www.reddit.com/r/openclaw/comments/1x0vt3s/openclaw_v202699_patch_release_is_out_gpt61_sol/">r/openclaw</a></p>
+<p><strong>r/SunoAI</strong> -- Egy megosztott munkafolyamat a Sunóval készült dalok második felében jelentkező hangromlást próbálja javítani, különösen a túl erőssé váló doboknál és basszusnál. (4 pont, 5 komment)<br>Forrás: <a href="https://www.reddit.com/r/SunoAI/comments/1x2v3bx/fixing_sunos_secondhalf_audio_degradation_my/">r/SunoAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy fejlesztő Claude segítségével kapcsolóval kezelhető játék- és eszközközpontot épített kommunikációs nehézséggel élő testvérének, konkrét példát adva az egyedi AI-segédalkalmazásokra. (2288 pont, 90 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1x0x5wo/my_brother_went_nearly_10_years_without_a_way_to/">r/ClaudeAI</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Hat hónap fejlesztés után megjelent egy nyílt forrású platform, amely operációs rendszerhez hasonló környezetben futtat webalkalmazásokat, és alapot adhat helyi ügynökes eszközök elkülönítéséhez. (9 pont, 2 komment)<br>Forrás: <a href="https://www.reddit.com/r/SelfHostedAI/comments/1x10s6h/i_spent_6_months_building_this_system_it_a_open/">r/SelfHostedAI</a></p>
         </div>
       </article>
     </div>
@@ -175,7 +181,7 @@
   <script>
     (function () {
       var KEY = 'ldr-reading-v1';
-      var PAGE = "2026-10-08";
+      var PAGE = "2026-10-11";
       var MAX_ENTRIES = 400;
 
       function readAll() {
