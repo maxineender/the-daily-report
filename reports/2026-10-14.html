@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helyi modellek, gyorsabb terminálok és az ügynökléptékű infrastruktúra — LocalAgent Digest</title>
+  <meta name="description" content="A mai kiadásban a saját gépen futó következtetéstől a videós költségekig követjük az ügynökök gyakorlati korlátait.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-14</div>
+          <h1 class="article-title">Helyi modellek, gyorsabb terminálok és az ügynökléptékű infrastruktúra</h1>
+          <div class="article-sub">A mai kiadásban a saját gépen futó következtetéstől a videós költségekig követjük az ügynökök gyakorlati korlátait.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-14.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-14.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Helyi modellek, gyorsabb terminálok és az ügynökléptékű infrastruktúra" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép napot! A Liquid AI laptopokra és asztali gépekre szánt új ügynökmodellt adott ki. A mai híreket az köti össze, hogy az ügynökök körüli infrastruktúrának már a hosszú munkameneteket, a gyors parancsokat és a kiszámítható költségeket is kezelnie kell.</p>
+<h2>Az Anthropic öt hónap alatt lecserélte a Gitet a saját monorepójában</h2>
+<p>Az Anthropic májusban még körülbelül napi 2500, szeptemberben már több mint 30 000 kódváltoztatást olvasztott össze. A cég szerint a fejlesztői infrastruktúra nem bírta az emberi helyett ügynökléptékű terhelést, ezért öt hónap alatt új verziókezelő rendszert épített, majd teljes monorepóját átköltöztette rá a Gitről. A tanulság nem az, hogy mindenki írjon saját verziókezelőt, hanem hogy sok párhuzamos kódoló ügynöknél maga a repository-művelet, az összeolvasztás és az állapotkezelés is szűk keresztmetszetté válhat.</p>
+<p>Forrás: <a href="https://www.anthropic.com/engineering/redesigning-source-control">Anthropic Engineering</a></p>
+<h2>Az LFM2.5-24B-A2B tokenenként 2,45 milliárd paramétert aktivál</h2>
+<p>A Liquid AI új, ügynökökhöz szánt következtető modellje 24 milliárd teljes paraméterből tokenenként 2,45 milliárdot használ, kontextusablaka pedig 131 ezer token. Az alap- és utótanított súlyok elérhetők, a futtatást llama.cpp és Apple MLX is támogatja. A modell laptopokra és asztali gépekre készült, eszközhasználatra pedig többek között Hermes Agenthez és OpenClawhoz is csatlakoztatható.</p>
+<p>Forrás: <a href="https://x.com/WesRoth/status/2110188843341422599">Wes Roth</a></p>
+<h2>A Stitch terminálos felületet kapott a tervezőügynökökhöz</h2>
+<p>A Google Stitch új CLI-jével egy kódoló ügynök már terminálból kérhet mobilos vagy webes felületterveket, így nem kell hozzá külön Google Cloud-beállításon és grafikus munkafolyamaton végigmenni. A Stitch Gemini-modellekkel készíti a terveket, és a Google képgenerátorát is használhatja a felületekhez szükséges vizuális elemek előállítására. Ez különösen azoknál a munkafolyamatoknál érdekes, ahol az ügynöknek nemcsak a kódot, hanem a kezdeti képernyőtervet is elő kell állítania.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=au2TI8sdq8E">AI LABS bemutatója</a></p>
+<h2>A LoopTroop hússzor gyorsabb CLI-indítást céloz</h2>
+<p>A LoopTroop új pull requestje különválasztaná a szerver buildjét a parancssori csomagtól, és eltávolítaná a `gpt-tokenizer` függőséget. A fejlesztők szerint ezzel a CLI-parancsok körülbelül hússzor gyorsabban indulhatnak, miközben a csomag mérete nagyjából a felére csökkenhet. A módosítás jelenleg pull request, tehát még nem tekinthető kész kiadásnak.</p>
+<p>Forrás: <a href="https://github.com/looptroop-ai/LoopTroop/pull/259">LoopTroop PR #259</a></p>
+<h2>A Gemini CLI javította a gyors Ctrl-C után sérülő munkameneteket</h2>
+<p>A Gemini CLI v0.64.0 megakadályozza, hogy a gyors egymásutánban küldött Ctrl-C megszakítások hibás állapotban hagyják a munkamenetet. A kiadás emellett tovább tölti a többi bővítményt, ha egy kiegészítő elbukik az engedélyezési lista ellenőrzésén, helyesen üresnek kezeli a csak szóközöket tartalmazó UTF-16 és UTF-32 fájlokat, valamint javítja az Unicode-karakterek kijelölését a fordított parancskeresésben.</p>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0">Gemini CLI v0.64.0</a></p>
+<h2>Hat nap és 40 000 dollárnyi számítás kellett egy Chrome-hibalánchoz</h2>
+<p>Greg Brockman beszámolója szerint a GPT-5.6 Sol hat nap és 40 000 dollárnyi számítás felhasználásával talált kritikus sérülékenységet a Chrome-ban. A bejegyzés ezt a Google első teljes hibaláncért járó 2026-os jutalmaként írja le, és a probléma becsült érintetti körét egymilliárd felhasználóra teszi. Az eredmény egyben jelzi, hogy a hosszú ideig futó biztonsági ügynökök költsége már önálló erőforrás-tervezési kérdés.</p>
+<p>Forrás: <a href="https://x.com/gdb/status/2110063893016096831">Greg Brockman</a></p>
+<h2>A Gemini 4 Argon megnyílt a fizetős API-ban</h2>
+<p>A Google október 13-án szélesebben elérhetővé tette a Gemini 4 Argont, amelyet hosszú kódmigrációkhoz, összetett tudásmunkához és kibervédelmi feladatokhoz pozicionál. A fejlesztők a Gemini API fizetős szintjén, Google AI Studióban és Android Studióban használhatják. A Google AI Ultra előfizetői az AI Studio mellett az Antigravity ügynökplatformon is hozzáférnek.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/">Google Developers Blog</a></p>
+<h2>Videónként hatszoros kreditkülönbséget hozhat a modellválasztás</h2>
+<p>Dankieft összehasonlításában egy jelenet Kling 3.0-val 12, Seedance 2.5-tel 72 kreditbe került, miközben az eredményeket hasonlónak ítélte. Egy animepéldánál a Minimax H3 30, a Seedance 2.5 pedig 180 kreditet használt. A videó egy másik munkafolyamatban három próbálkozást és a kiválasztott változat felskálázását összesen 420 kreditből oldotta meg, míg három közvetlen, nagy felbontású generálás 720 kredit lett volna. Ezek egyetlen készítő saját tesztjei, ezért nem általános minőségi rangsorként, hanem költségtervezési példaként érdemes kezelni őket.</p>
+<p class="price-line">Ár: Plus csomag 49 USD/hó, Ultra csomag 310 USD/hó</p>
+<p>Forrás: <a href="https://youtu.be/KKfaBVM3Jdg">Dankieft bemutatója</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/SharePoint/sp-dev-docs">SharePoint Developer Documentation</a></strong> - Ez a repository a SharePoint fejlesztői dokumentáció nyers forrásfájljait tartalmazza, amelyekből a Microsoft Learn SharePoint fejlesztői oldalai készülnek. A tartalom többek között a SharePoint Frameworköt, a SharePoint Embeddedet, a listaformázást, a webhely-sablonokat és a kivezetett SharePoint-bővítményeket dokumentálja, de futtatható ügynököt vagy szervert nem biztosít. CC-BY-4.0 licenc alatt érhető el, nem fork. A repót 2016. augusztus 9-én hozták létre, utoljára 2026. október 12-én frissítették, és 1379 csillaggal rendelkezik. Saját ügynök mellett SharePoint-műveletekhez használható dokumentációs tudásforrásként, önmagában azonban nem ad végrehajtható SharePoint-eszközöket.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála, hogy a modellképességek mellett egyre fontosabb a futtatási sebesség, az eszközkapcsolat és az emberi ellenőrzés.</p>
+<p><strong>@demishassabis</strong> -- A Gemini 4 Argon fizikai szabályokat és 3D elemeket kezelő varázssakk-demója azt mutatja, hogy az ügynökök már összetett interaktív prototípusokat is össze tudnak rakni.<br>Forrás: <a href="https://x.com/demishassabis/status/2110041008100843835">@demishassabis</a></p>
+<p><strong>@futurepedia<em>io</strong> -- Egy éjszakai ügynökfutás 40 százalékkal csökkentette a Google ADK hosszú munkameneteinek előkészítési idejét, míg a Gemma 4 E2B következtetése 2,85-ször gyorsult vLLM-en.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2110204048943260032">@futurepedia_io</a></p>
+<p><strong>@futurepedia</em>io</strong> -- Az Argon biztonsági rendszere futás közben figyeli az ügynök következtetését és blokkolhatja a nem kívánt kerülőutakat, ami hosszabb autonóm feladatoknál különösen fontos.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2110204066156724595">@futurepedia_io</a></p>
+<p><strong>@rryssf</strong> -- A természetes többnyelvű modellkimenethez továbbra is gondos bemenet és több nyelven jártas emberi szerkesztés kell, ezért az automatikus lokalizálást érdemes ellenőrzési lépéssel futtatni.<br>Forrás: <a href="https://x.com/rryssf/status/2110125578548613238">@rryssf</a></p>
+<p><strong>@rryssf</strong> -- Az Opus 5.5 leváltásánál a jobb mérési eredmény és a feleakkora futtatási költség erős érv lehet, de saját ügynökfeladatokon végzett próba nélkül a benchmark kevés.<br>Forrás: <a href="https://x.com/rryssf/status/2110076220918698283">@rryssf</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Qualcomm szerint 2028-ra telefonokon folyamatosan futó, 100 milliárd paraméteres modelleket szeretnének az AI-cégek, de a memória, a fogyasztás és a hőtermelés még komoly akadály. (1279 pont, 583 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1x2z14s/qualcomm_ceo_reveals_ai_companies_want_phones/">r/LocalLLaMA</a></p>
+<p><strong>r/ClaudeAI</strong> -- Claude segítségével egy évek óta javítatlan kátyú ügyéhez készült meggyőző bizonyíték és videó, amely után két napon belül intézkedett a város. (1017 pont, 103 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1x4s9hp/someone_used_claude_to_get_a_yearsold_pothole/">r/ClaudeAI</a></p>
+<p><strong>r/mcp</strong> -- Egy univerzális MCP-szerver egyetlen kapcsolaton keresztül adna hozzáférést az ügynököknek weboldalakhoz, alkalmazásokhoz, fájlokhoz és adatbázisokhoz. (16 pont, 6 komment)<br>Forrás: <a href="https://www.reddit.com/r/mcp/comments/1x48s16/i_built_a_universal_mcp_server_one_server_that/">r/mcp</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Egy könnyű OpenWebUI-alternatíva már ügynököket, MCP-t, RAG-ot és képszerkesztést is kínál, így egyetlen helyi felületből kezelhető több gyakori munkafolyamat. (13 pont, 1 komment)<br>Forrás: <a href="https://www.reddit.com/r/SelfHostedAI/comments/1x402wa/llc_lightweight_openwebui_alt_now_with/">r/SelfHostedAI</a></p>
+<p><strong>r/StableDiffusion</strong> -- Egy négy évvel ezelőtti AI-kép újraközlése jól láthatóvá teszi, mennyit javult rövid idő alatt a helyben futtatható képgenerálás minősége. (288 pont, 61 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1x55z7z/my_first_image_i_created_using_ai_4_years_ago/">r/StableDiffusion</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Kevesebb próba, olcsóbb modell: így érdemes videógenerálást automatizálni</strong>. A videós ügynök költségét gyakran nem a végső render, hanem a rosszul megválasztott próbálkozások emelik meg.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-10-14-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-10-14";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>

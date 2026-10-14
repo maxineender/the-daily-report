@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb próba, olcsóbb modell: így érdemes videógenerálást automatizálni — LocalAgent Digest</title>
+  <meta name="description" content="A videós ügynök költségét gyakran nem a végső render, hanem a rosszul megválasztott próbálkozások emelik meg.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-14</div>
+          <h1 class="article-title">Kevesebb próba, olcsóbb modell: így érdemes videógenerálást automatizálni</h1>
+          <div class="article-sub">A videós ügynök költségét gyakran nem a végső render, hanem a rosszul megválasztott próbálkozások emelik meg.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Kevesebb próba, olcsóbb modell: így érdemes videógenerálást automatizálni" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A generatív videó könnyen válik kiszámíthatatlan költségű ügynökfeladattá. Egy szöveges modellnél viszonylag egyszerű tokenkeretet szabni, a videóknál viszont a modell, a hossz, a felbontás és az ismételt generálások együtt döntik el a számlát. Dankieft friss bemutatója három olyan módszert jár körül, amely automatizált munkafolyamatban is használható: az olcsóbb modell előzetes kiválasztását, a piszkozatmódot és a használatalapú API-t. Az összehasonlítás a készítő saját tesztje, nem független benchmark, de a költségszerkezetet jól láthatóvá teszi. <a href="https://youtu.be/KKfaBVM3Jdg">A teljes bemutató itt nézhető meg.</a></p>
+<h2>Nem minden jelenethez kell a legdrágább modell</h2>
+<p>A videó első példájában ugyanaz a feladat Kling 3.0-val 12, Seedance 2.5-tel 72 kreditbe került. A készítő szerint a két eredmény minősége hasonló volt, vagyis ugyanabból a keretből hat Kling-próba fért volna ki egyetlen Seedance-generálás helyett. Egy animejelenetnél még nagyobb volt a különbség: a Minimax H3 30 kreditet, a Seedance 2.5 pedig 180 kreditet használt, miközben a készítő a Minimax eredményét választotta volna. <a href="https://youtu.be/KKfaBVM3Jdg">A konkrét összehasonlítások a videóban láthatók.</a></p>
+<p>Ez nem bizonyítja, hogy valamelyik modell általában jobb. Azt mutatja, hogy a modellválasztás jelenettípushoz kötött optimalizálási feladat. A hosszú, több szereplős párbeszéd, a kinetikus tipográfia és az anime nem feltétlenül ugyanannak a rendszernek az erőssége.</p>
+<p>Egy saját ügynök ezt előszűrő lépésként kezelheti. A promptból, a kívánt hosszból, a felbontásból és a referenciaképek számából előbb összeállíthat egy jelöltlistát, majd csak a legígéretesebb két modellen futtathat alacsony költségű próbát. A videóban bemutatott modellválasztó is ezt teszi: értékeli a promptot, figyelembe veszi az elérhető hossz- és felbontási korlátokat, majd költségbecslést ad. <a href="https://youtu.be/KKfaBVM3Jdg">A működés bemutatása ugyanebben a videóban szerepel.</a></p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: a videós folyamat első lépése ne a generálás, hanem egy költségkapu legyen. A vezérlő csak akkor küldje a feladatot a drágább modellre, ha az olcsó próbaváltozat nem teljesíti az előre rögzített hossz-, felbontás- vagy jelenetkövetelményt.</p></blockquote>
+<h2>A piszkozat nem gyenge végtermék, hanem olcsó döntési felület</h2>
+<p>A második módszer a draft mód. Ahelyett, hogy minden próbálkozás teljes felbontásban készülne, először kisebb felbontású változatok születnek. Ezeken ellenőrizhető a szereplők helye, a kamera mozgása, a párbeszéd ritmusa és a jelenetek folytonossága. Csak a kiválasztott változatot kell végül nagy felbontásra alakítani. <a href="https://youtu.be/KKfaBVM3Jdg">A videó ezt egy összetett űrcsatás jeleneten mutatja be.</a></p>
+<p>A példában az első próbánál a robot helyzete jelenetről jelenetre értelmetlenül változott. A második közelebb került a kívánt eredményhez, a harmadik pedig már használható volt. A három piszkozat és az egyetlen végső felskálázás összesen 420 kreditet igényelt. Ha mindhárom változat eleve nagy felbontásban készült volna, a teljes költség 720 kredit lett volna. <a href="https://youtu.be/KKfaBVM3Jdg">A számítás és a három változat a bemutatóban követhető.</a></p>
+<p>Ügynökkel ez a folyamat tovább javítható. A piszkozatokat egy látómodell összevetheti a jelenet strukturált követelményeivel: minden szereplő megjelent-e, megfelelő-e a sorrend, nem cserélődött-e fel egy tárgy, és van-e nyilvánvaló folytonossági hiba. A végső render csak akkor indulhat el, ha a jelölt elér egy meghatározott pontszámot. Ez nem garantál esztétikai minőséget, de megakadályozhatja, hogy egy nyilvánvalóan hibás kompozícióra menjen el a nagy felbontás költsége.</p>
+<h2>Előfizetés vagy API</h2>
+<p>A harmadik döntés az elszámolás módja. A videó szerint ritka használatnál az API lehet kedvezőbb, mert nincs kihasználatlan havi kreditkeret. Rendszeres, nagy terhelésnél viszont az előfizetés adhat alacsonyabb generálásonkénti árat. A bemutatóban szereplő Higgsfield Plus csomag havi 49 dollár, az Ultra havi 310 dollár volt a felvétel készítésekor. <a href="https://youtu.be/KKfaBVM3Jdg">A készítő külön összehasonlítja az API-t és a csomagokat.</a></p>
+<p>Saját ügynöknél az API másik előnye a vezérelhetőség. A készítő olyan saját felületet mutatott, amely a videó-API mellett saját Markdown-fájlokból betöltött promptoptimalizálást, stílusreferenciát, kezdő- és végképet, valamint modellválasztást használ. Az API-kulcsot a helyi vagy saját szerveren futó felület kezeli, a munkafolyamat pedig a csapat szabályaihoz igazítható. <a href="https://youtu.be/KKfaBVM3Jdg">A felület és az összeállítás menete a videó utolsó részében látható.</a></p>
+<h2>A jó automatizálás előbb dönt, csak utána generál</h2>
+<p>A videós ügynök költségét nem feltétlenül egy újabb prompttechnika csökkenti a legjobban. Többet számíthat egy egyszerű sorrend: jelenettípus felismerése, modellválasztás, alacsony felbontású próba, automatikus ellenőrzés, majd egyetlen végső render.</p>
+<p>A bemutatott kreditértékek szolgáltatótól és időponttól függnek, a minőségi értékelés pedig szubjektív. A módszer ettől még általánosítható. Ne a legerősebb videómodellt tedd minden feladat alapértelmezett célpontjává. A saját ügynököd először azt döntse el, melyik modell elég jó az adott jelenethez, és csak az elfogadott piszkozat után költsön a végleges felbontásra.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-10-14-deepdive";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
