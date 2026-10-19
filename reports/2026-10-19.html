@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amikor az ügynök mellé már a teljes futtatókörnyezet is költözik — LocalAgent Digest</title>
+  <meta name="description" content="Ma nem egyetlen új modell vitte a napot, hanem az a kérdés, hol és hogyan fusson tartósan a saját ügynököd.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-19</div>
+          <h1 class="article-title">Amikor az ügynök mellé már a teljes futtatókörnyezet is költözik</h1>
+          <div class="article-sub">Ma nem egyetlen új modell vitte a napot, hanem az a kérdés, hol és hogyan fusson tartósan a saját ügynököd.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-19.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-19.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Amikor az ügynök mellé már a teljes futtatókörnyezet is költözik" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép estét. Egy új, saját gépen futtatható fejlesztői platform tartós microVM-ekbe költöztetné az ügynököket. A mai anyag több oldalról ugyanoda fut ki: nem csak a modell számít, hanem a köré rakott állapot, eszköztár és munkafolyamat is.</p>
+<h2>Overalls: tartós microVM-eket adna a saját ügynökeid alá</h2>
+<p>A <a href="https://github.com/ghuntley/overalls">ghuntley/overalls</a> repó leírása szerint az Overalls egy „AI-first developer platform”, amelyet te futtatsz, nem szolgáltatásként kapsz. A README alapján minden fejlesztőgép egy perzisztens Firecracker microVM, amely NixOS, Ubuntu vagy Windows alatt futhat, és leállítás, indítás, átméretezés vagy klónozás után is megtartja a lemezét, nevét és címét. Beépített ügynököt is ad: böngészőből vagy CLI-ből indított szál tovább dolgozik, és felébreszti a gépet, ha az épp állt. A projekt még research preview, a nyilvános rajt dátuma a README szerint 2026. november 3.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ez a felállás pont azt a rést célozza, ahol a sima helyi CLI-ügynökök kényelmetlenek: hosszú build, teszt vagy refaktor közben bezárod a laptopot, és minden megszakad. Ha hasonlót akarsz házon belül összerakni, érdemes külön figyelni arra a mintára, hogy az ügynök ne a hoston, hanem tartós VM-ben éljen, saját diszkkel és ébreszthető állapottal.</p></blockquote>
+<p>Forrás: <a href="https://github.com/ghuntley/overalls">ghuntley/overalls</a></p>
+<h2>Paperthin: 28 nyílt skill arra, hogy az ügynök végre törölni is merjen</h2>
+<p>@rryssf egy friss posztban a Paperthin nevű nyílt skillcsomagot emelte ki, amely 28 skillből áll, és kifejezetten arra próbálja rávenni a kódoló asszisztenseket, hogy ne csak hozzáadjanak, hanem egyszerűsítsenek és töröljenek is. A poszt szerint a központi elem a `re0` skill, amely a fölösleges kód, komment és szerkezeti zaj visszavágását teszi alapértelmezettebbé. Ez nem új modell vagy új ügynök, inkább egy viselkedési réteg arra, hogyan dolgozzon a már meglévő.</p>
+<p>Forrás: <a href="https://x.com/rryssf/status/2111934606048137358">@rryssf</a></p>
+<h2>AI-Scientist-v3: egy futáskönyvtárba zárja az ötletet, kísérletet, ablationt és a papírt</h2>
+<p>A SakanaAI új repója, az AI-Scientist-v3, egy teljes agentes kutatási pipeline-t rak egybe. A README szerint egy `task.md` fájlból indul, az ágensek ötleteket javasolnak, kísérleteket futtatnak, a feladat rubrikája ellen értékelnek, majd baseline-okat, ablationöket, zárt végső kiértékelést és utólagos analízist is készítenek, végül megírják a papírt. Az ajánlott futtatás Dockerben történik, az alap parancs az `agsci run`, az agent image-et külön kell buildelni. A repo október 11-én jött létre, és október 18-án is kapott push-t.</p>
+<blockquote><p>Ha saját kutatós vagy benchmarkoló ügynököt futtatsz, ebből a szerkezeti ötlet az érdekes: egy run directory alá tenni a promptot, kódot, mérést, ablationt és végső értékelést. Ez sokkal könnyebbé teszi az utólagos auditot, mint a szétszórt notebookok és ideiglenes shell sessionök.</p></blockquote>
+<p>Forrás: <a href="https://github.com/SakanaAI/AI-Scientist-v3">SakanaAI/AI-Scientist-v3</a></p>
+<h2>Anthropic OSS Scanner: izolált VM-ben keres hibát, de a jelentéseket nem ember nézi át</h2>
+<p>Az Anthropic nyílt forrású OSS Scanner szolgáltatása most már nyilvános repóval és belépési folyamattal látszik. A README szerint kritikus open source projektekhez lehet jelentkezni egy `projects/&lt;name&gt;` könyvtáras PR-ral; a szolgáltatás izolált VM-ben buildeli a projektet, internet nélkül elemzi, majd e-mailben küld reprodukálót és, ha van, javítási javaslatot. Fontos részlet, hogy a jelentések modell által generáltak, ember nem nézi át őket, és nincs 90 napos kötelező nyilvános disclosure sem.</p>
+<p>Forrás: <a href="https://github.com/anthropics/oss-scanner">anthropics/oss-scanner</a></p>
+<h2>Linus is LLM-mel vadászott egy 13 éves kernelhibára</h2>
+<p>A széles körkép legerősebb nyílt forrású jele most nem egy új modell, hanem az, hogy a Linux-kernel fejlesztésében is egyre láthatóbb az LLM-használat. A SavvyNik összefoglalója szerint a maintainer summit után a fejlesztők azt mondták, a kötelező AI-jelölés nem bizonyult különösebben hasznosnak, miközben a videóban idézett adatok alapján az RC7 commitok nagyjából 10 százaléka kapott AI-attribúciós taget. Ugyanebben a blokkban az is elhangzik, hogy Linus modern LLM-eszközöket használt egy 13 éves kernelbug kibogozásához.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=UAs2XHkZtCo">SavvyNik</a></p>
+<h2>Suno a stúdióban: a praktikus workflow már nem szövegprompttal indul, hanem demo + stems körrel</h2>
+<p>A Suno friss videójában Marc E. Bassy elég konkrétan elmondja, hogyan használja a rendszert: akusztikus gitár + vokál demót visz be, külön dobot ad hozzá, majd a generált anyagból stemeket exportál, és újraénekli, újrajátssza a részeket. Ez azért érdekesebb a szokásos marketingvideónál, mert nem „írj egy dalt egy promptból” irányt mutat, hanem egy oda-vissza szerkeszthető, sávokra bontott workflow-t.</p>
+<p>Forrás: <a href="https://youtu.be/Rc05KjoU9IM">Suno</a></p>
+<h2>FOLYTATÁS/FRISSÍTÉS: a Gemini CLI most már a lezárási jeleket is továbbadja a gyerekfolyamatnak</h2>
+<p>A figyelt repók közt a Gemini CLI új commitjai között megjelent egy olyan javítás is, amely a bootstrap parentből továbbítja a termination signalokat a child process felé. A Gemini CLI az elmúlt napokban már többször szerepelt nálunk más hibákkal, ezért ez csak folytatásként érdekes, nem új sztoriként. A mostani változás annyit jelent, hogy megszakításkor vagy leállításkor kevesebb eséllyel marad félárván valami alfolyamat.</p>
+<blockquote><p>Ha wrapperből, tmuxból vagy más supervisor alól futtatod a CLI-t, ez a fajta javítás pont a nehezen reprodukálható „miért maradt ott a processz?” hibákat csökkenti. Érdemes frissítés után direkt kipróbálni egy hosszú tool-hívással, majd SIGINT vagy leállítás mellett megnézni, tisztán ürül-e a folyamatfa.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli">google-gemini/gemini-cli</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/SakanaAI/AI-Scientist-v3">SakanaAI/AI-Scientist-v3</a></strong> - A README alapján ez egy agentes tudományos pipeline: egy `task.md`-ból indul, az ágensek ötleteket generálnak, kísérleteket futtatnak, a feladat rubrikája szerint értékelnek, majd baseline-okat, ablationöket, zárt végső kiértékelést, utólagos analízist és végül papírírást is ugyanazon run directory alatt végeznek. Az ajánlott futtatás Dockerben történik, az alap image-et a `src/docker/agent-cli/Dockerfile` alapján kell buildelni, és utána az `agsci run` az alapértelmezett belépő. Apache-2.0 licencű, nem fork, 2026-10-11-én jött létre, utoljára 2026-10-18-án pusholták; 376 csillagnál és 60 forknál jár. Ez annak hasznos, aki a saját ügynökét nem chatre, hanem ismételhető kísérleti ciklusokra akarja fogni; viszont nem könnyű hétvégi játékszer, mert eleve Dockeres, többfázisú futásra van szabva.</p>
+<p><strong><a href="https://github.com/ghuntley/overalls">ghuntley/overalls</a></strong> - A README alapján az Overalls egy saját üzemeltetésű fejlesztői platform fejlesztőgépekhez és az azokon dolgozó ügynökökhöz. Minden gép perzisztens Firecracker microVM, amely NixOS, Ubuntu vagy Windows lehet, és megtartja a lemezét, nevét és címét leállítás, indítás, átméretezés, klónozás vagy költöztetés után is; az ügynökkel böngészőből vagy CLI-ből lehet szálat indítani, és az a laptop lezárása után is folytatja a munkát. MIT licencű, nem fork, 2025-12-18-án hozták létre, utoljára 2026-10-19-én pusholták; 1517 csillaga és 220 forkja van. A README külön kimondja, hogy research preview és még nem fogyasztásra való, tehát most inkább architektúrajel, mint kész napi driver, de annak, aki saját ügynököt tartós, elkülönített gépekre akar kötni, nagyon releváns irány.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála az, hogy a helyben futó AI körül most egyszerre gyorsulnak a modellek, az agentes workflow-k és a generatív multimédia trükkök.</p>
+<p><strong>@sama</strong> -- Az OpenAI Navier-Stokes pólós poénja arra utal, hogy a láncolt gondolat még mindig marketingeszköz is: helyi ügynököknél ez azért érdekes, mert a modellek belső lépéseinek láthatósága és naplózása továbbra is gyakorlati kérdés.<br>Forrás: <a href="https://x.com/sama/status/2111139227761266699">@sama</a></p>
+<p><strong>@AnthropicAI</strong> -- Az Anthropic új közhasznú alapja nem termékbejelentés, de annak jele, hogy a nagy laborok egyre erősebben intézményesítik, hogyan kezelik a modellhasználat társadalmi kockázatait: ez később az API-k, licencek és hozzáférési feltételek szintjén is lecsapódhat.<br>Forrás: <a href="https://x.com/AnthropicAI/status/2111881963657412903">@AnthropicAI</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Computer egy böngészőben futó, cyberpunk hangulatú Roadster-játékot rakott össze, ami jó példa arra, hogy generatív eszközökkel már nem csak asseteket, hanem teljes, gyorsan prototipizált élményeket is összeraknak.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2111850132669075696">@AravSrinivas</a></p>
+<p><strong>@Thom<em>Wolf</strong> -- Thom Wolf szerint a Hugging Face Hubon a legtöbbet továbbépített modell nem nyelvi, hanem a FLUX.1-dev, ami jól mutatja, hogy képgenerálásban továbbra is az open ökoszisztéma adja a legtöbb építőkockát a saját gépes workflow-khoz.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2111960585369772163">@Thom_Wolf</a></p>
+<p><strong>@rryssf</strong> -- Bár az AI-Scientist-v3 már szerepel a fő digestben, ez a poszt külön azt emeli ki, hogy a sima kódoló ügynökök kutatási feladatban hajlamosak beszűkülni hiperparaméter-tologatásra: hasznos figyelmeztetés, ha helyben futtatott agentet akarsz valódi feltáró munkára fogni.<br>Forrás: <a href="https://x.com/rryssf/status/2111845882744435068">@rryssf</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A DeepSeek-V4.1-Flash-1017 körüli reakciók alapján a közösség ezt nem apró frissítésnek, hanem komoly ugrásnak látja: ha tényleg ilyen erős, hamar megjelennek köré a kvantált, helyben futtatható változatok és finomhangolások is. (1107 pont, 304 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1x84po4/deepseekaideepseekv41flash1017_hugging_face/">r/LocalLLaMA</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy 25 éves NSA-s kriptográfiai rejtély gyors megoldása azt mutatja, hogy a modellek már nem csak kódot írnak, hanem szokatlan mintázatokat is kiszúrnak: ez helyi ügynököknél audit, reverse engineering és hibakeresés felé nyit új használatot. (4017 pont, 306 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1x8v3sn/claude_solved_a_25_year_old_nsa_cryptography/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- Az Opusszal készült 20 MB-os procedurális játék azért érdekes, mert jól látszik belőle, hogyan lehet modellekkel nem csak tartalmat generálni, hanem a játékszabályokat és rendszereket is tömören leírni. (2471 pont, 255 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1x8602z/procedural_generation_with_opus_is_insane_this/">r/ClaudeAI</a></p>
+<p><strong>r/comfyui</strong> -- Ez a poszt egy nagyon gyakorlati trükköt mutat: ugyanazon a GPU-n váltogatva futtatni a helyi agentet és a MiniMax H3-at OOM nélkül, ami sokaknak olcsóbb alternatíva lehet külön inferencia- és generálógép helyett. (32 pont, 4 komment)<br>Forrás: <a href="https://www.reddit.com/r/comfyui/comments/1x9h40v/i_let_a_local_agent_run_minimax_h3_overnight_on/">r/comfyui</a></p>
+<p><strong>r/Seedance</em>AI</strong> -- A Seedance 2.5 anime fight prompt négy snittre bontott tetőjelenete azt mutatja, hogy videógenerálásban egyre inkább shot-alapú, rendezői workflow felé megy a közösség, nem egyetlen nagy prompttal próbálnak mindent megoldani. (133 pont, 14 komment)<br>Forrás: <a href="https://www.reddit.com/r/Seedance_AI/comments/1x97lk3/seedance_25_anime_fight_prompt_a_fourshot_rooftop/">r/Seedance_AI</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-10-19";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
