@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kifelé nyílik az ügynökök világa — LocalAgent Digest</title>
+  <meta name="description" content="Ma több hír is arról szól, hogy az ügynök már nem csak promptol, hanem külső rendszerekhez, fájlokhoz és javítási körökhöz kapcsolódik.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-22</div>
+          <h1 class="article-title">Kifelé nyílik az ügynökök világa</h1>
+          <div class="article-sub">Ma több hír is arról szól, hogy az ügynök már nem csak promptol, hanem külső rendszerekhez, fájlokhoz és javítási körökhöz kapcsolódik.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kifelé nyílik az ügynökök világa" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Ma nem egy új modell viszi a napot, hanem az, hogy egyre több helyen kapnak valódi munkateret az ügynökök. A mai anyag közös pontja, hogy hol nyílik meg nekik új felület: felhős piactér, lokális fájlrendszer, IDE-konténer, vagy épp biztonsági javítási workflow.</p>
+<h2>OpenAI-modellek mennek a Google Cloudra</h2>
+<p>Az OpenAI tegnapi bejelentése szerint a modelljei megjelennek a Google Cloudban. A részletes cikk törzse nem tölthető le az oldalukról, de a hivatalos RSS-feed alapján ez nem pletyka, hanem kész bejelentés, és a széles körképben is úgy szerepel, hogy a GPT-6 Astra, GPT-6.1 Sol és GPT-6 Luna egy része már privát tesztben elérhető enterprise ügyfeleknek a Google Cloud Model Gardenen keresztül, később szélesebb indulással. A lényeg nem az, hogy új modell jött, hanem hogy ugyanaz a stack új helyen vásárolható és üzemeltethető.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha olyan gépen vagy VPC-ben futtatod az ügynöködet, ahol eddig a Google Cloudhoz volt közvetlen, belső útvonalad, de az OpenAI-hoz külön kimenő háló vagy számlázási kör kellett, ezt most érdemes újratervezni. Ugyanaz a workflow közelebb kerülhet a saját adattárolásodhoz, és a modellválasztást jobban el lehet választani a felhős infrastruktúra-választástól.</p></blockquote>
+<p>Forrás: <a href="https://openai.com/index/openai-models-google-cloud">OpenAI RSS</a></p>
+<h2>LayerFS: külön fájlrendszer kifejezetten kódoló ügynököknek</h2>
+<p>A Hacker News-on jól ment a <a href="https://layerfs.ai/">LayerFS</a>, ami magát "filesystem for AI coding agents" néven pozicionálja, 70 ponttal és 42 kommenttel. Ez nem új modell, hanem infrastruktúraötlet: olyan fájlrendszer-abstrakció, ami az ügynökös kódolási munkát próbálja biztonságosabbá és visszatekerhetőbbé tenni. Azért érdekes, mert a saját gépen futó kódoló ügynökök egyik állandó baja nem a token, hanem az, hogy hogyan írnak bele a working tree-be, hogyan lehet elkülöníteni a kísérleti módosításokat, és hogyan lehet egyáltalán követni, mi változott.</p>
+<p>Forrás: <a href="https://layerfs.ai/">LayerFS</a></p>
+<h2>OpenAI "Patch the Planet": ügynökös sérülékenység-javításból koordinált folyamatot csinálnának</h2>
+<p>Az OpenAI egyszerre két, ide kapcsolódó oldalt is kirakott: a <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/">Patch the Planet</a> és a <a href="https://openai.com/index/empowering-cyber-defenders/">Democratic governance of frontier AI, part II: Empowering cyber defenders</a> címmel futó anyagokat. A teljes törzs itt sem olvasható botvédelem miatt, de a címek és a sitemap-diff alapján egyazon napi, hivatalos biztonsági csomagról van szó: nem csak hibakeresésről beszélnek, hanem koordinált javítási és védelmi folyamatról.</p>
+<p>Ez önmagában még laborbeszéd lenne, de közben ugyanebbe a körbe belelóg a tegnap publikált php2shell-checker skill-repó is, ami már kézzelfogható eszköz ugyanebből a gondolatkörből. Vagyis a nagyobb irány most az, hogy az ügynök ne csak találjon valamit, hanem csatlakozzon a javítás menetéhez is.</p>
+<p>Forrás: <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/">OpenAI</a></p>
+<h2>Gemini CLI: most már konténerben is át tudja hidalni az IDE-kísérőt</h2>
+<p>A gemini-cli mostani commitjai közt van egy kifejezetten érdekes sor: "bridge the IDE companion into container sandboxes over exec stdio". Ez nem új release-hírként kerül ide, mert a v0.65.0-ról tegnap már írtunk, hanem azért, mert a commitlista alapján látszik egy konkrét új irány: a CLI jobban együtt akar működni a konténeres fejlesztői környezetekkel. Emellett jött javítás a user-szintű `~/.gitconfig` megtartására shell és git környezetben, privát hálózati MCP OAuth endpointok opt-in támogatására, és arra is, hogy a read-only fájlokat és hard linkeket rendesen kezelje.</p>
+<p>Ha a saját ügynököd Dev Containerben, Codespaces-szerű környezetben vagy lokális Dockerben dolgozik, ez fontosabb fejlemény, mint egy sima "hibajavítás" címke sugallná.</p>
+<blockquote><p>Ha van egy konténeres fejlesztői setupod, érdemes külön újrapróbálni az IDE-ből indított, de a sandboxban futó agentes munkát, mert pont ez a híd javult. A `~/.gitconfig`-fix miatt azt is nézd meg, hogy a commit author, includeIf szabályok és credential helper viselkedése megváltozott-e a korábbi kerülőutakhoz képest.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0">google-gemini/gemini-cli</a></p>
+<h2>Perplexity /graphify: kódbázis-vizualizálás 5000 kredittel</h2>
+<p>Aravind Srinivas tegnap bejelentette, hogy a `/graphify` most már számítógépen is elérhető, és minden felhasználó kap hozzá 5000 kreditet kipróbálásra. A skill célja, hogy vizualizáljon egy kódbázist. Ez nem ugyanaz a sztori, mint a korábbi Perplexity SPACE vagy más általános agentes hír, itt konkrétan egy codebase-felfogó eszközről van szó.</p>
+<p>A saját gépen futó ügynököknél visszatérő gond, hogy a projektmemória vagy túl szöveges, vagy túl sok tokenbe kerül. Egy kódbázis-gráf nem helyettesíti a lokális indexelést, de jó külső nézet lehet arra, hogy egy új repónál hol vannak a csomópontok.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2113029257886847264">@AravSrinivas</a></p>
+<h2>Thom Wolf egy 4 bites lm<em>head-kvantálást emelt ki, alig mérhető visszaeséssel</h2>
+<p>Thom Wolf tegnapi posztjában nem új modellt jelentett be, hanem egy technikai eredményt emelt ki: az a rész, amit "mindenki" magas precizitáson hagy, az `lm</em>head`, most 4 bitre lett kvantálva, és állítása szerint csak 0,7 ponttal maradt el a bf16-tól. A poszt arra utal, hogy az eredmény nyílt súlyokkal ment ki Hugging Face-re.</p>
+<p>Ez azért érdekes a saját ügynököt futtató olvasónak, mert a kvantálási beszélgetés eddig gyakran megállt ott, hogy "a kritikus rétegeket úgysem érdemes nagyon bántani". Ha ez a gyakorlatban is tartható marad több workloadon, akkor a helyi futtatásnál újra megnyílhat pár olyan modellméret, ami eddig csak kényelmetlen kompromisszummal fért bele.</p>
+<p>Forrás: <a href="https://x.com/Thom_Wolf/status/2112967683813609724">@Thom_Wolf</a></p>
+<h2>Képrealisztikánál továbbra is a többmodell-es próbálkozás a nyerő, nem az "egyetlen legjobb"</h2>
+<p>Dankieft friss Seedance 2.5-videója nem új termékbejelentés, hanem workflow-anyag, viszont elég konkrét ahhoz, hogy hír legyen belőle. A videó egyik legerősebb állítása, hogy realisztikus képnél és videónál továbbra sem az a jó stratégia, hogy kiválasztasz egy "legjobb" modellt, hanem hogy olcsóbb képgenerációval több modellt párhuzamosan próbálsz, majd csak a nyertes irányt viszed át drágább videóba vagy 1080p-s upscaleba. Név szerint említ Flux 2.0 Pro-t, GPT Image 2.5 Flare-t, Nano Banana 2.1-et, SeaDream 5.0-t, videónál pedig Seedance 2.5 draft és full módot.</p>
+<p>A lényeg itt nem a márka, hanem a kétlépcsős költés: olcsó keresés, drága finálé.</p>
+<blockquote><p>Ha saját ügynökkel generáltatsz kreatív asseteket, érdemes külön választani a "kereső" és a "véglegesítő" modellt. A videó alapján a legkézzelfoghatóbb spórolás az, hogy először 480p draft körben regeneráltatsz sokat, és csak a kiválasztott klipet emeled 1080p-re.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/2hJsvDSPWYM">Dankieft</a></p>
+<h2>Google Flow-os horrorworkflow: működik, de emberi kézi munka marad</h2>
+<p>A zapiwala-féle friss videó egy teljes horrorcsatorna-workflowt mutat meg Google Flow-val, ChatGPT-vel vagy Claude-dal, karakter- és helyszínsheetekkel, majd klipenkénti videógenerálással. Az anyag legfontosabb része nem a "lehet ilyet csinálni", hanem a korlát: az ingyenes úton 50 napi kreditből, klipenként kézzel, újrafelhasznált promptokkal és átnevezésekkel megy, és egy 5-6 perces videó összerakása így 24-48 órát is elvihet. Vagyis ez még nem egy gombnyomásos tartalomgyár, hiába annak látszik a thumbnailen.</p>
+<p>A saját gépen futó ügynökök felől nézve ez érdekes, mert jól mutatja, hol van még a határ a teljes automatizálás előtt: az ügynök tud előkészíteni, darabolni, promptot gyártani, de a platform oldali manuális lépések még sok helyen megfogják.</p>
+<p>Forrás: <a href="https://youtu.be/t9_cRAC221w">zapiwala</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/openai/php2shell-checker">openai/php2shell-checker</a></strong> - A README alapján ez egy PHP Version Checker, ami vagy egy weboldal URL-jét, vagy egy helyi PHP binárist ellenőriz abból a szempontból, hogy érintett-e a php2shell sérülékenységben. Két skillt ad: a `phpcheck-url` URL alapján vizsgál, a `phpcheck-server` pedig szerverhozzáférés mellett azt nézi meg, milyen PHP-verzió szolgálja ki a site-ot; a README konkrét parancsokat is ad a Codex skill-installerhez és a közvetlen futtatáshoz. A licenc Apache-2.0, tehát szabadon felhasználható a licenc feltételei mellett. A repó 2026-10-21-én jött létre, utoljára ugyanezen a napon pusholtak rá, 457 csillagnál és 32 forknál jár, és nem fork. Annak hasznos, aki a saját ügynökét nem csak kódírásra, hanem célzott ellenőrző vagy mitigációs skillként is be akarja kötni, de ez egy nagyon szűk, konkrét hibára lő, nem általános webauditor.</p>
+<p><strong><a href="https://github.com/amoai-tech/mdeai">amoai-tech/mdeai</a></strong> - A README szerint az MDE AI egy Medellínre fókuszált AI-native discovery és concierge platform: beszélgetős AI-t, térképet, helyi felfedezést, foglalást, jegyeket, bérlést, eseményeket, helyszíneket, éttermeket, kávézókat, nightlife-ot, utakat és partnerworkflowkat rak egy alkalmazásba. A repó dokumentáció-központú felépítésű, külön könyvtárakat ad termékhez, architektúrához, integrációkhoz, teszteléshez, üzemeltetéshez és stratégiához, tehát a README alapján nem egy apró tool, hanem egy nagy alkalmazás teljes forrásbázisa. A licenc MIT. 2026-09-15-én hozták létre, utolsó push 2026-10-22, jelenleg 1 csillaga van és 45 nyitott issue-ja; nem fork. Saját ügynök mellé inkább referencia arra, hogyan néz ki egy AI-native app dokumentációs gerince, mintsem azonnal beemelhető komponens.</p>
+<p>✅ All agents reported back!<br>├─ 🟠 Reddit: 2 threads │ 56 upvotes │ 19 comments<br>├─ 🔵 X: 29 posts │ 3,932 likes │ 331 reposts<br>├─ 🔴 YouTube: 3 videos │ 160,384 views │ 3/3 with transcripts<br>├─ 🎵 TikTok: 19 videos │ 204,378 views │ 10,516 likes<br>├─ 🟡 HN: 28 storys │ 1,996 points │ 1,510 comments<br>├─ 🐙 GitHub: 25 items │ 263 reactions │ 410 comments<br>├─ 🌐 Web: 17 pages - mage.space, tembo.io, opencode.ai, pricepertoken.com, neuralstack.network, tpsreport.news, safeguard.sh, Business Insider<br>└─ 🗣️ Top voices: @rexsooo, @AkterBrist39045, @saintsofthesage │ r/singularity, r/BestGitHubRepos</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az a közös, hogy mindenki azt feszegeti, meddig lehet elvinni a helyben vagy saját környezetben futó ügynököket: kódjavítástól Blenderig, kis modellektől a nyers inference tempóig.</p>
+<p><strong>@AnthropicAI</strong> -- Az Anthropic egy konkrét tudományos felhasználást emelt ki: Claude-ot fehérjekötők tervezésére használták skorpióméreg ellen, ami azt mutatja, hogy a modellek nem csak chatre jók, hanem laboros workflow-k előszűrésére és ötletgenerálására is.<br>Forrás: <a href="https://x.com/AnthropicAI/status/2112579251555721573">@AnthropicAI</a></p>
+<p><strong>@AravSrinivas</strong> -- A JOLT nevű poszt-training munka a self-distillationt és az RL-t köti össze, ami a kisebb vagy specializált modellek utóhangolásánál lehet fontos annak, aki saját ügynököt akar olcsóbban, de mégis használható minőségben futtatni.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2113013527418146913">@AravSrinivas</a></p>
+<p><strong>@AravSrinivas</strong> -- A Blenderhez adott számítógép-hozzáférésről szóló megosztás azért érdekes, mert jól mutatja, hogy egy ügynök már nem csak szöveget ír, hanem tényleges desktop-eszközöket kezelhet 3D és vizuális munkafolyamatokban is.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2113037333079708138">@AravSrinivas</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Notion frissítése alapján az ügynökök már 24 órán át dolgozhatnak saját böngészővel és géppel, ami a hosszabb, több lépéses háttérfeladatok felé tolja a termékeket, nem csak az egyszeri promptok felé.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2112720837875028279">@futurepedia_io</a></p>
+<p><strong>@Thom</em>Wolf</strong> -- Thom Wolf szerint a DeepSeek nem csak modellt, hanem teljes nyílt inference stacket rak le az asztalra, ami annak fontos, aki saját gépen akar gyors kiszolgálást és nem csak API-ra építene.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2112513796866813956">@Thom_Wolf</a></p>
+<p><strong>r/SelfHostedAI</strong> -- Egy nyílt forrású eszközzel ChatGPT-ből API-szerű végpontot csináltak böngészőn keresztül, ami érdekes kerülőút azoknak, akik meglévő webes AI-folyamatokat akarnak automatizálni saját rendszerből. (67 pont, 9 komment)<br>Forrás: <a href="https://www.reddit.com/r/SelfHostedAI/comments/1xa3ig4/i_turned_my_chatgpt_tab_into_an_api_with_a_free/">r/SelfHostedAI</a></p>
+<p><strong>r/openclaw</strong> -- Az OpenClaw új kiadása a Skill Workshop 2.0-val és nyilvános beszélgetéslinkekkel inkább az ügynökök körüli szerkeszthetőséget és megoszthatóságot tolja előre, ami napi használatban többet számít, mint egy új demó. (29 pont, 4 komment)<br>Forrás: <a href="https://www.reddit.com/r/openclaw/comments/1xa77t8/openclaw_v2026105_refreshed_sidebar_skill/">r/openclaw</a></p>
+<p><strong>r/openclaw</strong> -- A kis helyi modellekre készült ügynök-összehasonlítás azért hasznos, mert nem nagy GPU-klaszterekre mér, hanem arra a sávra, ahol egy 4B körüli modellből kell kihozni a legtöbb gyakorlati értéket. (24 pont, 12 komment)<br>Forrás: <a href="https://www.reddit.com/r/openclaw/comments/1xb5yuw/top_10_ai_agents_for_small_local_llms_in_2026/">r/openclaw</a></p>
+<p><strong>r/LLMDevs</strong> -- A DeepSeek 4.1 Flash sebességmérése vLLM és DeepInfer alatt azt mutatja, hogy a helyi inference világa továbbra is brutálisan optimalizáció-érzékeny, és a futtatókörnyezettel sokszor többet lehet nyerni, mint új promptokkal. (7 pont, 1 komment)<br>Forrás: <a href="https://www.reddit.com/r/LLMDevs/comments/1xbor7i/over_600k_tokenss_deepseek_41_flash_on_8b300_vllm/">r/LLMDevs</a></p>
+<p><strong>r/hermesagent</strong> -- A Hermes-agentes smart TV-poszt jó példa arra, hogy a helyben futó ügynökök már nem csak laptopos asszisztensek, hanem hétköznapi eszközök rendberakására és automatizálására is használhatók. (337 pont, 83 komment)<br>Forrás: <a href="https://www.reddit.com/r/hermesagent/comments/1xamiyp/hermes_just_decrapified_my_cheap_smart_tv/">r/hermesagent</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-10-22";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
