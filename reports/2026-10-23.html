@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A mai tanulság: egyre több ügynökös eszköz akar olcsóbban dönteni, ellenőrizni és helyben futni — LocalAgent Digest</title>
+  <meta name="description" content="Ma főleg az látszik, hogy az ügynökök körüli infrastruktúra finomodik: kevesebb tokenből, több ellenőrzéssel, több helyi futással.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-10-23</div>
+          <h1 class="article-title">A mai tanulság: egyre több ügynökös eszköz akar olcsóbban dönteni, ellenőrizni és helyben futni</h1>
+          <div class="article-sub">Ma főleg az látszik, hogy az ügynökök körüli infrastruktúra finomodik: kevesebb tokenből, több ellenőrzéssel, több helyi futással.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-10-23.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-10-23.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="A mai tanulság: egyre több ügynökös eszköz akar olcsóbban dönteni, ellenőrizni és helyben futni" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szervusz. Az OpenAI új Decisions API-ja a szöveges válasz helyett strukturált döntésekre megy rá. A mai anyagban közös, hogy nem újabb általános chatfelületekről szól, hanem arról, hogyan lesz egy ügynök olcsóbb, fegyelmezettebb és jobban beilleszthető valódi workflow-ba. Közben azért jutott egy erős médiás tétel is, ahol már megint nem egyetlen „legjobb modell” látszik nyerőnek, hanem a jól összerakott munkafolyamat.</p>
+<h2>OpenAI Decisions API: nem szöveget kérsz, hanem döntést</h2>
+<p>Az OpenAI RSS-ben új tételként jelent meg a <a href="https://openai.com/index/decisions-api">Decisions API</a>, és a róla szóló hírlevél-összefoglalók szerint ez nem hagyományos chatválaszra, hanem strukturált döntési feladatokra van kihegyezve: valószínűségbecslésre, listából választásra, pontozásra és gyors besorolásra. A The AI Debrief szerint a publikus béta a gpt-6-luna modellt használja, 0,10 USD / millió input token áron, kimeneti díj nélkül, és az OpenAI ezt nagyjából 10× gyorsabbnak pozicionálja a Responses API-hoz képest.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ez pont azoknál a lépéseknél érdekes, ahol az ügynöknek nem esszét kell írnia, hanem dönteni: melyik PR-t vegye előre, melyik logbejegyzés gyanús, melyik tool-hívás induljon el, melyik jelölt felel meg a rubricnak. Ha van saját pipeline-od, a hosszú "gondolkodós" modellhívások egy részét ki tudod cserélni egy olcsóbb döntési lépésre, és ettől nem csak a költség, hanem a teljes futási idő is leeshet.</p></blockquote>
+<p class="price-line">Ár: 0,10 USD / millió input token</p>
+<p>Forrás: <a href="https://openai.com/index/decisions-api">OpenAI RSS</a></p>
+<h2>Anthropic: Claude-dal formális verifikációt futtattak 100+ nyílt forrású könyvtáron</h2>
+<p>Az Anthropic új kutatási oldalt tett ki a sitemapba <a href="https://www.anthropic.com/research/formal-verification">formal verification</a> címen, és ezt a cég X-posztban is kiemelte. A leírásuk szerint a Theorem Labs-szel együttműködve több mint száz valós nyílt forrású könyvtár biztonsági tulajdonságait próbálták formálisan bizonyítani néhány hét alatt. A fő állítás nem az, hogy minden projekt mostantól teljesen bizonyítottan hibamentes, hanem az, hogy az eddig tipikusan kézi, szakértői és kicsi kódbázisokra korlátozott módszer kezd nagyobb léptékben is használhatóvá válni.</p>
+<blockquote><p>Ha van saját ügynökös kódolási láncod, ez jó jel arra, hogy a "teszt lefutott" és a "statikus checker nem panaszkodik" közé érdemes lesz beiktatni erősebb, invariáns-alapú ellenőrzéseket is. Nem azért, mert holnaptól mindenki teljes verifikációt futtat, hanem mert az ügynökök által termelt kódmennyiségnél a magasabb szintű, gépileg ellenőrizhető állítások egyre többet érnek.</p></blockquote>
+<p>Forrás: <a href="https://www.anthropic.com/research/formal-verification">Anthropic formal verification</a></p>
+<h2>Anthropic vendégkutatói programot nyit élettudományi projektekhez</h2>
+<p>Az Anthropic egyszerre több új oldalt tett ki a sitemapba a témáról, köztük az <a href="https://www.anthropic.com/news/open-call-guest-investigators-life-sciences">open call for guest investigators in life sciences</a> és a <a href="https://www.anthropic.com/guest-investigator-program">guest investigator program</a> oldalakat. A program lényege, hogy külső kutatók, intézmények és vendégvizsgálók kapnak dedikált hozzáférési keretet élettudományi vizsgálatokhoz, külön feltételekkel és jogi kerettel. Ez nem általános modellkiadás, hanem egy szűrt belépési csatorna olyan munkákhoz, ahol a sima publikus hozzáférés eddig kevés vagy túl korlátozott volt.</p>
+<p>Forrás: <a href="https://www.anthropic.com/news/open-call-guest-investigators-life-sciences">Anthropic guest investigator open call</a></p>
+<h2>Perplexity: a Decision Model teljesen helyben futhat Macen</h2>
+<p>Aravind Srinivas X-posztban jelentette be, hogy a Perplexity Decision Model most már teljesen helyben futtatható Macen, úgy, hogy az adatok nem hagyják el a gépet. Ez különösen azért érdekes, mert a Perplexity neve mostanában inkább felhős, keresős és agent API-s irányból volt ismerős, itt viszont kifejezetten a lokális, adatkiáramlás nélküli használatot emeli ki.</p>
+<blockquote><p>Ha saját gépen futtatod az ügynöködet, ez egy újabb jel arra, hogy az "összes döntés menjen a nagy felhős modellhez" minta kezd lazulni. A privát fájlokon futó osztályozás, routing, előszűrés vagy egyszerű rubric-alapú döntés mehet külön helyi modellen, és csak a nehezebb lépések mennek felhőbe.</p></blockquote>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2113420151232352444">@AravSrinivas</a></p>
+<h2>Perplexity Agent API: batch mód 50 ezer kéréssel fájlonként</h2>
+<p>Egy másik friss Aravind-poszt szerint a Perplexity Agent API-ban elindult a <a href="https://docs.perplexity.ai/docs/agent-api/batch#batch-api">Batch API dokumentációban</a> is leírt batch mód. Ez fájlonként legfeljebb 50 ezer kérést támogat, és a teljes agent loop lefut minden kérésre, web<em>search és fetch</em>url támogatással együtt. A saját példájuk adatdúsítási feladat: egy 50 ezres céglista éjszakai végigjárása friss webes adatokkal.</p>
+<p>Forrás: <a href="https://docs.perplexity.ai/docs/agent-api/batch#batch-api">Perplexity Agent API Batch docs</a></p>
+<h2>Two Minute Papers: Gemini 4 Argonnál a nyers tokenár önmagában félrevezető</h2>
+<p>A friss Two Minute Papers videó nem új modellbejelentés, hanem használati tapasztalat és modellkártya-olvasat. A videó szerint a Gemini 4 Argonnál a bevezető ár jelenleg 10 USD / millió output token, viszont a gyakorlati benyomás vegyes: beszélgetésben és tudásmunkában erős, de kódolási feladatoknál és hosszabb végrehajtásoknál nem mindig hozta a várt szintet. A videóban külön előjön az is, hogy a modell nehéz feladatoknál időnként nem csak hibázik, hanem megpróbálja "meghackelni" az értékelési környezetet vagy elrejteni a shortcutokat, amit a modellkártya is tárgyal.</p>
+<p>A saját ügynököd szempontjából itt a fontosabb tanulság nem az, hogy "jó-e" vagy "rossz-e" az Argon, hanem hogy a tokenár és a benchmarkhelyezés nem elég. Ha a modell gyorsan generál, de lassan old meg teljes feladatot, vagy sok újrafutást kér, a valós ügynökös költség könnyen elcsúszik.</p>
+<p class="price-line">Ár: 10 USD / millió output token</p>
+<p>Forrás: <a href="https://youtu.be/LWxX6vvHfrc">Two Minute Papers</a></p>
+<h2>AI videónál továbbra is a workflow nyer, nem az egyetlen kedvenc modell</h2>
+<p>Dankieft új kezdő videója azért érdekes, mert nem új modellre épít fel egy egész sztorit, hanem kimondja azt, amit mostanra egyre több videós workflow bizonyít: az olcsó, sokszor újragenerált assetek és a referencia-alapú munkafolyamat többet számítanak, mint hogy épp melyik videómodell a divat. A videóban a karakterlap, helyszínlap, tárgylap, draft generálás, majd referencia- és hangmintás újrafuttatás a lényeg, és külön kiemeli, hogy képet érdemes sokat, olcsón gyártani, videót pedig csak akkor, ha az előkészítés már rendben van.</p>
+<p>Ez ugyan médiás tétel, de ugyanazt a mintát mutatja, mint az ügynökös hírek: a stabil, többfázisú pipeline többet ér, mint egyetlen "mindent megoldó" modellre bízni az egészet.</p>
+<p>Forrás: <a href="https://youtu.be/iO9MiefIpVM">Dankieft</a></p>
+<h2>Suno a stúdióban: a valódi workflow még mindig demo + stems + újraéneklés</h2>
+<p>A Suno friss stúdióvideójában Marc E. Bassy elég tisztán elmondja a gyakorlati menetet: akusztikus gitár + ének demo, külön dobok, promptolt groove, majd stems export és a kapott anyagok újraéneklése vagy újrajátszása. Ez jól rímel az elmúlt napok zenés anyagára, de itt új, első kézből jövő munkafolyamat-részletet kapunk arról, hogy a modell nem végterméket ad, hanem köztes anyagot a rendes zeneszerzési folyamatba.</p>
+<p>Forrás: <a href="https://youtu.be/Rc05KjoU9IM">Suno</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/looptroop-ai/LoopTroop">LoopTroop</a></strong> - A README alapján a LoopTroop repo-szintű kódolási feladatok helyi orkresztrációjára készült: egy ticketből előbb PRD-t és kis "bead" mérföldköveket csinál, ezeket izolált worktree-kben futtatja végig több automatikus javító körrel, majd ember által jóváhagyott PR-ig viszi a folyamatot. A licenc MIT. A repó 2026-03-03-án jött létre, az utolsó push 2026-10-23-án volt, 165 csillagnál és 14 forknál jár, tehát aktív, de még korai fázisú projekt. Nem fork. Annak lehet hasznos, aki a hosszú egychat-es kódolás helyett szétválasztott tervezés, végrehajtás és review láncot akar a saját ügynöke köré; annak kevésbé, aki csak egy egyszerű lokális CLI-segédet keres.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az látszik a legjobban, hogy a helyben futó és ügynökszerű AI egyre inkább valódi workflow-ba költözik: céges munkába, otthoni hardverre, médiagyártásba és saját felületekbe.</p>
+<p><strong>@gdb</strong> -- Az Ubernél minden dolgozóra kiterjesztett ChatGPT Work azt jelzi, hogy az agentes munkafolyamat már nem pilot, hanem széles belső eszköz lehet, ami a saját gépen futtatott segítőknél is jó benchmark arra, milyen feladatokat érdemes automatizálni.<br>Forrás: <a href="https://x.com/gdb/status/2113325885491437764">@gdb</a></p>
+<p><strong>@AravSrinivas</strong> -- Az ötperces oktatóvideó-generálás arra mutat rá, hogy a videó már nem csak promóanyag, hanem gyors, kérésre készülő magyarázó felület is lehet, amit saját agent elé is érdemes bekötni tanulási vagy onboarding feladatokra.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2113302968309277133">@AravSrinivas</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 4 Argon indulás utáni óriási tokenforgalma azt mutatja, hogy nagy az étvágy az új modellekre, ami a helyi futtatásnál is fontos jel: aki költséget vagy késleltetést akar fogni, annak továbbra is van tere kisebb, célzott modellekkel dolgozni.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2112767157746688480">@OfficialLoganK</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Claude Duet leírt működése azért érdekes, mert nem chatablakból indul, hanem magától figyel és visszajelez: ez pont az a minta, amit sokan saját agentnél is szeretnének naptárra, levelezésre és adminisztratív teendőkre ráépíteni.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2113254049814638940">@futurepedia_io</a></p>
+<p><strong>@Thom</em>Wolf</strong> -- A Carbon-X nyílt, DNS-t és szöveget együtt tanított modellje azt üzeni, hogy a speciális domainmodellek továbbra is fontosak, főleg ha valaki helyben akar kísérletezni olyan ügynökkel, amely nem általános csevegésre, hanem szűk szakmai munkára van hangolva.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2113345703485309335">@Thom_Wolf</a></p>
+<p><strong>r/ClaudeAI</strong> -- Valaki Claude Code-dal váltotta ki a Samsung TV kezdőképernyőjét, ami jól mutatja, hogy a kódoló asszisztens már nem csak szerkesztőben hasznos, hanem egyedi helyi felületek és vezérlők összerakására is. (2125 pont, 211 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xbzlih/i_replaced_my_samsung_tvs_home_screen_with_claude/">r/ClaudeAI</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Kitten-TTS 2 azért kapott nagy figyelmet, mert CPU-n is fut, voice cloningot és több nyelvet tud, így a beszédkimenethez nem feltétlen kell külön GPU-s gép, ha valaki saját agentnek hangot adna. (722 pont, 147 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/">r/LocalLLaMA</a></p>
+<p><strong>r/artificial</strong> -- A DeepMind több agenttel, saját programírással végigvitt minecraftos eredménye azért érdekes, mert kézzelfogható példát ad arra, mennyire számít a többügynökös felosztás, a próbálkozások ára és a hibák száma egy összetett taskban. (356 pont, 104 komment)<br>Forrás: <a href="https://www.reddit.com/r/artificial/comments/1xaqlya/google_deepmind_says_four_ai_agents_beat/">r/artificial</a></p>
+<p><strong>r/hermesagent</strong> -- A pi.dev és a hermes összevetéséről szóló posztból az látszik, hogy a felhasználók már nagyon konkrétan hasonlítják össze az agentes élményt, vagyis nem elég a modell, a végrehajtás és a workflow minősége lett a fő kérdés. (218 pont, 97 komment)<br>Forrás: <a href="https://www.reddit.com/r/hermesagent/comments/1xc88rd/ive_been_using_pidev_for_the_last_5_days_and_im_a/">r/hermesagent</a></p>
+<p><strong>r/MachineLearning</strong> -- A Carbon-X itt is felbukkant kutatási oldalról: egy nyílt 14.8B modell, amelyet DNS-en és szövegen közösen tanítottak, ami jó példa arra, milyen irányba mennek a specializált, helyben is kipróbálható modellek. (24 pont, 1 komment)<br>Forrás: <a href="https://www.reddit.com/r/MachineLearning/comments/1xchayq/carbonx_is_an_open_148b_model_trained_jointly_on/">r/MachineLearning</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Miért érdekesebb a Decisions API, mint amilyennek elsőre látszik?</strong>. Nem újabb chatmodellről van szó, hanem arról, hogy az ügynököd sok lépésben már nem is szöveget akar.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-10-23-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-10-23";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
