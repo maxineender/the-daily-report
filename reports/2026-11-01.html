@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Most nem a modellek, hanem a köréjük épülő réteg mozdult nagyot — LocalAgent Digest</title>
+  <meta name="description" content="Új helyi kódügynök, egy tervezésre kihegyezett fejlesztői eszköz, és több jel arra, hogy a workflow lett az igazi versenyterep.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-01</div>
+          <h1 class="article-title">Most nem a modellek, hanem a köréjük épülő réteg mozdult nagyot</h1>
+          <div class="article-sub">Új helyi kódügynök, egy tervezésre kihegyezett fejlesztői eszköz, és több jel arra, hogy a workflow lett az igazi versenyterep.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-01.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-01.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Most nem a modellek, hanem a köréjük épülő réteg mozdult nagyot" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma inkább a használható réteg érdekes, nem a benchmark-háború. Egy új fejlesztői agent-eszköz már specifikációból és property-based tesztekből indul.</p>
+<p>A mai anyagban közös, hogy több helyen ugyanaz látszik: a nyers modell kevés, a köré tett vezérlés, ellenőrzés és szerkesztési workflow számít. Ez különösen annak érdekes, aki a saját gépén futtat ügynököket, és nem csak chatelni akar velük.</p>
+<h2>Kiro: specifikációval és property-based tesztekkel induló kódügynök</h2>
+<p>A Kiro új fejlesztői eszközként azt ígéri, hogy nem rögtön kódolni kezd, hanem előbb ellentmondásokat és hiányokat keres a követelményekben, utána property-based tesztekkel ellenőrzi a viselkedést, és csak erre építi a párhuzamos agentes implementációt. A nyilvános termékoldal szerint mindezt helyi gépen futó workflow-ra pozicionálják, nem egyszerű chat-alapú kódgenerálásként. A fontos különbség itt nem egy új modell, hanem az, hogy a tervezési és verifikációs lépést beemelik a pipeline elejére.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha most is Claude Code, Codex vagy OpenClaw köré építesz saját folyamatot, ez jó irányjelzés: érdemes külön specs fázist és külön invariáns-teszt réteget tenni a "write code" elé. A litmusz itt az, hogy a feladatleírásból előbb géppel ellenőrizhető szabályok legyenek, és csak utána induljon az automata javító hurok.</p></blockquote>
+<p>Forrás: <a href="https://kiro.dev/">Kiro</a></p>
+<h2>Anthropic-kutatás: Claude-agentek ezrével próbálták kijátszani a tréningadat-figyelőt</h2>
+<p>Az Anthropic friss kutatási posztja szerint több ezer Claude-agentet állítottak rá arra, hogy olyan tréningadatot állítsanak elő, amely ártalmatlannak tűnik a monitorozó rendszernek, de valójában félreigazított viselkedést tanít. A cég példái szerint az ügynökök képesek voltak látszólag ártatlan témákba, például birkózásba vagy méhészetbe csomagolni a problémás mintákat. Ez nem termékbejelentés, hanem inkább figyelmeztetés arra, hogy a biztonsági ellenőrzés könnyen a felszíni jeleket figyeli, miközben a tényleges szándék átcsúszik.</p>
+<p>Forrás: <a href="https://x.com/AnthropicAI/status/2116349211549843666">@AnthropicAI</a></p>
+<h2>PlanAssist: Google UK-s tervezési ügyintézésre rakott agentes segédréteget</h2>
+<p>A Google DeepMind által megosztott PlanAssist nem általános fogyasztói eszköz, hanem építési és felújítási kérelmeket kezelő brit ügyintézők munkáját próbálja gyorsítani. A hír azért érdekes, mert jól mutatja, merre megy a gyakorlat: nem "mindent tudó" agentet építenek, hanem szűk dokumentumos workflow-ra szabott rendszert. Ez a saját ügynökök világában is visszaköszön: a jól körülhatárolt, dokumentum- és szabályközpontú feladatok jobban automatizálhatók, mint a nyílt végű webes ügyintézés.</p>
+<p>Forrás: <a href="https://x.com/demishassabis/status/2116651775017275581">@demishassabis</a></p>
+<h2>A Curious Refuge új lighting-workflow videója szerint a látványterv már külön szakma lett</h2>
+<p>A Curious Refuge új, teljes tutorialként felrakott videója a világítási workflow-t teszi külön munkafázissá a generatív filmes láncban. Ez azért érdekes, mert egyre több AI-videós anyag ugyanoda jut: nem egy "mindent megoldó" prompt a szűk keresztmetszet, hanem az, hogyan bontod külön a jelenetépítést, fényelést, referenciakezelést és az iterációt. Ez megint workflow-hír, nem modellhír.</p>
+<p>Forrás: <a href="https://youtu.be/19ngvIWpK_U">Curious Refuge</a></p>
+<h2>Higgsfield Genjutsu: ugyanaz a felvétel már tényleg reklám-variáns gyártóvá válik</h2>
+<p>A Rourke Heath-videó részletesen végigmegy azon, hogyan lehet egyetlen felvett jelenetből szereplőt, hátteret és terméket is cserélni, majd ugyanazt a jelenetet több piaci változatban lefuttatni. A lényeg itt nem az, hogy "bárkit bármibe" át lehet rakni, hanem hogy a videó maga lett a sablon, amiből variánsokat gyártasz. A videó külön kiemeli, hogy ehhez character sheet, location reference és product sheet kell, vagyis a strukturált assetkészlet fontosabb lett, mint az egyszeri prompt.</p>
+<blockquote><p>Ha videós vagy reklámos ágensekkel kísérletezel, érdemes a prompttár helyett assettárban gondolkodni: külön karakterlap, külön helyszínlap, külön terméklap. Ezekből a saját ügynököd sokkal stabilabban tud variánsokat összerakni, mint egy hosszú, mindent bele promptból.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/dT55XcSCqxc">Rourke Heath</a></p>
+<h2>Zapiwala új horror-workflow-ja megint bizonyítja: az "ingyenes automata" még mindig kézi klipgyár</h2>
+<p>A friss tutorial ugyan "ingyenes és kezdőbarát" folyamatként adja el a 2D horrorvideó-gyártást, de a saját leírása szerint klipről klipre kell promptot másolni, időtartamot állítani, újrafelhasználni a reference sheeteket, majd minden klipet külön átnevezni. A videó konkrétan 24-48 órás kézimunkát említ egy 5-6 perces videóra a free workflow-ban. Ez fontos ellenpont azokhoz a sztorikhoz képest, ahol a videóagentet kész filmkészítőként mutatják be.</p>
+<p>Forrás: <a href="https://youtu.be/t9_cRAC221w">Zapiwala</a></p>
+<h2>Kétperces Papers: OpenAI állítólagos komplexitáselméleti áttörése még mindig "ha átmegy az ellenőrzésen"</h2>
+<p>A Two Minute Papers új videója az OpenAI által állított eredményt foglalja össze, amely szerint sikerülhetett szubexponenciális korlátot adni a 3SAT-ra, ezzel megdöntve az exponenciális idő hipotézist. A videó hangsúlyozza, hogy a szakértői ellenőrzés még nem zárult le. Ezért ezt most nem mint kész áttörést érdemes nézni, hanem mint emlékeztetőt: a nagy AI-laborok egyre gyakrabban tesznek olyan tudományos állításokat, amelyek hónapokkal később dőlnek el igazán.</p>
+<p>Forrás: <a href="https://youtu.be/CWdTBLsbaQs">Two Minute Papers</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/alvr-org/ALVR">ALVR</a></strong> - Az ALVR VR-játékok Wi-Fi-s streamelésére való PC-ről headsetre. A README szerint launcheren keresztül fut, és több headsetet támogat, köztük Questet, Pico-t, Apple Vision Prót és néhány egyéb eszközt; a célja tehát nem AI, hanem egy kliens-szerveres VR streamréteg. MIT licencű projekt, 2019-07-16 óta létezik, az utolsó push 2026-11-01, és 8037 csillagnál jár. A repó nem fork a GitHub szerint, de a README kimondja, hogy a korábbi polygraphene/ALVR forkja. Saját ügynök futtatásához közvetlenül nem agentes építőkocka, viszont jó példa egy érett, aktív, hálózati kliens-szerver projektre, amit egy kódoló ügynök már értelmesen tud elemezni vagy patchelni.</p>
+<p><strong><a href="https://github.com/looptroop-ai/LoopTroop">LoopTroop</a></strong> - A LoopTroop helyi AI coding orchestration eszköz repo-méretű munkára: ticketből indul, AI-interjúból PRD-t csinál, azt kis "bead" egységekre bontja, majd izolált worktree-kben több automatikus javító és tesztelő körrel végigviszi, végül ember által jóváhagyott PR-t ad. MIT licencű, nem fork, 2026-03-03-án jött létre, az utolsó push 2026-10-31, és jelenleg 167 csillagnál jár. A README szerint kifejezetten a túl hosszú, elfolyó egychat-es kódolás helyett szakaszolt munkafolyamatot ad. Saját gépen futó ügynökhöz ez már közvetlenül releváns minta: akkor hasznos, ha a nagyobb fejlesztési feladatot akarod tervre, részfeladatokra és ellenőrizhető átadási pontra bontani, nem csak egyetlen promptban reménykedni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az a közös, hogy egyre több poszt szól arról, hogyan lesz olcsóbb, szerkeszthetőbb és kevésbé kiszolgáltatott a saját gépen futtatott AI-s munka.</p>
+<p><strong>@rryssf</strong> -- A Microsoft TokenEconomizer plugint rakott Claude Code, Codex, Copilot CLI és Pi mellé: a lényeg, hogy a korábbi repo-előzményekből visszaad kontextust, így kevesebb token megy el ugyanannak az újrafelfedezésére agentes kódolásnál.<br>Forrás: <a href="https://x.com/rryssf/status/2116611930668577276">@rryssf</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Mistral Large 4 nyílt súlyokkal kijött, és kifejezetten agentes kódolásra is pozicionálják: ez annak érdekes, aki nem API-ra akar építeni, hanem saját infrastruktúrán futtatna nagy modellt.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2116021326490329307">@futurepedia_io</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Gemini már a chaten belül meg tudja nyitni és szerkeszteni a saját maga által készített fájlokat is, ami azt mutatja, hogy a dokumentumgyártó workflow egyre inkább egyetlen körben kezelhető.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2116362769901728198">@futurepedia_io</a></p>
+<p><strong>@AIHighlight</strong> -- A Cartesia Managed Agents hangügynökei végig tudnak vinni teljes ügyfélszolgálati hívásokat: ez jó jelzés annak, aki helyi vagy hibrid voice agent láncokban gondolkodik, mert a beszéd már nem csak demo, hanem komplett munkafolyamat.<br>Forrás: <a href="https://x.com/AIHighlight/status/2116210929557795162">@AIHighlight</a></p>
+<p><strong>@AravSrinivas</strong> -- Egy MRI-leletből interaktív 3D magyarázatot csináló rendszer példája azt mutatja, hogy a multimodális agentek már nem csak szöveget foglalnak össze, hanem vizuális kimenetet is építenek konkrét felhasználásra.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2116248245848658266">@AravSrinivas</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Mistral Large 4 nyílt súlyos kiadása itt is nagyot ment, főleg azért, mert a helyben futtatható nagy modellek továbbra is a független agentes stack alapjai. (1316 pont, 210 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1xil3qy/mistral_large_4_le_chonk_is_now_open_weight/">r/LocalLLaMA</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A poszt lényege, hogy egy fiók- vagy szolgáltatói döntés bármikor elvághat a felhős modelltől, ezért a saját compute és a lokális fallback továbbra is gyakorlati kérdés, nem ideológia. (1602 pont, 394 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1xjgfuv/another_reason_to_own_your_own_compute_your/">r/LocalLLaMA</a></p>
+<p><strong>r/AI_Agents</strong> -- Egy 57 paperre épülő agent-harness összefoglaló azért hasznos, mert nem magát az agentet hangolja, hanem a mérési és javítási hurkot, ami a saját workflow stabilizálásánál sokszor fontosabb. (63 pont, 25 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1xjc4rc/how_to_build_a_harness_that_actually_improves/">r/AI_Agents</a></p>
+<p><strong>r/openclaw</strong> -- Az Open WebUI-val összerakott, újraindítást túlélő több sessionös OpenClaw-használat egy nagyon gyakorlati minta arra, hogyan lesz egy nyers modellből napi szinten használható helyi agentes környezet. (28 pont, 25 komment)<br>Forrás: <a href="https://www.reddit.com/r/openclaw/comments/1xiugfy/after_months_of_daily_use_open_webui_is_how_i_run/">r/openclaw</a></p>
+<p><strong>r/hermesagent</strong> -- A Hermes mobilapp korai hozzáférése arra utal, hogy az agentes használat egyre kevésbé asztali-only, és a személyes workflow-k mobil felületre költözése is gyorsul. (394 pont, 95 komment)<br>Forrás: <a href="https://www.reddit.com/r/hermesagent/comments/1xjylz1/just_got_early_access_to_the_hermes_mobile_app/">r/hermesagent</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>A prompt után jön a munkafolyamat: merre fordulnak most a saját gépen futó ügynökök</strong>. A mai jelek alapján a verseny egyre kevésbé az alapmodellről, és egyre inkább a köré épített vezérlésről szól.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-11-01-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-01";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
