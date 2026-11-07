@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevésbé látványos nap, több hasznos tanulsággal a saját ügynöködhöz — LocalAgent Digest</title>
+  <meta name="description" content="Memória-szervezés, tudományos modellezés, reverse engineering eszközök és néhány tanulságos nyílt repó adja a mai szűkebb válogatást.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-07</div>
+          <h1 class="article-title">Kevésbé látványos nap, több hasznos tanulsággal a saját ügynöködhöz</h1>
+          <div class="article-sub">Memória-szervezés, tudományos modellezés, reverse engineering eszközök és néhány tanulságos nyílt repó adja a mai szűkebb válogatást.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-07.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-07.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevésbé látványos nap, több hasznos tanulsággal a saját ügynöködhöz" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Ma nem egyetlen nagy modellbejelentés vitte el a napot. Inkább az látszik, hogyan válnak használhatóbbá a köréjük épített ügynökös workflow-k.</p>
+<p>A mai anyag nagy része ugyanarról szól más-más oldalról: nem az a kérdés, hogy az alapmodell mennyire okos, hanem az, hogy mennyire tud emlékezni, eszközöket kezelni, és ellenőrizhető munkát végezni a saját gépeden vagy a saját folyamatodban.</p>
+<h2>Claude memóriája nem csak tárol, hanem utólag át is rendezi magát</h2>
+<p>Anthropic új kutatási oldalt tett ki a sitemapba a Claude ügynökmemóriájáról, és az X-poszt leírása szerint a rendszerben a "dreaming" jellegű háttérfolyamat segít abban, hogy a modell rendezze, javítsa és később könnyebben visszakeresse a korábbi tapasztalatait. A lényeg itt nem egy új chatfunkció, hanem az, hogy a memória nem puszta naplóként viselkedik, hanem idővel átszervezett munkaterületként. Ez fontos különbség ahhoz képest, amikor egy ügynök csak egyre hosszabb kontextusba pakolja a múltját.  <br>Forrás: <a href="https://x.com/AnthropicAI/status/2118814753154064501">AnthropicAI</a></p>
+<h2>Tudományos modelleket is építtetnének Claude-dal</h2>
+<p>Szintén új Anthropic URL került elő a sitemapból: a "teaching-ai-to-build-scientific-models" oldal. A teljes törzs nincs itt, de maga az URL és az időbélyeg elég világosan jelzi, hogy nem egyszerű összefoglalóról, hanem külön kutatási anyagról van szó. Ez abba az irányba mutat, hogy a labor nem csak tudományos szövegek olvastatására használja a modellt, hanem modellezési feladatokra is próbálja ráengedni.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha a saját rendszeredben van "notes", "memory" vagy projektfájl-alapú emlékezet, érdemes különválasztani a nyers eseménynaplót és az időnként újraszerkesztett összefoglalót. A mai hír pont azt erősíti meg, hogy a használható memória nem attól jó, hogy mindent megőriz, hanem attól, hogy később jobb szerkezetbe rendezi a múltat.</p></blockquote>
+<p>Forrás: <a href="https://www.anthropic.com/research/teaching-ai-to-build-scientific-models">Anthropic Research</a></p>
+<h2>Project EVE: Claude-ot MMO-játékokba is bedobták</h2>
+<p>Új Anthropic kutatási URL jelent meg "project-eve-claude-plays-mmorpgs" címmel. Maga az oldal törzse itt nem szerepel, de már a kutatási oldal neve is elég konkrét: Claude-ot MMO-környezetben vizsgálták. Ez azért érdekes, mert az MMO nem egy egyszerű benchmark, hanem hosszú távú célkezelés, részleges információ, eszközhasználat és állapotkövetés egyszerre. A saját gépen futó ügynökök szempontjából ez közelebb van a valós, többórás munkafolyamatokhoz, mint egy egyszeri promptteszt.  <br>Forrás: <a href="https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs">Anthropic Research</a></p>
+<h2>Reverse engineering ügynökök: már Ghidrát, radare2-t és WinDbg-t is összedrótozzák MCP-vel</h2>
+<p>Az X-en most több figyelmet kapott, hogy AI-ügynököket már Ghidrával, radare2-vel és WinDbg-vel is összekötnek MCP-n át. A poszt szerint az egyik Ghidra-híd 219 eszközt ad a modell kezébe, és pont ez lett a tanulság: a túl sok tool nem feltétlenül jobb. Az érdekes rész nem az, hogy "az AI reverse engineeringel", hanem az, hogy a használhatósági plafont már nem csak a modell tudása, hanem a szerszámkiosztás mérete is adja.  <br>Forrás: <a href="https://x.com/max_thinking/status/2118875041375088931">@max_thinking</a></p>
+<h2>Qwen4-et egy rövid poszttal erősítették meg, a lényeg a helyi futtatás lehet</h2>
+<p>Egy X-poszt szerint az Alibaba megerősítette a Qwen4 érkezését, négy tierrel, köztük egy 27B-s változattal, amely saját PC-n is futhat. Ez egyelőre egyetlen, gyenge bizonyosságú forrás, nincs hozzá hivatalos termékoldal vagy benchmarkanyag az anyagban, ezért ezt inkább figyelendő előjelként érdemes kezelni, nem kész bejelentésként. Ha viszont a 27B-s helyi futtatás tényleg része lesz a csomagnak, az a saját üzemeltetésű ügynököknek fontosabb hír lehet, mint bármelyik új, csak API-n elérhető csúcstier.  <br>Forrás: <a href="https://x.com/tech_tsukamoto/status/2118879083140616381">@tech_tsukamoto</a></p>
+<h2>A nyílt modelleknél a harness számít, nem csak maga a modell</h2>
+<p>Thom Wolf egy friss posztban azt emelte ki, hogy ugyanaz a nyílt modell nagyon eltérő eredményt adhat attól függően, milyen harness hajtja meg. Ez nem új törvény, de most megint előkerült, és a saját gépen futó ügynököknél különösen fontos: könnyű egy modellt leírni vagy felmagasztalni úgy, hogy valójában a köré tett promptolás, eszközkezelés, reviewer-lépés vagy adapterréteg döntött helyette.  <br>Forrás: <a href="https://x.com/Thom_Wolf/status/2118863053001531676">@Thom_Wolf</a></p>
+<h2>Scenario-féle "virális videó klónozó" skill: érdekes pipeline, nem kész automatika</h2>
+<p>Emmanuel 2M egy Scenario-s workflow-t mutatott be, amely egy virális videó linkjéből shot-by-shot elemzést, átírást, majd képet, klipet, voiceovert és zenét készít, végül Claude rakja össze kódból a vágást. Ez inkább azért érdekes, mert jól látszik rajta a mai kreatív agentes minta: nem egy nagy modell csinál mindent, hanem több specializált generátor és egy összerakó ügynök dolgozik láncban. A saját gépes tanulság itt az orchestration, nem maga a reklámígéret.  <br>Forrás: <a href="https://x.com/emmanuel_2m/status/2118698100709621865">@emmanuel_2m</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/github/gh-aw-firewall">github/gh-aw-firewall</a></strong> - Ez a projekt egy agentes workflow-khoz szánt hálózati tűzfal: a README szerint az `awf` Docker-sandboxban futtat parancsokat három konténerrel, ahol a Squid proxy domainek szerinti allowlisttel szűri a kifelé menő HTTP/HTTPS forgalmat, az agent konténer maga futtatja a feladatot, az API proxy sidecar pedig úgy tartja a modellkulcsokat, hogy azok ne kerüljenek az agent folyamathoz. MIT licencű. A repó 2025-10-16-án jött létre, az utolsó push 2026-11-07, 157 csillagnál és 82 forknál jár. A README külön figyelmeztet, hogy a v0.25.21 és v0.25.39 közötti kiadások egy billinghibás sorozat miatt vissza lettek vonva. Saját ügynökhöz ez akkor érdekes, ha tényleg szeretnéd kényszeríteni, hogy csak előre engedélyezett domaineket érjen el, de Linuxos, Dockeres előfeltételekkel számolni kell.</p>
+<p><strong><a href="https://github.com/ahrav/eidnara-sim">ahrav/eidnara-sim</a></strong> - A README alapján ez egy "live-slice world simulation" az Eidnara projekthez: valódi Pi és OpenCode binárisokat futtat, Eidnarával és anélkül, majd előre regisztrált összehasonlításokat készít viselkedésről, károkról, költségről, késleltetésről, szivárgásokról és ismert hibakategóriákról. MIT licencű. A repó 2026-10-15-én indult, utolsó push 2026-11-07, jelenleg 0 csillaggal és 0 forkkal. A parancslistából látszik, hogy Bun-alapú, van prereg-validálás, corpus-ellenőrzés, scenario-compile és tier-futtatás is. Saját ügynökhöz ez nem kész hétvégi eszköz, inkább egy érdekes irány arra, hogyan lehet reprodukálhatóbb, kísérletes értékelést rakni agentes rendszerek köré.</p>
+<p><strong><a href="https://github.com/Djihads80/Eglantine">Djihads80/Eglantine</a></strong> - A leírás szerint ez egy nagyon kísérleti Nintendo Switch 2 emulátor. A README alapján C++-ban íródik, hordozhatóságra törekszik, és Windows, Linux, macOS, Android, FreeBSD és más platformok szerepelnek a célok között; a kompatibilitási rész szerint a cél a kereskedelmi játékok futtatása megfelelő hardveren, de részletes támogatási lista még nincs. GPL-3.0 licencű, nem fork. A repó 2026-10-29-én jött létre, utolsó push 2026-11-07, már 4935 csillagnál és 538 forknál jár. Saját ügynökhöz ez közvetlenül nem sokat ad, legfeljebb azért érdekes, mert jól mutatja, mennyire gyorsan gyűjtenek figyelmet a kísérleti, nagy compute-igényű nyílt projektek, miközben gyakorlati agentes hasznuk még nincs.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatásban az a közös, hogy minden oldalról a helyben futó ügynökök körüli gyakorlati kérdések jönnek elő: milyen modellt érdemes betenni, hogyan szervezd a memóriát és a toolingot, és mire jók már most a generatív videós eszközök.</p>
+<p><strong>@gdb</strong> -- Az OpenAI GPT-6 Cyber kiadása kifejezetten védelmi munkára van pozicionálva, és a lényeg helyi ügynököt futtatóknak az, hogy a modell szorosabban tartja az operátor által kijelölt határokat, ami tool-használatnál és sérülékenységkutatási workflowknál számít.<br>Forrás: <a href="https://x.com/gdb/status/2118395717966606542">@gdb</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini Omni Flash 1.2 hosszabb videógenerálást, többkamerás kontrollt és többkörös szerkesztést hoz olcsóbban, ami azoknak érdekes, akik agentes pipeline-ba kötnének storyboardot, oktatóvideót vagy iteratív videós promptolást.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2118390838434693281">@OfficialLoganK</a></p>
+<p><strong>@AravSrinivas</strong> -- Az a megfigyelés, hogy ügynökök egyre gyakrabban más ügynököket fognak használni, itt konkrétan git-alapú nyomkövetéssel van összekötve: ha a kódmód és a trace verziókezelve van, a többlépéses automatizálás mérhetőbbé válik.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2118572536300699764">@AravSrinivas</a></p>
+<p><strong>@AIHighlight</strong> -- A StreamEval üzenete egyszerű: a szép videómodell még nem feltétlenül jó interaktív szerkesztésre, ezért ha élő, módosítható videós workflowt építesz ügynökkel, külön nézni kell az állapottartást és az utasításkövetést is.<br>Forrás: <a href="https://x.com/AIHighlight/status/2118719489348952145">@AIHighlight</a></p>
+<p><strong>@rryssf</strong> -- Ez a thread egy megosztott agent-memória gyakorlati buktatóit emeli ki: nincs zárolás, és csoportba nem érdemes privát adatot tenni, vagyis több ügynökös helyi rendszerben a memória-szervezés legalább annyira fontos, mint maga a modell.<br>Forrás: <a href="https://x.com/rryssf/status/2118830487552905435">@rryssf</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A RAM-árcsökkenésről szóló topik azért fut nagyot, mert a helyi modellezésnél ez közvetlenül meghatározza, mekkora kontextust, kvantizálást vagy többmodelles setupot engedhetsz meg magadnak. (2202 pont, 479 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1xovnaa/maybe_well_get_cheap_ram_for_christmas_after_all/">r/LocalLLaMA</a></p>
+<p><strong>r/LocalLLM</strong> -- A guardrail-eltávolítós Qwen-poszt alatt gyorsan átfordult a beszélgetés abba, hogy ezt csak rendes benchmarkkal érdemes komolyan venni, ami jó emlékeztető arra, hogy helyi finomhangolásnál a benyomás kevés, mérni kell. (724 pont, 172 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLM/comments/1xp56x6/i_removed_guardrails_from_qwen_and_it_is/">r/LocalLLM</a></p>
+<p><strong>r/LocalLLM</strong> -- A DDR4 512 GB kontra DDR5 kérdés tipikus saját gépes dilemma: nagy MoE offloadnál sokszor nem a GPU a szűk keresztmetszet, hanem az, hogy mennyi és milyen sebességű rendszermemóriát tudsz gazdaságosan betenni. (278 pont, 120 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLM/comments/1xph2dn/ddr4_512gb_vs_switching_to_ddr5_for_moe_offload/">r/LocalLLM</a></p>
+<p><strong>r/AI_Agents</strong> -- A Markdown plusz tudásgráf megközelítés arra mutat rá, hogy kisebb dokumentumkorpusznál nem biztos, hogy vektoros RAG kell: egy egyszerűbb, átláthatóbb helyi tudásréteg néha jobb agentes viselkedést ad. (44 pont, 25 komment)<br>Forrás: <a href="https://www.reddit.com/r/AI_Agents/comments/1xpjfau/i_replaced_vectorsearch_rag_with_markdown/">r/AI_Agents</a></p>
+<p><strong>r/SelfHostedAI</strong> -- A feltört Echo Dotra kötött helyi LLM és vision-projekt azt mutatja, hogy olcsó fogyasztói hardverből is lehet saját hangos agent-végpontot építeni, ha valaki nem kész dobozos asszisztenst akar használni. (17 pont, 4 komment)<br>Forrás: <a href="https://www.reddit.com/r/SelfHostedAI/comments/1xoffj0/local_llm_and_hacked_echo_dot_i_gave_it_vision_too/">r/SelfHostedAI</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-07";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
