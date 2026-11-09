@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb pazarlás, több folytonosság: ma inkább a munkafolyamatok erősödtek — LocalAgent Digest</title>
+  <meta name="description" content="Egy csomó mai tétel nem új modellről szólt, hanem arról, hogyan marad használhatóbb és olcsóbb a saját ügynököd munka közben.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-09</div>
+          <h1 class="article-title">Kevesebb pazarlás, több folytonosság: ma inkább a munkafolyamatok erősödtek</h1>
+          <div class="article-sub">Egy csomó mai tétel nem új modellről szólt, hanem arról, hogyan marad használhatóbb és olcsóbb a saját ügynököd munka közben.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb pazarlás, több folytonosság: ma inkább a munkafolyamatok erősödtek" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Jó reggelt, ma nem a legnagyobb modellbejelentés vitte a napot.</p>
+<p>A legerősebb mai szál az, hogy az ügynökök körüli körítés kezd felnőni a hosszabb, drágább és megszakítható feladatokhoz. Ez egyszerre jelent tokenfaragást, stabilabb futást és olyan eszközöket, amelyek nem laborbemutatón, hanem tényleges munkamenetben számítanak.</p>
+<h2>Microsoft-féle Token Economizer: 18-31 százalékos költségvágás kódügynököknél</h2>
+<p>A mai anyagból az egyik legérdekesebb gyakorlati tétel egy Better Stack-videóban előkerült Microsoft-eszköz: a Token Economizer. A videó szerint a Microsoft és az UC Berkeley 277 SWE-bench feladaton, hat repón és öt agent-modell kombináción tesztelte, és az átlagos költség 18,4 és 31 százalék közé esett vissza úgy, hogy nem olcsóbb modellre váltottak és nem másik ügynökkel csalálták le a számokat. A bemutató szerint az eszköz a fölösleges kontextust vágja vissza, eldobja a nem használt tool-leírásokat, és emlékszik arra, hogyan működik a repó, hogy kevesebb ismétlés menjen át a modellbe.</p>
+<blockquote><p>Miért hasznos, ha saját ügynököt futtatsz: Ha nálad a fő költség nem maga az API-tarifa, hanem a feleslegesen újraküldött repo- és tool-kontextus, akkor ez a mostani irány fontosabb lehet, mint egy új modellváltás. Különösen hosszú Claude Code, Codex vagy hasonló kódügynökös meneteknél érdemes figyelni az olyan rétegeket, amelyek a promptcsomagolást optimalizálják, mert ez helyi és távoli futásnál is azonnal pénzre váltható.</p></blockquote>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=P5QCrpdr9gU">Better Stack</a></p>
+<h2>AIPOCH Open-Science 1.2.0: már remote compute backendre is kinyúl a helyi research workbench</h2>
+<p>Az AIPOCH Open-Science 1.2.0 kiadása négy új távoli futtatási backendet tett be a rendszerbe: Kubernetes, Hugging Face Jobs, Modal és Ray, az eddigi SSH és Slurm mellé. A README szerint a desktop app továbbra is local-first és model-agnostic, de most már jóval könnyebben tud olyan jóváhagyott jobokat kilőni külső erőforrásra, amelyeket a saját gépen nem futtatnál. Emellett új alapértelmezett beépített ügynököt is kapott, child beszélgetéseket lehet nyitni importált kutatási lépésekből, és a restart utáni collection recovery is bekerült.</p>
+<blockquote><p>Ha a saját gépeden futó ügynököd eddig csak helyi Python- vagy R-lépegetésre volt jó, ez az a fajta bővülés, amitől egy research workflow nem fullad bele a laptop limitjeibe. A fontos rész itt nem az, hogy "van cloud", hanem hogy a jóváhagyás és a nyomkövetés megmarad, miközben a nehezebb jobok átcsúsznak távoli vasra.</p></blockquote>
+<p>Forrás: <a href="https://github.com/aipoch/open-science/releases/tag/v1.2.0">AIPOCH Open-Science v1.2.0</a></p>
+<h2>Asahi körüli licencvita: nem ügynökhír, de a saját gépes stack miatt mégis fontos</h2>
+<p>Steipete két posztban is nekiment az Asahi projekt friss GPL-váltásának és az ehhez kapcsolt AI-ellenes korlátozási hangulatnak. A konkrét vita nem AI-eszközről szól, hanem arról, mennyire elfogadható extra korlátokat rátenni olyan nyitott projektekre, amelyekre mások építenének. Ez önmagában még nem lenne mai digest-tétel, de a saját gépen futó AI-s világban nagyon is számít: egyre több helyi agentes, multimodális és GPU-s workflow lóg olyan alaprendszereken, drivereken és kompatibilitási rétegeken, ahol a licenc és a felhasználási feltétel hirtelen gyakorlati kérdés lesz.</p>
+<p>Forrás: <a href="https://x.com/steipete/status/2119264334627090514">@steipete</a></p>
+<h2>Claude + three.js mint gyors 3D-prototípus: nem termék, hanem átadható minta</h2>
+<p>Chetas Lua egy Opus 5.5 + three.js példát osztott meg, mellé pedig a teljes kódot is kirakta GitHubra. A demo egy Xbox 360 kontrolleres kulcstartó rövid assembly-filmje, és az érdekes része nem a nosztalgia, hanem az, hogy a minta teljesen böngészőben generált: SDF-geometria, procedurális anyagok és hang, assetfájlok nélkül. Ez azért erősebb a szokásos "nézd, mit csináltam" posztnál, mert egyből bontható és újrahasznosítható alapot ad arra, hogyan érdemes a modellt olyan feladatra befogni, ahol a végtermék kód és vizuális pipeline egyszerre.</p>
+<blockquote><p>Ha a saját ügynöködnek adnál kisebb 3D vagy webes vizuálfeladatokat, ez jobb kiindulópont, mint egy puszta videós demo. A modell itt nem kész médiafájlt köp ki, hanem olyan kódot és szerkezetet, amit utána tovább tudsz hajtani helyben, verziókövetéssel.</p></blockquote>
+<p>Forrás: <a href="https://github.com/ChetasLua/xbox360-keychain-threejs">ChetasLua/xbox360-keychain-threejs</a></p>
+<h2>Motion graphicsban továbbra sem ugyanaz a győztes, mint narratív videóban</h2>
+<p>A Dankieft-féle nagy videógenerátoros összehasonlítást már korábban is érintettük, de a mai anyagból most nem az egész tierlist az érdekes, hanem egy konkrét munkafolyamat-tanulság: motion graphics feladatnál a videó szerint a Minimax H3 jött ki a legerősebbnek, miközben más körökben Seedance 2.5 vagy One 3.0 volt jobb. Ez megerősíti azt a mintát, hogy a tipográfiás, layoutos, átmenetes grafikai mozgás nem ugyanaz a feladat, mint az UGC, a lip sync vagy a filmes jelenetgenerálás.</p>
+<p>Forrás: <a href="https://youtu.be/tnG3TIULBro">Dankieft</a></p>
+<h2>Claude-os motion graphics workflow: storyboard, hang és Blender egy menetben</h2>
+<p>Rourke Heath új videója jóval konkrétabb workflow-t mutat annál, mint hogy "Claude csinál reklámot". A bemutató három szintet választ szét: sima Claude-os animáció, hanggal és voiceoverrel megtolt változat, illetve Blenderrel összedrótozott pipeline. A fontosabb részletek: előbb számozott storyboardot érdemes kérni, explicit tiltani kell a cross-dissolve átmeneteket, a mozgást a képközépre kell szervezni, a sound design csak a végén jöjjön, és a Blender-rész úgy használható, hogy a felhasználónak nem kell közvetlenül a 3D szoftverben dolgoznia.</p>
+<p>Forrás: <a href="https://youtu.be/cDb-wPq0Iyk">Rourke Heath</a></p>
+<h2>Suno stúdióvideója megint azt mutatja: a használható zenés workflow nem egylépéses generálás</h2>
+<p>A Suno új kulisszavideójában a Deathpixie-projekt készítői kimondják a lényeget: nem arról van szó, hogy megnyomnak egy gombot és kijön a kész szám. Többször futtatják a personát, külön dolgoznak a hookokon, stemszinten pucolják a generációt, cserélnek dobokat, és utólag rendezik a szerkezetet. Ez ugyan nem új termékbejelentés, de hasznos ellensúly a sok "AI zene kész" narratívával szemben.</p>
+<p>Forrás: <a href="https://youtu.be/Mw95nxzYP4E">Suno</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/ChetasLua/xbox360-keychain-threejs">xbox360-keychain-threejs</a></strong> - Ez egy 13 másodperces, tisztán three.js-ben készített böngészős film, amelyben egy Xbox 360 kontrolleres kulcstartó épül össze darabonként. A README alapján minden helyben, a böngészőben áll elő: az SDF-geometriát Web Workerek mesh-elik, a megjelenést procedurális anyagok adják, a hangot pedig WebAudio szintetizálja, vagyis nincs hozzá külső modell, textúra, font vagy audio asset. Futni egyszerű HTTP kiszolgálóról fut, például `python3 -m http.server 8000`, majd böngészőben indul. MIT licencű, nem fork, 2026-11-08-án jött létre és ugyanazon a napon volt az utolsó push; jelenleg 1 csillagnál tart. Annak jó, aki a saját ügynökével kódalapú 3D vagy motion prototípusokat akar generáltatni és utána helyben továbbvinni, de kész agent frameworknek nyilván nem ez való.</p>
+<p><strong><a href="https://github.com/aipoch/open-science">aipoch/open-science</a></strong> - Az AIPOCH Open-Science egy local-first, model-agnostic kutatási workbench, amely papírból, adatfájlból vagy kérdésből indulva ügynökkel dolgozik fel bizonyítékot, adatot és jegyzeteket. A README szerint a rendszer nyomkövethető artifactokat, futtatási előzményt, Python- és R-végrehajtást, valamint exportálható `.science` csomagot ad a reprodukálható munkához. A mostani v1.2.0-ban bekerült a Kubernetes, Hugging Face Jobs, Modal és Ray remote compute támogatás, plusz a beépített Open-Science Agent lett az alapértelmezett. Apache-2.0 licencű, nem fork, 2026-07-03-án jött létre, utolsó push 2026-11-09, és 5496 csillagnál jár. Akkor érdekes neked, ha a saját ügynököd nem csak chatel vagy kódol, hanem ellenőrizhető kutatási lépéseket és külső compute-ra kilőhető feladatokat is kezelne.</p>
+<p>✅ All agents reported back!<br>├─ 🟠 Reddit: 3 threads │ 787 upvotes │ 86 comments<br>├─ 🔵 X: 34 posts │ 227 likes │ 32 reposts<br>├─ 🔴 YouTube: 5 videos │ 130,425 views │ 2/5 with transcripts<br>├─ 🟡 HN: 29 storys │ 1,923 points │ 1,548 comments<br>├─ 🐙 GitHub: 23 items │ 122 reactions │ 297 comments<br>├─ 🌐 Web: 47 pages - llm-stats.com, flowaivideo.org, mindstudio.ai, Product Hunt, thehype.news, cybeslify.com, analyticsinsight.net, bestaiforthis.com<br>└─ 🗣️ Top voices: @0xForce<em>, @cutetoxicguy, @SinglemanWQN │ r/OpenWebUI, r/ObscurePatentDangers, r/MachineLearning</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála az, hogy egyre több poszt szól a helyben futó ügynökök felügyeletéről, memóriájáról és a köréjük épülő kreatív workflowkról, nem csak magukról a modellekről.</p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Teammates korai használata gyorsan nő, ami azt jelzi, hogy az emberek már nem csak chatelnek modellekkel, hanem hosszabban futó automatizmusokat bíznak rájuk.  <br>Forrás: <a href="https://x.com/AravSrinivas/status/2119211310424654034">@AravSrinivas</a></p>
+<p><strong>@AravSrinivas</strong> -- Itt már azt bontja ki, mitől működik jobban egy ügynökös rendszer: kódban követett futási nyomok, modellfüggetlen felépítés és erős keresés, ami hasznos szempont annak, aki saját stackben rak össze agent workflowt.  <br>Forrás: <a href="https://x.com/AravSrinivas/status/2119320047403589761">@AravSrinivas</a></p>
+<p><strong>@rryssf</strong> -- A poszt azt a mintát szedi össze, hogy a hosszabb távú memória egyre gyakrabban külön háttérfolyamatként épül, vagyis a helyi ügynököknél is érdemes külön kezelni az emlékezést, nem mindent a futó kontextusablakra bízni.  <br>Forrás: <a href="https://x.com/rryssf/status/2119559530732560789">@rryssf</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Claude Code Session Rail típusú kezelőfelület azért érdekes, mert a párhuzamosan futó agent munkáknál egyre fontosabb a sessionök, mappák és tokenkeret láthatósága, főleg ha több gép vagy távoli elérés is van a képben.  <br>Forrás: <a href="https://x.com/futurepedia_io/status/2119293367834059185">@futurepedia_io</a></p>
+<p><strong>@AIHighlight</strong> -- A StreamEval linkgyűjteménye egy olyan értékelési csomagra mutat, amellyel streaming vagy hosszabban futó modellviselkedést lehet mérni, ez pedig jól jön, ha helyben futtatott ügynököt vagy multimodális workflowt akarsz összehasonlítani.  <br>Forrás: <a href="https://x.com/AIHighlight/status/2118719494709465285">@AIHighlight</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy felhasználó Claude Code-dal épített vitorlás szimulátort, majd modelleket versenyeztetett benne: ez jó példa arra, hogy a kódoló ügynök már nem csak appot ír, hanem gyorsan összerak egy tesztkörnyezetet is modellek összevetésére. (2369 pont, 170 komment)  <br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xpij9t/i_built_a_sailing_sim_with_claude_code_and_made/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- Az önmagát bővítő Backrooms-projekt azt mutatja, hogy egy erős modelllel már teljes, futtatható generatív világokat lehet iterálni, nem csak képeket vagy rövid demókat. (1131 pont, 125 komment)  <br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xqp0p0/i_built_an_infinite_selfevolving_backrooms_with/">r/ClaudeAI</a></p>
+<p><strong>r/StableDiffusion</strong> -- A Moss workflow körüli lelkesedés arra utal, hogy továbbra is a kész, megosztható node-alapú pipeline-ok adják a legtöbb gyakorlati értéket a képgenerálásban, nem egyetlen modellverzió. (673 pont, 172 komment)  <br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1xp7e5x/to_the_person_who_made_this_moss_workflow_thank/">r/StableDiffusion</a></p>
+<p><strong>r/comfyui</strong> -- A Minimax H3 remix és karaktercsere poszt azért érdekes, mert a videós workflowkban most az kap figyelmet, ami hosszabb klipet és konzisztens szereplőt tud kezelni, nem csak rövid látványos mintát. (205 pont, 18 komment)  <br>Forrás: <a href="https://www.reddit.com/r/comfyui/comments/1xqqhxh/minimax_h3_best_remix_tool_friendly_ultrafast/">r/comfyui</a></p>
+<p><strong>r/ChatGPTCoding</strong> -- A MacBook lezárt fedelénél tovább futó helyi kódügynök kérdése nagyon gyakorlati probléma: a kommentekből várhatóan energiaellátásról, alvó módról és távoli elérésről tanul a közösség, ami minden saját gépes agent setupnál előjön. (18 pont, 28 komment)  <br>Forrás: <a href="https://www.reddit.com/r/ChatGPTCoding/comments/1xp5z8v/how_do_you_keep_local_coding_agents_running_on_a/">r/ChatGPTCoding</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-09";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
