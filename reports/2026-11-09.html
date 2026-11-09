@@ -36,6 +36,19 @@
           </button>
         </header>
 
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-09.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-09.mp3"></audio>
+        </div>
 
         
         <div class="article-hero-img-wrap">
@@ -72,13 +85,12 @@
 <h2>RepoCheck</h2>
 <p><strong><a href="https://github.com/ChetasLua/xbox360-keychain-threejs">xbox360-keychain-threejs</a></strong> - Ez egy 13 másodperces, tisztán three.js-ben készített böngészős film, amelyben egy Xbox 360 kontrolleres kulcstartó épül össze darabonként. A README alapján minden helyben, a böngészőben áll elő: az SDF-geometriát Web Workerek mesh-elik, a megjelenést procedurális anyagok adják, a hangot pedig WebAudio szintetizálja, vagyis nincs hozzá külső modell, textúra, font vagy audio asset. Futni egyszerű HTTP kiszolgálóról fut, például `python3 -m http.server 8000`, majd böngészőben indul. MIT licencű, nem fork, 2026-11-08-án jött létre és ugyanazon a napon volt az utolsó push; jelenleg 1 csillagnál tart. Annak jó, aki a saját ügynökével kódalapú 3D vagy motion prototípusokat akar generáltatni és utána helyben továbbvinni, de kész agent frameworknek nyilván nem ez való.</p>
 <p><strong><a href="https://github.com/aipoch/open-science">aipoch/open-science</a></strong> - Az AIPOCH Open-Science egy local-first, model-agnostic kutatási workbench, amely papírból, adatfájlból vagy kérdésből indulva ügynökkel dolgozik fel bizonyítékot, adatot és jegyzeteket. A README szerint a rendszer nyomkövethető artifactokat, futtatási előzményt, Python- és R-végrehajtást, valamint exportálható `.science` csomagot ad a reprodukálható munkához. A mostani v1.2.0-ban bekerült a Kubernetes, Hugging Face Jobs, Modal és Ray remote compute támogatás, plusz a beépített Open-Science Agent lett az alapértelmezett. Apache-2.0 licencű, nem fork, 2026-07-03-án jött létre, utolsó push 2026-11-09, és 5496 csillagnál jár. Akkor érdekes neked, ha a saját ügynököd nem csak chatel vagy kódol, hanem ellenőrizhető kutatási lépéseket és külső compute-ra kilőhető feladatokat is kezelne.</p>
-<p>✅ All agents reported back!<br>├─ 🟠 Reddit: 3 threads │ 787 upvotes │ 86 comments<br>├─ 🔵 X: 34 posts │ 227 likes │ 32 reposts<br>├─ 🔴 YouTube: 5 videos │ 130,425 views │ 2/5 with transcripts<br>├─ 🟡 HN: 29 storys │ 1,923 points │ 1,548 comments<br>├─ 🐙 GitHub: 23 items │ 122 reactions │ 297 comments<br>├─ 🌐 Web: 47 pages - llm-stats.com, flowaivideo.org, mindstudio.ai, Product Hunt, thehype.news, cybeslify.com, analyticsinsight.net, bestaiforthis.com<br>└─ 🗣️ Top voices: @0xForce<em>, @cutetoxicguy, @SinglemanWQN │ r/OpenWebUI, r/ObscurePatentDangers, r/MachineLearning</p>
 <h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
 <p>A mai válogatás közös szála az, hogy egyre több poszt szól a helyben futó ügynökök felügyeletéről, memóriájáról és a köréjük épülő kreatív workflowkról, nem csak magukról a modellekről.</p>
 <p><strong>@AravSrinivas</strong> -- A Perplexity Teammates korai használata gyorsan nő, ami azt jelzi, hogy az emberek már nem csak chatelnek modellekkel, hanem hosszabban futó automatizmusokat bíznak rájuk.  <br>Forrás: <a href="https://x.com/AravSrinivas/status/2119211310424654034">@AravSrinivas</a></p>
 <p><strong>@AravSrinivas</strong> -- Itt már azt bontja ki, mitől működik jobban egy ügynökös rendszer: kódban követett futási nyomok, modellfüggetlen felépítés és erős keresés, ami hasznos szempont annak, aki saját stackben rak össze agent workflowt.  <br>Forrás: <a href="https://x.com/AravSrinivas/status/2119320047403589761">@AravSrinivas</a></p>
 <p><strong>@rryssf</strong> -- A poszt azt a mintát szedi össze, hogy a hosszabb távú memória egyre gyakrabban külön háttérfolyamatként épül, vagyis a helyi ügynököknél is érdemes külön kezelni az emlékezést, nem mindent a futó kontextusablakra bízni.  <br>Forrás: <a href="https://x.com/rryssf/status/2119559530732560789">@rryssf</a></p>
-<p><strong>@futurepedia</em>io</strong> -- A Claude Code Session Rail típusú kezelőfelület azért érdekes, mert a párhuzamosan futó agent munkáknál egyre fontosabb a sessionök, mappák és tokenkeret láthatósága, főleg ha több gép vagy távoli elérés is van a képben.  <br>Forrás: <a href="https://x.com/futurepedia_io/status/2119293367834059185">@futurepedia_io</a></p>
+<p><strong>@futurepedia_io</strong> -- A Claude Code Session Rail típusú kezelőfelület azért érdekes, mert a párhuzamosan futó agent munkáknál egyre fontosabb a sessionök, mappák és tokenkeret láthatósága, főleg ha több gép vagy távoli elérés is van a képben.  <br>Forrás: <a href="https://x.com/futurepedia_io/status/2119293367834059185">@futurepedia_io</a></p>
 <p><strong>@AIHighlight</strong> -- A StreamEval linkgyűjteménye egy olyan értékelési csomagra mutat, amellyel streaming vagy hosszabban futó modellviselkedést lehet mérni, ez pedig jól jön, ha helyben futtatott ügynököt vagy multimodális workflowt akarsz összehasonlítani.  <br>Forrás: <a href="https://x.com/AIHighlight/status/2118719494709465285">@AIHighlight</a></p>
 <p><strong>r/ClaudeAI</strong> -- Egy felhasználó Claude Code-dal épített vitorlás szimulátort, majd modelleket versenyeztetett benne: ez jó példa arra, hogy a kódoló ügynök már nem csak appot ír, hanem gyorsan összerak egy tesztkörnyezetet is modellek összevetésére. (2369 pont, 170 komment)  <br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xpij9t/i_built_a_sailing_sim_with_claude_code_and_made/">r/ClaudeAI</a></p>
 <p><strong>r/ClaudeAI</strong> -- Az önmagát bővítő Backrooms-projekt azt mutatja, hogy egy erős modelllel már teljes, futtatható generatív világokat lehet iterálni, nem csak képeket vagy rövid demókat. (1131 pont, 125 komment)  <br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xqp0p0/i_built_an_infinite_selfevolving_backrooms_with/">r/ClaudeAI</a></p>
