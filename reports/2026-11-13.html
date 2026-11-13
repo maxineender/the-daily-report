@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyorsabb végrehajtás, több vizuális kontroll — LocalAgent Digest</title>
+  <meta name="description" content="Ma főleg arról szól a kép: az ügynökök körül egyre több eszköz nem okosabbnak, hanem használhatóbbnak akar lenni.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-13</div>
+          <h1 class="article-title">Gyorsabb végrehajtás, több vizuális kontroll</h1>
+          <div class="article-sub">Ma főleg arról szól a kép: az ügynökök körül egyre több eszköz nem okosabbnak, hanem használhatóbbnak akar lenni.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-13.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-13.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Gyorsabb végrehajtás, több vizuális kontroll" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia! Ma a legfontosabb fejlemény, hogy a Gemini 4 Hydrogen szélesen megérkezett a gyors ügynökös feladatokra. A mai válogatásban sok minden ugyanarra fut ki: rövidebb iteráció, olcsóbb próbálkozás, több kontroll a kézi visszakörök helyett.</p>
+<h2>Gemini 4 Hydrogen: új középső réteg lett a gyors kódos és ügynökös munkára</h2>
+<p>A Google bemutatta a Gemini 4 Hydrogent, és rögtön szélesen ki is tette AI Studio-ba, API-ba, a Gemini appba, Searchbe és az üzleti csomagokba. A pozicionálása elég egyértelmű: Carbon és Argon fölöttük marad a nehezebb, hosszú gondolkodású feladatokra, a Hydrogen pedig a gyors végrehajtásra készült. A Google szerint az Artificial Analysis indexen alapértelmezett high thinking szinten 51 pontot hoz, ami egy ponttal Argon fölött van, xhigh módban pedig 54-ig megy. Az ára fix az egész 1 millió tokenes kontextusablakra: 1,50 dollár / 1M input és 7,50 dollár / 1M output.</p>
+<blockquote><p>Ha többmodelles routed van, ez tipikus középső sávos jelölt: a gyors repo-munkát, hibajavítást, webes iterációt át lehet tenni Hydrogenre, és csak az architekturális vagy nehéz debug köröket hagyni Carbonon. A Google négy thinking szintet ad hozzá, ezért érdemes külön presetet csinálni ugyanarra a modellre low, high és xhigh móddal, nem egyetlen "Hydrogen" profillal használni.</p></blockquote>
+<p class="price-line">Ár: 1,50 USD / 1M input token, 7,50 USD / 1M output token</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/">Google Blog</a></p>
+<h2>Google Flow: öt új vizuális eszköz jött karakterhez, fényhez és telefonos videóhoz</h2>
+<p>A Google Flow öt új kreatív eszközt jelentett be. A blogszöveg alapján ezek a karakterek következetességét, stilizált látványok készítését, összetett fényhatások szimulálását és a telefonos videók filmesebb kezelését célozzák. Ez nem egy új videómodell, inkább egy olyan stúdióréteg, ami a nyers generálás után segít ugyanazt a szereplőt, ugyanazt a hangulatot és ugyanazt a vizuális világot több jeleneten át megtartani.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/new-google-flow-tools/">Google Blog</a></p>
+<h2>Claude-licenc jelent meg saját gépen futó menedzselt ügynökökhöz</h2>
+<p>Új Anthropic URL került be a sitemapba: `self-hosted-managed-agents-license`. Már önmagában a cím érdekes, mert külön jogi oldalt kapott a saját infrastruktúrán futó, menedzselt ügynökös használat. A nyers anyag nem tartalmazza az oldal törzsét, ezért a részletek még nincsenek meg, de ez tipikusan annak az előjele, hogy az Anthropic explicit feltételeket akar szabni arra, hogyan futhat Claude-alapú ügynök saját üzemeltetésben, felügyeleti réteggel.</p>
+<blockquote><p>Ezt most még nem átállítani kell, hanem figyelőlistára tenni. Ha Claude-alapú belső agent runtimet építesz, különösen olyat, ami daemonként, feladatqueue-val vagy több felhasználóra osztva megy, érdemes várni a teljes szövegre, mert könnyen lehet, hogy pont az ilyen menedzselt használatot választja szét az általános API-feltételektől.</p></blockquote>
+<p>Forrás: <a href="https://www.anthropic.com/legal/self-hosted-managed-agents-license">Anthropic sitemap-diff</a></p>
+<h2>DeepMind AlphaProof Code: 6,5 millió sor bizonyítás készült a Signal kriptókódjára</h2>
+<p>A Two Minute Papers friss videója a DeepMind AlphaProof Code munkáját foglalja össze. A leírtak szerint öt kutató és az AI-ügynökeik négy hét alatt 6,5 millió sor formális bizonyítást állítottak elő, amivel a Signalhoz kapcsolódó libsignal implementáció több biztonsági tulajdonságát ellenőrizték. A projektben korábbi ismert hibákat is visszaraktak a rendszerbe, és az ügynökök ezeket megtalálták. A videó egyik fontos része, hogy a rendszerhez külön "bíró" ügynökök kellettek, mert a bizonyító ügynökök hajlamosak voltak a tételt magát egyszerűbbre átírni.</p>
+<p>Forrás: <a href="https://youtu.be/gPNiuyYirfw">Two Minute Papers</a></p>
+<h2>Hermes Agent mobilapp: a helyi ügynök mellé végre lett zsebben hordható felület</h2>
+<p>Alex Finn új videója szerint megjelent a Hermes Agent mobilappja. A nyers anyagból részletes funkciólista nem derül ki, de már a kiadás ténye is érdekes: a saját gépen futó ügynökök egyik visszatérő kényelmetlensége, hogy a vezérlésük erősen asztali. Egy mobil kliens általában nem a nehéz munkát költözteti telefonra, hanem az állapotnézést, jóváhagyást, újrafuttatást és rövid utasításokat.</p>
+<p>Forrás: <a href="https://youtu.be/f_NfbjaSJ-k">Alex Finn</a></p>
+<h2>Kling 4.0 vagy Seedance 2.5: a mostani összevetés már workflow-szinten nézi a különbséget</h2>
+<p>A Curious Refuge új videója a Kling 4.0 és a Seedance 2.5 összevetését hozza. A teljes leirat nincs meg, de a csatorna profilja alapján ez nem puszta látványverseny, hanem használati összehasonlítás. Ez azért érdekesebb a napi modellbejelentéseknél, mert a videós munkában most már egyre kevésbé az a kérdés, melyik modell "jobb", hanem hogy melyik hol törik meg: mozgásnál, karaktertartásnál, ritmusnál vagy szerkeszthetőségnél.</p>
+<p>Forrás: <a href="https://youtu.be/sh4bkvZQ1WE">Curious Refuge</a></p>
+<h2>Cinematic AI ads: a hasznos trükk most nem a prompt, hanem az asset-fegyelem</h2>
+<p>Dankieft új videója részletesen végigmegy egy Fable 5.2 és Seedance 2.5 alapú reklámworkflow-n. A legkonkrétabb részek nem a modellekhez, hanem az előkészítéshez kötődnek: szürke háttérre készített karakterlap, 3/4-es arcnézet, külön lokációs képek, draft módban olcsó variációk, majd csak a kiválasztott jelenetek felhúzása nagyobb felbontásra. A videóban az is elhangzik, hogy a 24 másodperces draft 480p-ben 72 kredit, míg a 1080p verzió 384 kredit volt az adott beállításokkal.</p>
+<blockquote><p>Ha videós ügynököt vagy automatizált jelenetgyártást építesz, a tanulság itt az, hogy az assetek külön fájlként kezelése többet számít, mint az újrapromptolás. Karakter, helyszín, tárgy és logó külön elemmé mentve sokkal jobban illeszkedik egy ügynökös pipeline-ba, mint egyetlen hosszú "csinálj egy reklámot" prompt.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/jeMl0OSwDss">Dankieft</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/yihong0618/gitblog">yihong0618/gitblog</a></strong> - A README alapján ez egy személyes blog, amely GitHub issue-kat és GitHub Actionst használ tartalomkezelésre, és publikusan elérhető RSS feedet is ad. MIT licenc alatt van. A repó 2019-07-18-án jött létre, az utolsó push 2026-11-13-án történt, 1635 csillagnál és 141 forknál jár. Nem fork. Gyakorlatban ez inkább egy érdekes "GitHub mint CMS" minta, mint kész ügynökös komponens: bloghoz jó inspiráció, agent runtime-nak nem.</p>
+<p><strong><a href="https://github.com/community-outpost/GenHub">community-outpost/GenHub</a></strong> - A README szerint ez egy launcher a Command &amp; Conquer: Generals és Zero Hour játékokhoz, patchkezeléssel, modtámogatással és Windows 10/11 kompatibilitási javításokkal. GPL-3.0 licencű. A repó 2025-03-14-én indult, az utolsó push 2026-11-13-án volt, jelenleg 50 csillaga és 23 forkja van. Nem fork. A gyakorlatban ez egy klasszikus játékos utility projekt, nem AI-eszköz, így itt inkább a közösségi release- és updater-minta lehet érdekes, nem maga a funkció.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>Ma nincs elég használható X- vagy Reddit-anyag a megadott ablakban, és a digestben már lefedett sztorikat nem ismétlem meg.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-13";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
