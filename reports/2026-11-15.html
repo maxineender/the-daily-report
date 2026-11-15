@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagyobb helyi modellek, olcsóbb döntőmodellek, rendezettebb ügynök-workflowk — LocalAgent Digest</title>
+  <meta name="description" content="Ma inkább az látszik, hogyan tisztul a saját gépes stack: modellméretben, vezérlésben és kreatív pipeline-ban.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-15</div>
+          <h1 class="article-title">Nagyobb helyi modellek, olcsóbb döntőmodellek, rendezettebb ügynök-workflowk</h1>
+          <div class="article-sub">Ma inkább az látszik, hogyan tisztul a saját gépes stack: modellméretben, vezérlésben és kreatív pipeline-ban.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-15.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-15.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Nagyobb helyi modellek, olcsóbb döntőmodellek, rendezettebb ügynök-workflowk" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma több fronton is rendeződik a kép. Az Edge0 új, egy-GPU-s 120B és 145B modelleket adott ki. A mai anyag közös pontja, hogy több helyen nem újabb chatfelület jött, hanem használhatóbb futtatási és workflow-réteg.</p>
+<h2>Edge0: 120B és 145B modell egyetlen NVIDIA GPU-ra</h2>
+<p>Az Edge0 csapata 2026-11-13-án kiadta az `edge0-145b` és `edge0-120b` modelleket, a README szerint Qwen3.8-Flash-Next alapú latent mixture-of-experts változatokként. A leírásuk szerint egyetlen NVIDIA GPU-n futnak Linuxon vagy Windowson, és az `edge0-strata` rétegre épülnek, amit az `edge0-infer serve` és `edge0-infer chat` indít el hozzájuk. A súlyok Hugging Face-en vannak kint több kvantált változatban is.</p>
+<blockquote><p>Ha eddig a 35B környékét tekintetted felső plafonnak egy saját gépes interaktív stackben, ez most újra megér egy tesztkört. Az itt fontos konkrétum nem csak a paraméterszám, hanem hogy ugyanazon a `edge0-infer` motoron és OpenAI-kompatibilis helyi szerveren ül, mint a korábbi kiadásuk, tehát nem kell külön futtatási modellt kitalálni csak azért, mert nagyobbra váltasz.</p></blockquote>
+<p>Forrás: <a href="https://github.com/Edge0-AI/Edge0">Edge0-AI/Edge0</a></p>
+<h2>Decider v1.3 és Decider Flash v1.3: nyílt döntőmodell karakter-offsetes találattal</h2>
+<p>Arav Srinivas 2026-11-12-én bejelentette, hogy nyílt forrásként kiadták a Decider v1.3 és Decider Flash v1.3 modelleket, és egy hétig ingyenesen elérhetők OpenRouteren is. Az új képesség neve `locate`: megadod, mit kell megtalálni, a modell pedig nem csak választ ad, hanem visszaadja a hozzá tartozó szövegrészt karakter-offsetekkel együtt. A poszt szerint ezt batch jellegű döntési, bizonyíték-kinyerési, NER-, PII- és extractive QA feladatokra szánják.</p>
+<blockquote><p>Ha van olyan routed, ahol az ügynöknek nem szabad "szabadon értelmeznie", csak kiválasztani, címkézni vagy idézett bizonyítékot visszaadni, ezt érdemes külön modellként kipróbálni. A karakter-offset különösen akkor hasznos, ha utólag rá akarsz mutatni a forrásdokumentumban a kiválasztott részre, vagy saját UI-ban akarod kiemelni a találatot.</p></blockquote>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2121020114321703210">@AravSrinivas</a></p>
+<h2>Scenario: egy kattintásos riggelt és animált 3D asset, weben, API-n, node-okkal és MCP-vel</h2>
+<p>Emmanuel 2 Minute Papers 2026-11-13-án arról posztolt, hogy a Scenario már teljesen riggelt, animált, játékra kész 3D assetet tud generálni egy lépésben, és ez weben, node-os workflowban, API-n és MCP-n át is elérhető. A következő napi példájában már konkrét exportokat is mutatott `.OBJ`, `.GLB`, `.FBX` és `.BLEND` formátumokba.</p>
+<p>Ez még nem a klasszikus kódügynök-vonal, de annak a határán van, ahol egy helyi ügynök már nem csak kódot vagy promptot ír, hanem használható játékelemeket és scene-asseteket gyárt egy külső generáló felé. A lényeg itt az interfész: ha tényleg van MCP és API, akkor ez már workflow-építő elem, nem csak demó.</p>
+<p>Forrás: <a href="https://x.com/emmanuel_2m/status/2121374252460826798">@emmanuel_2m</a></p>
+<h2>Helyi modellek feladatonként és memóriaosztályonként: végre nem csak a csúcsvasról szól a beszélgetés</h2>
+<p>Alex Grankin 2026-11-14-i videója azt próbálja rendszerezni, hogy milyen helyi modellek érik meg különféle feladatokra különböző memóriahatárok mellett. A leírás és a kiemelt részletek alapján nem egyetlen "best model" listát ad, hanem use case szerint bont: írás, kód, képgenerálás, dokumentumfeldolgozás, átírás. Ez azért érdekes, mert a saját gépes használatban a valódi kérdés ritkán az, hogy mi a legerősebb modell összességében, hanem az, hogy mi fér bele egy 8, 16, 32 vagy 128 GB-os gépbe elfogadható késleltetéssel.</p>
+<p>A videó önmagában nem primer technikai dokumentáció, de jó jelzés arra, hogy a közösségi figyelem megint visszafordult a tényleges géposztályok felé. Ez a mindennapi ügynökfuttatásnál sokkal fontosabb, mint egy új benchmark-görbe.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=V1THtK0Fu2E">Alex Grankin</a></p>
+<h2>AI rajzfilmsorozat-workflow: a tartós konzisztenciát most már skill-ekkel építik fel</h2>
+<p>Dankieft friss videója nem új modellbejelentés, hanem egy teljes rajzfilm-workflow lebontása. A bemutatóban Claude-projektre épített skill-rendszerrel készít külön "master style", karakter-, helyszín-, prop- és animációs prompt-szinteket, majd ezeket viszi tovább kép- és videógenerálásba. A lényeg nem az, hogy melyik egyedi modell szerepel benne, hanem hogy a konzisztenciát nem egy nagy prompttal próbálja megoldani, hanem újrahasználható, projekten belüli építőkockákkal.</p>
+<blockquote><p>Ha vizuális vagy videós ügynököt építesz, ezt a szerkezeti mintát érdemes átvenni még akkor is, ha más modelleket használsz. A külön style-, character-, location- és prop-réteg sokkal könnyebben cserélhető és hibakereshető, mint egy mindenre ráülő monolit prompt.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/ZRUpbbZF0_A">Dankieft</a></p>
+<h2>PHAI videóügynök: költségplafonnal, lépésenkénti jóváhagyással és modellválasztással dolgozik</h2>
+<p>Bob Doyle friss videója egy olyan videóügynököt mutat be, amely nem csak jeleneteket gyárt, hanem szakaszonként költséget becsül, modellt választ, és minden fizetős lépés előtt jóváhagyást kér. A bemutatóban külön látszik a host-kép, a helyszíngenerálás, a lip sync, a reveal-shotok és az újravágás költségterve is, végig dollárbecslésekkel és revíziós kerettel.</p>
+<p>Ez azért érdekesebb, mint egy sima "jó lett a videó" típusú bemutató, mert ugyanazt a működési mintát hozza, amit a kódügynököknél is szeretnénk: részfeladatokra bontás, budget cap, explicit jóváhagyási pontok, és a modellszintű csere lehetősége. A kreatív ügynökök kezdik felvenni a fejlesztői workflowk fegyelmét.</p>
+<p>Forrás: <a href="https://youtu.be/yEFeLZ0nsbk">BobDoyleMedia</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/Edge0-AI/Edge0">Edge0-AI/Edge0</a></strong> - A README alapján ez egy eszközoldali foundation model stack, amely ugyanazzal a `edge0-infer` motorral futtat modelleket macOS-en, iOS-en, Androidon és Windowson, CLI-val, OpenAI-kompatibilis helyi szerverrel és chatapp-példákkal. A friss híreknél külön kiemelik, hogy 2026-11-13-án megjelent az `edge0-145b` és az `edge0-120b`, amelyeket `edge0-infer serve` vagy `edge0-infer chat` indít, és az `edge0-strata` rétegen futnak. A licenc Apache-2.0. A repó 2026-09-08-án jött létre, az utolsó push 2026-11-14, és 11 595 csillagnál jár; nem fork. Gyakorlatban ez akkor érdekes, ha egyetlen, több platformon átvihető helyi inference-motort és nagyobb modellskálát keresel, nem csak egy-egy elszigetelt demót.</p>
+<p><strong><a href="https://github.com/ThePlenkov/bro">ThePlenkov/bro</a></strong> - A README szerint a `bro` egy CLI-s segédréteg ügynökök mellé: review-debt pipeline-t, PR-triage-ot és fix-loopokat kezel. Konkrétan a helyi `.agents/review-debt/` könyvtárba gyűjti a PR-kommentekből visszamaradó teendőket, `debt:*` címkékkel jelöli a már feldolgozott PR-okat, és olyan parancsokat ad, mint az `act status`, `debt prs`, `debt collect` és `debt status`. MIT licencű, 2026-09-14-én jött létre, az utolsó push 2026-11-14, és jelenleg 1 csillaga van; nem fork. Ez nem általános ügynök-runtime, hanem egy nagyon konkrét résproblémára készült eszköz: arra jó, hogy a review-botok és ügynökök után ne vesszen el a maradék javítanivaló.</p>
+<p><strong><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></strong> - A README alapján a T3 Code a gépeden futó kódügynököket fogja össze egyetlen felület alá, és ugyanazokat a szálakat elérhetővé teszi desktopon, weben és telefonon is. Claude Code-ot, Codexet, Cursort, OpenCode-ot, Grok Buildet, Antigravityt, Kirot, Pi-t, Muse Code-ot, fx-et és ACP-kompatibilis ügynököket tud vezérelni; worktree-alapú git-menetet is ad, diffnézettel, committal, pushsal és PR-nyitással. MIT licencű, 2026-02-08-án jött létre, az utolsó push 2026-11-15, és 60 705 csillagnál jár; nem fork. Gyakorlatban ez azoknak való, akik több agentet akarnak egy saját vezérlőréteg alatt tartani, nem pedig egyetlen szolgáltató kliensében élni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai minta elég tiszta: gyors új modellek jönnek, közben egyre több poszt arról szól, hogyan lehet ezeket valódi agentes és kreatív workflow-ba bekötni a saját gépen futó stack mellé.</p>
+<p><strong>@demishassabis</strong> -- A Gemini 4 Hydrogen kiadása azért érdekes, mert kifejezetten kódolásra és agentes feladatokra pozicionálják, vagyis új jelölt lehet a helyi workflow-k külső "gyors agyaként".<br>Forrás: <a href="https://x.com/demishassabis/status/2120942605466800374">@demishassabis</a></p>
+<p><strong>@AravSrinivas</strong> -- Nyílt döntési modelleket tettek ki agentes biztonsági munkára, ami annak hasznos, aki nagy log- és telemetriahalmazon akar olcsóbban hibát vagy javítási javaslatot keresni.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2121092767665598477">@AravSrinivas</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Cursor Projects többemberes agentes munkát ígér közös memóriával és feladatkezeléssel, ami kis helyi fejlesztőcsapatnál érdekes, ha nem egyetlen operátor ül az agent fölött.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2120954783699718364">@futurepedia_io</a></p>
+<p><strong>@futurepedia</em>io</strong> -- Az n8n Labs-féle Nod egy nyílt forráskódú személyi ügynök saját gépre, és pont azokat az apró, ismétlődő irodai lépéseket célozza, amiket sokan kézzel ragasztanak össze levelezésből, naptárból és figyelésből.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2120875510334959899">@futurepedia_io</a></p>
+<p><strong>@chetaslua</strong> -- A Fable 5.2-ről mutatott three.js demó azt sugallja, hogy asset nélküli, böngészőben futó 3D jeleneteket is lehet vele generáltatni, ami gyors prototípushoz vagy agent által összerakott vizuális outputhoz jól jöhet.<br>Forrás: <a href="https://x.com/chetaslua/status/2121176151234330707">@chetaslua</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egyetlen 97 KB-os HTML-ben épített, bejárható víz alatti világ jó példa arra, hogy a generatív modellek már nagyon kicsi, hordozható webes demókhoz is használhatók, nem csak nagy engine-projektekhez. (heti top 2. hely a csoportban, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xw376f/i_built_a_swimmable_underwater_world_in_one_97_kb/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- A "local Opus 5.5" poszt azért érdekes, mert megint előjön az a gyakorlati kérdés, hogy milyen helyi modell- és promptkombóval lehet megközelíteni a nagy zárt modellek használati élményét saját gépen. (heti top 14. hely a csoportban, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xwcmj3/ppl_keep_asking_for_local_opus_55_this_is_local/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- A részletes játékos workflow-poszt azt mutatja meg, hogyan lesz egy chatmodellből tényleges gyártási lánc: tervezés, assetek, iteráció és publikálható eredmény egyben. (heti top 19. hely a csoportban, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xul18m/my_game_got_removed_from_gamedev_subs_for_using/">r/ClaudeAI</a></p>
+<p><strong>r/StableDiffusion</strong> -- A kérdés, melyik képgeneráló modellből érdemes MiniMax I2V videós workflow-t indítani, jól mutatja, hogy a közösség már nem egyetlen modellben gondolkodik, hanem több lépéses képből-videó pipeline-ban. (heti top 27. hely a csoportban, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/StableDiffusion/comments/1xvfcho/whats_the_best_model_for_generating_images_like/">r/StableDiffusion</a></p>
+<p><strong>r/codex</strong> -- A Pixar-jellegű Blender-render újragenerálása GPT-6 Astrával azt a vonalat erősíti, hogy a modellek egyre használhatóbbak konkrét 3D jelenetek és kreatív reprodukciók összerakására, nem csak szöveges segítségre. (heti top 98. hely a csoportban, 0 komment)<br>Forrás: <a href="https://www.reddit.com/r/codex/comments/1xunpw5/i_asked_gpt6_astra_to_recreate_this_pixarinspired/">r/codex</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-15";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
