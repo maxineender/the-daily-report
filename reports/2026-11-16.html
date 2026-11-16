@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eszközök, amik már nem csak válaszolnak, hanem beépülnek a munkamenetbe — LocalAgent Digest</title>
+  <meta name="description" content="A mai válogatásban böngészőn kívülre lépő zeneeszköz, olcsóbb nyílt modell és pár nagyon gyakorlati workflow-jel.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-16</div>
+          <h1 class="article-title">Eszközök, amik már nem csak válaszolnak, hanem beépülnek a munkamenetbe</h1>
+          <div class="article-sub">A mai válogatásban böngészőn kívülre lépő zeneeszköz, olcsóbb nyílt modell és pár nagyon gyakorlati workflow-jel.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-16.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-16.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Eszközök, amik már nem csak válaszolnak, hanem beépülnek a munkamenetbe" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szép estét. A mai fő sztori: megjelent egy 65B-s Apache 2.0 modell, kifejezetten olcsó API-val.</p>
+<p>A mai anyagban több külön szál ugyanoda fut: a hasznos újdonság most nem a nagy ígéret, hanem az, amikor egy modell vagy eszköz konkrétan beül a meglévő munkamenetbe, olcsóbban fut, vagy kevesebb kézi kerülőutat kér. Ez igaz a kódra, a zenére és a média-workflowkra is.</p>
+<h2>Ripple-65B Preview: Apache 2.0 licenc, 65B méret és 0,60 dolláros output ár</h2>
+<p>A Ricursive kiadta a Ripple-65B Preview modellt, egy általános célra is pozicionált, eredetileg chiptervezési háttérből érkező 65B-s modellt. A hírben a két igazán fontos konkrétum az Apache 2.0 licenc és az API-árazás: 0,60 USD / 1 millió output token. Ez nem súlykiadásról szóló külön GitHub-poszt az anyagban, hanem egy VentureBeat beszámoló, de a licenc és az ár együtt így is figyelemre méltó, mert ritkán jön ennyire tiszta "használható és jogilag egyszerű" csomag ebben a méretosztályban.</p>
+<blockquote><p>Ha van olyan routed, ahol most drága feladatokra nagy modellt hívsz csak strukturált kimenet, hosszabb átírás vagy kódmagyarázat miatt, ezt érdemes külön tartalék modellként felvenni, nem fő modellként. Az Apache 2.0 miatt egyszerűbb lehet belső toolchainbe vagy helyi gateway mögé tenni, mint sok "open, de nem igazán nyílt" alternatívát.</p></blockquote>
+<p class="price-line">Ár: 0,60 USD / 1M output token</p>
+<p>Forrás: <a href="https://venturebeat.com/technology/ex-googlers-new-apache-2-0-model-ripple-65b-preview-claims-the-u-s-open-coding-lead-on-two-major-benchmarks">VentureBeat</a></p>
+<h2>Build Live Apps: a Cursor már hosztolást és adatbázist is ránt a felhős agent mögé</h2>
+<p>A The Debrief összefoglalója szerint a Cursor november 5-én elindította a Build Live Apps funkciót. A leírás alapján a felhős agent képes appot scaffoldolni, szükség esetén Postgres-adatbázist felhúzni, Cursor SSO mögé tenni a belépést, hosztolást beállítani, majd élő linket adni. Publikálás csak biztonsági ellenőrzések után és kézi jóváhagyással történik. Jelenleg fizetős csomaghoz és bekapcsolt cloud agensekhez kötött, a publikus megosztás pedig csak egyéni csomagoknál érhető el.</p>
+<p>Ez nem helyi futtatású stack, de annak is jelzés, merre mozdul a piac: a kódügynök már nem csak fájlokat ír, hanem komplett deploy-láncot kezel.</p>
+<p>Forrás: <a href="https://thedebrief.ai/p/turn-any-product-photo-into-a-gif-in-chatgpt">The Debrief</a></p>
+<h2>notebooklm-py: egy gyakorlati híd Claude Code és jegyzetelt projektmemória közé</h2>
+<p>A The Debrief egyik frissebb anyaga egy közösségi eszközt emel ki: a notebooklm-py nevű, MIT-licences toolt, amellyel Claude Code egy Gemini Notebookba tud jegyzeteket menteni, majd a következő session elején visszakérdezni rájuk. A leírás szerint két fontos korlát van: nem hivatalos, dokumentálatlan Google API-kat használ, és az első belépés Chromium-letöltéssel jár, nagyjából 170 MB méretben. Az is lényeges, hogy csak azt "emlékszi vissza", amit ténylegesen elmentettél.</p>
+<blockquote><p>Ha több napos agent-meneteid vannak, ez egy használható minta akkor is, ha nem pont ezt az eszközt választod: a sessionvégi wrap-upot külön, lekérdezhető jegyzettárba érdemes menteni, nem csak a chatelőzményre bízni. A kulcs nem a "memória", hanem az, hogy legyen kereshető, dátumozott döntésnapló a projekted mellett.</p></blockquote>
+<p>Forrás: <a href="https://thedebrief.ai/p/five-chatgpt-codes-that-change-every-reply">The Debrief</a></p>
+<h2>AI TV-hack videó: a reverse engineering ügynököknél már a fogyasztói hardver a játszótér</h2>
+<p>A széles körképben feljött egy RelfWolf-videó arról, hogy AI-eszközökkel meg lehet-e hackelni egy okostévét, letiltani háttérfolyamatokat és saját kezdőképernyőt építeni rá. A videó idézett részletei szerint egy korábbi példa 22-25 appot és folyamatot kapcsolt ki, és Apple TV-szerű home screen készült helyette. Ez nem hivatalos termékbejelentés, inkább jelzés: a reverse engineering körüli agent-használat egyre inkább átmegy hétköznapi eszközök testreszabásába.</p>
+<p>Ez önmagában nem recept, és nem is mindenkinél reprodukálható, de jól mutatja, hogy a kódügynökös "nézz bele, találd meg, javítsd át" minta már nem csak webappokon él.</p>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=aN-65z6bvKk">RelfWolf</a></p>
+<h2>RepoCheck</h2>
+<p>A mai anyaghoz nem érkezett kitöltött RepoCheck tényblokk, ezért ezt a szekciót most kihagyom.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála: gyors új modellhírek mellett sok a gyakorlati példa arra, hogyan költöznek az agentek és a generatív eszközök közvetlenül a napi munkafolyamatokba.</p>
+<p><strong>@futurepedia<em>io</strong> -- A Gemini 4 Hydrogen indulása azért érdekes, mert a Google most kifejezetten gyors kódolási és több lépéses agent feladatokra pozicionál egy modellt, miközben az API-ár már azt is eldönti, hogy helyi vagy felhős futtatás éri meg jobban.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2121824223337521265">@futurepedia_io</a></p>
+<p><strong>@futurepedia</em>io</strong> -- A Claude Meetings azt mutatja, hogy az agent már nem csak chatablakban dolgozik: élő meetingen jegyzetel, dokumentál és feladatlistát ír, ami jó minta lehet saját, lokális meeting-asszisztensek építéséhez is.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2121093079549788415">@futurepedia_io</a></p>
+<p><strong>@AIHighlight</strong> -- A SAG2-féle keresési megközelítés azért figyelemre méltó, mert embedding- és előfeldolgozás-heavy RAG helyett teljes szöveges indexre épít, ami egyszerűbb, saját gépes tudáskereső pipeline-ok felé mutat.<br>Forrás: <a href="https://x.com/AIHighlight/status/2121522162984964101">@AIHighlight</a></p>
+<p><strong>@emmanuel_2m</strong> -- Ez a Scenario-demo azt emeli ki, hogy már egyetlen promptból lehet riggelt, animált 3D assetet exportálni több formátumba, ami indie asset-gyártásnál és agenttel vezérelt tartalompipeline-oknál is rövidíti a kört.<br>Forrás: <a href="https://x.com/emmanuel_2m/status/2121548586999554267">@emmanuel_2m</a></p>
+<p><strong>@chetaslua</strong> -- A tisztán kódból generált vizuál plusz hang példa jól mutatja, hogy a multimodális modellek már komplett generatív jeleneteket tudnak összerakni, nem csak egy-egy képet vagy rövid klipet.<br>Forrás: <a href="https://x.com/chetaslua/status/2121885449509851415">@chetaslua</a></p>
+<p><strong>r/singularity</strong> -- A Gemini 4 Hydrogen benchmark-poszt azért pörgött fel, mert a közösség most nagyon figyeli, hogy a gyors modellek mennyire használhatók tényleges agent feladatokra, nem csak demókra. (heti top 20. hely a csoportban pont, komment nincs megadva)<br>Forrás: <a href="https://www.reddit.com/r/singularity/comments/1xwvg9b/gemini_4_hydrogen_just_destroyed_claude_fable_52/">r/singularity</a></p>
+<p><strong>r/ClaudeAI</strong> -- A DOS-ra felférő, Claude-dal megíratott és betaníttatott mini nyelvi modell pont azt a barkács-irányt képviseli, ami a saját gépen futó AI-val játszó olvasóknak érdekes: extrém kicsi, de végigfogható stack. (heti top 22. hely a csoportban pont, komment nincs megadva)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xwpenj/claude_wrote_and_trained_a_language_model_for_dos/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- A Claude Desktop frissítéséről szóló poszt azért kapott figyelmet, mert a desktop kliens képességei közvetlenül befolyásolják, mennyire váltható ki böngészős vagy felhős workflow egy helyi, napi használatú agentes munkarendben. (heti top 56. hely a csoportban pont, komment nincs megadva)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xx5iam/the_latest_claude_desktop_update_in_one_picture/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- A Fable limitkezeléséről szóló PSA gyakorlati apróság, de annak fontos, aki napi szinten osztja be a modellhasználatot agentes munkára és tanácsadó jellegű lekérdezésekre. (heti top 66. hely a csoportban pont, komment nincs megadva)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1xvnq0t/psa_using_fable_as_an_advisor_doesnt_touch_your/">r/ClaudeAI</a></p>
+<p><strong>r/LocalLLaMA</strong> -- Az EUROPA közel ezermilliárd paraméteres nyílt modellterve azért érdekes, mert ha valóban nyílt súlyos irányba megy, hosszabb távon a helyben futtatható európai modellek ökoszisztémájára is hatással lehet. (heti top 83. hely a csoportban pont, komment nincs megadva)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1xwr917/europa_the_eus_open_ai_model_is_aiming_for_nearly/">r/LocalLLaMA</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-16";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
