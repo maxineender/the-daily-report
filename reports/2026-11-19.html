@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyorsabb modellek, szigorúbb végrehajtók, használhatóbb kreatív csövek — LocalAgent Digest</title>
+  <meta name="description" content="Ma inkább az számít, hogyan futnak és hogyan kapcsolódnak össze az eszközök, mint az, hogy ki mondta a legnagyobbat.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-19</div>
+          <h1 class="article-title">Gyorsabb modellek, szigorúbb végrehajtók, használhatóbb kreatív csövek</h1>
+          <div class="article-sub">Ma inkább az számít, hogyan futnak és hogyan kapcsolódnak össze az eszközök, mint az, hogy ki mondta a legnagyobbat.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-19.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-19.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Gyorsabb modellek, szigorúbb végrehajtók, használhatóbb kreatív csövek" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma több fronton is közelebb kerültünk a ténylegesen használható ügynökös stackhez.</p>
+<p>A nap fő sztorija: a Gemini 4 Neon gyors, olcsón cache-elhető és ügynöki javításokra is kihegyezték.</p>
+<p>A mai csokorban közös, hogy mindegyik tétel a végrehajtás körül szorít egy csavart: jobb steering, óvatosabb shell-futtatás, folyamatos termékügynök, vagy épp kreatív MCP, ami nem szakítja szét a munkafolyamatot.</p>
+<h2>Gemini 4 Neon: gyorsabb frontmodell, 95 százalékos cache-kedvezménnyel</h2>
+<p>A Google bemutatta a Gemini 4 Neont. A blog szerint az Artificial Analysis Intelligence Indexen 61 ponttal #3 összesítésben, a Vals Indexen #2, és külön kiemelik, hogy az Agent Arena Indexen steerabilityben is #2 lett, vagyis jobban viseli a menet közbeni korrekciókat. A modell 1 millió tokenes kontextust kapott, ára 3 USD / 1M input token, 0,15 USD / 1M cache-elt input token és 15 USD / 1M output token.</p>
+<p class="price-line">Ár: 3 USD / 1M input token, 0,15 USD / 1M cache-elt input token, 15 USD / 1M output token</p>
+<blockquote><p>Ha ugyanazon a kódbázison vagy tudásbázison több menetben dolgozol, itt most tényleg megéri külön figyelni a prompt-cache-re. A 0,15 USD / 1M cache-elt input már elég nagy különbség ahhoz, hogy a hosszú rendszerpromptot, repo-összefoglalót és állandó eszközleírásokat érdemes legyen stabilan újrahasználni, nem minden körben újraküldeni.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/">Google Blog / Introducing Gemini 4 Neon</a></p>
+<h2>Stitch Loop: folyamatos termékügynök élő metrikákkal és PR-nyitással</h2>
+<p>A Google Labs új kísérlete, a Stitch Loop egy hosszabban futó product agent, amely a saját leírásuk szerint ráköt a kódbázisra és az élő metrikákra, hibákat keres, biztonsági és teljesítményproblémákat jelez, majd javítási javaslatokat és pull requesteket nyit. A mostani állapot még waitlistes, de a lényeg itt az, hogy a build-fázisból kifejezetten a fenntartási fázisba tolja át az ügynököt.</p>
+<blockquote><p>Ha most is van CI-d, lintered és monitoringod, ez nem helyettesíti őket, hanem föléjük ül. Az érdekes teszt az lesz, hogy mennyire tudod úgy korlátozni a hozzáférését, hogy csak olvassa a metrikákat, PR-t nyisson, de közvetlenül ne deployoljon. Ezt a fajta szétválasztást már most érdemes alapelvként megtartani más ügynököknél is.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/">Google Blog / Introducing Stitch Loop</a></p>
+<h2>Suno MCP: zene, kép és videó ugyanabból a chatből</h2>
+<p>A Suno kiadta a saját MCP-szerverét. A bemutatóban ChatGPT-hez a `api.suno.com/mcp` címen kötnek be egy custom MCP szervert, és ugyanabban a beszélgetésben lehet dalt generálni, azon módosítani, majd a dalhoz képet és rövid videóklipet is építeni. A videó szerint az MCP nem ad külön kreditkeretet: a limitek és a kreditek a Suno-előfizetésedhez kötődnek.</p>
+<blockquote><p>Ha már használsz ChatGPT-t, Claude-ot vagy Cursort forgatókönyvre, trailer-vázra vagy játékvilág-hangulatra, ez most leveszi a kontextus-újramagyarázás egy részét. A fontos korlát az, hogy a költés nem különül el az MCP miatt, ezért érdemes a Sunóban meglévő library-kezelést és kreditellenőrzést is bekötni a rutinba, nem csak a generálást.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/vdBHr4mlUss">Suno</a></p>
+<h2>Scenario Photoshop plugin: nyílt workflow-csomag MCP-vel Claude Code mellé</h2>
+<p>Scenario nyílt forrásban kirakott egy komplett Photoshop-pluginos workflow-készletet, amit a poszt szerint közvetlenül Photoshopban lehet használni, vagy Claude Code-dal MCP-n keresztül futtatni. A csomag szerepkörökre bontott műveleteket ad, például concept art, retus, kivágás, relight, upscale és canvas-extend feladatokra.</p>
+<p>Forrás: <a href="https://x.com/emmanuel_2m/status/2123066519802318997">@emmanuel_2m</a></p>
+<h2>Gemini CLI: biztonsági és végrehajtási szigorítások érkeztek a 0.69.0-ban</h2>
+<p>A `google-gemini/gemini-cli` 0.69.0-s kiadásánál a release-jegyzet kevésbé érdekes, a commitok annál inkább. Az elmúlt napokban bekerült több olyan javítás, ami közvetlenül az eszközhívás és shell-végrehajtás kockázatát szűkíti: a top-level parancs ellenőrzése, az unresolved shell expansionök ASK<em>USER-en tartása, lineáris idejű policy-kiértékelés `re2js`-szel, valamint az insecure command permissionös system MCP serverek kihagyása.</p>
+<blockquote><p>A két konkrét sor, amire most érdemes figyelni: az unresolved expansionök ne menjenek át automatikusan, és a system MCP szerverek jogosultságai legyenek szigorúak. Ha saját parancs-policyval futtatsz ügynököt, ez jó alkalom átnézni, hogy prefixre, regexre vagy tényleges argumentum-felbontásra szűrsz-e.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.69.0">google-gemini/gemini-cli v0.69.0</a></p>
+<h2>Claude Code Code Mode: a hookoknál nem elég a parancs elejét nézni</h2>
+<p>Egy rövid, de fontos fejlesztői figyelmeztetés érkezett a Claude Code kísérleti Code Mode-járól. A poszt szerint a modell ilyenkor JavaScriptet írhat, amely egy lépésben több tool callt indít; ezek továbbra is átmennek a PreToolUse hookokon, de egy ellenőrzés, ami csak a parancs elejét nézi, átengedhet olyan formát, mint `cd 'app' &amp;&amp; git push`. Ugyanitt az is szerepel, hogy Auto módban a classifier script-szintet vizsgál, nem külön minden tool callt.</p>
+<blockquote><p>Ha van saját hookod, ami `startsWith("git push")` vagy hasonló egyszerű mintát néz, azt most érdemes szétszedni tokenekre vagy shell-részekre. A konkrét probléma itt nem általános biztonsági bölcsesség, hanem az, hogy az összefűzött parancsformák másképp néznek ki, mint amire a legegyszerűbb hookok készültek.</p></blockquote>
+<p>Forrás: <a href="https://x.com/rryssf/status/2122817415700754560">@rryssf</a></p>
+<h2>Genie 4: valós idejű világépítés közösségi galériával</h2>
+<p>A Google kiadta a Genie 4-et a Project Genie-ben. A hivatalos leírás szerint természetes nyelven lehet valós időben világot szerkeszteni, időjárást, karaktereket és natív hangot hozzáadni, és az eredményt közösségi galériában megosztani vagy remixálni. A hozzáférés most Google AI Ultra előfizetőknek nyílik, Pro csomaggal várólista van.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/">Google Blog / Genie 4 is now available</a></p>
+<h2>OpenAI chip design poszt: a modellek itt már mérnöki ciklusba vannak beültetve</h2>
+<p>Az OpenAI RSS-ben megjelent egy új cikk `Advancing chip design with OpenAI models` címmel. A teljes törzs nem érhető el a botvédelem miatt, de maga a megjelenés azért érdekes, mert azt jelzi, hogy a labor külön anyagot szán annak, hogyan építik be a modelleket a chiptervezési munkafolyamatokba. Ez közelebb áll a hosszú futású, eszközös mérnöki ügynökhöz, mint a sima chat-demóhoz.</p>
+<p>Forrás: <a href="https://openai.com/index/advancing-chip-design-with-our-models/">OpenAI RSS / Advancing chip design with OpenAI models</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/Beehtrix/entire-graph">Beehtrix/entire-graph</a></strong> - Ez a repó a README szerint egy előre kiszámolt térképet ad egy Git repóról ügynököknek: rangsorolt kódkeresést, definíciókat, hívókat, típusokat, route-okat és change impact adatot, mindezt `file:line` helyekkel. A beépített elemző lokálisan fut tree-sitterrel, és a leírás szerint nem küld hálózati kérést, nem hív modellt és nem kér API-kulcsot. MIT licencű, 2026-11-05-én jött létre, utoljára 2026-11-18-án pusholták, jelenleg 0 csillaga és 4 nyitott issue-ja van. Fork, mégpedig az `entireio/entire-graph` eredetiből. Gyakorlatban akkor hasznos, ha az első repo-felderítési kör tokenköltségét akarod levágni, de a friss fork-státusz és a nulla csillag miatt ezt inkább kísérleti komponensként érdemes kezelni.</p>
+<p><strong><a href="https://github.com/Project-HAMi/HAMi">Project-HAMi/HAMi</a></strong> - A HAMi Kuberneteshez készült heterogén GPU-megosztó és ütemező réteg: a README szerint GPU-k és más AI-gyorsítók megosztását, memória- és compute-izolációját, valamint device-aware schedulinget ad úgy, hogy az alkalmazáskódot nem kell átírni. Apache-2.0 licencű, 2021-09-14-én jött létre, utolsó push 2026-11-18, 5028 csillagnál és 35 nyitott issue-nál jár. Nem fork, és CNCF Incubating projektként hivatkozzák. A gyakorlatban ez nem desktop ügynökeszköz, hanem infraépítő darab, akkor érdekes, ha több workload között akarod a drága gyorsítókat finomabban szétosztani Kubernetes alatt.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála, hogy a helyben futó ügynökök körül egyszerre lett fontosabb a jó modellválasztás, a hosszú futások költsége és a kreatív outputok közvetlen előállítása.</p>
+<p><strong>@gdb</strong> -- Az OpenAI új GPT-6.2 Astra és Sol modelljeit olcsóbb, komoly szakmai és kutatási munkára szánt opcióként pozicionálja, ami annak érdekes, aki több lépéses agent workflow-t futtat és számolja az egy feladatra jutó költséget.<br>Forrás: <a href="https://x.com/gdb/status/2122752345364935113">@gdb</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Orchestrator API-ja több mint 45 modellt tud feladathoz illesztve választani, ami hasznos minta azoknak, akik saját ügynöknél nem egyetlen modellt akarnak minden lépésre ráerőltetni.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2122786511829807229">@AravSrinivas</a></p>
+<p><strong>@AravSrinivas</strong> -- A Context API weboldalakból húz ki strukturált anyagot ügynökök számára, vagyis a böngészés és forrásfeldolgozás külön scraper-réteg nélkül is beépíthető egy helyi agent láncba.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2123085971625476277">@AravSrinivas</a></p>
+<p><strong>@rryssf</strong> -- A Neonról kiemeli az alacsonyabb tévedési arányt, az olcsó cache-t és az 1 milliós kontextust, ami hosszú rendszerpromptos, eszközhasználós futásoknál közvetlenül lejjebb viheti a hibajavítás és újrapróbálás árát.<br>Forrás: <a href="https://x.com/rryssf/status/2123198830594097642">@rryssf</a></p>
+<p><strong>@futurepedia</em>io</strong> -- Egy Claude plus Three.js workflow-val teljes 3D magyarázó videók készülnek kódból, ami jó példa arra, hogy kreatív anyagokhoz sem feltétlenül kell klasszikus DCC-s eszközlánc, ha a modell elég jó a jelenetgenerálásban.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2123100169658937798">@futurepedia_io</a></p>
+<p><strong>r/reddit</strong> -- Nincs használható Reddit-anyag a nyers csomagban, mert a lekérés hibával elszállt, ezért ezt a helyet most nem töltöm fel gyengébb vagy kitalált tétellel. (n.a. pont, n.a. komment)<br>Forrás: <a href="#">r/reddit</a></p>
+<p><strong>r/reddit</strong> -- Nincs használható Reddit-anyag a nyers csomagban, mert a lekérés hibával elszállt, ezért ezt a helyet most nem töltöm fel gyengébb vagy kitalált tétellel. (n.a. pont, n.a. komment)<br>Forrás: <a href="#">r/reddit</a></p>
+<p><strong>r/reddit</strong> -- Nincs használható Reddit-anyag a nyers csomagban, mert a lekérés hibával elszállt, ezért ezt a helyet most nem töltöm fel gyengébb vagy kitalált tétellel. (n.a. pont, n.a. komment)<br>Forrás: <a href="#">r/reddit</a></p>
+<p><strong>r/reddit</strong> -- Nincs használható Reddit-anyag a nyers csomagban, mert a lekérés hibával elszállt, ezért ezt a helyet most nem töltöm fel gyengébb vagy kitalált tétellel. (n.a. pont, n.a. komment)<br>Forrás: <a href="#">r/reddit</a></p>
+<p><strong>r/reddit</strong> -- Nincs használható Reddit-anyag a nyers csomagban, mert a lekérés hibával elszállt, ezért ezt a helyet most nem töltöm fel gyengébb vagy kitalált tétellel. (n.a. pont, n.a. komment)<br>Forrás: <a href="#">r/reddit</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-19";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
