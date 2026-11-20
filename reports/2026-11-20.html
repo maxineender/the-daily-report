@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb token a szerszámokra, több kontroll a futó munkák fölött — LocalAgent Digest</title>
+  <meta name="description" content="A mai válogatás főleg arról szól, hogyan lesznek olcsóbbak, kezelhetőbbek és hordozhatóbbak a saját gépen futó ügynökös workflow-k.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-20</div>
+          <h1 class="article-title">Kevesebb token a szerszámokra, több kontroll a futó munkák fölött</h1>
+          <div class="article-sub">A mai válogatás főleg arról szól, hogyan lesznek olcsóbbak, kezelhetőbbek és hordozhatóbbak a saját gépen futó ügynökös workflow-k.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-20.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-20.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb token a szerszámokra, több kontroll a futó munkák fölött" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Jó reggelt. A Gemini API új Tool Retrieval módot kapott nagy eszközkészletekhez. A mai anyagban visszatérő minta, hogy a gyártók egyre kevésbé egyetlen nagy chatként kezelik az AI-t, és egyre inkább futó, állapotos, több eszközt kezelő rendszerként. Ez ott számít igazán, ahol egy ügynöködnek már nem 3, hanem 30 vagy 300 tool között kell eligazodnia.</p>
+<h2>Gemini API: Tool Retrieval preview nagy tool librarykhoz</h2>
+<p>A Google previewban elindította a Tool Retrievalt a Gemini Interactions API-ban. A lényeg, hogy az ügynöknek nem kell minden kérésnél beküldeni a teljes tool-könyvtár összes paramétersémáját: elég egy `tool<em>search` eszközt hozzáadni, és `defer</em>loading` beállítással csak akkor töltődnek be a részletes sémák, amikor tényleg kellenek. A Google ezt kifejezetten nagy tool librarykre pozicionálja, tokenköltség-, késleltetés- és pontossági javulással.</p>
+<blockquote><p>Ha már most hosszú MCP- vagy function-calling listával dolgozol, ez az a pont, ahol érdemes különválasztani a "tool discovery" és a "tool execution" lépést. A teljes JSON schema beküldését nem minden fordulóban kell erőltetni: a nagy, ritkán használt eszközöket tedd olyan csoportba, amit csak keresés után töltesz be.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/">Google Blog / Introducing Tool Retrieval in the Gemini API</a></p>
+<h2>Gemini app: Maces computer use érkezik a Geminihez</h2>
+<p>A Google új Gemini app-funkciót jelentett be Macre, amellyel a Gemini ismétlődő gépes feladatokat tud kezelni. A mai anyagban csak a hivatalos bejegyzés rövid törzse áll rendelkezésre, de annyi biztos, hogy a funkció a Gemini appon belül jelenik meg, és kifejezetten a Macen végzett ismétlődő műveletekre van kihegyezve. Ez közelebb viszi a Gemini appot a "helyetted kattintgató" desktop agent irányhoz.</p>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/">Google Blog / Let Gemini tackle repetitive chores on your Mac</a></p>
+<h2>Gemini app: más AI appokból is átviheted az előzményeket és beállításokat</h2>
+<p>A Google új importfunkciót rakott a Gemini appba: más AI asszisztensekből át lehet hozni kontextust, preferenciákat és chat historyt. A bejegyzés alapján a cél az, hogy ne nulláról kelljen kezdeni a váltást. Ez elsőre fogyasztói kényelmi hírnek tűnik, de a saját workflow-k szempontjából azt jelzi, hogy a chatelőzmény és a személyes működési szabályok lassan hordozható állapottá válnak, nem egyetlen szolgáltatóba zárt melléktermékké.</p>
+<blockquote><p>Ha több klienssel kísérletezel ugyanarra a feladatra, kezdd külön menteni a projekt-szintű instrukciókat és a tartós preferenciákat a szolgáltatótól függetlenül is. Az ilyen importerek hasznosak, de az igazán mozgatható setup még mindig az, amit te kontrollálsz fájlban vagy repóban.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/products/gemini-app/switch-ai-assistants-transfer-history/">Google Blog / Transfer your history from other AI apps into Gemini</a></p>
+<h2>gemini-cli 0.70.0: pontosabb parancsszűrés, biztosabb ASK<em>USER és lineárisabb policy-ellenőrzés</h2>
+<p>A `gemini-cli` 0.70.0 kiadása önmagában csak automatikus PR-lista, de a commitok között van néhány tényleg fontos változás. Javították a `commandPrefix` és `commandRegex` szabályok illesztését, hogy a top-level parancsargumentum ellen menjen; megmarad az `ASK</em>USER`, ha a shell parancsban feloldatlan expansion van; lineáris idejű `re2js` alapú policy `argsPattern` kiértékelés jött; és több CLI/IDE stabilitási javítás is bekerült, például PowerShell parse miatti spinner-fagyás és atomi portfájl-írás.</p>
+<blockquote><p>Ha policykkel fogod a shell-eszközöket, ez a verzió kifejezetten olyan hely, ahol újra kell próbálni a korábban bizonytalan tiltási és jóváhagyási eseteket. Főleg azokat, ahol regexre, parancselőtagra vagy változó-expanzióra támaszkodsz.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.70.0">google-gemini/gemini-cli v0.70.0</a></p>
+<h2>OpenClawban már landolt a fix a hookos parancsellenőrzéshez</h2>
+<p>`@steipete` szerint az OpenClawban már tegnap bekerült a javítás ahhoz a hibához, amelynél a beágyazott harness használatakor a hookos parancsellenőrzés nem volt elég szigorú. A posztból az látszik, hogy ez jelenleg főleg az embedded harness-t használó kisebb körnek fontos, és a legtöbb harness még nem frissült. A tegnapi Claude Code-os hír után ez már a gyakorlati következmény: a környező eszközöknek is követniük kell a szigorúbb ellenőrzési logikát.</p>
+<p>Forrás: <a href="https://x.com/steipete/status/2123487048250327497">@steipete</a></p>
+<h2>Pika Enact: élő rendezés felé mozdul az AI videó</h2>
+<p>A Pika bemutatta az Enact nevű kísérleti videós rendszert, ahol a jelenet futása közben lehet szereplőket húzni, hangos instrukciókat adni és kamerát mozgatni. A Rundown összefoglalója szerint a demo 640×480-on, 24 fps mellett futott nyolc B300 GPU-n, fogyasztói hozzáférés még nincs, és a vágott demo miatt nem látszik, mennyire áll össze egy teljes session. Mégis érdekes, mert a videógenerálás súlypontja a promptolásról a jelenet közbeni irányításra tolódik.</p>
+<blockquote><p>Ha videós ügynököt raksz össze, ebből az látszik, hogy a "generálj egy klipet" modellhívás mellé érdemes külön állapotot tartani a szereplőkről, kameráról és take-enkénti megjegyzésekről. A jövő workflow-ja valószínűleg nem egyetlen prompt, hanem több körös rendezés lesz.</p></blockquote>
+<p>Forrás: <a href="https://www.therundown.ai/news/pika-enact-ai-video-live-directing">The Rundown / Pika previews Enact for directing AI video in real time</a></p>
+<h2>Dankieft GTA 6-workflowja: a videós konzisztencia most már asset-fegyelem kérdése</h2>
+<p>A Dankieft új videója nem új modellt jelentett be, hanem egy elég jól dokumentált gyártási workflow-t mutatott be Seedance 2.5 és Claude Fable 5.2 köré. A lényeg nem a "csinálj nekem GTA trailert" prompt, hanem az, hogy külön style-analysis chat, shot list, location sheet, prop sheet, karakterlap, sőt videós karakterlap készül, és csak ezután jön a draft generálás meg az olcsó iteráció. A videó külön kiemeli, hogy a drága videókreditet az előkészítéssel lehet megfogni.</p>
+<blockquote><p>Ha jelenetkonzisztenciával küzdesz, a hasznos váltás nem új prompt, hanem külön asset-mappa és újrahasznosítható "sheet" struktúra. A szereplő, helyszín és kellék külön referenciaként sokkal jobban skálázódik, mint egyetlen hosszú leírás minden generálásnál.</p></blockquote>
+<p>Forrás: <a href="https://youtu.be/GOR4Fn0GGes">Dankieft / I Made A GTA 6 Trailer with Seedance 2.5 + Claude Fable 5.2</a></p>
+<h2>Apple is saját, Maceket kezelő AI agenten dolgozhat</h2>
+<p>A TechCrunch szerint az Apple olyan AI agentet fejleszthet, amely a Macet tudja kezelni. Ez egyelőre egyetlen forrásos riport, nem hivatalos bejelentés, ezért érdemes fenntartással kezelni. Mégis figyelendő, mert ha igaz, az azt jelzi, hogy a desktop computer-use irány már nem csak OpenAI, Anthropic és Google-terep, hanem az OS-t birtokló platformgazdák is be akarnak lépni.</p>
+<p>Forrás: <a href="https://techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac">TechCrunch / Apple may be developing its own AI agent that runs your Mac</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/rukamori/ArchiveTune">rukamori/ArchiveTune</a></strong> - Az ArchiveTune egy Androidos zenelejátszó, amely a README szerint helyi fájlokat és YouTube Musicot is támogat. Kotlinnal és Jetpack Compose-zal készült androidos app, tehát nem ügynökkeret vagy modelltooling, hanem végfelhasználói alkalmazás. A licenc GPL-3.0, vagyis szabad szoftver, de copyleft feltételekkel. A repó 2025-09-01-jén jött létre, az utolsó push 2026-11-19, jelenleg 8526 csillagnál és 373 forknál jár, tehát aktív és látható projekt. Nem fork. Gyakorlatban ez inkább jó referencia egy modern, aktívan karbantartott Android FOSS app felépítésére, mintsem közvetlen AI- vagy ügynökös eszköz.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>Ma a modellek használhatósága a fő szál: gyors új modell, agentes API-k és pár konkrét példa arra, hogyan lesz ebből helyben futó workflow.</p>
+<p><strong>@demishassabis</strong> -- Megjelent a Gemini 4 Neon: a poszt alapján ez most a gyorsabb, mégis erős általános modell, ami akkor érdekes, ha a saját agentednél a válaszidő és a költség ugyanúgy számít, mint a nyers képesség.<br>Forrás: <a href="https://x.com/demishassabis/status/2123168218743554465">@demishassabis</a></p>
+<p><strong>@demishassabis</strong> -- Elérhető a Genie 4 is a Project Genie-ben: ez inkább építős, kísérletezős irány, ami új generatív workflow-khoz adhat alapot azoknak, akik nem csak chatet, hanem összetettebb rendszert raknak össze.<br>Forrás: <a href="https://x.com/demishassabis/status/2123130606162985350">@demishassabis</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity három új API-t rakott ki egyszerre: Monitor, Orchestrator és Context. Ez közvetlenül hasznos annak, aki több modellt akar eseményfigyeléssel, route-olással és webes tartalom-előkészítéssel egy agentes láncba kötni.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2123224126248906811">@AravSrinivas</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Computerben már olyan rendszer is fut, ami a korábbi sessionökből új skillt ír és frissít. Ez azért fontos, mert a saját gépen futó agenteknél most már nem csak promptot, hanem fokozatosan tanult műveleti mintákat is lehet kezelni.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2123451045657690627">@AravSrinivas</a></p>
+<p><strong>@chetaslua</strong> -- A Gemini 4 Neon tiszta JavaScriptből készített motion design videót külső asset nélkül: ez jó jel arra, hogy a kódvezérelt képi generálás kezd használható lenni gyors prototípusokra és automatikus kreatív pipeline-okra.<br>Forrás: <a href="https://x.com/chetaslua/status/2123219124260315301">@chetaslua</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Tool sprawl után jön a tool retrieval</strong>. Mi változik, ha az ügynöködnek már nem pár, hanem több tucat eszközt kell kezelnie.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-11-20-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-20";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
