@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eszköztár, memória, lokális vas: ma ezek körül sűrűsödnek a használható hírek — LocalAgent Digest</title>
+  <meta name="description" content="Kevés, de konkrét tételek jöttek: ingyen 32 GB VRAM a Kaggle-ben, új lokális inference-réteg, és pár olyan frissítés, ami közvetlenül átírhatja a napi workflow-t.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-21</div>
+          <h1 class="article-title">Eszköztár, memória, lokális vas: ma ezek körül sűrűsödnek a használható hírek</h1>
+          <div class="article-sub">Kevés, de konkrét tételek jöttek: ingyen 32 GB VRAM a Kaggle-ben, új lokális inference-réteg, és pár olyan frissítés, ami közvetlenül átírhatja a napi workflow-t.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-21.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-21.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Eszköztár, memória, lokális vas: ma ezek körül sűrűsödnek a használható hírek" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szervusz, ma inkább a gyakorlati oldal erős. Ingyenes Kaggle-notebookban mutattak be 32 GB VRAM-os modelfuttatást. A mai anyag nagy része arról szól, hogyan lesz több mozgástered helyben vagy olcsón: kevesebb promptterheléssel, jobb eszközválasztással, használhatóbb memóriával és pár kész workflow-val, amit már most át lehet venni.</p>
+<h2>Ingyen 32 GB VRAM Kaggle-notebookból nyílt modellekhez</h2>
+<p>A Hyperautomation Labs egy friss videóban végigmutatja, hogyan lehet Google Kaggle notebookban ingyenes GPU-s környezetet használni nagyobb nyílt modellek futtatására. A bemutató szerint a notebook két NVIDIA GPU-val összesen 32 GB VRAM-ot ad, ami már elég lehet olyan, nagyjából 17 GB-os modellfájlokhoz, amelyek egy átlagos laptopba nem férnek be. A videó kifejezetten arra épül, hogy nem saját gépen, hanem ideiglenes felhős notebookban fut az inferencia, nulla közvetlen költséggel.</p>
+<blockquote><p>Ha gyorsan akarsz kipróbálni egy új modellt vásárlás vagy hosszú helyi telepítés nélkül, érdemes a Kaggle-t külön "burner" futtatókörnyezetként kezelni: benchmarkra, prompttesztre, kvantizáció-összehasonlításra jó, de tartós memóriának ne használd. A notebookok efemer jellege miatt a modellek, cache-ek és session-állapot mentését tedd rögtön Drive-ra vagy külső tárra.</p></blockquote>
+<p>Forrás: <a href="https://www.youtube.com/watch?v=Uw5lbb9uJOk">Hyperautomation Labs / FREE 32GB VRAM Server for Running AI Models (No PC Needed)</a></p>
+<h2>PolyStrata: egykattintásos lokális futtatás több nagy modellhez localhost API-val</h2>
+<p>A PolyStrata neve most főleg azért érdekes, mert nem egy új modellről szól, hanem egy olyan futtatórétegről, ami több nagy modellt tesz használhatóvá helyi API-n keresztül. A projekt leírása szerint Windowson és Linuxon is ad egykattintásos telepítést, és OpenAI illetve Anthropic kompatibilis localhost API-t kínál. A README alapján két engine-nel dolgozik: az egyik a Strata saját motorja a Qwen3.8-Flash-Nexthez, a másik egy külön PolyStrata-engine, amin GLM 5.3 Flash, DeepSeek V4 Flash, LFM2.5, Qwen3.6, Ornith 1.5, Gemma 4, Tiel Coder és MiniCPM-V is futhat. Ez azért számít, mert így az ügynökös toolchainben kevesebb helyen kell átírni a kliensoldalt.</p>
+<blockquote><p>Ha valamelyik ügynököd OpenAI-stílusú endpointot vár, egy localhost API-t adó futtatóréteg sokszor gyorsabb út, mint natív integrációt várni. Ilyenkor a modellcsere a backendben marad, a kliensedben pedig gyakran elég a base URL és a modelnév átállítása.</p></blockquote>
+<p>Forrás: <a href="https://github.com/simplexai-labs/PolyStrata">simplexai-labs/PolyStrata</a></p>
+<h2>OpenAI új posztot tett ki az adversarial distillation elleni védekezésről</h2>
+<p>Az OpenAI RSS-ben új, elsődleges bejegyzés jelent meg `Combatting adversarial distillation` címmel. A teljes törzs itt nem tölthető le, ezért csak annyi áll biztosan, hogy a cég külön anyagot szentelt az adversarial distillation elleni védekezésnek, vagyis annak a problémának, amikor egy modell viselkedését, stílusát vagy képességeit célzottan próbálják kinyerni és utánozni. Ez inkább infrastruktúra- és hozzáféréspolitikai hír, mint végfelhasználói feature.</p>
+<blockquote><p>Ez arra utalhat, hogy a hosztolt API-knál szigorodhat a mintavétel, a rate limit, vagy a kimenetek körüli megfigyelés. Ha ügynököt úgy építesz, hogy nagyon sok szisztematikus lekérdezéssel gyűjt példákat finomhangoláshoz vagy replay-teszthez, érdemes felkészülni arra, hogy az ilyen mintázatokra érzékenyebbek lesznek a szolgáltatók.</p></blockquote>
+<p>Forrás: <a href="https://openai.com/index/combatting-adversarial-distillation">OpenAI / Combatting adversarial distillation</a></p>
+<h2>MedChemBench: OpenAI külön benchmarkot tett ki gyógyszerjelölt-azonosításhoz</h2>
+<p>Az OpenAI sitemap-diffben és RSS-ben is újként jelent meg az `introducing-medchembench` oldal. A cím alapján ez egy új benchmark vagy értékelési keret a medicinal chemistry feladatokra, vagyis arra, hogy modellek mennyire használhatók ígéretes gyógyszerjelöltek azonosítására. Mivel a teljes oldaltörzs nem tölthető le, a biztos állítás itt maga az új, elsődleges publikáció és a fókuszterület.</p>
+<p>Forrás: <a href="https://openai.com/index/introducing-medchembench/">OpenAI / Introducing MedChemBench</a></p>
+<h2>Google Search és Gemini app: új Connected Apps jöttek bevásárláshoz és pénzügyekhez</h2>
+<p>A Google új Connected Apps funkciókat gördít ki az Egyesült Államokban Searchben és a Gemini appban. A blogposzt szerint az új csatlakozások között ott vannak az Albertsons, Safeway, Shaw’s és Target bevásárlós integrációk, valamint pénzügyi oldalon az Experian, továbbá H&amp;R Blockos adózási segítség. A háttérben a Universal Commerce Protocol dolgozik, vagyis a Gemini és a Search egyre inkább nem csak kérdez-felel felület, hanem külső rendszerekbe becsatlakozó végrehajtó réteg.</p>
+<p>Forrás: <a href="https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/">Google Blog / Get your year-end tasks done with new Connected Apps.</a></p>
+<h2>Watch Duty: Gemini-alapú rádióátirat 30 másodperc alatti tűzjelzéshez</h2>
+<p>A Google.org Fellowship keretében épített Watch Duty-eszköz több mint 20 ezer óra rádiófelvételen tanult, és a célja a zajos tűzoltó-rádióforgalom tisztítása, majd kereshető szöveggé alakítása. A Google szerint a rendszer új wildfire dispatch-eket 30 másodpercen belül tud észlelni. Ez nem ügynökös termékbejelentés, de jó példa arra, hogy egy Gemini-réteg mennyire használható zajos, doménspecifikus audio előfeldolgozásra.</p>
+<p>Forrás: <a href="https://blog.google/company-news/outreach-and-initiatives/google-org/watch-duty-gemini-tool/">Google Blog / How Watch Duty is using Gemini to get wildfire alerts out faster</a></p>
+<h2>Anthropic új URL a sitemapban: lezárták az IPO-t</h2>
+<p>Az Anthropic sitemapjában új oldal jelent meg `ipo-close` URL-lel. Mivel ez új URL és nem csak lastmod-zaj, valódi fejleményként kezelhető: a cég közzétette az IPO lezárásáról szóló külön oldalt. Ez elsősorban vállalati hír, de annyiban mégis számít, hogy a nyilvános céges működés általában több transzparenciát, több negyedéves számsort és sokszor szigorúbb termékprioritást hoz.</p>
+<p>Forrás: <a href="https://www.anthropic.com/news/ipo-close">Anthropic / IPO close</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/simplexai-labs/PolyStrata">PolyStrata</a></strong> - A README alapján a PolyStrata nagy AI modellek futtatására való normál PC-n, Windows és Linux alatt, és OpenAI illetve Anthropic kompatibilis API-t ad localhoston. Konkrétan két engine-t használ: a Strata motorját a Qwen3.8-Flash-Nexthez, és egy külön PolyStrata-engine-t több más modellhez, köztük GLM 5.3 Flashhez, DeepSeek V4 Flashhez, Gemma 4-hez és MiniCPM-V-hez. A licenc MIT, tehát szabadon felhasználható a licencfeltételek mellett. A repó 2026-10-06-án jött létre, az utolsó push 2026-11-18-án volt, és most 1309 csillagnál jár. Nem fork. Gyakorlatban ez akkor érdekes, ha egy helyi modellparkot akarsz egy közös, ügynökbarát API mögé rakni, nem pedig minden klienshez külön integrációt írni.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai minta főleg arról szól, hogy a gyorsabb új modellek mellé egyre több hangos, agentes és generatív workflow épül, ami helyi használatnál is átvehető ötletként.</p>
+<p><strong>@gdb</strong> -- Greg Brockman szerint a hang és az élő diktálás kezd jobb számítógépes felületté válni, ami annak érdekes, aki helyben futó agentekhez keres természetesebb beviteli réteget.<br>Forrás: <a href="https://x.com/gdb/status/2123150520303161763">@gdb</a></p>
+<p><strong>@AravSrinivas</strong> -- A Perplexity Teammates már telefonon, hanggal is elérhető, ami jól mutatja, hogy az agentes munkafolyamatok egyre inkább hívásként és nem csak chatablakban jelennek meg.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2123490843428622413">@AravSrinivas</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 4 Neon elindult AI Studio-ban és API-n is, és a visszajelzések alapján kifejezetten a sebesség és használhatóság kombinációja lehet érdekes azoknak, akik sok iterációs agentes feladatot futtatnak.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2123167791922741362">@OfficialLoganK</a></p>
+<p><strong>@Thom_Wolf</strong> -- A Hugging Face már saját CDN-t üzemeltet az óriási modelfájl-forgalom miatt, ami annak jelzés, hogy a helyi modellfuttatás infrastruktúra-oldalon is más terhelési mintát jelent, mint a sima webes terítés.<br>Forrás: <a href="https://x.com/Thom_Wolf/status/2123852806213730744">@Thom_Wolf</a></p>
+<p><strong>@chetaslua</strong> -- Gemini 4 Neonból készült egy ASCII animációs demó blind critic visszacsatolással, ami jó gyakorlati minta arra, hogyan lehet többügynökös kritika-kört ráépíteni kreatív generálásra.<br>Forrás: <a href="https://x.com/chetaslua/status/2123831991061840145">@chetaslua</a></p>
+<p><strong>r/reddit hiányzik</strong> -- A Reddit-lekérés most hibára futott, ezért ebből a forrásból ma nem jött be olyan nyers tétel, amit linkkel és pontszámmal szabályosan be lehetne tenni. (0 pont, 0 komment)<br>Forrás: <a href="HIBA: a Reddit-lekérés elszállt, az RSS (HTTPError">r/reddit hiányzik</a> és a régi lista-út is)</p>
+<p><strong>r/reddit hiányzik</strong> -- A mai csomagból emiatt pont azok a közösségi tapasztalatok maradnak ki, amelyek általában a helyi agentes setupok valós használatát és hibáit mutatják meg. (0 pont, 0 komment)<br>Forrás: <a href="HIBA: a Reddit-lekérés elszállt, az RSS (HTTPError">r/reddit hiányzik</a> és a régi lista-út is)</p>
+<p><strong>r/reddit hiányzik</strong> -- Mivel nincs subreddit-posztlista, ma nem érdemes gyenge pótlásokkal feltölteni a Reddit-részt, inkább maradjon látható, hogy az adatforrás hiányzik. (0 pont, 0 komment)<br>Forrás: <a href="HIBA: a Reddit-lekérés elszállt, az RSS (HTTPError">r/reddit hiányzik</a> és a régi lista-út is)</p>
+<p><strong>r/reddit hiányzik</strong> -- A forráshiba különösen a helyi kép-, videó- és zeneeszközök körüli workflow-posztokat vágja ki, pedig ezek szoktak a leginkább gyakorlati tippeket adni. (0 pont, 0 komment)<br>Forrás: <a href="HIBA: a Reddit-lekérés elszállt, az RSS (HTTPError">r/reddit hiányzik</a> és a régi lista-út is)</p>
+<p><strong>r/reddit hiányzik</strong> -- Ha újra lefut a Reddit-gyűjtés, érdemes majd elsőként azokat a posztokat nézni, ahol konkrét lokális agentes pipeline, modellcsere vagy generatív eszközlánc szerepel. (0 pont, 0 komment)<br>Forrás: <a href="HIBA: a Reddit-lekérés elszállt, az RSS (HTTPError">r/reddit hiányzik</a> és a régi lista-út is)</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-21";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
