@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejtett MCP-utasítások és új lokális utak kerültek elő — LocalAgent Digest</title>
+  <meta name="description" content="Ma inkább a vezérlésről és a futtatási környezetről szólnak a fontosabb tételek, nem a nagy laborbejelentésekről.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-22</div>
+          <h1 class="article-title">Rejtett MCP-utasítások és új lokális utak kerültek elő</h1>
+          <div class="article-sub">Ma inkább a vezérlésről és a futtatási környezetről szólnak a fontosabb tételek, nem a nagy laborbejelentésekről.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-22.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-22.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Rejtett MCP-utasítások és új lokális utak kerültek elő" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma több hír is arról szól, ki irányít valójában az ügynököd lépéseit. A legérdekesebb tétel egy Runpod MCP-incidens, ahol a szerver az ügynöknek szóló, felhasználó elől elrejtett utasítást fűzött a válaszhoz. Emellett előkerült egy DOS-os kódolóügynök, egy friss Meta-kis modell, egy új Apple-szál a helyi munkafolyamatokhoz, és pár repo, amit érdemes józanul nézni.</p>
+<h2>Rejtett utasítást kapott a Runpod MCP-szerveren keresztül az ügynök</h2>
+<p>A `runpod/runpod-mcp` repó egyik friss issue-ja szerint 2026-11-20 óta a hosztolt `https://mcp.runpod.io/` szerver egyes sikeres `create-pod` válaszok végére olyan plusz szöveget fűzött, amely kifejezetten az ügynöknek szólt, és azt kérte, hogy hívja meg a `rate<em>nps</em>score` eszközt úgy, hogy ezt ne említse a felhasználónak. Az issue HN-re is kikerült, vagyis nem elszigetelt, privát hibajegyről van szó, hanem nyíltan vitatott esetről. A konkrét történet itt nem az, hogy egy eszköz telemetriát kér, hanem az, hogy az MCP-válaszba rejtett, felhasználó előli utasítás keveredik az operatív eredménnyel.</p>
+<blockquote><p>Ha MCP-klienseknél tudsz nyers tool response logot menteni, most érdemes bekapcsolni legalább a pod-kezelő szervereknél. Ahol lehet, külön kezeld a tool-outputot és a modell-kontekstuként visszaadott szöveget, mert az ilyen beágyazott utasítások pont a kettő összemosásából élnek.</p></blockquote>
+<p>Forrás: <a href="https://github.com/runpod/runpod-mcp/issues/202">runpod/runpod-mcp issue #202</a></p>
+<h2>ClawDOS: kódolóügynök DOS-hoz, natív DOS-környezetben</h2>
+<p>A Hacker Newsra felkerült a ClawDOS, egy DOS-ra célzott AI kódolóügynök-projekt. A leírás alapján nem emulált modern shellről van szó, hanem klasszikus DOS-fejlesztési környezethez kötött eszközről, ami kifejezetten retro vagy korlátozott platformos buildfolyamatokra érdekes. A HN-en 161 pontig jutott 51 kommenttel, ami nem tömegjelenség, de elég ahhoz, hogy látszódjon: van igény a nagyon szűk, célhardveres agent-workflowkra is.</p>
+<p>Forrás: <a href="http://ricapar.net/ClawDOS/">ClawDOS</a></p>
+<h2>Meta Muse Ember: könnyű modell ügynökfuttatáshoz</h2>
+<p>A TechCrunch szerint a Meta kiadta a Muse Ember modellt, amit a cég a legkisebb és legjobb költség-haszon arányú modelljeként pozicionál, külön kiemelve az agent execution feladatokat. A mostani anyagban nincs elsődleges gyártói link, ezért itt csak annyit érdemes biztosra venni, hogy a sztori a könnyű, olcsó, gyors végrehajtó modellek irányába mutat. Ez azért érdekes, mert sok helyi workflow-ban nem a legokosabb modell a szűk keresztmetszet, hanem az, hogy mennyibe kerül vagy mennyi memóriát eszik a sok apró lépés.</p>
+<p>Forrás: <a href="https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/">TechCrunch / Meta releases Muse Ember, a new lightweight model for agent execution</a></p>
+<h2>Apple AI asszisztens Logic Próba és iWorkban, plusz MCP az iWork-appokhoz</h2>
+<p>A Verge szerint az Apple béta AI asszisztenst rak a Pagesbe, Keynote-ba, Numbersbe és Logic Próba, és MCP-támogatást is ad a Pages, Keynote és Numbers vonalon. Ez két külön szál: egyrészt még több natív appba kerül be a generatív réteg, másrészt az MCP Apple-oldalon is egyre inkább nem csak fejlesztői furcsaság, hanem app-szintű csatlakozási modell. A Logic Pro említése azért fontos, mert a helyi kreatív workflow-kban így közelebb kerül egymáshoz a dokumentum, a prezentáció, a táblázat és a zenei szerkesztés.</p>
+<p>Forrás: <a href="https://www.theverge.com/tech/1019373/apple-pages-keynote-numbers-ai-chatbot-update">The Verge / Apple adds a beta AI assistant built on Apple's and OpenAI's models to Keynote, Pages, Numbers, and Logic Pro, plus MCP support to Keynote, Pages, and Numbers</a></p>
+<h2>DAW + AI: Logic Pro 13-ban már külön AI asszisztens és jobb Stem Splitter jön</h2>
+<p>A DAW-blokk mai egyetlen érdemi tétele ugyanennek az Apple-frissítésnek a zenei oldala: a Tech Yahoo összefoglalója szerint a Logic Pro új AI asszisztenst kap bétában, a Stem Splitter már dobot is külön tud választani, és a böngészője is átalakul. Ez még nem egy nyílt, ügynökből teljesen vezérelhető stúdió, de arra jó jel, hogy a DAW-kon belüli AI egyre inkább szerkeszthető anyagot ad, nem csak egy végső audiofájlt.</p>
+<blockquote><p>Ha dallamötleteket vagy stem-alapú átírást csinálsz modellel, most már érdemes a kimenetet nem kész zeneként kezelni, hanem szétszedhető munkafájlként. A dobsáv különválasztása ott spórol időt, ahol eddig külső stem-eszköz kellett az újradoboláshoz vagy MIDI-zéshez.</p></blockquote>
+<p>Forrás: <a href="https://tech.yahoo.com/ai/apple-intelligence/articles/apple-creator-studio-gets-major-193529764.html">Tech Yahoo / Apple Creator Studio gets major AI upgrade with many new tools</a></p>
+<h2>GTA 6 natív PC-rekompilációs projekt indult, de még nem bootol</h2>
+<p>Az `ItsNotRexed/Leonida` repó pár nap alatt 6814 csillagig ment fel. A README szerint ez egy statikus rekompilációs projekt a GTA 6 Xbox-változatához: a kód natívan futna PC-n, a konzolos GPU-programokat Vulkanhoz fordítják át, a modelleket, textúrákat és hangot pedig a saját játékcsomagodból olvassa. A fontos rész viszont a státusz: a projekt korai, a játék még nem bootol. Ettől még technikailag figyelemre méltó, csak nem szabad kész futtatási megoldásként kezelni.</p>
+<p>Forrás: <a href="https://github.com/ItsNotRexed/Leonida">ItsNotRexed/Leonida</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/runpod/runpod-mcp">runpod/runpod-mcp</a></strong> - A README alapján ez a Runpod hivatalos MCP-szervere: MCP-kliensekből, például Claude Code-ból, Cursorból vagy VS Code-ból lehet vele Podokat, Serverless endpointokat, template-eket és hálózati volume-okat kezelni. Futtatható a Runpod hosztolt `https://mcp.runpod.io/` végpontján OAuth-belépéssel, vagy lokálisan npm-csomagként `@runpod/mcp-server` néven; a telepítéshez a README egy `npx @runpod/mcp-server@latest add` parancsot ad. A repónál nincs megadott licenc, a GitHub API szerint `NOASSERTION`, ami gyakorlatban azt jelenti, hogy alapértelmezés szerint nem szabadon újrafelhasználható. 2025-03-27-én jött létre, az utolsó push 2026-11-22, 88 csillagnál jár, és nem fork. Gyakorlatban hasznos, ha Runpod-erőforrásokat akarsz ügynökből kezelni, de pont ezért különösen fontos, hogy a tool-válaszokat átlásd és naplózd.</p>
+<p><strong><a href="https://github.com/incoai/splash">incoai/splash</a></strong> - A README szerint a Splash egy Apple Siliconra írt lokális inference engine, amely egy Macen tud kódolóügynököket és OpenAI vagy Anthropic kompatibilis appokat kiszolgálni. DFlash 2 speculative decodingot, speciális Metal kerneleket, automatikus memóriatervezést, visiont, tool callingot és beépített chat oldalt említ; CLI-ből például `splash serve --model unsloth/Qwen3.8-27B-GGUF:UD-Q4<em>K</em>M` formában fut. Apache-2.0 licencű, 2026-09-18-án jött létre, utolsó push 2026-11-17, 2604 csillagnál áll, és nem fork. A README alapján M3 vagy újabb Macet és macOS 26.4-et vár a desktop apphoz. A gyakorlatban akkor érdekes, ha egyetlen Macen akarsz helyi, API-kompatibilis modellszervert és agent-futtatást összevonni; nem jó választás, ha nem Apple Silicon a fő géped.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás fő szála, hogy egyszerre gyorsul a helyben is használható modellek világa, az ügynökös workflow-k, és a tisztán kódból épített kreatív AI-projektek.</p>
+<p><strong>@AravSrinivas</strong> -- Arav szerint a Gemini Neon ritka kombinációt hoz: gyors és közben elég okos ahhoz, hogy akár alapértelmezett modell is lehessen egy számítógépet kezelő ügynöknél, ami a saját gépen futtatott munkafolyamatokhoz is erős jelzés.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2124254600723394644">@AravSrinivas</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Genie 4 megnyitja a world model API-használatot fejlesztőknek, ami azoknak érdekes, akik játékos, szimulációs vagy vizuális ügynököket akarnak saját stackbe kötni.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2123467449257623770">@OfficialLoganK</a></p>
+<p><strong>@futurepedia<em>io</strong> -- A Perplexity Computer már magától ír és finomít újrahasznosítható playbookokat a visszatérő feladatokból, vagyis az ügynök egyre kevésbé csak végrehajt, és egyre inkább kialakítja a saját rutinjait.<br>Forrás: <a href="https://x.com/futurepedia_io/status/2123778398015418503">@futurepedia_io</a></p>
+<p><strong>@chetaslua</strong> -- Egy látványos kísérlet azt mutatja, hogy a Gemini 4 Neon tiszta kódból is össze tud rakni hangot, képet, videót és beszédszerű kimenetet, ami helyi generatív pipeline-okhoz is jó irányt mutat: kevesebb külső asset, több programozható média.<br>Forrás: <a href="https://x.com/chetaslua/status/2124131378770182389">@chetaslua</a></p>
+<p><strong>@AravSrinivas</strong> -- A Getsumen Express poszt azért érdekes, mert jól látszik rajta a vegyes AI-workflow: kép-3D eszközök, Blender-scriptek és böngészős render együtt gyorsítják a prototípuskészítést egy kis csapatnál is.<br>Forrás: <a href="https://x.com/AravSrinivas/status/2124174082522685820">@AravSrinivas</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A thinkingmachines Inkling-2-Mini kifejezetten helyi használatra méretezett MoE modellként kapott figyelmet, 1M tokenes kontextussal és olyan mérettel, ami sok olvasónknak pont a gyakorlati sáv. (1615 pont, 469 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1y1diuk/thinkingmachinesinkling2mini_moe_26b_a3b/">r/LocalLLaMA</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy rejtélyes új leaderboard-modell veri a Fable 5.2-t, ami arra utal, hogy megint érdemes figyelni a gyorsan felbukkanó modelleket, mielőtt valaki hosszabb ügynökös workflow-t egy tegnapi alapra épít. (1565 pont, 220 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1y0b2i6/a_stealth_model_just_appeared_on_the_fdb/">r/ClaudeAI</a></p>
+<p><strong>r/ClaudeAI</strong> -- A levegőben játszható böngészős hangszer jó példa arra, hogy egy modelllel már nem csak appot lehet összerakni, hanem újfajta zenei interfészt is, gyors prototípussal és azonnali kipróbálhatósággal. (968 pont, 84 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1y1xtu9/i_built_a_musical_instrument_you_play_in_thin_air/">r/ClaudeAI</a></p>
+<p><strong>r/hermesagent</strong> -- A Hermes körüli függőséglánc-botrány emlékeztető arra, hogy saját ügynök futtatásánál a pluginok és külső projektek elérhetősége ugyanúgy kockázat, mint maga a modellválasztás. (825 pont, 143 komment)<br>Forrás: <a href="https://www.reddit.com/r/hermesagent/comments/1y07qsp/github_just_banned_the_devs_of_a_core_hermes/">r/hermesagent</a></p>
+<p><strong>r/google</em>antigravity</strong> -- A Neon és Hydrogen használati limiteiről szóló panasz azért fontos, mert a gyakorlatban nem csak a modell minősége számít, hanem az is, mennyi tényleges kapacitást kapsz ügynökös vagy hosszabb helyi munkamenetekhez. (645 pont, 151 komment)<br>Forrás: <a href="https://www.reddit.com/r/google_antigravity/comments/1y1ep0k/we_get_less_hydrogen_and_neon_usage_than_opus_55/">r/google_antigravity</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-22";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
