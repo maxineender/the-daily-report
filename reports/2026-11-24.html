@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevesebb token, szűkebb jogosultság, célzottabb fájlolvasás — LocalAgent Digest</title>
+  <meta name="description" content="A mai erős tételek arról szólnak, hogyan lesz olcsóbb és nehezebben félrevihető a napi ügynökmunka.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-24</div>
+          <h1 class="article-title">Kevesebb token, szűkebb jogosultság, célzottabb fájlolvasás</h1>
+          <div class="article-sub">A mai erős tételek arról szólnak, hogyan lesz olcsóbb és nehezebben félrevihető a napi ügynökmunka.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+        <div class="listen-bar" data-audio="../assets/audio/2026-11-24.mp3">
+          <button class="listen-play" type="button" aria-label="Cikk felolvasasa">
+            <svg class="listen-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            <svg class="listen-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"></path></svg>
+          </button>
+          <div class="listen-body">
+            <div class="listen-label">Meghallgatom</div>
+            <div class="listen-progress"><div class="listen-progress-fill"></div></div>
+          </div>
+          <div class="listen-time">--:--</div>
+          <button class="listen-speed" type="button" aria-label="Lejatszasi sebesseg">1x</button>
+          <audio class="listen-audio" preload="metadata" src="../assets/audio/2026-11-24.mp3"></audio>
+        </div>
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/placeholder-1.jpg" alt="Kevesebb token, szűkebb jogosultság, célzottabb fájlolvasás" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>Szia, ma inkább a munkapad alatti változások voltak érdekesek. A Gemini API most már csak a fájl szükséges részeit tölti be.</p>
+<p>A mai anyag nagy része ugyanoda fut ki: hogyan adj kevesebb fölösleges kontextust, és hogyan zárd szűkebbre azt, amit az ügynök elérhet. Ez egyszerre költség-, sebesség- és biztonsági kérdés.</p>
+<h2>Gemini API: már oldalra, cellatartományra és médiarészletre lehet szűkíteni a fájlbevitelt</h2>
+<p>A Gemini API-ban megjelentek a natív file slicing kontrollok: PDF-eknél oldalakat, tábláknál sheet- és cellatartományt, audió- és videófájloknál pedig szegmenseket lehet kérni, és a modell csak ezeket a részeket olvassa be szerveroldalon. Ezzel együtt natív feltöltési támogatás jött Microsoft Office és OpenDocument formátumokhoz is. A Google külön kiemeli, hogy így nem kell előre teljes fájlokat plain textté lapítani vagy minden oldalt betolni a kontextusba, és a tokenköltség is csak az átnézett részre számít.</p>
+<blockquote><p>Ha most még úgy dolgozol, hogy az ügynök teljes PDF-eket vagy egész xlsx-eket nyel be, ezt érdemes elsőként lecserélni. A praktikus nyereség nem elméleti: invoice-ellenőrzésnél, PRD-olvasásnál vagy meetingvideóknál rögtön külön választhatod a releváns oldalakat, tabokat és időszeleteket, és ezzel egyszerre csökken a számla és a félreolvasás esélye.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/">Google Blog / Introducing file slicing controls in the Gemini API</a></p>
+<h2>gemini-cli 0.71.1: az A2A szerver már kötelező bearer tokennel és bemenetellenőrzéssel megy</h2>
+<p>A mai gemini-cli kiadás önmagában még nem lenne hír, de a hozzá tartozó egyetlen érdemi commit igen: az A2A szerverben mostantól kötelező a bearer tokenes hitelesítés, és bekerült a request input validation is. Ez a `fix(a2a-server): enforce bearer token authentication and request input validation (#30420)` változás a gépek közötti hívásoknál zár le két tipikus rést: a hitelesítés nélküli elérést és a túl laza bemenetkezelést.</p>
+<blockquote><p>Ha van saját bridge-ed vagy belső agent-to-agent hívásod gemini-cli körül, nézd meg, nem számítottál-e eddig néma anoním elérésre. Ez a fajta szigorítás gyakran azért fáj, mert a helyi automatizmus addig "valahogy ment", most pedig explicit tokent és tisztább inputot vár.</p></blockquote>
+<p>Forrás: <a href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.71.1">google-gemini/gemini-cli v0.71.1</a></p>
+<h2>Anthropic új kutatási oldal: Working with AI</h2>
+<p>Az Anthropic sitemapjában új kutatási URL jelent meg `working-with-ai` címen. A teljes törzs itt nincs az anyagban, ezért ebből csak annyi biztos, hogy nem blogfőoldal-zaj, hanem új research oldal került ki 2026-11-23-as lastmoddal. Már önmagában az is jelzés, hogy a labor külön oldalt nyitott arra, hogyan dolgoznak együtt ember és modell.</p>
+<p>Forrás: <a href="https://www.anthropic.com/research/working-with-ai">Anthropic / Working with AI</a></p>
+<h2>OpenAI új oldal a sitemapban: Shirudo Cisco-val</h2>
+<p>Az OpenAI RSS-ben új tételként jelent meg az `Introducing Shirudo`, a sitemap-diff alapján ez új URL, és a cím szerint Cisco-partnerségről van szó. A részletes törzs most nem tölthető le az openai.com botvédelme miatt, így csak a biztos minimum állítható: új, hivatalos OpenAI-bejelentésről van szó, nem másodkézből szedett utalásról.</p>
+<p>Forrás: <a href="https://openai.com/index/introducing-shirudo">OpenAI RSS / OpenAI and Cisco introduce Shirudo</a></p>
+<h2>Hydrogen köré már konkrét mintaprojektek épülnek, köztük interaktív 3D és Three.js jelenetek</h2>
+<p>A Google hat korai Hydrogen-projektet mutatott be, köztük Three.js skyline-jelenetet, időben változó repülős szcénát és kattintásra reagáló interaktív mot-objektumot. Ez nem új modellbejelentés, hanem használati minta: a Hydrogen náluk kifejezetten gyors végrehajtó modellként jelenik meg, akár önmagában, akár Carbon mellé párosítva többmodellű workflow-ban.</p>
+<blockquote><p>Ha többmodelles láncot építesz, ez jó emlékeztető arra, hogy a "gondolkodó" és a "végrehajtó" modellt külön kezeld. A könnyebb renderelési, UI- és asset-előkészítő köröket érdemes a gyorsabb modellre kiszervezni, és csak a tervezést vagy a nehéz hibakeresést hagyni a drágább lépcsőre.</p></blockquote>
+<p>Forrás: <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/">Google Blog / See what 6 builders are making with Gemini 4 Hydrogen</a></p>
+<h2>Perplexityn a felhasználók maguktól tolják a Neon használatát keresésnél és agentes feladatoknál</h2>
+<p>Arav Srinivas szerint a Gemini 4 Neon használata Perplexityn november 19. és 22. között napi +10,6 százalékkal nőtt az Ask lekérdezéseknél és +15 százalékkal a Computer típusú, agentes feladatoknál, ráadásul állítása szerint ezt még nem default routing hajtja, hanem organikus átváltás. A poszt szerint a váltás főleg Opus 5.5-ről és Sol 6.2-ről jön.</p>
+<p>Forrás: <a href="https://x.com/AravSrinivas/status/2124765417378099414">@AravSrinivas</a></p>
+<h2>RepoCheck</h2>
+<p><strong><a href="https://github.com/looptroop-ai/LoopTroop">LoopTroop</a></strong> - A README alapján a LoopTroop helyi AI kódolási orchestrator nagyobb repós feladatokra: egy ticketből interjú és PRD után kis "bead" lépésekre bontott tervet készít, ezeket izolált worktree-kben futtatja, több automatikus javító körrel, majd ember által engedélyezett PR-ig viszi. MIT licencű repó, tehát szabadon használható és módosítható. A GitHub-adatok szerint 2026-03-03-án jött létre, 2026-11-24-én volt utoljára pusholva, 182 csillagnál és 14 forknál jár, nem fork. Gyakorlatban annak érdekes, aki nem egyetlen hosszú chatre akar rábízni egy teljes fejlesztési feladatot, hanem szakaszos, izolált végrehajtást akar helyi kontrollal.</p>
+<p><strong><a href="https://github.com/Homebrew/homebrew-cask">Homebrew Cask</a></strong> - A README alapján ez a Homebrew bináris csomaggyűjteménye macOS-re és Linuxra, GUI appok, CLI eszközök, fontok, pluginek és más előre csomagolt szoftverek telepítésére. BSD-2-Clause licencű, tehát nyílt és szabadon felhasználható a licenc feltételei mellett. 2012-03-05-én hozták létre, 2026-11-24-én volt utolsó push, 22 318 csillagnál és 12 151 forknál tart, és nem fork. A napi gyakorlatban nem ügynökkeretrendszer, viszont akkor jön jól, ha a helyi AI-s eszközkészletet reprodukálhatóan akarod telepíteni vagy frissíteni Macen és Linuxon.</p>
+<h2>PulseCheck: mi megy most az X-en és a Redditen</h2>
+<p>A mai válogatás közös szála, hogy egyre több konkrét példa jön arra, hogyan lesz a modellekből ténylegesen használható helyi workflow: olcsóbb futás, hosszabb autonóm munka és közvetlenebb multimédiás kimenet.</p>
+<p><strong>@rryssf</strong> -- Egy 26 perces, külön böngészőben futó ügynökös tesztet mutat be, ahol a modell magától járt végig több száz oldalt és végül még a saját gyártója SDK-ját sem hozta ki élre: ez jó visszajelzés annak, aki hosszabb, felügyelet nélküli kutató workflow-t akar gépen futtatni.<br>Forrás: <a href="https://x.com/rryssf/status/2124857808994889887">@rryssf</a></p>
+<p><strong>@rryssf</strong> -- A GLM-5.4 kapcsán azt emeli ki, hogy a rövidebb válaszok mellett jobb eredményt hozhat a dupla átfutásos megközelítés: ez főleg akkor érdekes, ha nálad a tokenköltség és a késleltetés ugyanannyira fontos, mint a nyers minőség.<br>Forrás: <a href="https://x.com/rryssf/status/2124850781887275282">@rryssf</a></p>
+<p><strong>@OfficialLoganK</strong> -- A Gemini 4 Neon már megjelent a Google Workspace ügyfeleknek is, ami azt jelzi, hogy a modellt nem csak demóként tolják, hanem napi munkafolyamatokba is betolják: ez a helyi ügynököknél is azt erősíti, hogy a gyors, általános célú modellek köré érdemes eszközláncot építeni.<br>Forrás: <a href="https://x.com/OfficialLoganK/status/2125018427790344654">@OfficialLoganK</a></p>
+<p><strong>@emmanuel_2m</strong> -- Egy Claude-alapú, Scenario MCP-re kötött 3D workflow-t mutat, ahol promptból vagy referencia képből készül szerkeszthető Blender fájl: annak hasznos, aki agentes pipeline-ba akar 3D assetgyártást tenni kézi modellezés helyett.<br>Forrás: <a href="https://x.com/emmanuel_2m/status/2124859364242563405">@emmanuel_2m</a></p>
+<p><strong>@itsPaulAi</strong> -- Azt demonstrálja, hogy egy bot saját beszélgetéséből visszanézve 35-50 százalékkal le tudta faragni a tokenhasználatot azonos kimenet mellett: ez egyszerű minta arra, hogyan lehet meglévő agent promptokat helyben finomítani anélkül, hogy az egész rendszert újra kellene írni.<br>Forrás: <a href="https://x.com/itsPaulAi/status/2124971563296739747">@itsPaulAi</a></p>
+<p><strong>r/singularity</strong> -- Egy livestreamelt kísérletben összehangolt ügynökök próbálják megoldani a P = NP problémát: a poszt attól érdekes, hogy közösségi, párhuzamos agent-farmként gondolkodik, nem egyetlen nagy futásként. (1165 pont, 259 komment)<br>Forrás: <a href="https://www.reddit.com/r/singularity/comments/1y30m1o/a_coordinated_army_of_agents_is_trying_to_solve_p/">r/singularity</a></p>
+<p><strong>r/ClaudeAI</strong> -- A kommentekből egy csomó apró promptfogás gyűlt össze, amelyekkel a Claude kevésbé találgat és jobban kérdez vissza: ez közvetlenül hasznos annak, aki helyi vagy API-s ügynököknél a hibás feltételezéseket akar visszafogni. (1170 pont, 168 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1y2qpdd/whats_one_small_trick_that_changed_how_you_use/">r/ClaudeAI</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A GLM-5.4 loop transformer bejelentése azért kapott nagy figyelmet, mert új architektúrás ötletet köt össze kódolási teljesítménnyel és későbbi open weight ígérettel: ez a helyben futtatott kódoló modellek következő hullámát előlegezheti meg. (1069 pont, 343 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1y3enps/glm54_toward_generalized_coding_with_our_first/">r/LocalLLaMA</a></p>
+<p><strong>r/LocalLLaMA</strong> -- A Basaltos Inkling 2 Mini sebességtesztje arról szól, mennyire brutális tempót lehet kihozni egyetlen 5090-en: annak fontos, aki lokális inferenciánál a nyers áteresztőképességet és a nagyobb kontextust nézi elsődleges szempontnak. (550 pont, 173 komment)<br>Forrás: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1y1x7zo/basalt_inkling_2_mini_on_one_5090_at_up_to_613/">r/LocalLLaMA</a></p>
+<p><strong>r/ClaudeAI</strong> -- Egy hobbi projektből kinőtt, Claude-dal tervezett digitális álomházat mutatnak be, ami jó példa arra, hogy generatív modellekkel nem csak kódot, hanem összetett vizuális-tervezési iterációt is lehet vinni. (651 pont, 62 komment)<br>Forrás: <a href="https://www.reddit.com/r/ClaudeAI/comments/1y3a8ry/a_small_project_became_an_obsession_with_building/">r/ClaudeAI</a></p>
+<h2>Mélymerülés</h2>
+<p>Ma hosszabb írás is készült: <strong>Miért fontosabb a fájlszeletelés, mint egy újabb modellnév</strong>. A Gemini API új file slicing kontrolljai egy nagyon hétköznapi, de drága problémát oldanak meg.</p>
+<p><a href="https://mxndr.com/the-daily-report/reports/2026-11-24-deepdive.html">Elolvasom</a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-24";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
