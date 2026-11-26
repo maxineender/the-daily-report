@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mit változtat a dátumhoz kötött web az ügynökökön? — LocalAgent Digest</title>
+  <meta name="description" content="A Perplexity Time Machine nem csak archív keresés, hanem egy új tesztkörnyezet a retrievalre épülő workflow-knak.">
+  <link rel="stylesheet" href="../assets/style.css?v=4b6fbf10">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" id="header-brand-logo"><img src="../assets/logo-header.jpg" alt="LocalAgent Digest" class="brand-logo-img"></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-container">
+      <a href="../index.html" class="back-btn" id="btn-back-home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Vissza a főoldalra
+      </a>
+
+      <article>
+        <header class="article-header">
+          <div class="article-date-hud">// NODE: REPORT_DATA // PUBLISHED: 2026-11-26</div>
+          <h1 class="article-title">Mit változtat a dátumhoz kötött web az ügynökökön?</h1>
+          <div class="article-sub">A Perplexity Time Machine nem csak archív keresés, hanem egy új tesztkörnyezet a retrievalre épülő workflow-knak.</div>
+          <button id="share-btn" class="share-button" style="display:inline-flex;align-items:center;gap:8px;background:var(--panel-border);color:var(--text-main);border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:var(--font-mono);font-size:0.85rem;margin-bottom:20px;transition:var(--transition);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Megosztás
+          </button>
+        </header>
+
+
+        
+        <div class="article-hero-img-wrap">
+          <img src="../assets/deepdive-cover.jpg" alt="Mit változtat a dátumhoz kötött web az ügynökökön?" class="article-hero-img">
+        </div>
+
+        <div class="article-content">
+          <p>A Perplexity tegnapi bejelentése első olvasásra egyszerűnek tűnik: lehet a webet egy kiválasztott dátum állapota szerint mutatni a modellnek a Search és Context API-ban. Arav Srinivas ezt úgy fogalmazta meg, hogy a Time Machine „a modellt pontosan úgy látja a webet, ahogy az adott napon kinézett”, és ez előrejelzésre tanított ügynökök építését is segítheti <a href="https://x.com/AravSrinivas/status/2125707364053680383">(forrás)</a>.</p>
+<p>Ez könnyen hangzik marketingnek, pedig ennél jóval érdekesebb. A retrievalre épülő ügynökök egyik legnagyobb, még mindig alulkezelt problémája az időszivárgás. Sok workflow papíron jól néz ki, mert visszateszteléskor a modell olyan cikkeket, összefoglalókat és későbbi magyarázatokat is felvesz a környezetéből, amelyek az eredeti döntési pillanatban még nem léteztek. Ilyenkor a rendszer nem okosabb, csak csal.</p>
+<h2>A mai web túl sok mindent tud előre</h2>
+<p>Ha ma visszafuttatsz egy ügynököt egy tavalyi feladatra, többnyire a mai interneten futtatod vissza. Még akkor is, ha a promptban azt kéred, „úgy gondolkodj, mintha 2025 júniusa lenne”. A modell ugyanis a retrievalből olyan oldalakat, későbbi elemzéseket, javított dokumentációt vagy utólagos fórumválaszokat kaphat, amelyek akkor még nem álltak rendelkezésre.</p>
+<p>Ez különösen fájdalmas három típusú feladatnál:</p>
+<ol><li><strong>piaci és előrejelző workflow-knál</strong>, ahol egy hír vagy adat pont a későbbi következményei miatt válik könnyebben értelmezhetővé;</li><li><strong>kutatóügynököknél</strong>, ahol az utólag megszületett magyarázatok elfedik, hogy az adott pillanatban mennyire volt bizonytalan a helyzet;</li><li><strong>fejlesztői feladatoknál</strong>, ahol a dokumentáció, README vagy issue thread később tisztul le, és az ügynök így irreális előnyből dolgozik.</li></ol>
+<p>A Time Machine itt hoz rendet: nem a modellt teszi időutazóvá, hanem a visszakeresett környezetet zárja be egy adott napba <a href="https://x.com/AravSrinivas/status/2125707364053680383">(forrás)</a>.</p>
+<h2>Miért fontosabb ez, mint egy új benchmarkpont</h2>
+<p>Az utóbbi hetek hírei tele voltak benchmarkokkal, modellekkel és biztonsági vizsgálatokkal. Ezek fontosak, de a napi használatban sokszor az dönti el az eredményt, hogy a modell milyen inputréteget kap. A Google például pár napja külön fájl-szeletelési kontrollt adott a Gemini API-hoz, hogy oldalra, cellatartományra vagy médiarészletre lehessen szűkíteni a bevitt anyagot <a href="https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/">(forrás)</a>. Az Anthropic pedig most arról írt, hogyan validálták a Pythonról Rustra költöző Messages API-t ügynökökkel, a régi szolgáltatást referenciaként használva <a href="https://www.anthropic.com/research/migrating-api-to-rust">(forrás)</a>.</p>
+<p>Mindkettő ugyanabba az irányba mutat: a következő nyereség egyre kevésbé pusztán a modellből jön, és egyre inkább abból, hogyan szeleteled, időzíted és ellenőrzöd a környezetét.</p>
+<p>A dátumhoz kötött retrieval ebből a szempontból alapfunkció. Nem csak kényelmi extra, hanem a tisztességes mérés minimuma.</p>
+<h2>Mire jó ez helyben, a saját workflow-dban?</h2>
+<p>A legegyszerűbb nyereség a backtest. Ha van egy ügynököd, ami hírekből, dokumentumokból vagy webes forrásokból készít döntési javaslatot, most már közelebb kerülhetsz ahhoz, hogy ugyanazt a feladatot valóban korhű környezetben futtasd.</p>
+<p>Ez három gyakorlati dolgot jelenthet.</p>
+<h3>1. Végre elválaszthatod a modellhibát a retrievalhibától</h3>
+<p>Sokszor úgy tűnik, hogy a modell „túl okos”, valójában csak túl sok jövőbeli információt kapott. Ha időgép nélkül jó az eredmény, időgéppel viszont hirtelen szétesik, akkor a gond nem feltétlenül a reasoninggel van, hanem azzal, hogy a workflow eddig szivárgó adaton ült.</p>
+<h3>2. Lehet valósabb A/B tesztet futtatni</h3>
+<p>Ha ugyanarra a dátumra több modellt vagy több promptstratégiát futtatsz, jobban összevethető lesz, melyik kezel bizonytalanságot, hiányos információt és zajos webet. A mai webre futtatott tesztek gyakran kisimítják ezeket a különbségeket.</p>
+<h3>3. Újraértelmezheted a memóriát és a tudásbázist</h3>
+<p>Ha van helyi tudásbázisod, dokumentumraktárad vagy saját cache-ed, most már jobban érdemes különválasztani:<br>- a stabil, belső anyagokat<br>- az aktuális webet<br>- és a dátumhoz kötött történeti webet</p>
+<p>Ez nem csak technikai rendrakás. Ettől lesz reprodukálhatóbb egy ügynökfutás.</p>
+<blockquote><p>Érdemes minden retrievales tasknál külön mezőben tárolni az `as<em>of</em>date` értéket, és ezt végigvinni a keresőrétegen, a cache-kulcson és a futási naplóban is. Ha ezt nem teszed meg, két hét múlva már nem fogod tudni pontosan újrajátszani ugyanazt a döntési helyzetet.</p></blockquote>
+<h2>Mi a korlát?</h2>
+<p>A Time Machine önmagában nem old meg mindent. Nem tudjuk a posztból, milyen lefedettséggel, milyen oldalgyakorisággal és milyen archiválási hézagokkal dolgozik a rendszer. Az sem derül ki, mennyire kezel jól dinamikus oldalakat, törölt tartalmakat vagy bejelentkezés mögötti forrásokat <a href="https://x.com/AravSrinivas/status/2125707364053680383">(forrás)</a>.</p>
+<p>És van egy másik fontos korlát is: ha a modell maga előtanult bizonyos későbbi mintákat, attól még nem válik „naivvá” csak azért, mert a retrievalt múltbeli webre zárod. A Time Machine tehát nem teljes időszigetelés. De a legtöbb gyakorlati workflow-ban a retrievalszivárgás sokkal nagyobb torzító tényező, mint az, hogy a modell súlyaiban van valamilyen általános későbbi tudás.</p>
+<h2>Hova épül be először?</h2>
+<p>A legkézenfekvőbb területek:</p>
+<ul><li><strong>forecasting agentek</strong></li><li><strong>befektetési és piaci jegyzetelő rendszerek</strong></li><li><strong>OSINT és hírelemző pipeline-ok</strong></li><li><strong>dokumentációs regressziótesztek</strong></li><li><strong>kutatóügynökök, amelyek állításokat dátum szerint rekonstruálnak</strong></li></ul>
+<p>Különösen érdekes lehet ott, ahol ma kézzel oldod meg a dátumzárást archive linkekkel, képernyőmentésekkel vagy saját crawl mentésekkel. Ha ezt egy API-réteg elkezdi natívan adni, a workflow sokkal egyszerűbb lesz.</p>
+<h2>A fontos váltás: retrieval mint kísérleti környezet</h2>
+<p>Az egészben talán ez a legérdekesebb. A retrieval eddig sok csapatnál csak kiszolgáló komponens volt: egy kereső, ami „odahozza a kontextust”. A Time Machine azt sugallja, hogy a retrievalből kísérleti környezet lesz. Nem csak adatforrás, hanem kontrollált labor, ahol meg tudod mondani, mit láthatott a modell és mit nem.</p>
+<p>Ez azért nagy ügy, mert az ügynökök értékelése így végre kevésbé lesz színjáték. Ha egy workflow csak a mai internet bölcsességével működik, azt jobb hamar megtudni.</p>
+<p>A modellek valószínűleg továbbra is gyorsan jönnek majd. De közben csendben azok az eszközök lesznek a legfontosabbak, amelyek kordában tartják, milyen világot látnak maguk körül. A dátumhoz kötött web pontosan ilyen eszköz.</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>// END OF DATA TRANSMISSION // NODE: LOCALAGENT //</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      const bar = document.querySelector('.listen-bar');
+      if (!bar) return;
+      const audio = bar.querySelector('.listen-audio');
+      const playBtn = bar.querySelector('.listen-play');
+      const iconPlay = bar.querySelector('.listen-icon-play');
+      const iconPause = bar.querySelector('.listen-icon-pause');
+      const fill = bar.querySelector('.listen-progress-fill');
+      const track = bar.querySelector('.listen-progress');
+      const time = bar.querySelector('.listen-time');
+      const speedBtn = bar.querySelector('.listen-speed');
+      const speeds = [1, 1.25, 1.5, 0.75];
+      let speedIdx = 0;
+      const fmt = s => (isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '--:--');
+      const showTime = () => { time.textContent = audio.currentTime > 0 ? fmt(audio.currentTime) + ' / ' + fmt(audio.duration) : fmt(audio.duration); };
+      audio.addEventListener('loadedmetadata', showTime);
+      audio.addEventListener('timeupdate', function () {
+        if (audio.duration) fill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+        showTime();
+      });
+      audio.addEventListener('ended', function () { iconPlay.style.display = ''; iconPause.style.display = 'none'; });
+      playBtn.addEventListener('click', function () {
+        if (audio.paused) { audio.play(); iconPlay.style.display = 'none'; iconPause.style.display = ''; }
+        else { audio.pause(); iconPlay.style.display = ''; iconPause.style.display = 'none'; }
+      });
+      track.addEventListener('click', function (e) {
+        if (!audio.duration) return;
+        const r = track.getBoundingClientRect();
+        audio.currentTime = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1) * audio.duration;
+      });
+      speedBtn.addEventListener('click', function () {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = speeds[speedIdx] + 'x';
+      });
+      showTime();
+    })();
+
+    const searchQuery = new URLSearchParams(window.location.search).get('q')?.trim();
+    if (searchQuery) {
+      const matcher = new RegExp('(' + searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      const content = document.querySelector('.article-content');
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) textNodes.push(node);
+      const highlights = [];
+      textNodes.forEach(textNode => {
+        if (!matcher.test(textNode.nodeValue)) return;
+        matcher.lastIndex = 0;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        textNode.nodeValue.replace(matcher, (match, _group, offset) => {
+          fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex, offset)));
+          const mark = document.createElement('mark');
+          mark.className = 'search-highlight';
+          mark.textContent = match;
+          fragment.append(mark);
+          highlights.push(mark);
+          lastIndex = offset + match.length;
+        });
+        fragment.append(document.createTextNode(textNode.nodeValue.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+      if (highlights[0]) highlights[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', async () => {
+        if (navigator.share) {
+          try {
+            await navigator.share({ title: document.title, url: window.location.href });
+          } catch (err) { console.error(err); }
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          const old = shareBtn.innerHTML;
+          shareBtn.innerHTML = 'Másolva!';
+          setTimeout(() => shareBtn.innerHTML = old, 2000);
+        }
+      });
+    }
+  </script>
+  <script>
+    (function () {
+      var KEY = 'ldr-reading-v1';
+      var PAGE = "2026-11-26-deepdive";
+      var MAX_ENTRIES = 400;
+
+      function readAll() {
+        try {
+          var raw = window.localStorage.getItem(KEY);
+          var data = raw ? JSON.parse(raw) : {};
+          return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+        } catch (e) { return {}; }
+      }
+
+      function prune(data) {
+        var ids = Object.keys(data);
+        if (ids.length <= MAX_ENTRIES) return;
+        ids.sort(function (a, b) {
+          return ((data[b] && data[b].opened) || 0) - ((data[a] && data[a].opened) || 0);
+        });
+        ids.slice(MAX_ENTRIES).forEach(function (k) { delete data[k]; });
+      }
+
+      function update(changes) {
+        try {
+          var data = readAll();
+          var entry = data[PAGE] && typeof data[PAGE] === 'object' ? data[PAGE] : {};
+          for (var k in changes) entry[k] = changes[k];
+          if (typeof entry.opened !== 'number') entry.opened = Date.now();
+          data[PAGE] = entry;
+          prune(data);
+          window.localStorage.setItem(KEY, JSON.stringify(data));
+        } catch (e) { /* storage blocked or full: ignore */ }
+      }
+
+      var stored = readAll()[PAGE];
+      var savedPos = stored && typeof stored.pos === 'number' && isFinite(stored.pos)
+        ? Math.min(Math.max(stored.pos, 0), 1) : null;
+
+      update({ opened: Date.now() });
+
+      function scrollMax() {
+        var doc = document.documentElement;
+        var height = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0);
+        return height - window.innerHeight;
+      }
+      function scrollTopNow() {
+        return window.pageYOffset || document.documentElement.scrollTop || 0;
+      }
+      function scrollRatio() {
+        var max = scrollMax();
+        if (max <= 0) return 0;
+        return Math.min(Math.max(scrollTopNow() / max, 0), 1);
+      }
+
+      var settled = false;      // restore decision made (after the load event)
+      var userScrolled = false; // reader started scrolling on their own
+      var timer = null;
+
+      function savePos() {
+        timer = null;
+        // Before the restore decision, only save if the reader is actually scrolling;
+        // otherwise an early pagehide would overwrite the saved position with 0.
+        if (!settled && !userScrolled) return;
+        update({ pos: Math.round(scrollRatio() * 10000) / 10000 });
+      }
+      function onScroll() {
+        if (!timer) timer = setTimeout(savePos, 500);
+      }
+      function flush() {
+        if (timer) clearTimeout(timer);
+        savePos();
+      }
+      function markUser() { userScrolled = true; }
+
+      var scrollKeys = ['PageDown', 'PageUp', 'ArrowDown', 'ArrowUp', ' ', 'Spacebar', 'Home', 'End'];
+      window.addEventListener('wheel', markUser, { passive: true });
+      window.addEventListener('touchmove', markUser, { passive: true });
+      window.addEventListener('keydown', function (e) {
+        if (scrollKeys.indexOf(e.key) !== -1) markUser();
+      });
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('pagehide', flush);
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') flush();
+      });
+      window.addEventListener('pageshow', function (e) {
+        if (e.persisted) update({ opened: Date.now() });
+      });
+
+      function showNote() {
+        var note = document.createElement('div');
+        note.className = 'resume-note';
+        note.setAttribute('role', 'status');
+        note.textContent = 'Ott folytatod, ahol abbahagytad';
+        document.body.appendChild(note);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { note.classList.add('is-visible'); });
+        });
+        setTimeout(function () {
+          note.classList.remove('is-visible');
+          setTimeout(function () { if (note.parentNode) note.parentNode.removeChild(note); }, 600);
+        }, 2800);
+      }
+
+      function restore() {
+        if (settled) return;
+        settled = true;
+        // Nothing worth resuming: no saved position, near the top, or already finished.
+        if (savedPos === null || savedPos < 0.05 || savedPos > 0.95) return;
+        // A #hash target or a search hit (?q=) decides the position instead.
+        if (window.location.hash && window.location.hash.length > 1) return;
+        var query = null;
+        try { query = new URLSearchParams(window.location.search).get('q'); } catch (e) {}
+        if (query && query.trim()) return;
+        // Reader (or the browser's own scroll restoration) already moved the page.
+        if (userScrolled || scrollTopNow() > 40) return;
+        var max = scrollMax();
+        if (max <= 0) return;
+        window.scrollTo(0, Math.round(savedPos * max));
+        showNote();
+      }
+
+      function afterLoad() {
+        var done = false;
+        var go = function () {
+          if (done) return;
+          done = true;
+          setTimeout(restore, 0);
+        };
+        try {
+          // Web fonts can still change line heights right after load; wait briefly.
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(go, go);
+            setTimeout(go, 1000);
+            return;
+          }
+        } catch (e) {}
+        go();
+      }
+
+      if (document.readyState === 'complete') afterLoad();
+      else window.addEventListener('load', afterLoad);
+    })();
+  </script>
+</body>
+</html>
